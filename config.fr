@@ -1,0 +1,119 @@
+\ (c) 2013 Johns Hopkins University / Applied Physics Laboratory
+\ SPP common instrument (i.e. EPI-Lo & WISPR) configuration constants
+hex
+
+\ Note: a subset of these constants are used by the SPP boot programs.
+\ There is no overhead in defining constants for the boot programs that
+\ are not used.  The opposite is not true: defining constants for the
+\ boot programs that are not used by application take up space in the
+\ application.  Therefore, boot-specific constants are defined separately.
+
+\ Ids for externally visible data structures.  These can be loaded and
+\ dumped via XXX_MEM_STR_LOAD and XXX_MEM_STR_READ.
+0 constant #limits-str			\ monitor limits
+1 constant #params-str			\ parameters
+
+\ Data product ids.
+\ 0x00 - 0x0f reserved for common
+\ 0x10 - 0x3f reserved for application-specific
+\ Note: 00 is unused
+01 constant #echo-pkt			\ command echo
+02 constant #alarm-pkt			\ alarm
+03 constant #checksum-pkt		\ checksum
+04 constant #dump-pkt			\ memory dumps
+07 constant #mac-dump-pkt		\ macro dump
+08 constant #mac-check-pkt		\ macro checksums
+09 constant #limits-pkt			\ monitor limits
+0a constant #params-pkt			\ parameters
+0b constant #text-pkt			\ text
+0c constant #crit-hsk-pkt		\ critical housekeeping
+
+\ Command opcodes
+\ 0x00 - 0x3f reserved for common
+\ 0x40 - 0xff reserved for application-specific
+\ Core command opcodes.
+\ The next free opcode = 27
+\ Note: 00 is not used.
+01 constant #cmd-null
+21 constant #cmd-text
+02 constant #cmd-wrap
+03 constant #mac-check
+04 constant #mac-def
+05 constant #mac-delay
+06 constant #mac-end
+07 constant #mac-enddef
+08 constant #mac-halt
+09 constant #mac-loop-begin
+0a constant #mac-loop-end
+0b constant #mac-nest
+0c constant #mac-pause
+0d constant #mac-read
+0e constant #mac-restore
+0f constant #mac-run
+10 constant #mac-run-silent
+11 constant #mac-save
+12 constant #mem-check
+13 constant #mem-copy
+14 constant #mem-load
+26 constant #mem-nv-enb
+15 constant #mem-read
+16 constant #mem-read-abrt
+17 constant #mem-run
+18 constant #mem-str-load
+19 constant #mem-str-read
+1a constant #mem-write
+1b constant #mon-cntrl
+\ 1e constant #rom-boot
+\ 1f constant #rom-go
+25 constant #saf-cycle
+22 constant #saf-off
+23 constant #saf-reset
+24 constant #saf-timeout
+1c constant #stat-clr
+1d constant #stat-int
+20 constant #stat-mem
+
+\ Maximum number of command arguments.  Determined by largest command:
+\ XXX_MEM_LOAD
+d# 264 constant #max-args
+
+\ Maximum number of argument bytes to echo
+d# 10 constant #max-echo-args
+
+\ Results from commands.
+\ 0x00 - 0x0f reserved for common
+\ 0x10 - 0x7f reserved for appication-specific
+00 constant #ok-cmd			\ no error, command executed
+01 constant #ok-macro-cmd		\ no error, command appended to macro
+02 constant #unknown-cmd		\ unknown opcode or bad length
+03 constant #badarg-cmd			\ bad argument
+04 constant #macro-run-cmd		\ cannot run macro; no contexts
+05 constant #need-macro-cmd		\ cannot be used outside of a macro
+06 constant #macro-comp-cmd		\ macro compilation error
+07 constant #macro-kill-cmd		\ macro not killed (not running?)
+09 constant #macro-check-cmd		\ cannot load macros; bad EEPROM cksum
+0a constant #mem-write-cmd		\ cannot load memory; write disabled
+
+\ Alarm ids.
+\ 0x00 - 0x0f and 0x80 - 0xff reserved for common
+\ 0x10 - 0x7f reserved for application-specific
+d#   1 constant #bad-pkt-alm		\ bad packet, e.g. checksum
+d#   2 constant #no-contexts-alm	\ out of macro contexts
+d#   3 constant #auto-op-alm		\ autonomous operations error
+d# 128 constant #too-low-alm		\ monitored value too low
+d# 192 constant #too-high-alm		\ monitored value too high
+
+\ Maximum macro memory address.  Examples are:
+\ A value of 0 (equivalent to 10000) uses all available macro memory.
+\ A value of h# c000 uses all but 16 kbytes.
+0 constant #max-macro-addr
+
+\ Number of 32-bit data words in a dump packet
+d# 256 2/ cell/ constant #dump-words
+
+\ Dump handshake function: always true
+true constant dump-ok?
+
+\ CRC parameters
+1021 constant #crc-poly			\ CRC-CCITT polynomial (X^16 not shown)
+ffff constant #crc-seed

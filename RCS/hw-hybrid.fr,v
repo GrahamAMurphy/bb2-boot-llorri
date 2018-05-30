@@ -1,0 +1,347 @@
+head	0.1;
+access;
+symbols;
+locks
+	murphy:0.1.0.156; strict;
+comment	@# @;
+
+
+0.1
+date	2018.02.20.16.37.38;	author murphy;	state Exp;
+branches
+	0.1.0.29;
+next	;
+
+0.1.0.29
+date	2018.02.20.16.37.38;	author murphy;	state Exp;
+branches;
+next	0.1.0.62;
+
+0.1.0.62
+date	2018.02.23.13.34.31;	author murphy;	state Exp;
+branches;
+next	0.1.0.83;
+
+0.1.0.83
+date	2018.02.23.14.20.53;	author murphy;	state Exp;
+branches;
+next	0.1.0.123;
+
+0.1.0.123
+date	2018.04.13.02.04.43;	author murphy;	state Exp;
+branches;
+next	0.1.0.124;
+
+0.1.0.124
+date	2018.04.13.02.08.51;	author murphy;	state Exp;
+branches;
+next	0.1.0.126;
+
+0.1.0.126
+date	2018.04.13.02.11.00;	author murphy;	state Exp;
+branches;
+next	0.1.0.133;
+
+0.1.0.133
+date	2018.04.13.02.55.34;	author murphy;	state Exp;
+branches;
+next	0.1.0.134;
+
+0.1.0.134
+date	2018.04.13.02.55.42;	author murphy;	state Exp;
+branches;
+next	0.1.0.135;
+
+0.1.0.135
+date	2018.04.13.02.55.51;	author murphy;	state Exp;
+branches;
+next	0.1.0.136;
+
+0.1.0.136
+date	2018.04.13.02.56.06;	author murphy;	state Exp;
+branches;
+next	0.1.0.139;
+
+0.1.0.139
+date	2018.04.13.20.05.41;	author murphy;	state Exp;
+branches;
+next	0.1.0.146;
+
+0.1.0.146
+date	2018.04.14.01.14.52;	author murphy;	state Exp;
+branches;
+next	0.1.0.152;
+
+0.1.0.152
+date	2018.04.14.03.15.08;	author murphy;	state Exp;
+branches;
+next	0.1.0.153;
+
+0.1.0.153
+date	2018.04.14.03.15.23;	author murphy;	state Exp;
+branches;
+next	0.1.0.154;
+
+0.1.0.154
+date	2018.04.14.03.15.36;	author murphy;	state Exp;
+branches;
+next	0.1.0.155;
+
+0.1.0.155
+date	2018.04.14.03.15.42;	author murphy;	state Exp;
+branches;
+next	0.1.0.156;
+
+0.1.0.156
+date	2018.04.14.03.17.18;	author murphy;	state Exp;
+branches;
+next	;
+
+
+desc
+@2018-02-20 11:25:33 gam-1
+@
+
+
+0.1
+log
+@0.1
+@
+text
+@\ (c) 2013 Johns Hopkins University / Applied Physics Laboratory
+\ EPI-Lo-specific hardware interfaces
+hex
+
+\ ------------------------------------------------------------------------
+\ Memory map
+
+\ I/O
+\ 10 constant io-mem#                   \ memory-mapped I/O
+   000a constant comm-a#		\ R/W: S/C UART
+   000c constant comm-cfg-a#		\ W: S/C UART configuration
+
+\ ------------------------------------------------------------------------
+\ Interrupts and interrupt mask register
+
+\ Interrupts
+d# 10 constant comm-rx-int#		\ S/C comm. input interrupt
+d# 11 constant comm-tx-int#		\ S/C comm. output interrupt
+d#  6 constant 1pps-a-int#		\ 1PPS side A interrupt
+\ not used
+d# 14 constant 1pps-b-int#		\ 1PPS side B interrupt
+
+\ iem-sel-mask# constant iemb-sel-mask#
+h# 200 constant #rcv-buffer
+
+1pps-a-int# constant ticka-int#
+1pps-b-int# constant tickb-int#
+
+0 constant iemb-sel-mask#
+0 constant iema-enb-mask#
+0 constant iemb-enb-mask#
+
+: xxx drop ;
+: refresh-regs ;
+: process-mag ;
+: process-spin ;
+@
+
+
+0.1.0.29
+log
+@0.1.0.29
+@
+text
+@@
+
+
+0.1.0.62
+log
+@0.1.0.62
+@
+text
+@d33 1
+a33 1
+: xxx emit ;
+@
+
+
+0.1.0.83
+log
+@0.1.0.83
+@
+text
+@d21 1
+a21 1
+d# 12 constant 1pps-b-int#		\ 1PPS side B interrupt
+@
+
+
+0.1.0.123
+log
+@0.1.0.123
+@
+text
+@@
+
+
+0.1.0.124
+log
+@0.1.0.124
+@
+text
+@d16 7
+d26 7
+a36 18
+
+\ Interrupts
+d#  2 constant 1pps-a-int#              \ 1PPS side A interrupt
+d#  3 constant 1pps-b-int#              \ 1PPS side A interrupt
+
+d#  4 constant timer-int#                \ timing interrupt
+
+d# 10 constant comm-rx-int#             \ S/C comm. input interrupt
+d# 11 constant comm-tx-int#             \ S/C comm. output interrupt
+
+
+h# 8000 constant dog-enb-mask#
+
+\ DPU configuration register masks
+1 d# 2 lshift constant iem-sel-mask#    \ IEM side select: 0 = A, 1 = B
+1 d# 1 lshift constant iema-enb-mask#   \ IEM side A telemetry
+1 d# 0 lshift constant iemb-enb-mask#   \ IEM side B telemetry
+
+@
+
+
+0.1.0.126
+log
+@0.1.0.126
+@
+text
+@d37 1
+a37 1
+1 d# 2 lshift constant iemb-sel-mask#    \ IEM side select: 0 = A, 1 = B
+@
+
+
+0.1.0.133
+log
+@0.1.0.133
+@
+text
+@d38 2
+a39 2
+1 d# 1 lshift constant iemb-enb-mask#   \ IEM side B telemetry
+1 d# 0 lshift constant iema-enb-mask#   \ IEM side A telemetry
+@
+
+
+0.1.0.134
+log
+@0.1.0.134
+@
+text
+@d20 1
+@
+
+
+0.1.0.135
+log
+@0.1.0.135
+@
+text
+@d20 1
+a20 1
+: refresh-regs ;
+@
+
+
+0.1.0.136
+log
+@0.1.0.136
+@
+text
+@a20 1
+: process-mag ;
+@
+
+
+0.1.0.139
+log
+@0.1.0.139
+@
+text
+@@
+
+
+0.1.0.146
+log
+@0.1.0.146
+@
+text
+@d21 2
+a22 2
+\ : process-mag ;
+\ : process-spin ;
+@
+
+
+0.1.0.152
+log
+@0.1.0.152
+@
+text
+@d19 1
+a19 7
+: xxx
+    get-mem >r
+    io-mem# set-mem
+    h# 0 far!
+    r> set-mem
+;
+
+d21 2
+@
+
+
+0.1.0.153
+log
+@0.1.0.153
+@
+text
+@d17 1
+a17 1
+\ h# 200 constant #rcv-buffer
+@
+
+
+0.1.0.154
+log
+@0.1.0.154
+@
+text
+@d17 1
+a17 1
+h# 200 constant #rcv-buffer
+@
+
+
+0.1.0.155
+log
+@0.1.0.155
+@
+text
+@d16 1
+@
+
+
+0.1.0.156
+log
+@0.1.0.156
+@
+text
+@d29 1
+a29 1
+d#  3 constant 1pps-b-int#              \ 1PPS side B interrupt
+@

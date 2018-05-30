@@ -1,0 +1,110 @@
+head	0.1;
+access;
+symbols;
+locks
+	murphy:0.1.0.139; strict;
+comment	@# @;
+
+
+0.1
+date	2018.02.20.16.37.38;	author murphy;	state Exp;
+branches
+	0.1.0.29;
+next	;
+
+0.1.0.29
+date	2018.02.20.16.37.38;	author murphy;	state Exp;
+branches;
+next	0.1.0.123;
+
+0.1.0.123
+date	2018.04.13.02.04.43;	author murphy;	state Exp;
+branches;
+next	0.1.0.139;
+
+0.1.0.139
+date	2018.04.13.20.05.41;	author murphy;	state Exp;
+branches;
+next	;
+
+
+desc
+@2018-02-20 11:25:33 gam-1
+@
+
+
+0.1
+log
+@0.1
+@
+text
+@\ (c) 2014 Johns Hopkins University / Applied Physics Laboratory
+\ Configure boot software
+hex
+
+\ ------------------------------------------------------------------------
+\ Telemetry configuration, product ids, etc.
+
+\ Ids for externally visible data structures.  These can be loaded and
+\ dumped via C_MEM_STR_LOAD and C_MEM_STR_READ.
+\ Note: not used by boot
+0 constant #struct			\ total number of structures
+
+\ Data product ids.
+\ 0x00 - 0x0f reserved for common
+\ 0x10 - 0xff reserved for application
+06 constant #status-pkt			\ boot status
+
+\ ------------------------------------------------------------------------
+\ Command configuration, opcodes, etc.
+
+\ Command opcodes.
+1e constant #rom-boot
+1f constant #rom-go
+
+\ Results from commands.
+08 constant #bad-eeprom-cmd		\ bad eeprom checksum
+
+\ ------------------------------------------------------------------------
+\ Alarms and monitoring
+
+\ Alarm ids.
+\ None.
+
+\ ------------------------------------------------------------------------
+\ Configure host interface:  the receive buffer is allocated first;
+\ then, whatever space is left over is allocated to telemetry output frames.
+\ Size of buffer between interrupt routine and command process.  Choice
+\ depends on process priorities, maximum command execution time, etc.
+\ d# 512 constant #rcv-buffer
+\ Size of maximum output frame (i.e. data part of telemetry ITF).  Size must
+\ be a multiple of 2.  Note: one buffer will be allocated in code space.
+d# 1024 constant #max-out-frame
+
+\ Maximum number of frames that can be transmitted each second.
+1 constant #max-frames				\ EPI-Lo specific
+@
+
+
+0.1.0.29
+log
+@0.1.0.29
+@
+text
+@@
+
+
+0.1.0.123
+log
+@0.1.0.123
+@
+text
+@@
+
+
+0.1.0.139
+log
+@0.1.0.139
+@
+text
+@@

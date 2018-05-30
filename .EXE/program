@@ -1,0 +1,4 @@
+#!/bin/csh -f
+touch /tmp/build.start >& /dev/tty
+cmptime /tmp/build.stop >& /dev/tty
+exit 0

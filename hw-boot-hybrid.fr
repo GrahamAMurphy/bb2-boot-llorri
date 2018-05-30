@@ -1,0 +1,39 @@
+\ (c) 2015 Johns Hopkins University / Applied Physics Laboratory
+\ EPI-Lo-specific hardware interfaces
+hex
+
+\ ------------------------------------------------------------------------
+\ Memory map
+
+\ I/O
+\ 10 constant io-mem#			\ memory-mapped I/O
+   001a constant control-a#		\ W: instrument control
+
+\ ------------------------------------------------------------------------
+\ Low-level hardware access
+
+: set-io	\ ( x obj-data -- ) Write x to memory-mapped I/O.  Obj-data
+		\ contains the address.
+   @ io! ;				\ write memory-mapped I/O
+
+\ ------------------------------------------------------------------------
+\ Configuration and status (not downlinked)
+
+\ Additional "status".  This is not actually included in the status packet.
+create more-status
+   1 cells allot
+more-status 1 cells 0 fill
+
+more-status
+dup   0 +		port-word:  instr-control
+					' set-io , control-a# ,
+\  instr-control 1	port-bit:   aux-pwr
+   instr-control 0	port-bit:   nv-enb
+drop
+
+\ ------------------------------------------------------------------------
+\ Initialization
+
+: init-specific	\ ( -- ) Do instrument-specific initialization.
+\ none ...
+;

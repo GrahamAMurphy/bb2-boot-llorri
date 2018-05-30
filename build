@@ -1,0 +1,17 @@
+#!/bin/csh -f
+setenv FORTHXFILE "t-load.xref"
+/bin/rm -f $FORTHXFILE
+## .EXE/build-load.pl -cross
+setenv FORTHDEBUG 0x13
+
+if ( $#argv == 0 ) then
+    set input="t-load"
+else
+    set input=$1
+endif
+
+echo Running $input.
+forth $input | egrep -v '^$' > t-load.log
+.EXE/checkq
+.EXE/numrefs.pl -in t-load.xref
+## sort -n -r t-load.xref2 > t-load.xref3

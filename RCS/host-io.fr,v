@@ -1,0 +1,1117 @@
+head	0.1;
+access;
+symbols;
+locks
+	murphy:0.1.0.151; strict;
+comment	@# @;
+
+
+0.1
+date	2018.02.20.16.37.38;	author murphy;	state Exp;
+branches
+	0.1.0.29;
+next	;
+
+0.1.0.29
+date	2018.02.20.16.37.38;	author murphy;	state Exp;
+branches;
+next	0.1.0.31;
+
+0.1.0.31
+date	2018.02.20.16.53.48;	author murphy;	state Exp;
+branches;
+next	0.1.0.33;
+
+0.1.0.33
+date	2018.02.20.17.00.25;	author murphy;	state Exp;
+branches;
+next	0.1.0.37;
+
+0.1.0.37
+date	2018.02.21.17.23.34;	author murphy;	state Exp;
+branches;
+next	0.1.0.38;
+
+0.1.0.38
+date	2018.02.21.17.24.46;	author murphy;	state Exp;
+branches;
+next	0.1.0.41;
+
+0.1.0.41
+date	2018.02.23.12.56.50;	author murphy;	state Exp;
+branches;
+next	0.1.0.42;
+
+0.1.0.42
+date	2018.02.23.13.00.51;	author murphy;	state Exp;
+branches;
+next	0.1.0.43;
+
+0.1.0.43
+date	2018.02.23.13.08.26;	author murphy;	state Exp;
+branches;
+next	0.1.0.44;
+
+0.1.0.44
+date	2018.02.23.13.09.22;	author murphy;	state Exp;
+branches;
+next	0.1.0.45;
+
+0.1.0.45
+date	2018.02.23.13.11.12;	author murphy;	state Exp;
+branches;
+next	0.1.0.47;
+
+0.1.0.47
+date	2018.02.23.13.13.04;	author murphy;	state Exp;
+branches;
+next	0.1.0.48;
+
+0.1.0.48
+date	2018.02.23.13.13.44;	author murphy;	state Exp;
+branches;
+next	0.1.0.55;
+
+0.1.0.55
+date	2018.02.23.13.24.09;	author murphy;	state Exp;
+branches;
+next	0.1.0.56;
+
+0.1.0.56
+date	2018.02.23.13.25.03;	author murphy;	state Exp;
+branches;
+next	0.1.0.61;
+
+0.1.0.61
+date	2018.02.23.13.32.55;	author murphy;	state Exp;
+branches;
+next	0.1.0.76;
+
+0.1.0.76
+date	2018.02.23.13.50.31;	author murphy;	state Exp;
+branches;
+next	0.1.0.78;
+
+0.1.0.78
+date	2018.02.23.14.04.31;	author murphy;	state Exp;
+branches;
+next	0.1.0.80;
+
+0.1.0.80
+date	2018.02.23.14.08.37;	author murphy;	state Exp;
+branches;
+next	0.1.0.81;
+
+0.1.0.81
+date	2018.02.23.14.12.35;	author murphy;	state Exp;
+branches;
+next	0.1.0.86;
+
+0.1.0.86
+date	2018.02.23.14.23.29;	author murphy;	state Exp;
+branches;
+next	0.1.0.88;
+
+0.1.0.88
+date	2018.02.23.14.26.44;	author murphy;	state Exp;
+branches;
+next	0.1.0.89;
+
+0.1.0.89
+date	2018.02.23.14.27.28;	author murphy;	state Exp;
+branches;
+next	0.1.0.90;
+
+0.1.0.90
+date	2018.02.23.14.28.03;	author murphy;	state Exp;
+branches;
+next	0.1.0.91;
+
+0.1.0.91
+date	2018.02.23.14.28.31;	author murphy;	state Exp;
+branches;
+next	0.1.0.92;
+
+0.1.0.92
+date	2018.02.23.14.29.29;	author murphy;	state Exp;
+branches;
+next	0.1.0.93;
+
+0.1.0.93
+date	2018.02.23.14.29.46;	author murphy;	state Exp;
+branches;
+next	0.1.0.94;
+
+0.1.0.94
+date	2018.02.23.14.31.01;	author murphy;	state Exp;
+branches;
+next	0.1.0.95;
+
+0.1.0.95
+date	2018.02.23.14.31.54;	author murphy;	state Exp;
+branches;
+next	0.1.0.96;
+
+0.1.0.96
+date	2018.02.23.14.32.26;	author murphy;	state Exp;
+branches;
+next	0.1.0.97;
+
+0.1.0.97
+date	2018.02.23.14.33.18;	author murphy;	state Exp;
+branches;
+next	0.1.0.98;
+
+0.1.0.98
+date	2018.02.23.14.33.50;	author murphy;	state Exp;
+branches;
+next	0.1.0.99;
+
+0.1.0.99
+date	2018.02.23.14.34.23;	author murphy;	state Exp;
+branches;
+next	0.1.0.100;
+
+0.1.0.100
+date	2018.02.23.14.34.48;	author murphy;	state Exp;
+branches;
+next	0.1.0.105;
+
+0.1.0.105
+date	2018.02.23.14.43.44;	author murphy;	state Exp;
+branches;
+next	0.1.0.106;
+
+0.1.0.106
+date	2018.02.23.14.47.09;	author murphy;	state Exp;
+branches;
+next	0.1.0.107;
+
+0.1.0.107
+date	2018.02.23.14.50.05;	author murphy;	state Exp;
+branches;
+next	0.1.0.108;
+
+0.1.0.108
+date	2018.02.23.14.51.58;	author murphy;	state Exp;
+branches;
+next	0.1.0.110;
+
+0.1.0.110
+date	2018.02.23.14.55.18;	author murphy;	state Exp;
+branches;
+next	0.1.0.111;
+
+0.1.0.111
+date	2018.02.23.14.56.06;	author murphy;	state Exp;
+branches;
+next	0.1.0.112;
+
+0.1.0.112
+date	2018.02.23.14.56.34;	author murphy;	state Exp;
+branches;
+next	0.1.0.113;
+
+0.1.0.113
+date	2018.02.23.14.58.59;	author murphy;	state Exp;
+branches;
+next	0.1.0.121;
+
+0.1.0.121
+date	2018.04.13.02.02.14;	author murphy;	state Exp;
+branches;
+next	0.1.0.123;
+
+0.1.0.123
+date	2018.04.13.02.04.43;	author murphy;	state Exp;
+branches;
+next	0.1.0.128;
+
+0.1.0.128
+date	2018.04.13.02.26.58;	author murphy;	state Exp;
+branches;
+next	0.1.0.139;
+
+0.1.0.139
+date	2018.04.13.20.05.41;	author murphy;	state Exp;
+branches;
+next	0.1.0.145;
+
+0.1.0.145
+date	2018.04.14.01.14.18;	author murphy;	state Exp;
+branches;
+next	0.1.0.151;
+
+0.1.0.151
+date	2018.04.14.03.06.55;	author murphy;	state Exp;
+branches;
+next	;
+
+
+desc
+@2018-02-20 11:25:33 gam-1
+@
+
+
+0.1
+log
+@0.1
+@
+text
+@\ (c) 2007 Johns Hopkins University / Applied Physics Laboratory
+\ Host interface: low-level I/O
+decimal
+
+module> host
+
+\ ------------------------------------------------------------------------
+\ Identity
+
+\ Instrument code
+variable instr-code
+
+: init-identity	\ ( -- ) Find and record instrument id.
+   parin-a# io@@ 8 rshift h# 03 and	\ read board jumpers: 2-bit
+      instr-code ! ;			\   instrument code
+
+: #instr-code	\ ( -- id ) Return instrument code.
+   instr-code @@ ;
+
+\ ------------------------------------------------------------------------
+\ Spacecraft side
+
+\ Variables to control side selection.  Note: initially both sides are disabled.
+variable side-a
+variable side-b
+
+: init-side	\ ( -- ) Initialize: turn off transmitters to both sides.
+   iema-enb-mask#			\ turn off transmitters
+   iemb-enb-mask# or clr-dpu-cfg ;
+
+: side-select	\ ( -- ) Select side, if any, to transmit on.
+   side-a @@ if				\ if side A active
+      iema-enb-mask# set-dpu-cfg	\ transmit on side A,
+      iemb-enb-mask# clr-dpu-cfg	\   but not on side B
+   else side-b @@ if			\ otherwise, if side B active
+      iemb-enb-mask# set-dpu-cfg	\ transmit on side B,
+      iema-enb-mask# clr-dpu-cfg	\   but not on side A
+   then then ;
+
+: use-side-a	\ ( -- ) Use spacecraft side A.  Start listening on side A
+		\ right now, but transmit on side A on next frame.  Delaying
+		\ prevents possibility of turning on transmitter in middle
+		\ of a frame.
+		\ Note: called from an interrupt routine.
+   iemb-sel-mask# clr-dpu-cfg		\ listen on side A, now
+   true side-a !			\ transmit on side A, next frame
+   false side-b ! ;
+
+: use-side-b	\ ( -- ) Use spacecraft side B.  Start listening on side B
+		\ right now, but transmit on side B on next frame.  Delaying
+		\ prevents possibility of turning on transmitter in middle
+		\ of a frame.
+		\ Note: called from an interrupt routine.
+   iemb-sel-mask# set-dpu-cfg		\ listen on side B, now
+   true side-b !			\ transmit on side B, next frame
+   false side-a ! ;
+
+\ ------------------------------------------------------------------------
+\ Telemetry input
+
+\ Input byte queue.  Note: space is "stolen" from telemetry.
+#rcv-buffer tlm-mem# far-allot		\ remotely allocate buffer
+   constant rcv-buffer			\ input buffer
+   tlm-mem# far-here constant rcv-buffer-end
+variable rcv-scan-get			\ pointer to next byte to read
+variable rcv-scan-put			\ pointer to next free slot
+variable rcv-count			\ number of bytes in buffer
+
+\ Receive/command event semaphore.  Semaphore is signalled by bytes
+\ received as well as no bytes received timeout (to trigger poll of
+\ macros), a real-time command (in case of macro run), and macro commands
+\ (to keep macro going).
+variable rcv/cmd-event
+
+: cmd-signal	\ ( -- ) Signal next command event.
+   rcv/cmd-event signal ;
+
+: cmd-wait	\ ( -- ) Wait for next command event.
+   rcv/cmd-event wait ;
+
+: handle-rcv	\ ( -- ) Handle receive interrupt.
+		\ Note: called from an interrupt routine.
+   \ io-mem# set-mem			\ remote memory-mapped I/O already set
+   comm-a# far@@				\ read byte from receiver & reset int.
+   rcv-count @@ dup #rcv-buffer <> if	\ if room available in input FIFO
+      1+ rcv-count !			\ count new byte
+      rcv-scan-put @@ dup		\ store byte
+      1+ dup rcv-buffer-end = if drop rcv-buffer then
+      rcv-scan-put !			\ stepping pointer
+      tlm-mem# set-mem farc!		\ save byte (int. code restores DPR)
+      cmd-signal			\ signal event
+   else 2drop
+   then ;
+
+comm-rx-int# int: \ ( -- ) Handle host byte receive interrupt.
+   handle-rcv ;int			\ receive byte
+
+: rcv-empty?	\ ( -- t/f ) Return true iff there are no bytes in input buffer.
+   rcv-count @@ 0= ;			\ check counter
+
+: rcv-byte	\ ( -- byte ) Return next byte.
+		\ Precondition: rcv-empty? returns false.
+   get-mem tlm-mem# set-mem		\ data in remote memory
+   disable
+   rcv-scan-get @@ dup farc@@ swap	\ get byte
+   1+ dup rcv-buffer-end = if drop rcv-buffer then
+   rcv-scan-get !			\ step scanner
+   -1 rcv-count +!
+   enable
+   swap set-mem ;
+
+do: timeout-event \ ( -- ) Timeout byte arrival.
+   cmd-signal ;do
+
+: init-host-input \ ( -- ) Initialize receive.  Interrupt is enabled elsewhere.
+   rcv-buffer rcv-scan-put !  rcv-buffer rcv-scan-get !
+   timeout-event every 1 seconds doit ;
+
+\ ------------------------------------------------------------------------
+\ Telemetry output
+
+\ Transmit data:
+2variable xmit-scan			\ pointer to next byte
+variable xmit-left			\ number of bytes remaining
+
+: handle-xmit	\ ( -- ) Handle transmit interrupt.
+		\ Note: called from an interrupt routine.
+   xmit-left @@ ?dup if			\ if there is data to send
+      1- xmit-left !			\ decrement amount left
+      xmit-scan 2@@ set-mem		\ send next byte
+      dup farc@@ io-mem# set-mem comm-a# far!
+      1+ xmit-scan cell+ !		\ step pointer
+   then ;
+
+comm-tx-int# int: \ ( -- ) Handle host byte transmit interrupt.
+   handle-xmit ;int			\ send byte
+
+: start-frame	\ ( addr memid len -- ) Start transmitting given data.
+   side-select				\ select side A or B (or neither)
+   xmit-left !  xmit-scan 2!		\ record length and scan start
+   get-mem disable			\ send first byte to start things going
+      handle-xmit			\   by calling interrupt routine
+   enable set-mem ;
+
+\ ------------------------------------------------------------------------
+\ * Timing
+
+variable 1hz-sem
+variable dt-sem
+
+public:
+
+: sync-1hz	\ ( -- ) Wait for next 1 Hz pulse.
+   0 1hz-sem !
+   1hz-sem wait
+   0 dt-sem ! ;
+
+: sync-dead-time \ ( -- ) Wait for next dead time.
+   dt-sem wait ;
+
+private:
+
+ticka-int# int: \ ( -- ) Handle host side A tick interrupt.
+   use-side-a				\ use spacecraft side A
+   sync-time				\ synchronize time
+   ;int
+
+tickb-int# int: \ ( -- ) Handle host side B tick interrupt.
+   use-side-b				\ use spacecraft side B
+   sync-time				\ synchronize time
+   ;int
+
+[ifdef] __GOAWAY__
+timer-int# int:	\ ( -- ) Handle timer interrupt.
+   hv-trip-check			\ poll MCP HV overcurrent trip.
+   prop-time				\ propogate time
+   dup 0= if drop 1hz-sem signal	\ signal telemetry 1 Hz
+   else dup 800 = if drop dt-sem signal	\ signal telemetry dead time
+   else 1 and if exec-i2c-slot		\ execute next i2c function
+   then then then ;int
+[else]
+
+variable debug-timer-int
+0 debug-timer-int !
+
+timer-int# int: \ ( -- ) Handle timer interrupt.  Propogate time, signal
+                \ dead time, and run milli-schedule.
+                \ Note: 1Hz signal is delayed from 1PPS.  If this were done
+                \ at the more obvious delta=0, the 1Hz would happen before
+                \ the 1PPS.
+                \ Note: schedule call occurs every millisecond, except for
+                \ 1Hz and dead time's case; this avoids more than one signal
+                \ per interrupt.
+   prop-time                            \ propagate time
+   dup  10 = if 
+        debug-timer-int @@ if
+            h# 34 xxx 
+        then
+        drop 1hz-sem signal else \ signal telemetry 1Hz, or
+       800 = if dt-sem signal else      \  signal telemetry dead time, or
+       exec-slot                                \  execute next slot function
+   then then 
+   ;int
+
+
+[then]
+
+\ ------------------------------------------------------------------------
+\ Initialization
+
+: init-host-reg	\ ( -- ) Initialize host registers, e.g. baud rate, etc.,
+		\ and unmask interrupts.
+\  h# 25 comm-cfg-a# io!		\ S/C UART: 57600, even parity
+\  h# 20 comm-cfg-a# io!		\ S/C UART: 115200, even parity
+   timer-int# get-mask			\ unmask timer interrupt,
+      \ ticka-int# get-mask or		\   side A tick,
+      \ tickb-int# get-mask or		\   side B tick,
+      \ comm-tx-int# get-mask or		\   transmit,
+      \ comm-rx-int# get-mask or		\   receive,
+      unmask-int ;
+
+: init-host-io	\ ( -- ) Initialize host I/O.
+   init-identity			\ initialize instrument identity
+   init-side				\ initialize side
+   init-host-input			\ initialize input
+   \ init-i2c				\ initialize I2C
+   init-slots
+   init-host-reg			\ unmask interrupts, etc.
+;
+
+endmodule>
+@
+
+
+0.1.0.29
+log
+@0.1.0.29
+@
+text
+@@
+
+
+0.1.0.31
+log
+@0.1.0.31
+@
+text
+@a167 1
+[ifdef] __1PPS_B__
+a171 1
+[then]
+d226 1
+@
+
+
+0.1.0.33
+log
+@0.1.0.33
+@
+text
+@d218 4
+a221 4
+      ticka-int# get-mask or		\   side A tick,
+      tickb-int# get-mask or		\   side B tick,
+      comm-tx-int# get-mask or		\   transmit,
+      comm-rx-int# get-mask or		\   receive,
+@
+
+
+0.1.0.37
+log
+@0.1.0.37
+@
+text
+@d18 1
+a18 4
+   instr-code @@ 
+   drop
+   h# 3e0
+   ;
+@
+
+
+0.1.0.38
+log
+@0.1.0.38
+@
+text
+@d19 2
+@
+
+
+0.1.0.41
+log
+@0.1.0.41
+@
+text
+@d18 2
+a19 1
+   instr-code @@ ;
+d169 1
+d174 1
+a228 1
+   \ init-i2c				\ initialize I2C
+@
+
+
+0.1.0.42
+log
+@0.1.0.42
+@
+text
+@a167 1
+[ifdef] __X
+a171 1
+[then]
+@
+
+
+0.1.0.43
+log
+@0.1.0.43
+@
+text
+@d168 1
+d173 1
+@
+
+
+0.1.0.44
+log
+@0.1.0.44
+@
+text
+@d217 1
+a217 1
+      \ tickb-int# get-mask or		\   side B tick,
+@
+
+
+0.1.0.45
+log
+@0.1.0.45
+@
+text
+@a222 1
+   h# 42 emit
+a228 1
+   h# 43 emit
+@
+
+
+0.1.0.47
+log
+@0.1.0.47
+@
+text
+@d223 1
+a223 1
+   h# 34 emit
+d230 1
+a230 1
+   h# 35 emit
+@
+
+
+0.1.0.48
+log
+@0.1.0.48
+@
+text
+@d173 10
+d184 1
+a184 1
+1 debug-timer-int !
+d204 3
+@
+
+
+0.1.0.55
+log
+@0.1.0.55
+@
+text
+@d191 1
+a191 1
+       \ exec-slot                                \  execute next slot function
+@
+
+
+0.1.0.56
+log
+@0.1.0.56
+@
+text
+@a183 1
+   [ifdef] __X
+d191 1
+a191 1
+       exec-slot                                \  execute next slot function
+a192 1
+   [then]
+@
+
+
+0.1.0.61
+log
+@0.1.0.61
+@
+text
+@d212 1
+d219 1
+@
+
+
+0.1.0.76
+log
+@0.1.0.76
+@
+text
+@d174 1
+a174 1
+0 debug-timer-int !
+d184 1
+d194 1
+@
+
+
+0.1.0.78
+log
+@0.1.0.78
+@
+text
+@d200 2
+d204 1
+a204 1
+      tickb-int# get-mask or		\   side B tick,
+d215 1
+a215 1
+   \ init-host-reg			\ unmask interrupts, etc.
+@
+
+
+0.1.0.80
+log
+@0.1.0.80
+@
+text
+@a167 1
+[ifdef] __X
+a171 1
+[then]
+@
+
+
+0.1.0.81
+log
+@0.1.0.81
+@
+text
+@d168 1
+a168 1
+[ifdef] __1PPS_B__
+d204 1
+a204 1
+      \ tickb-int# get-mask or		\   side B tick,
+d215 1
+a215 1
+   init-host-reg			\ unmask interrupts, etc.
+@
+
+
+0.1.0.86
+log
+@0.1.0.86
+@
+text
+@d215 1
+a215 1
+   \ init-host-reg			\ unmask interrupts, etc.
+@
+
+
+0.1.0.88
+log
+@0.1.0.88
+@
+text
+@d215 1
+a215 1
+   init-host-reg			\ unmask interrupts, etc.
+@
+
+
+0.1.0.89
+log
+@0.1.0.89
+@
+text
+@d203 1
+a203 1
+      \ ticka-int# get-mask or		\   side A tick,
+d205 2
+a206 2
+      \ comm-tx-int# get-mask or		\   transmit,
+      \ comm-rx-int# get-mask or		\   receive,
+@
+
+
+0.1.0.90
+log
+@0.1.0.90
+@
+text
+@a185 1
+   [ifdef] _X
+a194 1
+   [then]
+@
+
+
+0.1.0.91
+log
+@0.1.0.91
+@
+text
+@d217 1
+a217 1
+   \ init-host-reg			\ unmask interrupts, etc.
+@
+
+
+0.1.0.92
+log
+@0.1.0.92
+@
+text
+@d186 1
+a186 1
+   h# 33 emit
+d196 1
+@
+
+
+0.1.0.93
+log
+@0.1.0.93
+@
+text
+@d216 1
+a216 1
+   init-host-reg			\ unmask interrupts, etc.
+@
+
+
+0.1.0.94
+log
+@0.1.0.94
+@
+text
+@a187 1
+   h# 35 emit
+a195 1
+   h# 36 emit
+@
+
+
+0.1.0.95
+log
+@0.1.0.95
+@
+text
+@d186 1
+d188 1
+d197 1
+d218 1
+a218 1
+   \ init-host-reg			\ unmask interrupts, etc.
+@
+
+
+0.1.0.96
+log
+@0.1.0.96
+@
+text
+@d215 1
+a215 1
+   init-host-reg			\ unmask interrupts, etc.
+@
+
+
+0.1.0.97
+log
+@0.1.0.97
+@
+text
+@a206 1
+      drop 0 
+@
+
+
+0.1.0.98
+log
+@0.1.0.98
+@
+text
+@d193 1
+a193 1
+       \ exec-slot                                \  execute next slot function
+d207 1
+@
+
+
+0.1.0.99
+log
+@0.1.0.99
+@
+text
+@d186 1
+a186 1
+   \ prop-time                            \ propagate time
+d193 1
+a193 1
+       exec-slot                                \  execute next slot function
+@
+
+
+0.1.0.100
+log
+@0.1.0.100
+@
+text
+@d186 1
+a186 1
+   prop-time                            \ propagate time
+@
+
+
+0.1.0.105
+log
+@0.1.0.105
+@
+text
+@d203 1
+a203 1
+      ticka-int# get-mask or		\   side A tick,
+d205 2
+a206 2
+      comm-tx-int# get-mask or		\   transmit,
+      comm-rx-int# get-mask or		\   receive,
+d213 1
+@
+
+
+0.1.0.106
+log
+@0.1.0.106
+@
+text
+@d193 1
+a193 1
+       \ exec-slot                                \  execute next slot function
+@
+
+
+0.1.0.107
+log
+@0.1.0.107
+@
+text
+@d193 1
+a193 1
+	   exec-slot                    \  execute next slot function
+@
+
+
+0.1.0.108
+log
+@0.1.0.108
+@
+text
+@d175 3
+d188 3
+d192 1
+a192 1
+        800 = if dt-sem signal else      \  signal telemetry dead time, or
+@
+
+
+0.1.0.110
+log
+@0.1.0.110
+@
+text
+@d187 1
+a187 1
+	\ exec-slot                    \  execute next slot function
+@
+
+
+0.1.0.111
+log
+@0.1.0.111
+@
+text
+@d187 1
+a187 1
+	exec-slot                    \  execute next slot function
+d199 2
+a200 2
+      \ comm-tx-int# get-mask or		\   transmit,
+      \ comm-rx-int# get-mask or		\   receive,
+@
+
+
+0.1.0.112
+log
+@0.1.0.112
+@
+text
+@d199 2
+a200 2
+      comm-tx-int# get-mask or		\   transmit,
+      comm-rx-int# get-mask or		\   receive,
+d208 1
+a208 1
+   \ init-host-reg			\ unmask interrupts, etc.
+@
+
+
+0.1.0.113
+log
+@0.1.0.113
+@
+text
+@d208 1
+a208 1
+   init-host-reg			\ unmask interrupts, etc.
+@
+
+
+0.1.0.121
+log
+@0.1.0.121
+@
+text
+@d29 1
+a29 1
+   iemb-enb-mask# or clr-io-cfg ;
+d33 2
+a34 2
+      iema-enb-mask# set-io-cfg	\ transmit on side A,
+      iemb-enb-mask# clr-io-cfg	\   but not on side B
+d36 2
+a37 2
+      iemb-enb-mask# set-io-cfg	\ transmit on side B,
+      iema-enb-mask# clr-io-cfg	\   but not on side A
+d45 1
+a45 1
+   iemb-sel-mask# clr-io-cfg		\ listen on side A, now
+d54 1
+a54 1
+   iemb-sel-mask# set-io-cfg		\ listen on side B, now
+d163 1
+a163 1
+1pps-a-int# int: \ ( -- ) Handle host side A tick interrupt.
+a165 1
+   h# 41 xxx
+d168 2
+a169 1
+1pps-b-int# int: \ ( -- ) Handle host side B tick interrupt.
+a171 1
+   h# 42 xxx
+d173 1
+a173 3
+
+variable debug-timer-int
+1 debug-timer-int !
+a183 1
+
+d185 4
+a188 11
+        debug-timer-int @@ if
+            h# 53 xxx 
+        then
+        drop 1hz-sem signal		\ signal telemetry 1Hz, or
+   else 
+        d# 800 = if 
+	    dt-sem signal 
+	else      \  signal telemetry dead time, or
+	   exec-slot                                \  execute next slot function
+        then 
+   then 
+d196 3
+a198 3
+      timer-int# get-mask			\ unmask timer interrupt,
+      1pps-a-int# get-mask or		\   side A tick,
+      1pps-b-int# get-mask or		\   side B tick,
+@
+
+
+0.1.0.123
+log
+@0.1.0.123
+@
+text
+@@
+
+
+0.1.0.128
+log
+@0.1.0.128
+@
+text
+@a219 1
+   3 set-io-cfg
+@
+
+
+0.1.0.139
+log
+@0.1.0.139
+@
+text
+@@
+
+
+0.1.0.145
+log
+@0.1.0.145
+@
+text
+@d29 1
+a29 3
+   iemb-enb-mask# or 
+   set-io-cfg ;
+   \ clr-io-cfg ;
+d220 1
+@
+
+
+0.1.0.151
+log
+@0.1.0.151
+@
+text
+@d168 1
+a168 1
+   \ h# 41 xxx
+d174 1
+a174 1
+   \ h# 42 xxx
+d178 1
+a178 1
+0 debug-timer-int !
+@

@@ -1,0 +1,236 @@
+head	0.1;
+access;
+symbols;
+locks
+	murphy:0.1.0.144; strict;
+comment	@# @;
+
+
+0.1
+date	2018.02.20.16.37.38;	author murphy;	state Exp;
+branches
+	0.1.0.29;
+next	;
+
+0.1.0.29
+date	2018.02.20.16.37.38;	author murphy;	state Exp;
+branches;
+next	0.1.0.123;
+
+0.1.0.123
+date	2018.04.13.02.04.43;	author murphy;	state Exp;
+branches;
+next	0.1.0.138;
+
+0.1.0.138
+date	2018.04.13.20.04.44;	author murphy;	state Exp;
+branches;
+next	0.1.0.139;
+
+0.1.0.139
+date	2018.04.13.20.05.41;	author murphy;	state Exp;
+branches;
+next	0.1.0.142;
+
+0.1.0.142
+date	2018.04.13.20.47.47;	author murphy;	state Exp;
+branches;
+next	0.1.0.144;
+
+0.1.0.144
+date	2018.04.14.01.12.44;	author murphy;	state Exp;
+branches;
+next	;
+
+
+desc
+@2018-02-20 11:25:33 gam-1
+@
+
+
+0.1
+log
+@0.1
+@
+text
+@\ Cross-compile boot ROM for 16-bit SCIP with common I/O
+" target.fr" used
+" scip/16bits/amba/common1" is-target
+
+\ Configure crosscompiler
+hex
+0000 set-ram				\ ram-based system
+def multitasking			\ include multitasker
+
+\ Load the kernel.
+" kernel1.fr" ftload			\ primitives and extend crosscompiler
+
+\ Load tty interface
+" brdparam.fr" ftload			\ useful addresses and defines
+" intprims.fr" ftload			\ interrupt support
+" intuser.mfr" ftload			\    and cross-compiler
+\ " polltty.fr" ftload			\ polled tty driver
+" devices/intttyws.fr" ftload		\ interrupt-driven tty driver
+" uart.fr" ftload			\    and configration
+
+\ Load rest of kernel and multitasker and interpreter if desired
+" kernel2.fr" ftload			\ interpreter?, multitasker?
+
+\ ------------------------------------------------------------------------
+\ Load application
+
+\ Steal useful I/O routines
+" forthio.fr"		ftload
+
+\ Libraries, etc.
+" modules2.mfr"		used
+" rtxprims.fr"		used		\ emulate some RTX primitives
+" timers2a.fr"		used
+" timers.mfr"		fload		\ local version: do: only
+" far2.fr"		used
+" farqueue2.fr"		used
+" extend-boot.fr"	fload		\ replace missing kernel functions
+" extend.fr"		used		\ needed by outbits, etc.
+" extend.mfr"		used
+" extend-mro.fr"	used
+" outbits2a.fr"		used
+" outbits2.mfr"		used
+
+\ Shared: common code config, h/w addresses, etc.
+" hw.fr"		used		\ SPP common
+" hw-hybrid.fr"		used		\ SPP common - EPI-Lo-specific
+" hw-boot.fr"		fload		\ SPP additions for boot
+" hw-boot-hybrid.fr"	fload		\ SPP additions - EPI-Lo-specific
+" config.fr"		used		\ SPP common
+" config-hybrid.fr"	used		\ SPP common - EPI-Lo-specific
+" config-boot.fr"	fload		\ additions for boot
+" farallot3.fr"		used
+" farallot3.mfr"	used
+" stat-db.fr"		fload		\ boot version
+" sumcrc.fr"		used
+
+\ Emulate missing/unused components
+" stubs.fr"		fload
+
+\ Host interface part 1 (part 2 loaded later)
+" time.fr"		used
+
+\ " host-io-hybrid.fr"	used
+\ " host-tlm.fr"		used
+\ " host-tlm-split.fr"	used
+
+" host-io.fr"           used
+\ " host-ip.fr"           used
+" host-tlm.fr"          used
+\ " host-tlm-split.fr"    used
+
+" scstatus.fr"		used
+
+\ Core functions
+" memory1.fr"		used
+" farcopy.fr"		used
+" cmd-dict1.fr"		used
+" dump1.fr"		used
+" alarm1.fr"		used
+" mem-cmd2.fr"		used
+" mem-cmd-extend.fr"	used		\ SPP extension
+" cmd-echo1.fr"		used
+" cmd-proc1.fr"		used
+" stat-proc1.fr"	used
+
+\ Host interface part 2
+\ Host interface, commanding, etc.
+" host-cmd.fr"		used
+\ " host-cmd-hybrid.fr"	used
+
+\ Orchestrator
+" telecmd1.fr"		used
+" telemetry1.fr"	used
+
+\ Alpha monitor (generic components)
+" boot.fr"		used
+" motor2.fr"		used
+" alpha2.fr"		used
+
+\ Uplink versions of boot and go commands
+" boot-cmd1.fr"		used
+
+\ Load main and startup
+" autoboot.fr"		fload
+" main.fr"		fload
+" startup.fr"		ftload
+ram-here dp !				\ unused memory for run-time allocation
+' go is-startup
+
+\ Load boot booter
+" bootboot2.fr"		used
+
+report
+" llorri-boot.bin" saveobj
+
+cr .( stack depth = ) depth . cr
+@
+
+
+0.1.0.29
+log
+@0.1.0.29
+@
+text
+@@
+
+
+0.1.0.123
+log
+@0.1.0.123
+@
+text
+@@
+
+
+0.1.0.138
+log
+@0.1.0.138
+@
+text
+@d72 1
+a72 1
+\ " scstatus.fr"		used
+@
+
+
+0.1.0.139
+log
+@0.1.0.139
+@
+text
+@@
+
+
+0.1.0.142
+log
+@0.1.0.142
+@
+text
+@d104 1
+a104 1
+\ " autoboot.fr"		fload
+@
+
+
+0.1.0.144
+log
+@0.1.0.144
+@
+text
+@d72 1
+a72 3
+[ifdef] ___AUTO_BOOT___
+    " scstatus.fr"		used
+[then]
+d104 1
+a104 3
+[ifdef] ___AUTO_BOOT___
+	" autoboot.fr"		fload
+[then]
+@

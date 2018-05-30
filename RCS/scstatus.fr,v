@@ -1,0 +1,162 @@
+head	0.1;
+access;
+symbols;
+locks
+	murphy:0.1.0.139; strict;
+comment	@# @;
+
+
+0.1
+date	2018.02.20.16.37.38;	author murphy;	state Exp;
+branches
+	0.1.0.29;
+next	;
+
+0.1.0.29
+date	2018.02.20.16.37.38;	author murphy;	state Exp;
+branches;
+next	0.1.0.123;
+
+0.1.0.123
+date	2018.04.13.02.04.43;	author murphy;	state Exp;
+branches;
+next	0.1.0.139;
+
+0.1.0.139
+date	2018.04.13.20.05.41;	author murphy;	state Exp;
+branches;
+next	;
+
+
+desc
+@2018-02-20 11:25:33 gam-1
+@
+
+
+0.1
+log
+@0.1
+@
+text
+@\ (c) 2014 Johns Hopkins University / Applied Physics Laboratory
+\ Spacecraft status data
+decimal
+
+\ * Process spacecraft status data.  For each time and status packet
+\ * received, the status portion of the data is passed to the user.  This
+\ * is done via a call-back function.  The status data is in an ephemeral
+\ * buffer; the user must either process the data before returning, or copy
+\ * out the data for further use.
+\ * 
+\ * On start-up, there could be a short delay before the user receives the
+\ * first status data call-back.  There could also be off-nominal, but
+\ * hopefully rare cases where time and status packets are not received and
+\ * thus no call-back is made.
+\ *
+\ * Requires constants:
+\ *    start-mask#: instrument-specific bit mask for startup mode bit
+\ *    pwr-down-mask#: instrument-specific bit mask for power down warning bit
+\ *    ssr-offset#: instrument-specific offset into ssr-alloc array
+
+module> scstatus
+
+\ ------------------------------------------------------------------------
+\ * Spacecraft status data structure and parsing functions
+
+public:
+
+structure sc-status-struct		\ * structure of spacecraft status data
+     2 cells: .sc-solar-distance	\ * current distance to the sun
+     1 chars reserved			\ solar array +Y flap angle
+     1 chars reserved			\ solar array -Y flap angle
+     1 chars reserved			\ solar array +Y feather angle
+     1 chars reserved			\ solar array -Y feather angle
+     1 chars reserved			\ spare
+     6 chars: .sc-ssr-alloc		\ * SSR allocation status
+     1 chars reserved			\ EPI-Lo shared data
+     2 chars reserved			\ EPI-Hi shared data
+     0 chars reserved			\ WISPR shared data
+     2 chars reserved			\ FIELDS 1 shared data
+     2 chars reserved			\ FIELDS 2 shared data
+     2 chars reserved			\ spares
+    12 chars reserved			\ SWEAP shared data
+	cell: .sc-flags1		\ * flags, e.g. validity, startup,
+	cell: .sc-flags2		\ *   thruster fire, power down, etc.
+     4 cells reserved			\ reaction wheel speeds
+     1 chars reserved			\ reaction wheel flags
+    19 chars reserved			\ spares
+endstructure
+
+: auto-start?	\ ( sc-status -- t/f ) Return true if instrument should start
+		\ up, and then run, autonomously.
+   .sc-flags2 @@ start-mask# and 0= not ;
+
+: thruster-fire? \ ( sc-status -- t/f ) Return true if thrusters are firing
+		\ or are about to fire.
+   .sc-flags1 @@ h# 0800 and 0= not ;
+
+: power-down?	\ ( sc-status -- t/f ) Return true if instrument will be
+		\ powered down imminently.
+   .sc-flags1 @@ pwr-down-mask# and 0= not ;
+
+: solar-distance? \ ( sc-status -- valid? ) Return true if sc-status indicates
+		\ that solar distance is valid.
+   .sc-flags2 @@ h# 1000 and 0= not ;
+
+: solar-distance \ ( sc-status -- dist-ls dist-ms out? ) Extract solar
+		\ distance and in vs. outbound flag from sc-status.
+   dup >r .sc-solar-distance 2@@ r> .sc-flags1 @@ h# 0008 and 0= not ;
+
+: ssr-used	\ ( sc-status -- 0-255 ) Return amount of SSR allocation
+		\ used, 0 - 100% scaled 0 - 255.
+   .sc-ssr-alloc ssr-offset# + c@@ ;
+
+private:
+
+\ ------------------------------------------------------------------------
+\ * Spacecraft status call-back function.
+
+\ Execution vector to spacecraft status processing function.
+variable 'process-sc
+:noname drop ; 'process-sc !		\ default: discard data
+
+public:
+
+: register-sc-status \ ( f -- ) Register function for processing spacecraft
+		\ status data.  The function must accept a pointer to the
+		\ spacecraft status and return nothing, i.e. ( sc-status -- ).
+   'process-sc ! ;
+
+: process-sc-status \ ( sc-status -- ) Process given spacecraft status.
+		\ Pass status to user-supplied processing function; see
+		\ register-sc-status.
+   'process-sc @@ execute ;
+
+private:
+
+endmodule>
+@
+
+
+0.1.0.29
+log
+@0.1.0.29
+@
+text
+@@
+
+
+0.1.0.123
+log
+@0.1.0.123
+@
+text
+@@
+
+
+0.1.0.139
+log
+@0.1.0.139
+@
+text
+@@

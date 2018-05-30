@@ -1,0 +1,127 @@
+head	0.1;
+access;
+symbols;
+locks
+	murphy:0.1.0.139; strict;
+comment	@# @;
+
+
+0.1
+date	2018.02.20.16.37.38;	author murphy;	state Exp;
+branches
+	0.1.0.29;
+next	;
+
+0.1.0.29
+date	2018.02.20.16.37.38;	author murphy;	state Exp;
+branches;
+next	0.1.0.123;
+
+0.1.0.123
+date	2018.04.13.02.04.43;	author murphy;	state Exp;
+branches;
+next	0.1.0.139;
+
+0.1.0.139
+date	2018.04.13.20.05.41;	author murphy;	state Exp;
+branches;
+next	;
+
+
+desc
+@2018-02-20 11:25:33 gam-1
+@
+
+
+0.1
+log
+@0.1
+@
+text
+@\ (c) 2014 Johns Hopkins University / Applied Physics Laboratory
+\ Status and configuration data
+decimal
+
+module> status
+
+\ -------------------------------------------------------------------------
+\ Configuration and status databases
+
+\ Sizes
+16 constant #config/status		\ total size of status
+ 2 constant #more-config/status		\ extra status
+
+\ Combined database
+create config/status
+   #config/status allot
+
+\ Other configuration/status data.  These are not downlinked as part of
+\ status data
+create more-config/status
+   #more-config/status allot
+
+\ ------------------------------------------------------------------------
+\ * Configuration and status objects.  Each of these objects can be
+\ * modified via set; the current value is returned with get.
+
+public:
+
+\ * Software status
+config/status  0 +	mem-word:   status-int				\ *
+config/status  2 +	mem-word:   tlm-volume				\ *
+config/status  4 +	mem-word:   watch-addr				\ *
+config/status  6 +	mem-byte:   watch-mem				\ *
+config/status  7 +	mem-byte:   watch-byte1				\ *
+config/status  8 +	mem-byte:   watch-byte2				\ *
+config/status  9 +	mem-byte:   sw-version				\ *
+config/status 10 +	mem-byte:   alarm-id				\ *
+config/status 11 + 7	mem-bit:    alarm-type				\ *
+config/status 11 + 0 7	mem-field:  alarm-count				\ *
+config/status 12 +	mem-byte:   cmds-executed			\ *
+config/status 13 +	mem-byte:   cmds-rejected			\ *
+config/status 14 + 7	mem-bit:    cause				\ *
+config/status 14 + 6	mem-bit:    mem-write-enb			\ *
+config/status 14 + 0 3	mem-field:  code-ram				\ *
+
+\ More; not downlinked
+more-config/status  0 +	mem-byte:   macro-cmds-exec			\ *
+more-config/status  1 +	mem-byte:   macro-cmds-rej			\ *
+
+private:
+
+\ ------------------------------------------------------------------------
+\ Default values
+
+\ Most are zero; others can be set below
+config/status #config/status 0 fill
+
+\ Set individual values for non-zero defaults
+1 status-int set
+1 sw-version set
+
+endmodule>
+@
+
+
+0.1.0.29
+log
+@0.1.0.29
+@
+text
+@@
+
+
+0.1.0.123
+log
+@0.1.0.123
+@
+text
+@@
+
+
+0.1.0.139
+log
+@0.1.0.139
+@
+text
+@@

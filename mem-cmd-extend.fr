@@ -1,0 +1,16 @@
+\ (c) 2015 Johns Hopkins University / Applied Physics Laboratory
+\ Memory commands extension - non-volatile memory (MRAM)
+decimal
+
+memory extendmodule>
+
+: c-mem-nv-enb	\ ( -- ) Enable/disable non-volatile memory.
+   arg0 nv-enb set ;
+
+public:
+: init-mem-extend \ ( -- ) Initialize memory module extension.
+   ['] c-mem-nv-enb	#mem-nv-enb	  1 register-cmd/args
+;
+private:
+
+endmodule>

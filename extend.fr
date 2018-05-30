@@ -1,0 +1,57 @@
+\ (c) 2008 Johns Hopkins University / Applied Physics Laboratory
+\ Useful extensions
+decimal
+
+: erase		\ ( addr len -- ) Fill given array of bytes will zero.
+   0 fill ;
+
+: |		\ ( addr x -- addr++ ) Array initialization.
+   over !  cell+ ;
+
+: c|		\ ( addr c -- addr++ ) Array initialization.
+   over c!  1+ ;
+
+: 2|		\ ( addr xms xls -- addr++ ) Array initialization.
+		\ Note: ls on top
+   2pick cell+ !  over !  2 cells + ;
+
+: here-allot	\ ( size -- addr ) Allocate local memory and return address.
+   here swap allot ;
+
+: reserved	\ ( offset size -- offset' ) Extend struct.fr.  Allocate
+		\ reserved field in data structure of given size.
+   + ;
+
+: between	\ ( u1|n1 u2|n2 u3|n3 -- t/f ) Return true iff u1|n1 is
+		\ between u2|n2 and u3|n3 inclusive.
+   over - >r - r> u> not ;
+
+: u<=		\ ( u1 u2 -- t/f ) Return true iff u1<=u2.
+   u> not || ; inline
+
+: u>=		\ ( u1 u2 -- t/f ) Return true iff u1>=u2.
+   u< not || ; inline
+
+: du<		\ ( du1-ls du1-ms du2-ls du2-ms -- t/f ) Return true iff
+		\ du1 is less than du2.
+   >r over r@ - if drop nip r> u< else r> drop nip u< then ;
+
+: u/		\ ( u1 u2 -- u1/u2 ) Unsigned single divide.
+  0 swap um/mod nip ;
+
+: u/^		\ ( u1 u2 -- u1/u2 ) Unsigned single divide.  Non-integral
+		\ results are rounded up.
+  0 swap um/mod swap if 1+ then ;
+
+: split		\ ( x -- u1 u2 ) Split x into two bytes.  The ms byte is on top.
+   dup h# ff and swap 8 rshift ;
+
+: join		\ ( u1 u2 -- x ) Join two bytes.  The ms byte is on top.
+		\ Precondition: u1 < 256.
+   8 lshift or ;
+
+: pow2		\ ( n -- 2^n ) Return nth power of 2.
+   1 swap lshift ;
+
+: mask		\ ( n -- mask ) Return a mask n bits long.
+   1 swap lshift 1- ;

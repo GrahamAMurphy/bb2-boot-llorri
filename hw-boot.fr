@@ -1,0 +1,23 @@
+\ (c) 2014 Johns Hopkins University / Applied Physics Laboratory
+\ SPP boot hardware interface extensions
+hex
+
+\ ------------------------------------------------------------------------
+\ Memory map
+
+\ RAM
+7 constant boot-mem#			\ default RAM page to copy to
+   2000 constant #boot-words		\ size of boot ROM (16-bit words)
+\ MRAM
+40 constant eeprom-prog-mem#		\ default program
+\ 41 - 42				\   and backups
+   0000 constant eeprom-prog-addr	\ address of source program header
+\ I/O (formerly G-bus)
+\ 10 constant io-mem#			\ memory-mapped I/O
+\  6 constant stat-a#			\ R: interrupt (and cause) status
+     1 5 lshift constant cause-msk#	\ reset cause mask
+
+\ ------------------------------------------------------------------------
+\ Interrupts
+
+\ none ...

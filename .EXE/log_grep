@@ -1,0 +1,54 @@
+#!/usr/bin/perl
+
+open( HDLIN, "< t-load.log" ) or die "Could not open t-load.log" ;
+
+$x = 0 ;
+$n = 0 ;
+
+while( <HDLIN> ) {
+    chomp() ;
+    $in = $_ ;
+
+    if( /.next isn't unique/ ) {
+    } elsif( /get isn't unique/ ) {
+    } elsif( /set isn't unique/ ) {
+    } elsif( /\s\?$/ ) {
+	print STDERR "$in\n" ; $x = 1 ;
+    } elsif( /\s\?\s\S/ ) {
+	print STDERR "$in\n" ; $x = 1 ;
+    } elsif( /isn't unique/ ) {
+	print STDERR "$in\n" ; $x = 1 ;
+    } elsif( /forth:/ ) {
+	print STDERR "$in\n" ; $x = 1 ;
+    } elsif( /ouch\!/ ) {
+	print STDERR "$in\n" ; $x = 1 ;
+    } elsif( /^File Closed: / ) {
+	$in =~ s/File Closed:/>>>>>>>>>>>>/ ;
+	$in =~ s/$/ <<<<<<<<<<<</ ;
+	print STDERR "$in\n" if ( $x == 1 ) ;
+	$x = 0 ;
+    } elsif( /^here = ([0-9a-f]{4})/ ) {
+	if ( $1 ge "c000" ) {
+	    print STDERR "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% $in %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n" ;
+	    print STDERR "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% $in %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n" ;
+	    print STDERR "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% $in %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n" ;
+	    print STDERR "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% $in %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n" ;
+	    print STDERR "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% $in %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n" ;
+	    $n = 1 ;
+	}
+    } elsif( /^stack depth = ([0-9a-f]{1,4})/ ) {
+	if ( $1 ne "0" ) {
+	    print STDERR "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% $in %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n" ;
+	    print STDERR "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% $in %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n" ;
+	    print STDERR "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% $in %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n" ;
+	    print STDERR "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% $in %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n" ;
+	    print STDERR "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% $in %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n" ;
+	    $n = 1 ;
+	}
+    }
+    $n = 1 if ( $x == 1 ) ;
+
+}
+close( HDLIN ) ;
+exit(0) if ($n == 1 ) ;
+exit(1) ;

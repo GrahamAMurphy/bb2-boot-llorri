@@ -1,0 +1,45 @@
+#!/usr/bin/perl
+
+open( HDLIN, "< t-load.log" ) or die "Could not open t-load.log" ;
+
+$x = 0 ;
+$n = 0 ;
+@mem = () ;
+@len = () ;
+@add = () ;
+@names = () ;
+
+while( <HDLIN> ) {
+    chomp() ;
+    $in = $_ ;
+
+    if( $n == 1 ) {
+	$y = $_ ;
+	$y =~ s/\s+/ /g ;
+	$y =~ s/^.....// ;
+	$y =~ s/\s+.*// ;
+	push @names, $y ;
+	# print STDOUT "$x $y\n" ;
+	$n = 0 ;
+    } elsif( /\sFAR-ALLOT\s/ ) {
+	$x = $_ ;
+	$x =~ s;^\s+FAR-ALLOT mem/size/addr:\s+;; ;
+	( $m, $l, $a ) = split / /,$x ;
+	push @mem, $m ;
+	push @len, $l ;
+	push @add, $a ;
+	$n = 1 ;
+    }
+}
+close( HDLIN ) ;
+$len = $#names ;
+@sorted = sort{
+    $mem[$a] cmp $mem[$b]
+	    ||
+    $add[$a] cmp $add[$b]
+} 0 .. $len ;
+
+foreach $j ( 0 .. $len ) {
+    $k = $sorted[$j] ;
+    print STDOUT "$mem[$k] $add[$k] $len[$k] $names[$k]\n" ;
+}

@@ -1,0 +1,43 @@
+\ (c) 2013 Johns Hopkins University / Applied Physics Laboratory
+\ Stubs for missing system components
+hex
+
+\ ------------------------------------------------------------------------
+\ Macros
+
+: append-cmd	\ ( addr len -- t/f ) Append given command to macro currently
+		\ being compiled.  Return true if successful
+   2drop false ;
+
+: macro-ready?	\ ( -- t/f ) Return true if there is a runnable macro.  
+   false ;
+
+: macro-load	\ ( addr -- len ) Load next command from currently executing
+		\ macro into given address.  Return length of macro loaded.
+		\ Precondition: there is a macro command ready.
+   drop 0 ;
+
+: macro-echo?	\ ( -- t/f ) Return true iff commands of current macro 
+		\ should be echoed.
+   false ;
+
+: run-macro	\ ( id -- ) Start up identified macro in its own thread.
+   drop ;
+
+: try-mac-dump	\ ( -- ) Try to generate a macro dump packet.
+   ;
+
+\ ------------------------------------------------------------------------
+\ Autonomy
+
+: all-is-well	\ ( -- ) All is well; host is up.
+   ;
+
+\ ------------------------------------------------------------------------
+\ Slot management
+
+: exec-slot	\ ( -- ) Execute next slot function.
+   ;
+
+: init-slots	\ ( -- ) Initialize slot schedule.
+   ;

@@ -1,0 +1,10 @@
+#!/bin/bash -f
+
+if [ "x$1" == "x" ]; then
+    file="t-load.log"
+else
+    file=$1
+fi
+
+.EXE/log_grep $file && echo "ERROR!" && egrep '(stack depth)|(here = )' $file && exit
+egrep '(NOTE)|(stack depth)|(here = )|(ouch\!)' $file > /dev/stderr

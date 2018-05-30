@@ -1,0 +1,23 @@
+\ (c) 2013 Johns Hopkins University / Applied Physics Laboratory
+\ SPP common, WISPR-specific, configuration constants
+hex
+
+\ ITF
+06 constant #itf-vc			\ vitual channel
+
+\ Telemetry
+
+\ APIDs
+\ Note: the entire range of APIDs are allowed for commands and telemetry;
+\ however, we only use the base APID for commands.
+3e0 constant #apid-instr		\ base of command and telemetry APIDs
+d# 64 constant #apids			\ number of APIDs availble
+
+\ Spacecraft status data
+\ Note: these customize parsing the status data.
+0002 constant start-mask#		\ bit mask for startup mode bit
+0080 constant pwr-down-mask#		\ bit mask for power down warning bit
+2 constant ssr-offset#			\ offset into ssr-alloc array
+
+\ Commands
+\ ... nothing

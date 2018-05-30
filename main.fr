@@ -1,0 +1,59 @@
+\ (c) 2014 Johns Hopkins University / Applied Physics Laboratory
+\ SPP boot ROM startup
+decimal
+
+\ ------------------------------------------------------------------------
+\ Initialization
+
+: init-common	\ ( -- ) Initialize common/shared modules.
+   enable				\ enable interrupts
+   init-host				\ host interface
+   init-command				\ command handler
+   init-packet				\ packets
+   init-alarm				\ alarms
+   init-status				\ configuration and status
+   init-dump				\ memory dumper
+   init-memory				\ memory commands
+   init-mem-extend			\   and SPP extension
+   init-boot				\ boot/go commands
+;
+
+: check-cause	\ ( -- ) Find cause of reset, power-up or watchdog, and
+		\ record in status.  If watchdog reset, page 0 is dumped.
+   parin-a# io@ cause-msk# and if	\ test reset cause bit, if watchdog
+      0 0 65535 start-dump		\ start diagnostic dump
+	 256 1+ seconds			\ allow time for dump to complete
+      1
+   else					\ otherwise, power-up reset
+      1 seconds				\ no delay needed
+      0
+   then cause set			\ record cause
+
+[ifdef] ___AUTO_BOOT___
+   >r init-auto-boot in r> doit		\ schedule start of autonomous operation
+[then]
+
+   get-code code-ram set ;		\ record RAM selected
+
+: init-app	\ ( -- ) Initialize application-specific modules.
+   check-cause				\ check reset cause
+   init-specific			\ initialize instrument-specific hw
+;
+
+\ ------------------------------------------------------------------------
+\ Main
+
+: go		\ ( -- )
+   init-common				\ initialize common code
+   init-app				\ initialize application-specific
+   telemetry-process 0 nextprocess	\ start processes
+   command-process telemetry-process nextprocess
+   resched
+   key drop				\ wait for login
+   begin				\ run keyboard monitor
+      eeprom-prog-addr eeprom-prog-mem#	\ find a program to run
+	 interboot
+      disable far-execute enable	\ run program; resume if program returns
+   again ;
+
+0 mem-write-enb set

@@ -1,0 +1,716 @@
+head	0.1;
+access;
+symbols;
+locks
+	murphy:0.1.0.143; strict;
+comment	@# @;
+
+
+0.1
+date	2018.02.20.16.37.38;	author murphy;	state Exp;
+branches
+	0.1.0.29;
+next	;
+
+0.1.0.29
+date	2018.02.20.16.37.38;	author murphy;	state Exp;
+branches;
+next	0.1.0.30;
+
+0.1.0.30
+date	2018.02.20.16.40.17;	author murphy;	state Exp;
+branches;
+next	0.1.0.34;
+
+0.1.0.34
+date	2018.02.20.17.00.59;	author murphy;	state Exp;
+branches;
+next	0.1.0.46;
+
+0.1.0.46
+date	2018.02.23.13.12.10;	author murphy;	state Exp;
+branches;
+next	0.1.0.49;
+
+0.1.0.49
+date	2018.02.23.13.19.11;	author murphy;	state Exp;
+branches;
+next	0.1.0.50;
+
+0.1.0.50
+date	2018.02.23.13.19.26;	author murphy;	state Exp;
+branches;
+next	0.1.0.51;
+
+0.1.0.51
+date	2018.02.23.13.20.13;	author murphy;	state Exp;
+branches;
+next	0.1.0.52;
+
+0.1.0.52
+date	2018.02.23.13.21.00;	author murphy;	state Exp;
+branches;
+next	0.1.0.53;
+
+0.1.0.53
+date	2018.02.23.13.22.38;	author murphy;	state Exp;
+branches;
+next	0.1.0.54;
+
+0.1.0.54
+date	2018.02.23.13.23.30;	author murphy;	state Exp;
+branches;
+next	0.1.0.57;
+
+0.1.0.57
+date	2018.02.23.13.26.07;	author murphy;	state Exp;
+branches;
+next	0.1.0.58;
+
+0.1.0.58
+date	2018.02.23.13.28.14;	author murphy;	state Exp;
+branches;
+next	0.1.0.59;
+
+0.1.0.59
+date	2018.02.23.13.30.05;	author murphy;	state Exp;
+branches;
+next	0.1.0.60;
+
+0.1.0.60
+date	2018.02.23.13.31.21;	author murphy;	state Exp;
+branches;
+next	0.1.0.63;
+
+0.1.0.63
+date	2018.02.23.13.34.46;	author murphy;	state Exp;
+branches;
+next	0.1.0.64;
+
+0.1.0.64
+date	2018.02.23.13.38.08;	author murphy;	state Exp;
+branches;
+next	0.1.0.65;
+
+0.1.0.65
+date	2018.02.23.13.38.34;	author murphy;	state Exp;
+branches;
+next	0.1.0.66;
+
+0.1.0.66
+date	2018.02.23.13.39.38;	author murphy;	state Exp;
+branches;
+next	0.1.0.67;
+
+0.1.0.67
+date	2018.02.23.13.40.24;	author murphy;	state Exp;
+branches;
+next	0.1.0.68;
+
+0.1.0.68
+date	2018.02.23.13.41.04;	author murphy;	state Exp;
+branches;
+next	0.1.0.69;
+
+0.1.0.69
+date	2018.02.23.13.41.36;	author murphy;	state Exp;
+branches;
+next	0.1.0.70;
+
+0.1.0.70
+date	2018.02.23.13.42.21;	author murphy;	state Exp;
+branches;
+next	0.1.0.71;
+
+0.1.0.71
+date	2018.02.23.13.42.43;	author murphy;	state Exp;
+branches;
+next	0.1.0.72;
+
+0.1.0.72
+date	2018.02.23.13.43.25;	author murphy;	state Exp;
+branches;
+next	0.1.0.73;
+
+0.1.0.73
+date	2018.02.23.13.44.34;	author murphy;	state Exp;
+branches;
+next	0.1.0.74;
+
+0.1.0.74
+date	2018.02.23.13.47.46;	author murphy;	state Exp;
+branches;
+next	0.1.0.75;
+
+0.1.0.75
+date	2018.02.23.13.50.10;	author murphy;	state Exp;
+branches;
+next	0.1.0.79;
+
+0.1.0.79
+date	2018.02.23.14.06.17;	author murphy;	state Exp;
+branches;
+next	0.1.0.82;
+
+0.1.0.82
+date	2018.02.23.14.12.49;	author murphy;	state Exp;
+branches;
+next	0.1.0.84;
+
+0.1.0.84
+date	2018.02.23.14.22.14;	author murphy;	state Exp;
+branches;
+next	0.1.0.85;
+
+0.1.0.85
+date	2018.02.23.14.22.49;	author murphy;	state Exp;
+branches;
+next	0.1.0.87;
+
+0.1.0.87
+date	2018.02.23.14.25.21;	author murphy;	state Exp;
+branches;
+next	0.1.0.123;
+
+0.1.0.123
+date	2018.04.13.02.04.43;	author murphy;	state Exp;
+branches;
+next	0.1.0.139;
+
+0.1.0.139
+date	2018.04.13.20.05.41;	author murphy;	state Exp;
+branches;
+next	0.1.0.142;
+
+0.1.0.142
+date	2018.04.13.20.47.47;	author murphy;	state Exp;
+branches;
+next	0.1.0.143;
+
+0.1.0.143
+date	2018.04.13.20.48.10;	author murphy;	state Exp;
+branches;
+next	;
+
+
+desc
+@2018-02-20 11:25:33 gam-1
+@
+
+
+0.1
+log
+@0.1
+@
+text
+@\ (c) 2014 Johns Hopkins University / Applied Physics Laboratory
+\ SPP boot ROM startup
+decimal
+
+\ ------------------------------------------------------------------------
+\ Initialization
+
+: init-common	\ ( -- ) Initialize common/shared modules.
+   enable				\ enable interrupts
+   init-host				\ host interface
+   init-command				\ command handler
+   init-packet				\ packets
+   init-alarm				\ alarms
+   init-status				\ configuration and status
+   init-dump				\ memory dumper
+   init-memory				\ memory commands
+   init-mem-extend			\   and SPP extension
+   init-boot				\ boot/go commands
+;
+
+: check-cause	\ ( -- ) Find cause of reset, power-up or watchdog, and
+		\ record in status.  If watchdog reset, page 0 is dumped.
+   parin-a# io@@ cause-msk# and if	\ test reset cause bit, if watchdog
+      0 0 65535 start-dump		\ start diagnostic dump
+	 256 1+ seconds			\ allow time for dump to complete
+      1
+   else					\ otherwise, power-up reset
+      1 seconds				\ no delay needed
+      0
+   then cause set			\ record cause
+   >r init-auto-boot in r> doit		\ schedule start of autonomous operation
+   get-code code-ram set ;		\ record RAM selected
+
+: init-app	\ ( -- ) Initialize application-specific modules.
+   check-cause				\ check reset cause
+   init-specific			\ initialize instrument-specific hw
+;
+
+\ ------------------------------------------------------------------------
+\ Main
+
+: go		\ ( -- )
+   h# 31 emit
+   init-common				\ initialize common code
+   h# 32 emit
+   init-app				\ initialize application-specific
+   h# 33 emit
+   telemetry-process 0 nextprocess	\ start processes
+   command-process telemetry-process nextprocess
+   resched
+   h# 34 emit
+   h# 36 emit
+   h# 37 emit
+   key drop				\ wait for login
+ h# 35 emit
+   begin				\ run keyboard monitor
+      eeprom-prog-addr eeprom-prog-mem#	\ find a program to run
+	 interboot
+      disable far-execute enable	\ run program; resume if program returns
+   again ;
+
+0 mem-write-enb set
+@
+
+
+0.1.0.29
+log
+@0.1.0.29
+@
+text
+@@
+
+
+0.1.0.30
+log
+@0.1.0.30
+@
+text
+@d47 3
+a49 2
+   \ telemetry-process 0 nextprocess	\ start processes
+   \ command-process telemetry-process nextprocess
+d51 2
+d55 1
+a55 1
+    h# 35 emit
+@
+
+
+0.1.0.34
+log
+@0.1.0.34
+@
+text
+@d43 1
+d45 1
+d47 2
+a48 2
+   telemetry-process 0 nextprocess	\ start processes
+   command-process telemetry-process nextprocess
+d50 1
+d52 1
+@
+
+
+0.1.0.46
+log
+@0.1.0.46
+@
+text
+@a8 1
+   h# 32 emit
+a9 1
+   h# 33 emit
+@
+
+
+0.1.0.49
+log
+@0.1.0.49
+@
+text
+@a11 3
+   h# 33 emit
+   h# 33 emit
+   h# 33 emit
+@
+
+
+0.1.0.50
+log
+@0.1.0.50
+@
+text
+@d10 1
+a11 1
+   h# 32 emit
+a12 2
+   h# 32 emit
+   enable				\ enable interrupts
+a13 1
+   h# 34 emit
+a14 1
+   h# 34 emit
+@
+
+
+0.1.0.51
+log
+@0.1.0.51
+@
+text
+@d9 1
+a9 1
+   h# 33 emit
+d14 1
+a14 1
+   \ enable				\ enable interrupts
+@
+
+
+0.1.0.52
+log
+@0.1.0.52
+@
+text
+@a8 1
+   disable
+@
+
+
+0.1.0.53
+log
+@0.1.0.53
+@
+text
+@d9 9
+a18 1
+   enable				\ enable interrupts
+d52 1
+a52 2
+: go ;
+: xgo		\ ( -- )
+@
+
+
+0.1.0.54
+log
+@0.1.0.54
+@
+text
+@d44 2
+a45 1
+: go		\ ( -- )
+@
+
+
+0.1.0.57
+log
+@0.1.0.57
+@
+text
+@d9 2
+a10 1
+   h# 35 emit
+d12 1
+a12 2
+   enable				\ enable interrupts
+   \ init-host				\ host interface
+@
+
+
+0.1.0.58
+log
+@0.1.0.58
+@
+text
+@d11 2
+a12 3
+   disable				\ enable interrupts
+   \ enable				\ enable interrupts
+   init-host				\ host interface
+a20 1
+   h# 38 emit
+@
+
+
+0.1.0.59
+log
+@0.1.0.59
+@
+text
+@d9 4
+a12 1
+   enable				\ enable interrupts
+d22 1
+@
+
+
+0.1.0.60
+log
+@0.1.0.60
+@
+text
+@a18 1
+   h# 39 emit
+@
+
+
+0.1.0.63
+log
+@0.1.0.63
+@
+text
+@d19 1
+@
+
+
+0.1.0.64
+log
+@0.1.0.64
+@
+text
+@a43 1
+   h# 38 emit
+a44 1
+   h# 37 emit
+@
+
+
+0.1.0.65
+log
+@0.1.0.65
+@
+text
+@d47 2
+a48 2
+   \ telemetry-process 0 nextprocess	\ start processes
+   \ command-process telemetry-process nextprocess
+@
+
+
+0.1.0.66
+log
+@0.1.0.66
+@
+text
+@d43 1
+a43 1
+   \ init-common				\ initialize common code
+@
+
+
+0.1.0.67
+log
+@0.1.0.67
+@
+text
+@d45 1
+a45 1
+   \ init-app				\ initialize application-specific
+@
+
+
+0.1.0.68
+log
+@0.1.0.68
+@
+text
+@d43 1
+a43 1
+   init-common				\ initialize common code
+@
+
+
+0.1.0.69
+log
+@0.1.0.69
+@
+text
+@d9 1
+a9 1
+   \ enable				\ enable interrupts
+@
+
+
+0.1.0.70
+log
+@0.1.0.70
+@
+text
+@d9 1
+a9 2
+   enable				\ enable interrupts
+   [ifdef] __X
+a18 1
+   [then]
+@
+
+
+0.1.0.71
+log
+@0.1.0.71
+@
+text
+@d9 1
+a10 1
+   enable				\ enable interrupts
+@
+
+
+0.1.0.72
+log
+@0.1.0.72
+@
+text
+@d45 1
+a45 1
+   \ init-common				\ initialize common code
+@
+
+
+0.1.0.73
+log
+@0.1.0.73
+@
+text
+@a43 10
+3 int: ;int
+4 int: ;int
+5 int: ;int
+6 int: ;int
+7 int: ;int
+8 int: ;int
+9 int: ;int
+a int: ;int
+b int: ;int
+
+@
+
+
+0.1.0.74
+log
+@0.1.0.74
+@
+text
+@d51 2
+a52 2
+h# a int: ;int
+h# b int: ;int
+@
+
+
+0.1.0.75
+log
+@0.1.0.75
+@
+text
+@d9 1
+d20 1
+d44 10
+d55 6
+a60 4
+   init-common				\ initialize common code
+   init-app				\ initialize application-specific
+   telemetry-process 0 nextprocess	\ start processes
+   command-process telemetry-process nextprocess
+@
+
+
+0.1.0.79
+log
+@0.1.0.79
+@
+text
+@a10 1
+   [ifdef] __X
+a18 1
+   [then]
+d44 3
+a46 3
+   \ init-app				\ initialize application-specific
+   \ telemetry-process 0 nextprocess	\ start processes
+   \ command-process telemetry-process nextprocess
+@
+
+
+0.1.0.82
+log
+@0.1.0.82
+@
+text
+@d11 1
+d20 1
+d46 3
+a48 3
+   init-app				\ initialize application-specific
+   telemetry-process 0 nextprocess	\ start processes
+   command-process telemetry-process nextprocess
+@
+
+
+0.1.0.84
+log
+@0.1.0.84
+@
+text
+@a9 1
+   h# 31 emit
+@
+
+
+0.1.0.85
+log
+@0.1.0.85
+@
+text
+@a19 1
+   h# 32 emit
+@
+
+
+0.1.0.87
+log
+@0.1.0.87
+@
+text
+@d10 1
+d20 1
+@
+
+
+0.1.0.123
+log
+@0.1.0.123
+@
+text
+@@
+
+
+0.1.0.139
+log
+@0.1.0.139
+@
+text
+@@
+
+
+0.1.0.142
+log
+@0.1.0.142
+@
+text
+@a30 2
+
+[ifdef] __AUTO_BOOT__
+a31 2
+[then]
+
+@
+
+
+0.1.0.143
+log
+@0.1.0.143
+@
+text
+@d32 1
+a32 1
+[ifdef] ___AUTO_BOOT___
+@

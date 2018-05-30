@@ -1,0 +1,75 @@
+\ (c) 2013 Johns Hopkins University / Applied Physics Laboratory
+\ SPP common instrument (i.e. EPI-Lo & WISPR) hardware interfaces
+hex
+
+\ ------------------------------------------------------------------------
+\ Memory map
+
+\ RAM
+\ 01 constant macro-mem#		\ macro database
+02 constant tlm-mem#			\ telemetry frame buffer
+\ I/O
+\ 10 constant io-mem#			\ memory-mapped I/O
+\  0000 constant uart-a#		\ RW: UART
+   0002 constant wd-a#			\ R: ping watchdog
+\  0004 constant int-a#			\ R: interrupt vector W: mode/mask set
+\  0006 constant parin-a#		\ R: reset cause, jumpers, polled ints
+\ MRAM
+\ 40 constant eeprom-prog-mem#		\ default program
+\ 41 - 42				\   and backups
+\ Address space
+\ Note: RAM0 appears twice in the this space
+60 constant total-mem#			\ total memory (address space) size
+
+\ ------------------------------------------------------------------------
+\ Interrupts and interrupt mask register
+
+\ Interrupts
+\ d# 0 constant uart-rx-int#		\ UART receive
+\ d# 1 constant uart-tx-int#		\ UART transmit
+
+\ ------------------------------------------------------------------------
+\ Memory-mapped I/O access functions
+
+: io@		\ ( addr -- x ) Fetch x from given address in io-mem#.
+   get-mem >r io-mem# set-mem far	\ remote memory-mapped I/O
+   @					\ fetch
+   r> set-mem ;
+
+: io!		\ ( x addr -- ) Store x to given address in io-mem#.
+   get-mem >r io-mem# set-mem far	\ remote memory-mapped I/O
+   !					\ store
+   r> set-mem ;
+
+
+h# 000c constant sccfg-a#
+
+: set-io-cfg   \ ( mask -- ) Set given bits in DPU configuration register.
+   sccfg-a# io! ;                         \ set given bits
+
+: clr-io-cfg   \ ( mask -- ) Clear given bits in DPU configuration register.
+   sccfg-a# 2 + io! ;                     \ clear given bits
+
+
+
+\ ------------------------------------------------------------------------
+\ DPU configuration register
+\ Note: these bits are in the same register as the interrupt mask.
+\ The following words are, in effect, aliases for unmask-int and mask-int.
+
+: set-Dpu-cfg	\ ( mask -- ) Set given bits in DPU configuration register.
+   int-a# io! ;				\ set given bits
+
+: clr-Dpu-cfg	\ ( mask -- ) Clear given bits in DPU configuration register.
+   int-a# 2 + io! ;			\ clear given bits
+
+\ ------------------------------------------------------------------------
+\ Time
+
+: seconds	\ ( seconds -- ticks ) Given a time in seconds, compute
+		\ corresponding number of 'ticks' of hardwareclock.
+   || ; inline
+
+: seconds-d	\ ( seconds -- ticks-ls ticks-ms ) Given a time in seconds,
+		\ compute corresponding number of 'ticks' of hardwareclock.
+   0 ;

@@ -1,0 +1,50 @@
+#!/usr/bin/perl
+
+%defs = {} ;
+
+open( DEFIN, "< load-hybrid.fr" ) or 
+    open( DEFIN, "< load-wispr.fr" ) or 
+	die( "Could not open definitions file." ) ;
+
+while( <DEFIN> ) {
+    chomp() ;
+    if( /^def/ ) {
+	@q = split( /\s+/, $_, 2 ) ;
+	# print STDERR ">>$q[1]<<\n" ;
+	$defs{ $q[1] } = 1 ;
+    }
+}
+close( DEFIN ) ;
+
+foreach $n ( @ARGV ) {
+$g = 1 ;
+
+open( LOADIN, "< $n" ) or die( "Could not open $n." ) ;
+print STDERR "$n\n" ;
+    while( <LOADIN> ) {
+	chomp() ;
+	if( /^\\\s/ ) {
+	    s/^\\\s+.*// ;
+	} elsif( /\s\\\s/ ) {
+	    s/\s\\\s+.*// ;
+	}
+	s/\s+/ /g ;
+
+	if( /^\s*\[ifdef\]\s(\S+)/ ) {
+	    # print STDOUT "........ $1 ..........\n" ;
+	    $k = $defs{ $1 } ;
+	    # print STDOUT "========= $k =========\n" ;
+	    if( $k == 1 ) { $g = 1 ; } else { $g = 0 ; } 
+	} elsif( /^\s*\[else\]/ ) {
+	    if( $g == 1 ) { $g = 0 ; } else { $g = 1 ; } 
+	} elsif( /^\s*\[then\]/ ) {
+	    $g = 1 ;
+	} elsif( /^$/ ) {
+	} elsif( /^\s*$/ ) {
+	} elsif( /^default=/ ) {
+	} else {
+	    print STDOUT "$_\n" if( $g == 1 ) ;
+	}
+    }
+close( LOADIN ) ;
+}

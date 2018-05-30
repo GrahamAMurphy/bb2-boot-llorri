@@ -1,0 +1,114 @@
+head	0.1;
+access;
+symbols;
+locks
+	murphy:0.1.0.139; strict;
+comment	@# @;
+
+
+0.1
+date	2018.02.20.16.37.38;	author murphy;	state Exp;
+branches
+	0.1.0.29;
+next	;
+
+0.1.0.29
+date	2018.02.20.16.37.38;	author murphy;	state Exp;
+branches;
+next	0.1.0.123;
+
+0.1.0.123
+date	2018.04.13.02.04.43;	author murphy;	state Exp;
+branches;
+next	0.1.0.139;
+
+0.1.0.139
+date	2018.04.13.20.05.41;	author murphy;	state Exp;
+branches;
+next	;
+
+
+desc
+@2018-02-20 11:25:33 gam-1
+@
+
+
+0.1
+log
+@0.1
+@
+text
+@\ (c) 2015 Johns Hopkins University / Applied Physics Laboratory
+\ Host I/O - Telemetry - Packets split at frame level
+hex
+
+host extendmodule>
+
+\ The following functions require exclusive access to telemetry data.
+
+: split-pkt	\ ( src memid len -- ) Copy data from source into frame(s).
+		\ Precondition: sufficient frames preallocated.
+   begin
+      >r 2dup frame-free @@		\ load data into frame, smaller
+	 r@@ umin dup >r load-pkt	\ of size available or size remaining
+      swap r@@ + swap r> r> swap -	\ update remaining data pointer, size
+   dup while				\ if there is data remaining
+      1 reserve-space			\ flush frame
+   repeat drop 2drop ;
+
+: send-split-pkt \ ( pkt len -- ) Send packet with given (padded) payload
+		\ length.  Split over transfer frames if necessary.
+		\ Precondition: sufficient frames available.
+   1 reserve-space			\ flush frame if full
+   first-pkt				\ first packet in frame?
+   swap dup >r .pkt-time 2@@		\ build packet header
+      r@@ .pkt-id @@ start-ccsds		\ load header and packet payload
+   end-ccsds get-code ccsds-head-struct split-pkt
+   r@@ .pkt-src 2@@ r@@ .pkt-len @@ split-pkt
+   r@@ .pkt-src2 2@@ r@@ .pkt-len2 @@ split-pkt
+   zeros get-code r> .pkt-padlen @@ split-pkt ;
+
+public:
+: send-pkt	\ ( pkt -- t/f ) Copy data described by given packet
+		\ descriptor into telemetry subsystem.  This call
+		\ never blocks.  If the call cannot be completed, e.g.
+		\ because of insufficient memory, a false flag is returned.
+   get-tlm				\ get exclusive access
+   dup pad-pkt				\ pad packet; compute maximum number
+      dup ccsds-head-struct +		\   of frames needed
+      #max-out-frame u/^
+   reserve-frames if			\ if there are enough available
+      send-split-pkt			\ send packet
+      true				\ return success flag
+   else					\ if no frames
+      drop drop false			\ return failure flag
+   then
+   release-tlm ;
+private:
+
+endmodule>
+@
+
+
+0.1.0.29
+log
+@0.1.0.29
+@
+text
+@@
+
+
+0.1.0.123
+log
+@0.1.0.123
+@
+text
+@@
+
+
+0.1.0.139
+log
+@0.1.0.139
+@
+text
+@@

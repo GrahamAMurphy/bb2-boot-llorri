@@ -1,0 +1,158 @@
+
+
+
+
+
+
+
+
+
+Empty
+" load-defs.fr" used
+Empty
+" struct.fr" used
+
+" modules2.mfr" used	
+
+" rtxprims.fr" used
+" timers2.fr" used
+" timers.mfr" used
+" far2.fr" used
+" farqueue.fr" used
+" fardump.fr" used
+" extend.fr" used
+" extend.mfr" used
+" outbits2.fr" used
+" outbits2.mfr" used
+" hw.fr" used
+" hw-hybrid.fr" used
+" hw-app-wispr.fr" used
+" hw-app-wispr-gam.fr" used
+" config.fr" used
+" config-wispr.fr" used
+" config-wispr-gam.fr" used
+" config-app-wispr.fr" used
+" farallot3.fr" used
+" farallot3.mfr" used
+" stat-db-gam.fr" used
+" slotsched1.fr" used
+" time.fr" used
+" host-io-hybrid.fr" used
+" host-tlm.fr" used
+" host-tlm-split.fr" used
+" crit-hsk.fr" used
+" scstatus.fr" used
+" spi-user1.fr" used
+" adc1.fr" used
+" memory1.fr" used
+" farcopy.fr" used
+" cmd-dict1.fr" used
+" cmd-text1.fr" used
+" dump1.fr" used
+" alarm1.fr" used
+" sumcrc.fr" used
+" mem-cmd2.fr" used
+" mem-cmd-extend.fr" used
+" defmacro1.mfr" used
+" macro1.fr" used
+" macro-arch1.fr" used
+" macro-arch-extend.fr" used
+" macro-dump1.fr" used
+[ifdef] __COMMON_MONITOR__
+" monitor1.fr" used
+[then]
+" cmd-echo1.fr" used
+" cmd-proc1.fr" used
+" stat-proc1.fr" used
+" safing1.fr" used
+" safing-extend.fr" used
+" host-cmd.fr" used
+" host-cmd-hybrid.fr" used
+" telecmd1.fr" used
+" telemetry1.fr" used
+" extend-app.fr" used
+" analogs.fr" used
+" crit-hsk-hybrid.fr" used
+Empty
+" gam.fr" used
+Empty
+" gam-init.fr" used
+Empty
+" wispr-pages.fr" used
+" wispr-mode.fr" used
+" wispr-profile.fr" used
+" wispr-ticker.fr" used
+" wispr-adc.fr" used
+Empty
+
+" wispr-camera-defs.fr" used
+" wispr-camera-uart.fr" used
+" wispr-camera-aux.fr" used
+" wispr-camera-com.fr" used
+" wispr-camera-cmd.fr" used
+" wispr-camera-power.fr" used
+" wispr-camera-ucode.fr" used
+" wispr-camera-status.fr" used
+Empty
+
+" wispr-monitor-defs.fr" used
+[ifdef] __MONITOR_DEBUG__
+" wispr-monitor-debug.fr" used
+[then]
+" wispr-monitor.fr" used
+" wispr-monitor-ram.fr" used
+" wispr-monitor-state.fr" used
+Empty
+Empty
+
+" wispr-tc-defs.fr" used
+[ifdef] __TC_DEBUG__
+" wispr-tc-debug.fr" used
+[then]
+" wispr-tc-pid.fr" used
+" wispr-tc.fr" used
+" wispr-tc-ram.fr" used
+" wispr-tc-mode.fr" used
+Empty
+[ifdef] __SPECIAL_DEBUG__
+Empty
+" gam-hack.fr" used
+Empty
+[then]
+Empty
+[ifdef] __SPACEWIRE_HARDWARE__
+Empty
+Empty
+" host-images.fr" used
+" images.fr" used
+" images-bg.fr" used
+Empty
+" imgproc-bits.fr" used
+" imgproc-bits.mfr" used
+" wispr-sequencer-defs.fr" used
+Empty
+
+Empty
+
+
+Empty
+Empty
+
+Empty
+[then]
+Empty
+
+
+Empty
+" macro-dflt.fr" used
+Empty
+[ifdef] __COMMON_MONITOR__
+" monitor-dflt.fr" used
+[then]
+Empty
+Empty
+" .version.fr" used
+" main.fr" used
+Empty
+Empty
+" login1.fr" used

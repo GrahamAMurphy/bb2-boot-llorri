@@ -1,0 +1,108 @@
+head	0.1;
+access;
+symbols;
+locks
+	murphy:0.1.0.139; strict;
+comment	@# @;
+
+
+0.1
+date	2018.02.20.16.37.38;	author murphy;	state Exp;
+branches
+	0.1.0.29;
+next	;
+
+0.1.0.29
+date	2018.02.20.16.37.38;	author murphy;	state Exp;
+branches;
+next	0.1.0.123;
+
+0.1.0.123
+date	2018.04.13.02.04.43;	author murphy;	state Exp;
+branches;
+next	0.1.0.139;
+
+0.1.0.139
+date	2018.04.13.20.05.41;	author murphy;	state Exp;
+branches;
+next	;
+
+
+desc
+@2018-02-20 11:25:33 gam-1
+@
+
+
+0.1
+log
+@0.1
+@
+text
+@\ (c) 2013 Johns Hopkins University / Applied Physics Laboratory
+\ Stubs for missing system components
+hex
+
+\ ------------------------------------------------------------------------
+\ Macros
+
+: append-cmd	\ ( addr len -- t/f ) Append given command to macro currently
+		\ being compiled.  Return true if successful
+   2drop false ;
+
+: macro-ready?	\ ( -- t/f ) Return true if there is a runnable macro.  
+   false ;
+
+: macro-load	\ ( addr -- len ) Load next command from currently executing
+		\ macro into given address.  Return length of macro loaded.
+		\ Precondition: there is a macro command ready.
+   drop 0 ;
+
+: macro-echo?	\ ( -- t/f ) Return true iff commands of current macro 
+		\ should be echoed.
+   false ;
+
+: run-macro	\ ( id -- ) Start up identified macro in its own thread.
+   drop ;
+
+: try-mac-dump	\ ( -- ) Try to generate a macro dump packet.
+   ;
+
+\ ------------------------------------------------------------------------
+\ Autonomy
+
+: all-is-well	\ ( -- ) All is well; host is up.
+   ;
+
+\ ------------------------------------------------------------------------
+\ Slot management
+
+: exec-slot	\ ( -- ) Execute next slot function.
+   ;
+
+: init-slots	\ ( -- ) Initialize slot schedule.
+   ;
+@
+
+
+0.1.0.29
+log
+@0.1.0.29
+@
+text
+@@
+
+
+0.1.0.123
+log
+@0.1.0.123
+@
+text
+@@
+
+
+0.1.0.139
+log
+@0.1.0.139
+@
+text
+@@

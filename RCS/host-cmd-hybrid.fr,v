@@ -1,0 +1,202 @@
+head	0.1;
+access;
+symbols;
+locks
+	murphy:0.1.0.29; strict;
+comment	@# @;
+
+
+0.1
+date	2018.02.20.16.37.38;	author murphy;	state Exp;
+branches
+	0.1.0.29;
+next	;
+
+0.1.0.29
+date	2018.02.20.16.37.38;	author murphy;	state Exp;
+branches;
+next	;
+
+
+desc
+@2018-02-20 11:25:33 gam-1
+@
+
+
+0.1
+log
+@0.1
+@
+text
+@\ (c) 2013 Johns Hopkins University / Applied Physics Laboratory
+\ Host I/O - Xilinx/WISPR hybrid-specific command handling
+\ Subset to meet needs of xilinx. Is, in face, the EPI-Lo code.
+hex
+
+host extendmodule>
+
+: get-msg-byte	\ ( -- byte ) Return next byte from message input interface.
+		\ Since the gaps between the bytes can be arbitrarily long,
+		\ try to run macro commands in the gaps.
+   begin
+      cmd-wait				\ wait for command event, byte, etc.
+      rcv-empty? while			\ if there are no bytes queued
+      macro-ready? if			\ see if a macro is ready to run
+	 do-macro-cmd			\ if so, run one command
+      then
+   repeat
+   rcv-byte ;				\ return queued byte
+
+
+h# 45 constant #sync1-ip-msg
+h# 00 constant #sync2-ip-msg
+
+[ifdef] __SPP__
+: get-sync-header \ ( -- ) Search for synchronization pattern indicating
+		\ start of message.
+   begin
+      begin
+	 begin
+	    begin
+	       get-msg-byte #sync1-msg =
+	    until
+	    get-msg-byte #sync2-msg =
+	 until
+	 get-msg-byte #sync3-msg =
+      until
+      get-msg-byte #sync4-msg =
+   until ;
+
+[else]
+
+: get-sync-header \ ( -- ) Search for synchronization pattern indicating
+		\ start of message.
+   begin
+      begin
+	 get-msg-byte #sync1-ip-msg =
+      until
+      get-msg-byte #sync2-ip-msg =
+   until ;
+
+[then]
+
+: get-msg-word	\ ( -- x ) Read in two bytes and join them into a word
+   get-msg-byte get-msg-byte swap join ; \ read MS byte followed by LS byte
+
+: read-message	\ ( vc/seq len -- ) Read in message.  Vc/seq and length are
+		\ saved and remaing bytes are read and saved.
+   swap msg-buffer .msg-vc/seq !	\ save virtual channel and sequence
+   dup >r msg-buffer .msg-len !		\ save length
+   msg-buffer .msg-len cell+		\ save remaining data after length
+   dup r> + swap do			\ for each remaining byte
+      get-msg-byte i c!			\ read in byte and save
+   loop ;
+
+[ifdef] __SPP__
+public:
+: handle-message \ ( -- ) Read in and process message from spacecraft.
+   get-sync-header			\ synchronize to message byte stream
+   get-msg-word				\ read vc & seq; ignore but in checksum
+   get-msg-word dup msg-len-ok? if	\ read message length; if length ok
+      read-message msg-sum-ok? if	\ read in message; if checksum good
+	 process-message		\ process message
+	 all-is-well			\ log that S/C is talking to us
+      else				\ if bad ITF
+	 #itf-sum rcv-alarm		\ issue alarm
+      then
+   else					\ if bad length
+      drop drop #itf-len rcv-alarm	\ issue alarm
+   then ;
+[else]
+
+public:
+
+variable dbg-msg 
+    0 dbg-msg !
+
+variable dbg-msg-sem
+    0 dbg-msg-sem !
+
+: handle-message \ ( -- ) Read in and process message from spacecraft.
+    get-sync-header			\ synchronize to message byte stream
+    #sync1-ip-msg msg-buf .MSG-head c!
+    #sync2-ip-msg msg-buf .MSG-head 1+ c!
+
+    ip-head-struct 2 do
+	get-msg-byte 
+	msg-buf .MSG-head i + c!
+    loop
+
+    dbg-msg @@ if
+	msg-buf dup u. 30 dump
+    then
+
+    msg-buf .MSG-head ip-head-checksum -zero <> if
+	0 1 sw-alarm
+	." EXIT 1 " cr
+	exit
+    then
+
+    msg-buf .MSG-head trans-size msg-len-ok? 0= if
+	0 2 sw-alarm
+	." EXIT 2 " cr
+	exit
+    then
+
+    msg-buf .MSG-head .h-ip .ip-len @@ 
+    ip-head-struct 
+    do
+	get-msg-byte msg-buf .MSG-head i + c!
+    loop
+
+    msg-buf .MSG-head ip-good? 0= if
+\	0 3 sw-alarm
+	." EXIT 3 " cr
+\ NOTE NOTE NOTE	exit
+    then
+
+    \ Verify ITF sync is good.
+    msg-buf .MSG-data .msg-itf-asm 2@@ 
+    itf-rx-frame-sync 2@@ 
+    d<> if
+	0 4 sw-alarm
+	." EXIT 4 " cr
+	exit
+    then
+
+    \ msg-buffer 20 dump
+    \ msg-buffer .msg-len @@ u. cr
+
+    msg-buffer .msg-len @@ msg-len-ok? 0= if
+	0 5 sw-alarm
+	." EXIT 5 " cr
+	exit
+    then
+
+    msg-sum-ok? 0= if
+	0 6 sw-alarm
+	." EXIT 6 " cr
+	\ dbg-msg-sem wait
+	exit
+    then
+
+    \ dbg-msg-sem wait
+
+    process-message
+    
+    
+    ;
+
+[then]
+private:
+
+endmodule>
+@
+
+
+0.1.0.29
+log
+@0.1.0.29
+@
+text
+@@

@@ -1,0 +1,120 @@
+\ Cross-compile boot ROM for 16-bit SCIP with common I/O
+" target.fr" used
+" scip/16bits/amba/common1" is-target
+
+\ Configure crosscompiler
+hex
+0000 set-ram				\ ram-based system
+def multitasking			\ include multitasker
+
+\ Load the kernel.
+" kernel1.fr" ftload			\ primitives and extend crosscompiler
+
+\ Load tty interface
+" brdparam.fr" ftload			\ useful addresses and defines
+" intprims.fr" ftload			\ interrupt support
+" intuser.mfr" ftload			\    and cross-compiler
+\ " polltty.fr" ftload			\ polled tty driver
+" devices/intttyws.fr" ftload		\ interrupt-driven tty driver
+" uart.fr" ftload			\    and configration
+
+\ Load rest of kernel and multitasker and interpreter if desired
+" kernel2.fr" ftload			\ interpreter?, multitasker?
+
+\ ------------------------------------------------------------------------
+\ Load application
+
+\ Steal useful I/O routines
+" forthio.fr"		ftload
+
+\ Libraries, etc.
+" modules2.mfr"		used
+" rtxprims.fr"		used		\ emulate some RTX primitives
+" timers2a.fr"		used
+" timers.mfr"		fload		\ local version: do: only
+" far2.fr"		used
+" farqueue2.fr"		used
+" extend-boot.fr"	fload		\ replace missing kernel functions
+" extend.fr"		used		\ needed by outbits, etc.
+" extend.mfr"		used
+" extend-mro.fr"	used
+" outbits2a.fr"		used
+" outbits2.mfr"		used
+
+\ Shared: common code config, h/w addresses, etc.
+" hw.fr"		used		\ SPP common
+" hw-hybrid.fr"		used		\ SPP common - EPI-Lo-specific
+" hw-boot.fr"		fload		\ SPP additions for boot
+" hw-boot-hybrid.fr"	fload		\ SPP additions - EPI-Lo-specific
+" config.fr"		used		\ SPP common
+" config-hybrid.fr"	used		\ SPP common - EPI-Lo-specific
+" config-boot.fr"	fload		\ additions for boot
+" farallot3.fr"		used
+" farallot3.mfr"	used
+" stat-db.fr"		fload		\ boot version
+" sumcrc.fr"		used
+
+\ Emulate missing/unused components
+" stubs.fr"		fload
+
+\ Host interface part 1 (part 2 loaded later)
+" time.fr"		used
+
+\ " host-io-hybrid.fr"	used
+\ " host-tlm.fr"		used
+\ " host-tlm-split.fr"	used
+
+" host-io.fr"           used
+\ " host-ip.fr"           used
+" host-tlm.fr"          used
+\ " host-tlm-split.fr"    used
+
+[ifdef] ___AUTO_BOOT___
+    " scstatus.fr"		used
+[then]
+
+\ Core functions
+" memory1.fr"		used
+" farcopy.fr"		used
+" cmd-dict1.fr"		used
+" dump1.fr"		used
+" alarm1.fr"		used
+" mem-cmd2.fr"		used
+" mem-cmd-extend.fr"	used		\ SPP extension
+" cmd-echo1.fr"		used
+" cmd-proc1.fr"		used
+" stat-proc1.fr"	used
+
+\ Host interface part 2
+\ Host interface, commanding, etc.
+" host-cmd.fr"		used
+\ " host-cmd-hybrid.fr"	used
+
+\ Orchestrator
+" telecmd1.fr"		used
+" telemetry1.fr"	used
+
+\ Alpha monitor (generic components)
+" boot.fr"		used
+" motor2.fr"		used
+" alpha2.fr"		used
+
+\ Uplink versions of boot and go commands
+" boot-cmd1.fr"		used
+
+\ Load main and startup
+[ifdef] ___AUTO_BOOT___
+	" autoboot.fr"		fload
+[then]
+" main.fr"		fload
+" startup.fr"		ftload
+ram-here dp !				\ unused memory for run-time allocation
+' go is-startup
+
+\ Load boot booter
+" bootboot2.fr"		used
+
+report
+" llorri-boot.bin" saveobj
+
+cr .( stack depth = ) depth . cr

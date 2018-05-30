@@ -1,0 +1,40 @@
+\ (c) 2010 Johns Hopkins University / Applied Physics Laboratory
+\ Useful extensions (cross-compiler extensions)
+hex
+
+forth : fill	\ ( addr len pat -- ) Fill memory array with given pattern.
+   [host] -rot 0 do 2dup c! 1+ loop 2drop ;
+
+forth : erase	\ ( addr len -- ) Fill given array of bytes will zero.
+   [host] 0 fill ;
+
+forth : |	\ ( addr x -- addr++ ) Array initialization.
+   [host] over !  cell+ ;
+
+forth : c|	\ ( addr c -- addr++ ) Array initialization.
+   [host] over c!  1+ ;
+
+forth : 2|	\ ( addr xms xls -- addr++ ) Array initialization.
+		\ Note: ls on top
+   [host] 2pick cell+ !  over !  2 cells + ;
+
+forth : reserved \ ( offset size -- offset' ) Extend struct.fr.  Allocate
+		\ reserved field in data structure of given size.
+   [host] + ;
+
+forth : u/	\ ( u1 u2 -- u1/u2 ) Unsigned single divide.
+   [host] 0 swap um/mod nip ;
+
+forth : u/^	 \ ( u1 u2 -- u1/u2 ) Unsigned single divide.  Non-integral
+		\ results are rounded up.
+   [host] 0 swap um/mod swap if 1+ then ;
+
+forth : split	\ ( x -- u1 u2 ) Split x into two bytes.  The ms byte is on top.
+   [host] dup ff and swap 8 rshift ;
+
+forth : pow2	\ ( n -- 2^n ) Return nth power of 2.
+   [host] 1 swap lshift ;
+
+forth : mask	 \ ( n -- mask ) Return a mask n bits long.
+   [host] 1 swap lshift 1- ;
+

@@ -1,0 +1,10 @@
+/bin/echo 
+/bin/sleep 1
+/bin/echo 
+/bin/echo -n l
+xship SREC/llorri-e.del
+touch SREC/llorri.done
+/bin/sleep 1
+/bin/echo -n b
+/bin/sleep 1
+/bin/echo go

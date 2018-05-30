@@ -1,0 +1,1477 @@
+     1 <!+> 1 0006 
+   303 <!> 167 0006 27 0004 109 0000 
+     7 <!>log> 7 0000 
+     6 <!field> 6 0000 
+     3 <!fifo> 3 0006 
+     3 <!head> 3 0006 
+     1 <!run> 1 0006 
+    12 <""> 12 0000 
+    88 <"> 88 0000 
+     2 <#1pps-maxerr> 2 0006 
+     6 <#1pps-nom> 2 0004 4 0006 
+     1 <#1pps-phase> 1 0006 
+     2 <#>> 2 0000 
+     1 <#alarm-pkt> 1 0006 
+     0 <#apid-instr> 0
+     0 <#apids> 0
+     0 <#auto-op-alm> 0
+     1 <#bad-eeprom-cmd> 1 0006 
+     1 <#bad-pkt-alm> 1 0006 
+     4 <#badarg-cmd> 4 0006 
+     2 <#boot-words> 2 0006 
+     1 <#checksum-pkt> 1 0006 
+     1 <#cip-bad> 1 0006 
+     1 <#cip-cmd> 1 0006 
+     1 <#cip-down> 1 0006 
+     2 <#cip-len-wrong> 2 0006 
+     2 <#cip-noop> 2 0006 
+     0 <#cip-proc> 0
+     1 <#cip-safe> 1 0006 
+     1 <#cip-sci> 1 0006 
+     1 <#cip-time> 1 0006 
+     1 <#cip-unknown> 1 0006 
+     1 <#cmd-null> 1 0006 
+     0 <#cmd-text> 0
+     1 <#cmd-wrap> 1 0006 
+     3 <#config/status> 1 0006 2 0004 
+     0 <#cont-pkt> 0
+     1 <#crc-poly> 1 0006 
+     1 <#crc-seed> 1 0006 
+     0 <#crit-hsk-pkt> 0
+     1 <#dump-pkt> 1 0006 
+     1 <#dump-words> 1 0006 
+     1 <#echo-pkt> 1 0006 
+     0 <#first-pkt> 0
+     2 <#first-seg> 2 0006 
+     2 <#frames> 1 0004 1 0006 
+     4 <#instr-code> 4 0006 
+     2 <#ints> 1 0006 1 0004 
+     2 <#ip/udp-bad> 2 0006 
+     5 <#ipsync> 5 0006 
+     0 <#itf-vc> 0
+     0 <#last-pkt> 0
+     1 <#last-seg> 1 0006 
+     0 <#limits-pkt> 0
+     0 <#limits-str> 0
+     0 <#mac-check-pkt> 0
+     0 <#mac-check> 0
+     0 <#mac-def> 0
+     0 <#mac-delay> 0
+     0 <#mac-dump-pkt> 0
+     0 <#mac-end> 0
+     0 <#mac-enddef> 0
+     0 <#mac-halt> 0
+     0 <#mac-loop-begin> 0
+     0 <#mac-loop-end> 0
+     0 <#mac-nest> 0
+     0 <#mac-pause> 0
+     0 <#mac-read> 0
+     0 <#mac-restore> 0
+     0 <#mac-run-silent> 0
+     0 <#mac-run> 0
+     0 <#mac-save> 0
+     0 <#macro-check-cmd> 0
+     1 <#macro-comp-cmd> 1 0006 
+     0 <#macro-kill-cmd> 0
+     0 <#macro-run-cmd> 0
+     4 <#max-args> 2 0006 2 0004 
+     1 <#max-echo-args> 1 0006 
+     0 <#max-frames> 0
+     2 <#max-in-frame> 1 0006 1 0004 
+     0 <#max-macro-addr> 0
+     1 <#max-out-frame> 1 0004 
+     1 <#mem-check> 1 0006 
+     1 <#mem-copy> 1 0006 
+     1 <#mem-load> 1 0006 
+     1 <#mem-nv-enb> 1 0006 
+     1 <#mem-read-abrt> 1 0006 
+     1 <#mem-read> 1 0006 
+     1 <#mem-run> 1 0006 
+     1 <#mem-str-load> 1 0006 
+     1 <#mem-str-read> 1 0006 
+     2 <#mem-write-cmd> 2 0006 
+     1 <#mem-write> 1 0006 
+     0 <#mon-cntrl> 0
+     1 <#more-config/status> 1 0004 
+     2 <#n-max-subpkt> 2 0006 
+     5 <#n-out-frame> 2 0006 3 0004 
+     0 <#need-macro-cmd> 0
+     0 <#no-contexts-alm> 0
+     0 <#none-pkt> 0
+     2 <#ok-cmd> 2 0006 
+     2 <#ok-macro-cmd> 2 0006 
+     2 <#order> 2 0000 
+     0 <#params-pkt> 0
+     0 <#params-str> 0
+     7 <#pcr-ie> 1 0006 6 0004 
+     2 <#pcr-se> 1 0006 1 0004 
+     2 <#rcv-buffer> 1 0006 1 0004 
+     1 <#rom-boot> 1 0006 
+     1 <#rom-go> 1 0006 
+     2 <#s> 2 0000 
+     0 <#saf-cycle> 0
+     0 <#saf-off> 0
+     0 <#saf-reset> 0
+     0 <#saf-timeout> 0
+     1 <#stat-clr> 1 0006 
+     1 <#stat-int> 1 0006 
+     1 <#stat-mem> 1 0006 
+     1 <#status-pkt> 1 0006 
+     3 <#struct> 2 0006 1 0004 
+     1 <#t-wids> 1 0000 
+     7 <#target-order> 7 0000 
+     0 <#text-pkt> 0
+     0 <#too-high-alm> 0
+     0 <#too-low-alm> 0
+     2 <#unknown-cmd> 2 0006 
+     4 <#vocs> 4 0000 
+     5 <''h/r> 5 0000 
+     3 <''r> 3 0000 
+     2 <'*code*> 2 0000 
+     3 <'*codehost*> 3 0000 
+    26 <',> 26 0000 
+    34 <'> 24 0004 10 0000 
+    23 <'@> 23 0000 
+     3 <'define> 3 0000 
+     2 <'get> 2 0004 
+    12 <'h> 12 0000 
+     5 <'r> 5 0000 
+     2 <'set> 2 0004 
+     1 <(+loop)> 1 0006 
+    22 <(> 14 0000 8 0005 
+     1 <(do)> 1 0006 
+     1 <(get)> 1 0004 
+     1 <(loop)> 1 0006 
+     2 <(next)> 1 0000 1 0006 
+     1 <(set)> 1 0004 
+     1 <(start)> 1 0000 
+     1 <(success)> 1 0000 
+     0 <*/> 0
+     1 <*/mod> 1 0006 
+    13 <*> 6 0000 7 0006 
+     6 <*branch-dest*> 6 0000 
+     2 <*branch-dest-help*> 2 0000 
+     2 <*branch-unpack*> 2 0000 
+     8 <*call*> 8 0000 
+    10 <*callop*> 10 0000 
+     3 <*instr*> 3 0004 
+    16 <*literal*> 16 0000 
+     1 <*objcode*> 1 0004 
+     1 <*objcodehost*> 1 0004 
+     4 <*offset*> 4 0000 
+    26 <+!> 10 0000 16 0006 
+     0 <+"> 0
+    36 <+#> 36 0000 
+     5 <+-> 5 0006 
+   138 <+> 60 0000 78 0006 
+     0 <+c> 0
+     8 <+loop> 3 0000 5 0005 
+     7 <+ones> 7 0006 
+    71 <,> 20 0000 51 0004 
+     1 <,word> 1 0000 
+    94 <-->> 94 0000 
+    55 <-> 20 0000 35 0006 
+     8 <-rot> 4 0006 4 0000 
+     2 <-zero> 2 0006 
+    14 <."> 14 0000 
+     3 <.#applic> 3 0000 
+     3 <.'stop-transints> 3 0006 
+     2 <.'uart!> 2 0006 
+     3 <.'uart-first!> 3 0006 
+     3 <.'uart@> 3 0006 
+     1 <.(> 1 0000 
+     2 <.> 2 0000 
+     1 <.alarm-flag> 1 0006 
+     1 <.alarm-id> 1 0006 
+     1 <.alarm-limit> 1 0006 
+     1 <.alarm-value> 1 0006 
+     2 <.buffer> 2 0006 
+    11 <.charsin> 11 0006 
+    11 <.charsout> 11 0006 
+     6 <.cip-len> 6 0006 
+     2 <.cip-marker> 2 0006 
+     1 <.cip-trans> 1 0006 
+     2 <.cip-type> 2 0006 
+    11 <.cmd-args> 11 0006 
+     5 <.cmd-nargs> 5 0006 
+     2 <.cmd-opcode> 2 0006 
+     9 <.counter> 9 0006 
+     1 <.dig> 1 0006 
+     2 <.dpr> 2 0004 
+     2 <.dump-len> 2 0006 
+     1 <.dump-src> 1 0006 
+     3 <.ext-cmd-args> 3 0006 
+     1 <.ext-cmd-macro> 1 0006 
+     2 <.ext-cmd-opcode> 2 0006 
+     1 <.ext-time-sub> 1 0006 
+     1 <.ext-time> 1 0006 
+     1 <.frm-data> 1 0006 
+     3 <.frm-head> 3 0006 
+    10 <.h-ip> 10 0006 
+     9 <.h-udp> 9 0006 
+     8 <.head> 8 0006 
+    16 <.infifo> 16 0006 
+     5 <.init> 5 0006 
+     4 <.inptr> 4 0006 
+     1 <.ip-dst> 1 0006 
+     5 <.ip-len> 5 0006 
+     1 <.ip-proto> 1 0006 
+     2 <.ip-src> 2 0006 
+     1 <.ip-sum> 1 0006 
+     0 <.lsp-init> 0
+     3 <.nargs> 3 0006 
+     8 <.next> 3 0004 5 0006 
+     3 <.opcode> 3 0006 
+    16 <.outfifo> 16 0006 
+     4 <.outptr> 4 0006 
+     3 <.patlength> 3 0000 
+     0 <.pd-run> 0
+     4 <.pkt-id> 4 0006 
+     5 <.pkt-len2> 5 0006 
+     5 <.pkt-len> 5 0006 
+     3 <.pkt-padlen> 3 0006 
+     3 <.pkt-src2> 3 0006 
+     3 <.pkt-src> 3 0006 
+     3 <.pkt-time> 3 0006 
+     0 <.prog-cksum> 0
+     2 <.prog-dst> 2 0006 
+     1 <.prog-exec> 1 0006 
+     3 <.prog-length> 3 0006 
+     4 <.prog-mem> 4 0006 
+     5 <.psp-bot> 2 0006 3 0004 
+     2 <.psp-init> 2 0006 
+     4 <.psp> 2 0004 2 0006 
+     8 <.pstate> 7 0006 1 0004 
+     1 <.rsp-init> 1 0006 
+     4 <.rsp> 2 0004 2 0006 
+     1 <.rulecode> 1 0000 
+     1 <.rulename> 1 0000 
+     0 <.safe-cip-hdr> 0
+     1 <.safe-code> 1 0006 
+     9 <.state> 9 0006 
+     2 <.str-id> 2 0006 
+     4 <.str-len> 4 0006 
+     3 <.str-src> 3 0006 
+     1 <.sub-cip-hdr> 1 0006 
+     4 <.sub-idp-id> 4 0006 
+     4 <.sub-idp-len> 4 0006 
+     1 <.sub-idp-time> 1 0006 
+     1 <.sum-checksum> 1 0006 
+     1 <.sum-len> 1 0006 
+     1 <.sum-src> 1 0006 
+     5 <.tail> 5 0006 
+     1 <.udp-dst> 1 0006 
+     4 <.udp-len> 4 0006 
+     1 <.udp-src> 1 0006 
+     2 <.udp-sum> 2 0006 
+     2 <.udr> 2 0004 
+     4 <.value> 1 0004 3 0006 
+     2 <.vector> 2 0006 
+     3 </> 3 0000 
+     2 </mod> 2 0006 
+     1 <0+c> 1 0006 
+    14 <0<> 6 0000 8 0006 
+    25 <0=> 12 0000 13 0006 
+    54 <1+> 13 0000 41 0006 
+    36 <1-> 20 0006 16 0000 
+     3 <1hz-sem> 3 0006 
+     2 <1pps-a-int#> 1 0006 1 0004 
+     2 <1pps-b-int#> 1 0004 1 0006 
+     3 <1pps-interval> 2 0006 1 0004 
+     2 <1pps-time> 2 0006 
+    18 <2!> 2 0000 16 0006 
+    27 <2*> 4 0006 23 0000 
+     4 <2+> 4 0000 
+     3 <2,> 3 0000 
+     7 <2-> 7 0000 
+     7 <2/> 1 0006 6 0000 
+    28 <2@> 18 0006 10 0000 
+    30 <2drop> 17 0000 13 0006 
+    36 <2dup> 22 0006 14 0000 
+     0 <2over> 0
+    12 <2pick> 7 0000 5 0006 
+     6 <2r>> 6 0000 
+     2 <2r@> 2 0000 
+     2 <2swap> 2 0006 
+     7 <2var> 7 0000 
+     5 <2variable> 5 0004 
+     0 <2|> 0
+     1 <3pick> 1 0006 
+     1 <4+> 1 0000 
+     0 <8<<> 0
+   768 <:> 381 0000 387 0004 
+     2 <:noname> 2 0000 
+   769 <;> 388 0005 381 0000 
+     2 <;boot> 2 0005 
+     1 <;do> 1 0005 
+     7 <;int> 7 0005 
+     2 <;process> 2 0005 
+    19 <<!> 19 0000 
+     2 <<#> 2 0000 
+     9 <<<#> 9 0000 
+    67 <<<> 32 0005 35 0000 
+     2 <<> 1 0006 1 0000 
+    17 <<>> 5 0000 12 0006 
+     9 <<?br> 9 0000 
+    27 <<@> 27 0000 
+   164 <<alu> 164 0000 
+    10 <<alux> 10 0000 
+     7 <<br> 7 0000 
+     1 <<call> 1 0000 
+     3 <<does-default>> 2 0000 1 0004 
+    76 <<exit>> 76 0004 
+    65 <<lil> 65 0000 
+    68 <<lis> 68 0000 
+     1 <<lo-lit>> 1 0000 
+     1 <<lo-off>> 1 0000 
+     3 <<mark> 3 0004 
+    97 <<reg!> 97 0000 
+   108 <<reg@> 108 0000 
+     2 <<remote-does-default>> 1 0004 1 0000 
+     7 <<resolve> 7 0004 
+     8 <<shift> 8 0000 
+    19 <<shifti> 19 0000 
+     1 <<small+lit>> 1 0000 
+     1 <<small+off>> 1 0000 
+     1 <<small-lit>> 1 0000 
+     1 <<small-off>> 1 0000 
+     4 <<spec> 4 0000 
+     3 <<step> 3 0000 
+    43 <<test> 43 0000 
+    26 <<testx> 26 0000 
+    65 <==>> 35 0000 30 0005 
+    53 <=> 22 0000 31 0006 
+     3 <=>> 3 0005 
+   146 <>,> 146 0000 
+   498 <>.> 498 0004 
+     3 <>> 1 0000 2 0006 
+    67 <>>> 35 0000 32 0005 
+     2 <>>mark> 2 0004 
+     3 <>>resolve> 3 0004 
+     9 <>body> 8 0000 1 0004 
+    14 <>in> 14 0000 
+     7 <>log> 7 0000 
+     5 <>mark> 5 0004 
+     3 <>mem> 3 0006 
+     1 <>name> 1 0004 
+   184 <>r> 62 0000 122 0006 
+     5 <>resolve> 5 0004 
+     1 <?> 1 0000 
+   201 <??> 201 0000 
+    30 <?all> 30 0000 
+    60 <?aluop> 60 0000 
+     4 <?branch> 4 0006 
+     4 <?code> 4 0000 
+    19 <?condop> 19 0000 
+     1 <?dest> 1 0000 
+    20 <?dup> 12 0006 8 0000 
+     3 <?error> 3 0000 
+    14 <?high> 14 0000 
+    40 <?lit> 40 0000 
+     8 <?mem> 8 0000 
+     0 <?op> 0
+    17 <?reg> 17 0000 
+     0 <?rest> 0
+     9 <?shiftop> 9 0000 
+     1 <?stack> 1 0000 
+    30 <?stackop> 30 0000 
+     2 <@+> 2 0006 
+   375 <@> 128 0000 31 0004 216 0006 
+     2 <@field> 2 0000 
+     3 <@fifo> 3 0006 
+     4 <@head> 4 0006 
+     6 <@run> 6 0006 
+    17 <ALUop> 17 0000 
+     0 <Cbar> 0
+     4 <Cry> 4 0000 
+     1 <EQ> 1 0000 
+     3 <EVERY-BOOT> 1 0006 2 0004 
+     5 <FIFOSIZE> 4 0006 1 0004 
+     0 <Fls> 0
+     0 <GE> 0
+     1 <GENDIVIDE> 1 0004 
+     1 <GENMULTIPLY> 1 0004 
+     2 <GT> 2 0000 
+     1 <HI> 1 0000 
+     0 <HS> 0
+     1 <INJECT_HACK> 1 0000 
+     1 <KILL> 1 0006 
+     0 <LE> 0
+     4 <LO> 4 0000 
+     0 <LS> 0
+     2 <LT> 2 0000 
+     4 <N> 4 0000 
+     4 <NE> 4 0000 
+     4 <NEXT-BOOT> 2 0006 2 0004 
+     0 <Nbar> 0
+     3 <OUTPUT> 3 0006 
+     1 <PROMPT> 1 0006 
+     4 <QUIET> 4 0006 
+     0 <REBOOT> 0
+     2 <THROTTLED> 2 0006 
+     1 <Tru> 1 0000 
+     2 <V> 2 0000 
+     0 <Vbar> 0
+     1 <XOFF> 1 0006 
+     1 <XON> 1 0006 
+     6 <Z> 6 0000 
+    12 <Zbar> 12 0000 
+    27 <[']> 20 0005 7 0004 
+    17 <[> 17 0005 
+     0 <[ascii]> 0
+    32 <[char]> 29 0005 3 0000 
+    11 <[else]> 11 0000 
+    34 <[forth]> 34 0000 
+   114 <[host]> 114 0000 
+     4 <[if]> 4 0000 
+    22 <[ifdef]> 20 0000 2 0005 
+     2 <[ifndef]> 1 0005 1 0000 
+    53 <[meta]> 53 0000 
+    33 <[target]> 33 0000 
+    11 <[then]> 2 0005 9 0000 
+  3999 <\> 2665 0000 1334 0005 
+     1 <\constant> 1 0004 
+     1 <\offset> 1 0004 
+    21 <]> 21 0004 
+     3 <^h> 3 0006 
+     1 <^u> 1 0006 
+     0 <___AUTO_BOOT___> 0
+     0 <___TRAIN_TIME___> 0
+     1 <abort"> 1 0000 
+     1 <abort-dump> 1 0006 
+     3 <abs> 1 0000 2 0006 
+     1 <accept> 1 0006 
+     1 <ack-cmd> 1 0006 
+     1 <ack-mac-cmd> 1 0006 
+     0 <acts-like> 0
+     9 <add-log-number> 9 0000 
+    28 <add-log-string> 28 0000 
+     2 <addrhashtable> 2 0000 
+     2 <addrhashtablesize> 2 0000 
+     4 <again> 4 0005 
+     3 <alarm-access> 1 0004 2 0006 
+     5 <alarm-buffer> 5 0006 
+     4 <alarm-count> 4 0006 
+     1 <alarm-id> 1 0006 
+     3 <alarm-pkt> 3 0006 
+     2 <alarm-struct> 1 0006 1 0004 
+     1 <alarm-type> 1 0006 
+     0 <alarm> 0
+     6 <align-stack> 6 0004 
+     2 <align> 1 0000 1 0004 
+     6 <aligned> 1 0006 3 0004 2 0000 
+     1 <all-is-well> 1 0006 
+     3 <allo-frame-q> 3 0006 
+     4 <alloc-count> 4 0006 
+     5 <alloc-space> 5 0006 
+     2 <allocate-user-space> 2 0000 
+    36 <allot> 13 0000 22 0004 1 0006 
+     5 <allval> 5 0000 
+    10 <also> 10 0000 
+     3 <alubop?> 3 0000 
+     1 <aluswaps> 1 0000 
+     1 <aluswapsend> 1 0000 
+    17 <aminusb> 17 0000 
+     3 <aminusbx> 3 0000 
+    68 <and> 31 0006 37 0000 
+     1 <app-vector> 1 0004 
+     1 <append-cmd> 1 0006 
+     1 <applyrules> 1 0000 
+    10 <arg0> 10 0006 
+     6 <arg1> 6 0006 
+     4 <arg2> 4 0006 
+     4 <arg3> 4 0006 
+     3 <arg4> 3 0006 
+     3 <arg5> 3 0006 
+     2 <arg6> 2 0006 
+     2 <arg7> 2 0006 
+     2 <args> 2 0006 
+     5 <asr> 5 0000 
+     7 <aus:> 3 0000 4 0004 
+     7 <back> 7 0000 
+    15 <banda> 15 0000 
+    10 <base> 10 0000 
+    43 <begin> 16 0000 27 0005 
+     5 <between> 5 0006 
+     1 <bin> 1 0000 
+     0 <bits> 0
+    18 <bl> 3 0006 15 0000 
+    20 <bminusa> 20 0000 
+     2 <bminusax> 2 0000 
+     1 <boot-mem#> 1 0006 
+     2 <boot-program> 2 0006 
+     0 <bootcmd> 0
+     3 <bootload> 3 0006 
+    11 <bora> 11 0000 
+    28 <bplusa> 28 0000 
+     5 <bplusax> 5 0000 
+     6 <branch> 6 0006 
+     1 <brdestval> 1 0000 
+     6 <bxora> 6 0000 
+     1 <bytes-in> 1 0006 
+     1 <bytes-out> 1 0006 
+    39 <c!> 5 0000 27 0006 7 0004 
+     1 <c+> 1 0006 
+    15 <c,> 15 0004 
+     1 <c-cmd-null> 1 0006 
+     1 <c-mem-check> 1 0006 
+     1 <c-mem-copy> 1 0006 
+     1 <c-mem-load> 1 0006 
+     1 <c-mem-nv-enb> 1 0006 
+     1 <c-mem-read-abrt> 1 0006 
+     1 <c-mem-read> 1 0006 
+     1 <c-mem-run> 1 0006 
+     1 <c-mem-str-load> 1 0006 
+     1 <c-mem-str-read> 1 0006 
+     1 <c-mem-write> 1 0006 
+     1 <c-rom-boot> 1 0006 
+     1 <c-rom-go> 1 0006 
+     1 <c-stat-clr> 1 0006 
+     1 <c-stat-int> 1 0006 
+     1 <c-stat-mem> 1 0006 
+     0 <c1+> 0
+    56 <c@> 38 0006 11 0000 7 0004 
+     1 <cacheenable> 1 0006 
+     1 <callable> 1 0000 
+     0 <canceldoer> 0
+     0 <canceltimer> 0
+     0 <catch-this> 0
+     1 <cause-msk#> 1 0006 
+     1 <cause> 1 0006 
+   100 <cell+> 29 0004 23 0000 48 0006 
+     5 <cell-> 3 0006 1 0004 1 0000 
+     8 <cell/> 7 0006 1 0004 
+    62 <cell:> 57 0004 5 0000 
+     4 <cell> 2 0000 2 0006 
+    13 <cells:> 1 0000 12 0004 
+    63 <cells> 16 0004 21 0006 26 0000 
+     0 <char+> 0
+     0 <char-mask> 0
+     9 <char:> 9 0004 
+     2 <char> 2 0000 
+     0 <chars/dump> 0
+     6 <chars:> 1 0000 5 0004 
+     6 <chars> 6 0000 
+     1 <check-cause> 1 0006 
+     1 <check-cmd> 1 0006 
+     2 <check-stack> 2 0006 
+     3 <checksum+> 3 0006 
+     4 <checksum-buffer> 4 0006 
+     2 <checksum-pkt-struct> 1 0004 1 0006 
+     3 <checksum-pkt> 3 0006 
+     1 <checksum> 1 0006 
+     1 <cip-good?> 1 0006 
+     8 <cip-head-struct> 3 0004 5 0006 
+     1 <clear-all-cnts> 1 0006 
+     2 <clear-tlm-volume> 2 0006 
+     0 <clearstats> 0
+     2 <close-file> 2 0000 
+     3 <close-mem> 3 0006 
+     0 <clr-Dpu-cfg> 0
+     3 <clr-io-cfg> 3 0006 
+     8 <cmd-error> 8 0006 
+     4 <cmd-signal> 4 0006 
+     1 <cmd-wait> 1 0006 
+     2 <cmdbuf-size> 1 0006 1 0004 
+     2 <cmdbuf> 2 0006 
+     3 <cmds-executed> 3 0006 
+     3 <cmds-rejected> 3 0006 
+     2 <cmove> 1 0006 1 0000 
+     1 <cmove>> 1 0000 
+     2 <cnt-tlm-volume> 2 0006 
+     1 <code-ram> 1 0006 
+   102 <code> 102 0004 
+     2 <comm-a#> 2 0006 
+     0 <comm-cfg-a#> 0
+     2 <comm-rx-int#> 1 0004 1 0006 
+     2 <comm-tx-int#> 1 0006 1 0004 
+    19 <command-buffer> 19 0006 
+     1 <command-process> 1 0006 
+     2 <command-result> 2 0006 
+     1 <command-struct> 1 0004 
+     2 <commands> 2 0004 
+     2 <common-len> 2 0000 
+     2 <common-path> 2 0000 
+     0 <common> 0
+     5 <compare> 5 0000 
+     4 <complete-cip-hdr> 4 0006 
+     1 <complete-ip> 1 0006 
+    21 <condop> 21 0000 
+    17 <config/status> 1 0006 16 0004 
+   224 <constant> 173 0004 51 0000 
+     1 <construct-header> 1 0000 
+     6 <context> 6 0000 
+     1 <control-a#> 1 0004 
+     1 <convert-hex> 1 0006 
+     1 <copy-cmd> 1 0006 
+     1 <copy-ok?> 1 0006 
+     1 <copy-out> 1 0006 
+     2 <copy> 2 0006 
+     1 <count-cmd> 1 0006 
+     1 <count-mac-cmd> 1 0006 
+    13 <count> 10 0000 3 0006 
+     2 <countdown> 2 0006 
+     2 <cpr> 2 0000 
+     6 <cproc> 3 0004 3 0006 
+    19 <cr> 3 0006 16 0000 
+     1 <crc> 1 0006 
+     3 <create's-does> 3 0004 
+     3 <create-target> 3 0000 
+    35 <create> 15 0004 20 0000 
+     0 <createhashtable> 0
+     1 <createnotarget> 1 0000 
+     8 <cross-error> 8 0000 
+     0 <crossalias> 0
+     2 <curr-frame> 2 0006 
+     0 <c|> 0
+    47 <d#> 44 0000 3 0005 
+     1 <d+-> 1 0006 
+     7 <d+> 7 0006 
+     0 <d<> 0
+     0 <d<>> 0
+     2 <dabs> 2 0006 
+     3 <data-structures> 3 0006 
+     2 <debug-timer-int> 1 0004 1 0006 
+    16 <decimal> 16 0000 
+     3 <def-list> 3 0000 
+     5 <default-header> 5 0006 
+     0 <default=heads> 0
+     1 <default=noheads> 1 0000 
+    10 <deffield> 10 0000 
+    14 <define> 14 0000 
+     4 <definitions> 4 0000 
+     8 <defprocess> 2 0004 6 0006 
+     2 <delta-time> 2 0006 
+     2 <deltadelete> 2 0006 
+     3 <deltainsert> 3 0006 
+     3 <depth> 2 0006 1 0000 
+     1 <destval> 1 0000 
+    18 <disable> 18 0006 
+     1 <div1> 1 0000 
+     1 <div2> 1 0000 
+     1 <dn> 1 0006 
+     2 <dnegate> 2 0006 
+     1 <do-macro-cmd> 1 0006 
+     1 <do:> 1 0004 
+    35 <do> 16 0005 19 0000 
+     9 <doeraccess> 8 0006 1 0004 
+     5 <doerlist> 1 0004 4 0006 
+     1 <does-default> 1 0006 
+     7 <does>> 7 0000 
+     0 <dog-enb-mask#> 0
+     1 <doit> 1 0006 
+     3 <down-frame-q> 3 0006 
+     1 <download> 1 0006 
+     3 <dp> 2 0006 1 0004 
+     7 <dpr> 7 0000 
+   146 <drop> 98 0006 48 0000 
+     1 <dst-ok?> 1 0006 
+     3 <dt-sem> 3 0006 
+     0 <du<> 0
+     3 <dump-hdr-struct> 2 0004 1 0006 
+     5 <dump-header> 1 0004 4 0006 
+     6 <dump-len> 6 0006 
+     1 <dump-ok?> 1 0006 
+     4 <dump-pkt> 4 0006 
+     7 <dump-sem> 1 0004 6 0006 
+     3 <dump-src> 3 0006 
+     0 <dump> 0
+     0 <dumper> 0
+   335 <dup> 130 0000 205 0006 
+     2 <echo-cmd> 2 0006 
+     3 <echo-pkt> 3 0006 
+     1 <eeprom-copy> 1 0006 
+     1 <eeprom-entry> 1 0006 
+     1 <eeprom-good?> 1 0006 
+     2 <eeprom-prog-addr> 2 0006 
+     2 <eeprom-prog-mem#> 2 0006 
+   100 <else> 62 0005 38 0000 
+    23 <emit> 22 0006 1 0000 
+     2 <emplace> 2 0000 
+    19 <enable> 19 0006 
+     1 <end-scope> 1 0004 
+    17 <endmodule>> 17 0004 
+     0 <endroot> 0
+    94 <endrule> 94 0000 
+    14 <endsel> 6 0000 8 0005 
+    24 <endstructure> 23 0004 1 0000 
+     2 <eol> 2 0006 
+     3 <erase> 2 0004 1 0006 
+     1 <evaluate> 1 0000 
+     2 <every-boot:> 2 0004 
+     3 <every> 3 0006 
+     2 <exec-cmd> 2 0006 
+     1 <exec-slot> 1 0006 
+    20 <execute> 4 0000 16 0006 
+     1 <executedoers> 1 0006 
+    22 <exit> 15 0000 7 0005 
+     1 <ext-cmd-struct> 1 0006 
+     1 <ext-time-struct> 1 0006 
+     6 <extendmodule>> 6 0004 
+     4 <extract-bit> 2 0006 2 0004 
+     4 <extract-field> 2 0006 2 0004 
+    39 <false> 24 0006 15 0000 
+     5 <far!> 5 0006 
+     2 <far-allot> 2 0004 
+     3 <far-execute> 3 0006 
+     4 <far-h> 2 0004 2 0006 
+     3 <far-here> 3 0004 
+     3 <far-mem-set> 1 0006 2 0004 
+     0 <far-report> 0
+     0 <far2!> 0
+     0 <far2@> 0
+    38 <far> 38 0006 
+    13 <far@> 13 0006 
+     2 <farc!> 2 0006 
+     5 <farc@> 5 0006 
+     2 <farmode> 2 0000 
+     1 <farq-append-i> 1 0006 
+     0 <farq-append> 0
+     3 <farq-empty> 3 0006 
+     1 <farq-get-i> 1 0006 
+     3 <farq-get> 3 0006 
+     0 <farq-peek> 0
+     1 <farq-put-i> 1 0006 
+     4 <farq-put> 4 0006 
+     3 <farq-struct> 3 0004 
+     2 <fifo> 2 0004 
+     6 <fill> 2 0000 3 0004 1 0006 
+     1 <find-msg-sync> 1 0006 
+     2 <find> 2 0000 
+     5 <first-address> 5 0006 
+     8 <fload> 8 0004 
+     2 <flush-frame> 2 0006 
+     2 <fm/mod> 2 0006 
+     4 <foldable?> 4 0000 
+     4 <for> 4 0005 
+     2 <forth-wordlist> 2 0000 
+   102 <forth> 102 0002 
+     0 <forward:> 0
+     3 <foverride-len> 3 0000 
+     2 <foverride> 2 0000 
+     3 <frac-volume> 3 0006 
+     4 <frame-buffer> 4 0006 
+    11 <frame-len> 10 0006 1 0004 
+     3 <frame-sem> 1 0004 2 0006 
+     3 <frame-struct> 2 0004 1 0006 
+     4 <free-frame-q> 4 0006 
+     1 <free-line-buffer> 1 0000 
+     1 <free-locals> 1 0004 
+     0 <frisc3> 0
+     3 <froot-len> 3 0000 
+     2 <froot> 2 0000 
+     2 <ft-dir-buffer> 2 0000 
+     1 <ft-dir> 1 0000 
+     1 <ft-override-dir> 1 0000 
+     2 <ftarget-len> 2 0000 
+     2 <ftarget> 2 0000 
+    37 <ftload> 17 0000 20 0004 
+     2 <future-time-sub> 2 0006 
+     2 <future-time> 2 0006 
+     3 <fwd> 3 0000 
+     1 <gather-dump> 1 0006 
+     2 <gen-alarm> 2 0006 
+     1 <gen-vec-table> 1 0004 
+     4 <get-16bits> 4 0006 
+     1 <get-8bits> 1 0006 
+    10 <get-code> 10 0006 
+     3 <get-command> 3 0006 
+     2 <get-current> 2 0000 
+     2 <get-env> 2 0000 
+     1 <get-line-buffer> 1 0000 
+     1 <get-mac-cmd> 1 0006 
+     7 <get-mask> 7 0006 
+    27 <get-mem> 27 0006 
+     2 <get-msg-byte> 2 0006 
+     2 <get-msg-bytes> 2 0006 
+     1 <get-order> 1 0000 
+     0 <get-s/c-time> 0
+     1 <get-time> 1 0006 
+     4 <get-tlm> 4 0006 
+    18 <get> 14 0006 4 0004 
+     1 <go> 1 0006 
+     1 <good-page?> 1 0006 
+     9 <h#> 5 0005 4 0000 
+     3 <h.> 3 0006 
+     1 <handle-cmd> 1 0006 
+     1 <handle-mac-cmd> 1 0006 
+     1 <handle-message> 1 0006 
+     1 <handle-rcv> 1 0006 
+     2 <handle-xmit> 2 0006 
+     3 <hash-access> 3 0006 
+     1 <hash-command-struct> 1 0006 
+     2 <hash-opcode> 2 0006 
+     2 <hash-table> 2 0006 
+     4 <head-stack> 4 0000 
+     6 <head-struct> 2 0004 4 0006 
+     3 <head> 3 0006 
+     5 <head?> 5 0000 
+     8 <header> 8 0004 
+     9 <heads> 9 0000 
+     0 <heap> 0
+     1 <here-allot> 1 0006 
+    34 <here> 20 0004 13 0000 1 0006 
+    72 <hex> 72 0000 
+     2 <hexdigit> 2 0006 
+     1 <hide> 1 0000 
+     1 <highlitval> 1 0000 
+     2 <host-current> 2 0000 
+    12 <host> 2 0004 10 0000 
+    13 <hostinterp> 13 0000 
+    31 <i> 19 0000 12 0006 
+     3 <iema-enb-mask#> 3 0006 
+     3 <iemb-enb-mask#> 3 0006 
+     2 <iemb-sel-mask#> 2 0006 
+   199 <if> 116 0005 83 0000 
+     1 <immediate-target> 1 0000 
+    16 <immediate> 16 0000 
+     3 <in-macro> 3 0006 
+     0 <in-macro?> 0
+     0 <in> 0
+     2 <inca> 2 0000 
+     1 <include-file> 1 0000 
+     1 <init-alarm> 1 0006 
+     1 <init-app> 1 0006 
+     1 <init-boot> 1 0006 
+     1 <init-cmd-table> 1 0006 
+     1 <init-command> 1 0006 
+     1 <init-common> 1 0006 
+     1 <init-cproc> 1 0006 
+     1 <init-default-ip> 1 0006 
+     1 <init-dump> 1 0006 
+     1 <init-echo-pkt> 1 0006 
+     1 <init-host-input> 1 0006 
+     1 <init-host-io> 1 0006 
+     2 <init-host-reg> 2 0006 
+     1 <init-host-tlm> 1 0006 
+     1 <init-host> 1 0006 
+     1 <init-identity> 1 0006 
+     1 <init-ip> 1 0006 
+     1 <init-mem-extend> 1 0006 
+     1 <init-memory> 1 0006 
+     1 <init-packet> 1 0006 
+     6 <init-pkt> 6 0006 
+     1 <init-side> 1 0006 
+     1 <init-slots> 1 0006 
+     1 <init-specific> 1 0006 
+     1 <init-status> 1 0006 
+     1 <initlocals> 1 0006 
+     3 <initprocess> 3 0006 
+     0 <inline-bit> 0
+     2 <inline-from-host> 2 0000 
+     2 <inline-from-target> 2 0000 
+    10 <inline-keepbody> 10 0000 
+    80 <inline> 80 0000 
+     4 <insert-bit> 2 0006 2 0004 
+     4 <insert-field> 2 0004 2 0006 
+     2 <insertprocess> 2 0006 
+     1 <inspect> 1 0006 
+     2 <instr-code> 2 0006 
+     1 <instr-control> 1 0004 
+     1 <instr-ids> 1 0006 
+     1 <instr?> 1 0000 
+     5 <int-a#> 1 0004 4 0006 
+     1 <int-nop> 1 0006 
+     0 <int-response> 0
+     1 <int-vector> 1 0004 
+     7 <int:> 7 0004 
+     0 <interactive> 0
+     1 <interboot> 1 0006 
+     1 <interpret> 1 0000 
+    14 <invert> 6 0006 8 0000 
+     5 <io!> 5 0006 
+     8 <io-mem#> 7 0006 1 0004 
+     2 <io@> 2 0006 
+     1 <ip-good?> 1 0006 
+     2 <ip-head-checksum> 2 0006 
+     4 <ip-head-struct> 1 0004 3 0006 
+     0 <is-common> 0
+     0 <is-logfile> 0
+     0 <is-override> 0
+     1 <is-shared> 1 0000 
+     1 <is-startup> 1 0004 
+     1 <is-target> 1 0000 
+    48 <isconstraint> 48 0000 
+     0 <j> 0
+    13 <join> 13 0006 
+     6 <key> 6 0006 
+     0 <key?> 0
+     0 <kill> 0
+     9 <l:> 9 0000 
+    17 <label> 17 0004 
+     4 <labels> 4 0000 
+     8 <latest-target-data> 8 0000 
+     1 <learn-macro> 1 0006 
+     1 <leave> 1 0000 
+     4 <lit-*-melds?> 4 0000 
+     4 <lit-op-folds?> 4 0000 
+     4 <lit-op-melds?> 4 0000 
+     7 <literal> 4 0005 3 0000 
+     4 <litval> 4 0000 
+     1 <load-args> 1 0006 
+     2 <load-mem> 2 0006 
+     4 <load-subpkt> 4 0006 
+     0 <locals> 0
+     4 <log-anon> 4 0000 
+     1 <log-dict-entry> 1 0000 
+     3 <log-fp> 3 0000 
+     1 <log-name-str> 1 0000 
+     1 <log-name> 1 0000 
+     3 <long-instr?> 3 0000 
+     1 <long?> 1 0000 
+     0 <longlit> 0
+     1 <longop> 1 0000 
+     2 <lookahead> 2 0000 
+     2 <lookup-cmd> 2 0006 
+    27 <loop> 16 0000 11 0005 
+    28 <lshift> 8 0006 20 0000 
+     5 <lsl> 5 0000 
+     4 <lsr> 4 0000 
+     3 <m*> 3 0006 
+     6 <m-addr> 6 0006 
+     5 <m-memid> 5 0006 
+     0 <m/mmod> 0
+     1 <macro-cmd> 1 0006 
+     3 <macro-cmds-exec> 3 0006 
+     3 <macro-cmds-rej> 3 0006 
+     1 <macro-echo?> 1 0006 
+     1 <macro-load> 1 0006 
+     1 <macro-ready?> 1 0006 
+     1 <make-head?> 1 0000 
+    17 <makestruct> 17 0004 
+     6 <makewildcard> 6 0000 
+     1 <mask-int> 1 0006 
+     4 <mask> 2 0004 2 0000 
+     1 <matchreset> 1 0000 
+     5 <matchtable> 5 0000 
+     3 <max> 1 0000 2 0006 
+     3 <md!> 3 0006 
+    30 <md> 30 0000 
+     2 <md@> 2 0006 
+     2 <mem-b!> 1 0006 1 0004 
+     2 <mem-b@> 1 0004 1 0006 
+     2 <mem-bit!> 1 0006 1 0004 
+     3 <mem-bit-access> 3 0004 
+     3 <mem-bit:> 3 0004 
+     2 <mem-bit@> 1 0006 1 0004 
+     3 <mem-byte-access> 3 0004 
+     9 <mem-byte:> 9 0004 
+     2 <mem-field!> 1 0004 1 0006 
+     3 <mem-field-access> 3 0004 
+     2 <mem-field:> 2 0004 
+     2 <mem-field@> 1 0004 1 0006 
+     1 <mem-peek> 1 0006 
+     1 <mem-pos> 1 0006 
+     2 <mem-w!> 1 0004 1 0006 
+     2 <mem-w@> 1 0004 1 0006 
+     3 <mem-word-access> 3 0004 
+     3 <mem-word:> 3 0004 
+     4 <mem-write-enb> 3 0006 1 0004 
+     4 <mem16> 4 0000 
+     6 <mem8> 6 0000 
+    20 <memcell> 20 0000 
+     1 <memory> 1 0004 
+     4 <memsize> 4 0000 
+     8 <meta-clue> 8 0004 
+     0 <meta-wid> 0
+     5 <meta> 5 0000 
+     1 <metacomp> 1 0000 
+     0 <metacompiler> 0
+     6 <metaextend> 6 0000 
+     1 <metainterp> 1 0000 
+     0 <metamap> 0
+     2 <metasearch> 2 0000 
+     7 <metastate> 7 0000 
+     3 <min> 3 0006 
+     0 <mod> 0
+    11 <module>> 11 0004 
+     2 <more-config/status> 2 0004 
+     2 <more-downlink?> 2 0006 
+     2 <more-status> 2 0004 
+     6 <move> 3 0006 3 0000 
+     5 <msg-buffer> 5 0006 
+     1 <mul> 1 0000 
+     0 <multitasking> 0
+     2 <n-args> 2 0006 
+     4 <name>> 4 0000 
+     0 <namesize> 0
+    15 <near> 15 0006 
+     1 <nearby?> 1 0000 
+     2 <nearmode> 2 0000 
+     8 <negate> 4 0000 4 0006 
+     3 <new-time> 3 0006 
+     0 <next-boot:> 0
+     3 <next-head> 3 0000 
+     3 <next-t-wid> 3 0000 
+     4 <next> 4 0005 
+     3 <nextfreeslot> 3 0000 
+     2 <nextprocess> 2 0006 
+     0 <nf-size> 0
+    30 <nip> 8 0000 22 0006 
+    20 <nohead> 20 0000 
+     9 <noheads> 9 0000 
+     0 <nometamap> 0
+     3 <noop-msg-struct> 3 0006 
+     3 <nop-boot> 1 0006 2 0004 
+   142 <nopa> 142 0000 
+   239 <nopb> 239 0000 
+     0 <nopp> 0
+     1 <nopx> 1 0000 
+    15 <not> 6 0000 9 0006 
+     8 <nota> 8 0000 
+     7 <notb> 7 0000 
+     1 <notcond?> 1 0000 
+     1 <nullprocess-init> 1 0006 
+     2 <nullprocess> 1 0004 1 0006 
+     1 <nullpstack> 1 0004 
+     1 <nullrstack> 1 0004 
+     3 <number> 3 0000 
+     1 <nv-enb> 1 0006 
+     3 <objectbuffer> 3 0000 
+     3 <offset:> 1 0004 2 0000 
+     2 <ones-sum> 2 0006 
+     4 <only> 4 0002 
+     1 <opcode> 1 0006 
+     2 <open-error> 2 0000 
+     4 <open-file> 4 0000 
+     2 <open-ft> 2 0000 
+     1 <open-include> 1 0000 
+     3 <open-mem> 3 0006 
+     1 <open-path> 1 0000 
+     1 <open-up> 1 0000 
+     6 <optimize> 6 0000 
+     2 <opval> 2 0000 
+    37 <or> 17 0006 20 0000 
+     0 <otherwise> 0
+     2 <output-file> 2 0000 
+   113 <over> 74 0006 39 0000 
+     1 <pad-subpkt> 1 0006 
+     3 <pad> 3 0000 
+     2 <parin-a#> 2 0006 
+     4 <parse-word> 4 0000 
+     1 <pc> 1 0000 
+    18 <pcr> 18 0000 
+     1 <pd-init> 1 0006 
+     4 <pd-run> 2 0004 2 0006 
+     3 <pend-frame> 3 0006 
+     5 <perform> 5 0000 
+     0 <persist-alarm> 0
+     6 <pkt-desc-size> 6 0004 
+     0 <pkt-group!> 0
+     1 <pkt-id!> 1 0006 
+     1 <pkt-src!> 1 0006 
+     2 <pkt-src-more!> 2 0006 
+     1 <pkt-struct> 1 0004 
+     2 <pocket-ptr> 2 0000 
+     5 <pocket> 5 0000 
+     2 <pop-stream> 2 0000 
+   201 <popp> 201 0000 
+    28 <popr> 28 0000 
+     2 <port-b!> 1 0004 1 0006 
+     2 <port-b@> 1 0004 1 0006 
+     2 <port-bit!> 1 0006 1 0004 
+     3 <port-bit-access> 3 0004 
+     1 <port-bit:> 1 0004 
+     2 <port-bit@> 1 0006 1 0004 
+     3 <port-byte-access> 3 0004 
+     0 <port-byte:> 0
+     2 <port-field!> 1 0006 1 0004 
+     3 <port-field-access> 3 0004 
+     0 <port-field:> 0
+     2 <port-field@> 1 0006 1 0004 
+     2 <port-w!> 1 0006 1 0004 
+     2 <port-w@> 1 0004 1 0006 
+     3 <port-word-access> 3 0004 
+     1 <port-word:> 1 0004 
+    31 <postpone> 31 0000 
+     2 <pow2> 2 0004 
+     0 <prec-bit> 0
+     3 <prep-cip-hdr> 3 0006 
+     5 <prepare-space> 5 0006 
+     0 <previous> 0
+    30 <private:> 30 0004 
+     1 <proc-dead-time> 1 0006 
+     1 <process-cip> 1 0006 
+     1 <process-cmd> 1 0006 
+     1 <process-command> 1 0006 
+     1 <process-message> 1 0006 
+     1 <process-time> 1 0006 
+     2 <process:> 2 0004 
+     2 <processwaiter> 2 0006 
+     4 <prog-head-struct> 4 0006 
+     1 <prop-time> 1 0006 
+     4 <psp> 4 0000 
+     2 <pspreset> 2 0006 
+     2 <pstack> 1 0004 1 0006 
+    31 <public:> 31 0004 
+     2 <push-stream> 2 0000 
+   161 <pushp> 161 0000 
+    40 <pushr> 40 0000 
+     0 <pwr-down-mask#> 0
+     2 <r/o> 2 0000 
+   190 <r>> 63 0000 127 0006 
+   142 <r@> 16 0000 126 0006 
+     1 <ram-,> 1 0000 
+     2 <ram-align> 2 0000 
+     5 <ram-allot> 5 0000 
+     0 <ram-c,> 0
+     2 <ram-create> 2 0004 
+     4 <ram-dp> 4 0000 
+     8 <ram-here> 8 0000 
+    22 <ram> 22 0004 
+     5 <ramobject> 5 0000 
+     5 <rbuffer> 5 0006 
+     3 <rchecksum> 3 0006 
+     6 <rcv-alarm> 6 0006 
+     2 <rcv-buffer-end> 2 0006 
+     4 <rcv-buffer> 4 0006 
+     1 <rcv-byte> 1 0006 
+     4 <rcv-count> 4 0006 
+     1 <rcv-empty?> 1 0006 
+     3 <rcv-scan-get> 3 0006 
+     3 <rcv-scan-put> 3 0006 
+     2 <rcv/cmd-event> 2 0006 
+    13 <rdrop> 2 0000 11 0006 
+     3 <read-byte> 3 0006 
+     3 <read-digit> 3 0006 
+     2 <read-hex16> 2 0006 
+     6 <read-hex32> 6 0006 
+     1 <read-hex8> 1 0006 
+     2 <read-line> 2 0000 
+     1 <read-record> 1 0006 
+     1 <read-rest-msg> 1 0006 
+     1 <real-time?> 1 0006 
+     3 <reboot> 3 0006 
+     1 <record-alarm> 1 0006 
+     0 <record-does> 0
+     0 <recurse> 0
+     1 <refresh-regs> 1 0006 
+     0 <refresh> 0
+     0 <region> 0
+    15 <register-cmd/args> 15 0006 
+     2 <register-cmd> 2 0006 
+     0 <register-struct> 0
+    13 <register> 13 0000 
+     4 <release-tlm> 4 0006 
+     1 <remote-create> 1 0004 
+     2 <remote-does-default> 2 0006 
+     0 <remote-t-create> 0
+     2 <removeprocess> 2 0006 
+    31 <repeat> 17 0005 14 0000 
+     1 <report> 1 0000 
+     0 <req-power-off> 0
+     2 <resched> 2 0006 
+     3 <reserve-frames> 3 0006 
+     4 <reserved> 4 0004 
+     2 <reset-stream> 2 0000 
+     2 <reset-vector> 1 0006 1 0004 
+     0 <resolves> 0
+     1 <restval> 1 0000 
+     1 <resume-subpkt> 1 0006 
+    44 <return> 35 0000 9 0006 
+     1 <return?> 1 0000 
+     1 <returnop> 1 0000 
+     1 <reveal> 1 0000 
+     2 <rol> 2 0000 
+     0 <rom-create> 0
+     6 <rom/ram-dp> 6 0004 
+    22 <rom> 22 0004 
+     0 <romboot> 0
+     4 <root> 4 0000 
+     1 <rootlast> 1 0000 
+     1 <roottag> 1 0000 
+     7 <rot> 4 0000 3 0006 
+    12 <rotate> 9 0000 3 0006 
+    10 <rshift> 3 0006 7 0000 
+     3 <rsp> 3 0000 
+     1 <rstack> 1 0004 
+     1 <rt-cmd> 1 0006 
+    18 <rtop> 18 0000 
+     0 <rtx> 0
+     0 <rule-struct> 0
+    94 <rule> 94 0000 
+     1 <ruleapplied?> 1 0000 
+     6 <rulelist> 6 0000 
+     1 <ruleok?> 1 0000 
+     0 <rulestats> 0
+     0 <run-macro> 0
+     0 <run> 0
+    37 <s"> 37 0000 
+     1 <s-recs> 1 0006 
+     5 <s/c-time-sub> 5 0006 
+     5 <s/c-time> 5 0006 
+     1 <s1> 1 0006 
+     1 <s2> 1 0006 
+     1 <s3> 1 0006 
+     1 <s>d> 1 0006 
+     3 <safe-msg-struct> 3 0006 
+     1 <safe> 1 0006 
+     1 <save-cmd> 1 0006 
+     3 <save-data> 3 0006 
+     1 <savematch> 1 0000 
+     1 <saveobj> 1 0000 
+     3 <scan> 3 0000 
+     2 <sccfg-a#> 2 0006 
+     0 <scip> 0
+     6 <scr> 6 0000 
+     1 <search-for-record> 1 0006 
+     5 <search-wordlist> 5 0000 
+     0 <seconds-d> 0
+     3 <seconds> 3 0006 
+     5 <seek-memaddr> 5 0006 
+     5 <seek-memid> 5 0006 
+     3 <segment-subpkt> 3 0006 
+     1 <segment?> 1 0006 
+    14 <sel> 8 0005 6 0000 
+     1 <select-ram> 1 0006 
+     1 <send-dump> 1 0006 
+     6 <send-pkt> 6 0006 
+     1 <send-seg-subpkt> 1 0006 
+     1 <send-status> 1 0006 
+     1 <send-telemetry> 1 0006 
+     1 <send-unseg-subpkt> 1 0006 
+     0 <set-Dpu-cfg> 0
+     1 <set-cmd-length> 1 0006 
+     2 <set-code> 2 0006 
+     6 <set-current> 1 0004 5 0000 
+     4 <set-i> 4 0006 
+     4 <set-io-cfg> 4 0006 
+     1 <set-io> 1 0006 
+    62 <set-mem> 62 0006 
+     1 <set-opcode> 1 0006 
+     5 <set-order> 1 0004 4 0000 
+     1 <set-ram> 1 0000 
+     0 <set-rom/ram> 0
+     1 <set-root> 1 0000 
+     1 <set-time> 1 0006 
+    31 <set> 5 0004 26 0006 
+     1 <shift-foldable?> 1 0000 
+     1 <shift-op-folds?> 1 0000 
+     2 <shift-op-melds?> 2 0000 
+     5 <shiftop> 5 0000 
+     2 <short?> 2 0000 
+     3 <side-a> 3 0006 
+     3 <side-b> 3 0006 
+     1 <side-select> 1 0006 
+    23 <signal> 23 0006 
+     1 <signaltimers> 1 0006 
+     4 <sinclude> 4 0004 
+     0 <sload> 0
+     0 <sm/rem> 0
+     0 <smudge-bit> 0
+     3 <source-id> 3 0000 
+     1 <source> 1 0000 
+    10 <space> 7 0000 3 0006 
+     6 <spaces> 6 0000 
+     2 <specop> 2 0000 
+     0 <split> 0
+     1 <spreset> 1 0006 
+     0 <ssr-offset#> 0
+     1 <stack-errors> 1 0006 
+     5 <stackop> 5 0000 
+     1 <start-downlink> 1 0006 
+     2 <start-dump> 2 0006 
+     1 <start-frame> 1 0006 
+     0 <start-mask#> 0
+     2 <start-subpkt> 2 0006 
+     1 <startdoer> 1 0006 
+     0 <startroot> 0
+     1 <starttimer> 1 0006 
+     2 <status-cnt> 2 0006 
+     3 <status-int> 1 0004 2 0006 
+     3 <status-pkt> 3 0006 
+     1 <status> 1 0004 
+     2 <stdout> 2 0000 
+     3 <step-mem> 3 0006 
+     3 <stepop> 3 0000 
+     2 <stop-subpkt> 2 0006 
+     1 <stop-transints> 1 0006 
+     8 <strcat> 8 0000 
+     6 <strsave> 6 0000 
+     4 <struct-load-struct> 1 0004 3 0006 
+     2 <struct-name> 2 0004 
+     9 <struct:> 1 0000 8 0004 
+     0 <struct[]:> 0
+     3 <structure-pkt> 3 0006 
+    24 <structure> 23 0004 1 0000 
+     8 <subpkt-head-struct> 7 0006 1 0004 
+     5 <subpkt-msg> 5 0006 
+     1 <suspend-subpkt> 1 0006 
+     1 <sw-alarm> 1 0006 
+     1 <sw-version> 1 0004 
+   170 <swap> 103 0006 67 0000 
+    24 <swapaluop?> 24 0000 
+    67 <swapp> 67 0000 
+     1 <sync-1hz> 1 0006 
+     1 <sync-dead-time> 1 0006 
+     1 <sync-good?> 1 0006 
+     2 <sync-time> 2 0006 
+    11 <t-!> 11 0000 
+    37 <t-,> 37 0000 
+     1 <t->body> 1 0000 
+     3 <t->name> 3 0000 
+     6 <t->r> 6 0000 
+    10 <t-@> 10 0000 
+     5 <t-align> 5 0000 
+     4 <t-aligned> 4 0000 
+     4 <t-allot> 4 0000 
+     5 <t-c!> 5 0000 
+     3 <t-c,> 3 0000 
+     4 <t-c@> 4 0000 
+     9 <t-cell+> 9 0000 
+     3 <t-cell-> 3 0000 
+     2 <t-cell/> 2 0000 
+     3 <t-cell<<> 3 0000 
+     9 <t-cell> 9 0000 
+     3 <t-cells> 3 0000 
+     6 <t-cfa> 6 0000 
+     2 <t-char-mask> 2 0000 
+     4 <t-chars/dump> 4 0000 
+     9 <t-create> 9 0004 
+     7 <t-dbits> 7 0000 
+     7 <t-does>> 7 0000 
+     3 <t-forth-wordlist> 3 0004 
+    38 <t-here> 38 0000 
+     0 <t-i!> 0
+     3 <t-i+> 3 0000 
+     2 <t-i,> 2 0000 
+     3 <t-i-> 3 0000 
+    10 <t-i@> 10 0000 
+     2 <t-inline-bit> 2 0000 
+     1 <t-inst> 1 0000 
+     1 <t-name>> 1 0000 
+     5 <t-namesize> 5 0000 
+     1 <t-nf-size> 1 0000 
+     2 <t-prec-bit> 2 0000 
+     1 <t-smudge-bit> 1 0000 
+     1 <t-stack-aligned> 1 0000 
+     2 <t-w!> 2 0000 
+     0 <t-w,> 0
+     0 <t-w@> 0
+     2 <t-wid->wid-map> 2 0000 
+     2 <t-wid->wid> 2 0000 
+     4 <t-wid-step> 4 0000 
+     6 <tag-pkt> 6 0006 
+     3 <tailtimer> 1 0006 2 0004 
+     6 <target-current> 6 0000 
+     3 <target-order> 3 0000 
+     4 <target-wid> 4 0000 
+     3 <target-widtag> 3 0000 
+     2 <target> 2 0000 
+     1 <targethash> 1 0000 
+     0 <telecmd> 0
+     1 <telemetry-frames> 1 0006 
+     2 <telemetry-process> 2 0006 
+     0 <telemetry> 0
+     0 <terminate> 0
+     2 <th-arg> 2 0006 
+   207 <then> 84 0000 123 0005 
+     0 <time-tag-pkt> 0
+     0 <time> 0
+     1 <timeout-event> 1 0006 
+     2 <timer-int#> 1 0006 1 0004 
+     9 <timeraccess> 1 0004 8 0006 
+     5 <timerlist> 4 0006 1 0004 
+    12 <tlm-mem#> 4 0004 8 0006 
+     3 <tlm-volume> 3 0006 
+     0 <to> 0
+     1 <to?> 1 0000 
+     2 <tolower> 2 0006 
+     7 <top-head-stack> 7 0000 
+     3 <total-mem#> 3 0004 
+     0 <touch> 0
+     1 <trans-alarm> 1 0006 
+     0 <trap-base> 0
+     1 <trim-args> 1 0006 
+    33 <true> 18 0000 15 0006 
+     1 <try-dump-pkt> 1 0006 
+     1 <try-mac-dump> 1 0006 
+     1 <try-partial-frame> 1 0006 
+     1 <tty-getc> 1 0006 
+     1 <tty-incount> 1 0006 
+     1 <tty-init> 1 0006 
+     1 <tty-putc> 1 0006 
+     1 <tty-rcvint> 1 0006 
+     0 <tty-rcvrawint> 0
+     0 <tty-size> 0
+     1 <tty-transint> 1 0006 
+     6 <tty> 6 0006 
+     2 <ttystruct> 2 0004 
+     6 <type> 6 0000 
+     3 <u.> 3 0000 
+     6 <u.lz> 6 0000 
+     1 <u/> 1 0004 
+     2 <u/^> 2 0006 
+     1 <u<=> 1 0006 
+    20 <u<> 9 0006 11 0000 
+     2 <u>=> 2 0006 
+    17 <u>> 6 0000 11 0006 
+     1 <uart!> 1 0006 
+     3 <uart-a#> 3 0006 
+     1 <uart-first!> 1 0006 
+     2 <uart-rx-int#> 1 0004 1 0006 
+     2 <uart-tx-int#> 1 0006 1 0004 
+     1 <uart@> 1 0006 
+     2 <udp-checksum> 2 0006 
+     3 <udp-head-struct> 1 0004 2 0006 
+    10 <udr> 10 0000 
+     4 <um*> 4 0006 
+     1 <um*m> 1 0006 
+     9 <um/mod> 7 0006 2 0000 
+     1 <umax> 1 0000 
+     6 <umin> 3 0000 3 0006 
+     0 <under?> 0
+     3 <unloop> 1 0000 2 0006 
+     2 <unmask-int> 2 0006 
+     1 <unnext> 1 0006 
+     8 <until> 6 0005 2 0000 
+     1 <unwrap-command> 1 0006 
+     1 <up> 1 0006 
+     1 <update-dump> 1 0006 
+     5 <update-next-head> 5 0000 
+     1 <use-side-a> 1 0006 
+     1 <use-side-b> 1 0006 
+    42 <used> 38 0004 4 0000 
+     4 <user-size> 4 0004 
+     4 <user-space> 4 0000 
+     0 <user:> 0
+    78 <variable> 37 0000 41 0004 
+     2 <vector-table> 2 0004 
+     3 <vocabulary> 3 0000 
+     0 <w!> 0
+     2 <w/o> 2 0000 
+     4 <w0> 4 0000 
+     0 <w@> 0
+    19 <wait> 19 0006 
+     1 <waiter> 1 0004 
+     0 <wake> 0
+     4 <warn> 4 0006 
+     2 <watch-addr> 2 0006 
+     1 <watch-byte1> 1 0006 
+     1 <watch-byte2> 1 0006 
+     2 <watch-mem> 2 0006 
+     1 <watch-memory> 1 0006 
+     0 <wd-a#> 0
+    40 <while> 24 0005 16 0000 
+     0 <wid-step> 0
+     2 <wid/t-wid> 2 0000 
+     7 <wildcard-extract> 7 0000 
+    44 <wildcard-match> 44 0000 
+     6 <wildcard-resize> 6 0000 
+     8 <wildcard> 8 0000 
+     3 <within> 1 0006 2 0000 
+    10 <word> 10 0000 
+     4 <wordlist> 4 0000 
+     0 <words-in> 0
+     2 <words-out> 2 0006 
+     1 <write-file> 1 0000 
+     0 <xd> 0
+     3 <xmit-left> 3 0006 
+     3 <xmit-scan> 3 0006 
+     7 <xor> 3 0000 4 0006 
+     0 <xu> 0
+     1 <xxx> 1 0006 
+     4 <zerocond?> 4 0000 
+     2 <zeros> 2 0006 
+     0 <|> 0
+    29 <||> 29 0005 

@@ -1,0 +1,209 @@
+head	0.1;
+access;
+symbols;
+locks
+	murphy:0.1.0.139; strict;
+comment	@# @;
+
+
+0.1
+date	2018.02.20.16.37.38;	author murphy;	state Exp;
+branches
+	0.1.0.29;
+next	;
+
+0.1.0.29
+date	2018.02.20.16.37.38;	author murphy;	state Exp;
+branches;
+next	0.1.0.120;
+
+0.1.0.120
+date	2018.04.13.02.00.02;	author murphy;	state Exp;
+branches;
+next	0.1.0.122;
+
+0.1.0.122
+date	2018.04.13.02.03.55;	author murphy;	state Exp;
+branches;
+next	0.1.0.123;
+
+0.1.0.123
+date	2018.04.13.02.04.19;	author murphy;	state Exp;
+branches;
+next	0.1.0.125;
+
+0.1.0.125
+date	2018.04.13.02.09.30;	author murphy;	state Exp;
+branches;
+next	0.1.0.132;
+
+0.1.0.132
+date	2018.04.13.02.47.35;	author murphy;	state Exp;
+branches;
+next	0.1.0.139;
+
+0.1.0.139
+date	2018.04.13.20.05.41;	author murphy;	state Exp;
+branches;
+next	;
+
+
+desc
+@2018-02-20 11:25:33 gam-1
+@
+
+
+0.1
+log
+@0.1
+@
+text
+@\ (c) 2013 Johns Hopkins University / Applied Physics Laboratory
+\ SPP common instrument (i.e. EPI-Lo & WISPR) hardware interfaces
+hex
+
+\ ------------------------------------------------------------------------
+\ Memory map
+
+\ RAM
+\ 01 constant macro-mem#		\ macro database
+02 constant tlm-mem#			\ telemetry frame buffer
+\ I/O
+\ 10 constant io-mem#			\ memory-mapped I/O
+\  0000 constant uart-a#		\ RW: UART
+   0002 constant wd-a#			\ R: ping watchdog
+\  0004 constant int-a#			\ R: interrupt vector W: mode/mask set
+\  0006 constant parin-a#		\ R: reset cause, jumpers, polled ints
+\ MRAM
+\ 40 constant eeprom-prog-mem#		\ default program
+\ 41 - 42				\   and backups
+\ Address space
+\ Note: RAM0 appears twice in the this space
+60 constant total-mem#			\ total memory (address space) size
+
+\ ------------------------------------------------------------------------
+\ Interrupts and interrupt mask register
+
+\ Interrupts
+\ d# 0 constant uart-rx-int#		\ UART receive
+\ d# 1 constant uart-tx-int#		\ UART transmit
+d# 4 constant timer-int#		\ timing interrupt
+
+\ Additional mask bits
+1 d# 12 lshift constant dog-enb-mask#	\ watchdog enable
+
+\ ------------------------------------------------------------------------
+\ Memory-mapped I/O access functions
+
+: io@@		\ ( addr -- x ) Fetch x from given address in io-mem#.
+   get-mem >r io-mem# set-mem far	\ remote memory-mapped I/O
+   @@					\ fetch
+   r> set-mem ;
+
+: io!		\ ( x addr -- ) Store x to given address in io-mem#.
+   get-mem >r io-mem# set-mem far	\ remote memory-mapped I/O
+   !					\ store
+   r> set-mem ;
+
+\ ------------------------------------------------------------------------
+\ DPU configuration register
+\ Note: these bits are in the same register as the interrupt mask.
+\ The following words are, in effect, aliases for unmask-int and mask-int.
+
+: set-dpu-cfg	\ ( mask -- ) Set given bits in DPU configuration register.
+   int-a# io! ;				\ set given bits
+
+: clr-dpu-cfg	\ ( mask -- ) Clear given bits in DPU configuration register.
+   int-a# 2 + io! ;			\ clear given bits
+
+\ ------------------------------------------------------------------------
+\ Time
+
+: seconds	\ ( seconds -- ticks ) Given a time in seconds, compute
+		\ corresponding number of 'ticks' of hardwareclock.
+   || ; inline
+
+: seconds-d	\ ( seconds -- ticks-ls ticks-ms ) Given a time in seconds,
+		\ compute corresponding number of 'ticks' of hardwareclock.
+   0 ;
+@
+
+
+0.1.0.29
+log
+@0.1.0.29
+@
+text
+@@
+
+
+0.1.0.120
+log
+@0.1.0.120
+@
+text
+@d53 1
+a53 1
+: set-Dpu-cfg	\ ( mask -- ) Set given bits in DPU configuration register.
+d56 1
+a56 1
+: clr-Dpu-cfg	\ ( mask -- ) Clear given bits in DPU configuration register.
+@
+
+
+0.1.0.122
+log
+@0.1.0.122
+@
+text
+@a47 12
+
+h# 0008 constant sccfg-a#
+
+: set-io-cfg   \ ( mask -- ) Set given bits in DPU configuration register.
+   sccfg-a# io! ;                         \ set given bits
+
+: clr-io-cfg   \ ( mask -- ) Clear given bits in DPU configuration register.
+   sccfg-a# 2 + io! ;                     \ clear given bits
+
+
+
+
+@
+
+
+0.1.0.123
+log
+@0.1.0.123
+@
+text
+@d59 1
+@
+
+
+0.1.0.125
+log
+@0.1.0.125
+@
+text
+@d30 4
+@
+
+
+0.1.0.132
+log
+@0.1.0.132
+@
+text
+@d45 1
+a45 1
+h# 000c constant sccfg-a#
+@
+
+
+0.1.0.139
+log
+@0.1.0.139
+@
+text
+@@

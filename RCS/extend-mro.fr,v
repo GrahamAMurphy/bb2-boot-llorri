@@ -1,0 +1,138 @@
+head	0.1;
+access;
+symbols;
+locks
+	murphy:0.1.0.149; strict;
+comment	@# @;
+
+
+0.1
+date	2018.02.20.16.37.38;	author murphy;	state Exp;
+branches
+	0.1.0.29;
+next	;
+
+0.1.0.29
+date	2018.02.20.16.37.38;	author murphy;	state Exp;
+branches;
+next	0.1.0.123;
+
+0.1.0.123
+date	2018.04.13.02.04.43;	author murphy;	state Exp;
+branches;
+next	0.1.0.139;
+
+0.1.0.139
+date	2018.04.13.20.05.41;	author murphy;	state Exp;
+branches;
+next	0.1.0.149;
+
+0.1.0.149
+date	2018.04.14.01.19.42;	author murphy;	state Exp;
+branches;
+next	;
+
+
+desc
+@2018-02-20 11:25:33 gam-1
+@
+
+
+0.1
+log
+@0.1
+@
+text
+@\ Taken from forth/chips/scip/16bits/test-dinc.fr
+
+
+code c+         \ ( x y -- x+y ) Add; capture carry out in flag.
+        <alux   bplusa Cry popp >.
+        <exit> inline
+
+code +c         \ ( x y -- x+y+C ) Add with flag, i.e. carry in.
+        <alu    bplusax popp >.
+        <exit> inline
+
+code c1+        \ ( x -- x+1 ) Add one; capture carry out in flag.
+        <alux   inca Cry >.
+        <exit> inline
+
+code 0+c        \ ( x -- x' ) Add in flag (carry).
+        <lis    0 +# bplusax >.
+        <exit> inline
+
+
+: 8<< 8 lshift || ; inline
+
+[ifdef] __GO_SILENT__
+
+
+\ ------------------------------------------------------------------------
+\ Checksum helpers
+
+: ++ones			( x y -> sum )
+>r 0 r> 0 d+ +
+;
+
+: +ones
+    c+ 0+c || ; inline
+
+: ones-sum	\ ( sum addr nbytes -- sum' ) Accumulate one's complement
+		\ checksum starting at the given address for the given number
+		\ of bytes.  If there are an odd number of bytes, an implicit
+		\ 'zero' byte is assumed.
+		\ Precondition: aligned address.
+   dup >r cell/ for dup >r @@ +ones r> cell+ next
+   r> 1 and if c@@ 8<< +ones else drop then ;
+
+
+\ Not sure quite what this is meant to do. Contained RTX-specific
+\ code. Needs work only if needed.
+: farc!-w	\ ( c addr -- ) Do byte write to memory using only word
+		\ operations.  Not-reentrant.
+		\ Note: sq! ... md@@ shifts left 8 bits effectively masking c.
+   c!
+   ;
+   \ far  swap  @@  ff and  8 lshift or swap ! ;
+
+[then]
+
+: d<>
+    dnegate d+ or ;
+
+@
+
+
+0.1.0.29
+log
+@0.1.0.29
+@
+text
+@@
+
+
+0.1.0.123
+log
+@0.1.0.123
+@
+text
+@@
+
+
+0.1.0.139
+log
+@0.1.0.139
+@
+text
+@@
+
+
+0.1.0.149
+log
+@0.1.0.149
+@
+text
+@d20 1
+d22 33
+@

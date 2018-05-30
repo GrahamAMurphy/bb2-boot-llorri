@@ -1,0 +1,42 @@
+\ (c) 2014 Johns Hopkins University / Applied Physics Laboratory
+\ Automatically boot from non-volatile memory.
+decimal
+
+module> autoboot
+
+\ Flag set after failed automatic boot.
+variable auto-boot-done
+
+: boot-programs	\ ( boot-addr boot-mem -- ) Attempt to boot a program
+		\ using the given boot header.  A series of boots are
+		\ attempted at successive mem (i.e. page) locations.
+   3 0 do				\ try a series of programs
+      2dup bootload if			\ attempt to load program; if success
+	 disable far-execute enable	\ execute it
+      then
+      1+				\ try next program location
+   loop 2drop ;
+
+
+: auto-boot	\ ( sc-status -- ) Automatically boot application.
+   auto-start?				\ if auto start 
+   auto-boot-done @ not and if		\   but haven't already tried
+      eeprom-prog-addr eeprom-prog-mem#	\ attempt to boot
+      boot-programs
+      0 #auto-op-alm sw-alarm		\ if failure, issue alarm
+      true auto-boot-done !		\ don't try again
+  then ;
+
+[then]
+
+
+public:
+do: init-auto-boot \ ( -- ) Intialize.
+[ifdef] ___AUTO_BOOT___
+    ['] auto-boot register-sc-status \ register S/C status call-back
+[then]
+;do	
+
+private:
+
+endmodule>

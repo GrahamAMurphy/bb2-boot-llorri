@@ -1,0 +1,174 @@
+head	0.1;
+access;
+symbols;
+locks
+	murphy:0.1.0.141; strict;
+comment	@# @;
+
+
+0.1
+date	2018.02.20.16.37.38;	author murphy;	state Exp;
+branches
+	0.1.0.29;
+next	;
+
+0.1.0.29
+date	2018.02.20.16.37.38;	author murphy;	state Exp;
+branches;
+next	0.1.0.123;
+
+0.1.0.123
+date	2018.04.13.02.04.43;	author murphy;	state Exp;
+branches;
+next	0.1.0.138;
+
+0.1.0.138
+date	2018.04.13.20.04.44;	author murphy;	state Exp;
+branches;
+next	0.1.0.139;
+
+0.1.0.139
+date	2018.04.13.20.05.10;	author murphy;	state Exp;
+branches;
+next	0.1.0.140;
+
+0.1.0.140
+date	2018.04.13.20.10.34;	author murphy;	state Exp;
+branches;
+next	0.1.0.141;
+
+0.1.0.141
+date	2018.04.13.20.17.37;	author murphy;	state Exp;
+branches;
+next	;
+
+
+desc
+@2018-02-20 11:25:33 gam-1
+@
+
+
+0.1
+log
+@0.1
+@
+text
+@\ (c) 2014 Johns Hopkins University / Applied Physics Laboratory
+\ Automatically boot from non-volatile memory.
+decimal
+
+module> autoboot
+
+\ Flag set after failed automatic boot.
+variable auto-boot-done
+
+: boot-programs	\ ( boot-addr boot-mem -- ) Attempt to boot a program
+		\ using the given boot header.  A series of boots are
+		\ attempted at successive mem (i.e. page) locations.
+   3 0 do				\ try a series of programs
+      2dup bootload if			\ attempt to load program; if success
+	 disable far-execute enable	\ execute it
+      then
+      1+				\ try next program location
+   loop 2drop ;
+
+: auto-boot	\ ( sc-status -- ) Automatically boot application.
+   auto-start?				\ if auto start 
+   auto-boot-done @@ not and if		\   but haven't already tried
+      eeprom-prog-addr eeprom-prog-mem#	\ attempt to boot
+      boot-programs
+      0 #auto-op-alm sw-alarm		\ if failure, issue alarm
+      true auto-boot-done !		\ don't try again
+  then ;
+
+public:
+do: init-auto-boot \ ( -- ) Intialize.
+[ifndef] ___AUTO_BOOT___
+    ['] auto-boot register-sc-status \ register S/C status call-back
+[then]
+;do	
+
+private:
+
+endmodule>
+@
+
+
+0.1.0.29
+log
+@0.1.0.29
+@
+text
+@@
+
+
+0.1.0.123
+log
+@0.1.0.123
+@
+text
+@@
+
+
+0.1.0.138
+log
+@0.1.0.138
+@
+text
+@d21 1
+a21 1
+   \ auto-start?				\ if auto start 
+@
+
+
+0.1.0.139
+log
+@0.1.0.139
+@
+text
+@d21 1
+a21 3
+[ifdef] ___AUTO_BOOT___
+   auto-start?				\ if auto start 
+[then]
+d31 1
+a31 1
+[ifdef] ___AUTO_BOOT___
+@
+
+
+0.1.0.140
+log
+@0.1.0.140
+@
+text
+@d20 1
+a21 2
+
+: auto-boot	\ ( sc-status -- ) Automatically boot application.
+d23 1
+a30 4
+[then]
+
+[ifdef] ___AUTO_BOOT___
+
+d33 1
+d35 1
+a37 1
+[then]
+@
+
+
+0.1.0.141
+log
+@0.1.0.141
+@
+text
+@d20 1
+d33 1
+a36 1
+[ifdef] ___AUTO_BOOT___
+a37 1
+[then]
+d40 1
+@

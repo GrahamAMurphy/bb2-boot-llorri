@@ -1,0 +1,592 @@
+\ (c) 2007 Johns Hopkins University / Applied Physics Laboratory
+\ Host I/O - Telemetry (and basic IP/UDP/CIP support)
+hex
+
+host extendmodule>
+
+\ ========================================================================
+\ IP support
+
+structure ip-head-struct		\ IP
+     2 chars reserved
+	cell: .ip-len			\ length of packet, including header
+     5 chars reserved
+	char: .ip-proto			\ protocol
+	cell: .ip-sum			\ header checksum
+     2 cells: .ip-src			\ source and
+     2 cells: .ip-dst			\   destination addresses
+endstructure
+
+structure udp-head-struct		\ UDP
+	cell: .udp-src			\ source and
+	cell: .udp-dst			\   destination ports
+	cell: .udp-len			\ length of UDP part of packet
+	cell: .udp-sum			\ checksum
+endstructure
+
+structure head-struct			\ combined header
+     ip-head-struct struct: .h-ip	\ IP
+    udp-head-struct struct: .h-udp	\ UDP
+endstructure
+
+\ Default header for outgoing packets.  Provides the constant parts of
+\ the packet.  Lengths, checksums, etc. are filled in later.
+create default-header
+   45 c, 00 c,				\ IP: version, ihl, service
+   0000 ,				\ length (filled in later)
+   0000 ,				\ id
+   2 d# 13 lshift ,			\ flags & fragment
+   d# 255 c, d# 17 c,			\ ttl & protocol
+   0000 ,				\ checksum (filled in later)
+   d# 192 c, d# 168 c, 1 c, 3 c,	\ source address (JEDIx)
+   d# 192 c, d# 168 c, 1 c, 1 c,	\ destination address (Juno)
+   d# 5002 ,				\ UDP: source port (JEDIx)
+   d# 5002 ,				\ destination port (Juno/JEDIx)
+   0000 ,				\ length (filled in later)
+   0000 ,				\ checksum (filled in later)
+
+\ ------------------------------------------------------------------------
+\ Ones complement helpers
+
+\ One's complement -0.  This is a good checksum result.
+0 invert constant -zero
+
+: +ones		\ ( x y -- sum ) Return one's complement sum of x and y.
+   c+ 0+c || ; inline
+
+: ones-sum	\ ( sum addr nbytes -- sum' ) Accumulate one's complement
+		\ checksum starting at the given address for the given number
+		\ of bytes.  If there are an odd number of bytes, an implicit
+		\ 'zero' byte is assumed.
+		\ Note: aligned address and nbytes even and < 32768.
+   cell/ for dup >r @ +ones r> cell+ next drop ;
+
+\ ------------------------------------------------------------------------
+\ Packet header access and construction
+
+: ip-head-checksum \ ( packet -- sum ) Compute checksum of IP header.
+		\ Assumes current checksum is zero.
+   0 swap ip-head-struct ones-sum ;
+
+: udp-checksum	\ ( packet -- sum ) Compute checksum of IP pseudo-header,
+		\ UDP header, and data.  Assumes current checksum is zero.
+   >r 0					\ checksum seed
+   r@ .h-ip .ip-src 2@ +ones +ones	\ pseudo header: IP src,
+   r@ .h-ip .ip-dst 2@ +ones +ones	\   destination,
+   r@ .h-ip .ip-proto c@ +ones		\   and 0|protocol,
+   r@ .h-udp .udp-len @ +ones		\   and UDP length
+   r@ .h-udp r> .h-udp .udp-len @	\ UDP: header and data
+      ones-sum 
+      ;
+
+: init-default-ip \ ( -- ) Fill in default IP/UDP header based on instrument
+		\ id.
+   default-header .h-ip .ip-src 3 +	\ adjust source IP address
+      dup >r c@ #instr-code + r> c!	\ adjust source and dest. UDP ports
+   #instr-code default-header .h-udp .udp-src +!
+   #instr-code default-header .h-udp .udp-dst +! ;
+
+\ ========================================================================
+\ CIP Support
+
+\ GRAHAM HAS BEEN HERE. Realigned numbers.
+
+structure cip-head-struct		\ CIP
+     4 chars: .cip-marker		\ protocol
+	cell: .cip-len			\ length CIP, including header
+	char: .cip-type			\ transaction type:
+		1 constant #cip-time	\   time (in)
+		2 constant #cip-cmd	\   command (in)
+		3 constant #cip-noop	\   noop (out)
+		4 constant #cip-down	\   downlink (engineering) data (out)
+		5 constant #cip-proc	\   process data (out)
+		6 constant #cip-sci	\   science data (out)
+		7 constant #cip-safe	\   safe request (out)
+	char: .cip-trans		\ transaction id (unused)
+endstructure
+
+: prep-cip-hdr	\ ( type hdr -- ) Prepare CIP header with given type.  Also
+		\ fills in constant values.
+   >r 4def eefa r@ .cip-marker 2!	\ fill in constants: marker constant,
+   0 r@ .cip-trans c!			\   transaction id (unused),
+   r> .cip-type c! ;			\   and type
+
+: complete-cip-hdr \ ( len hdr -- ) Complete CIP header with length.
+   .cip-len ! ;
+
+: cip-good?	\ ( hdr len -- t/f ) Return true iff give CIP data is good.
+   over .cip-len @ u>=			\ return true iff there is enough data
+   over .cip-len @ cip-head-struct u>= and \  and minimum size is met
+   over .cip-len @ h# 03 and 0= and	\   and size is multiple of 4
+   swap .cip-marker 2@ >r 4def = and	\   and constant marker is correct
+   r> eefa = and ;
+
+\ ========================================================================
+\ * Telemetry downlink
+
+#max-out-frame d# 2600 umin		\ total packet size
+   head-struct -			\  less frame header
+constant #n-out-frame			\ size of transfer frame data in bytes
+
+structure frame-struct			\ structure of queued frames
+	cell: .next			\ link for keeping on queues
+   head-struct
+      struct: .frm-head			\ IP/UDP headers
+   #n-out-frame
+       chars: .frm-data			\ payload
+endstructure
+
+\ Allocate telemetry frames
+\   discard first cell; guarantees that null pointer indicates end of a list:
+\   (however, receive buffer has already been allocated, so this is unnecessary)
+\ cell tlm-mem# far-allot drop
+\   compute number of frames:
+tlm-mem# far-here negate		\ take all available telemetry memory
+h# ffff and ( for 32-bit cross environment )
+frame-struct u/ constant #frames
+\   allocate frames:
+#frames frame-struct *
+   tlm-mem# far-allot constant telemetry-frames
+
+\ Frame queues
+farq-struct makestruct free-frame-q	\ free frames
+farq-struct makestruct down-frame-q	\ frames to downlink
+farq-struct makestruct allo-frame-q	\ preallocated frames
+variable alloc-count			\ number of frames in allo-frame-q
+
+\ Frame buffer for assembling packets.
+#n-out-frame makestruct frame-buffer
+variable frame-len			\ number of bytes used
+	0 frame-len !
+
+\ Telemetry frame access control semaphore
+variable frame-sem
+	1 frame-sem !			\ available
+
+\ ------------------------------------------------------------------------
+\ Helpers
+
+: init-ip	\ ( size packet -- ) Initialize IP, etc. headers.
+		\ A default header is copied into the packet, and the
+		\ given payload size is filled in.
+		\ Precondition: remote memory selected for packet access.
+   >r default-header			\ fill in default header, i.e. constants
+      r@ head-struct cell/ words-out
+   far					\ all accesses in remote memory
+   dup udp-head-struct +
+      r@ .h-udp .udp-len !		\ fill in IP and UDP length fields
+   ip-head-struct + udp-head-struct +
+      r> .h-ip .ip-len ! ;
+
+: complete-ip	\ ( packet -- ) Complete IP, etc. headers.  Compute checksums
+		\ and fill in.
+		\ Precondition: remote memory selected for packet access.
+   far					\ all accesses in remote memory
+   dup >r ip-head-checksum invert	\ compute IP header checksum
+      r@ .h-ip .ip-sum !
+   r@ udp-checksum invert		\ compute UDP checksum
+      dup 0= if invert then		\ +0 checksum is special case, use -0
+      r> .h-udp .udp-sum ! ;
+
+: get-tlm	\ ( -- ) Get access to telemetry data.
+   frame-sem wait ;
+
+: release-tlm	\ ( -- ) Release access to telemetry data.
+   frame-sem signal ;
+
+: reserve-frames \ ( u -- t/f ) Try to preallocate given number of frames
+		\ before calling flush-frame.  Return true on success.
+		\ Precondition: exclusive access.
+   get-mem swap tlm-mem# set-mem	\ frames queued in remote memory
+   alloc-count @ begin
+      2dup u> while			\ while not enough frames prealloc
+      free-frame-q farq-get ?dup while	\  and there are free frames
+      allo-frame-q farq-put		\ save preallocated frames
+      1+				\  and count it
+   repeat false else true then		\ false on failure, true on success
+   swap alloc-count ! nip		\ update count of preallocated frames
+   swap set-mem ;
+
+: flush-frame	\ ( -- ) Flush current buffer.
+		\ Note: this will send an empty frame if asked to.
+		\ Precondition: exclusive access, at least one buffer
+		\ preallocated, and buffered size is mult of 4
+   get-mem tlm-mem# set-mem		\ buffer is in remote memory
+   allo-frame-q farq-get ?dup if	\ get preallocated buffer (never fails)
+      -1 alloc-count +!
+      frame-len @ over .frm-head init-ip \ initialize IP/UDP headers
+      frame-buffer over .frm-data	\ copy out data
+	 frame-len @ cell/ words-out	\   (counts on even length)
+      down-frame-q farq-put		\ queue for downlink
+      0 frame-len !			\ empty buffer
+   then
+   set-mem ;
+
+: prepare-space	\ ( u -- ) Prepare frame buffer to receive u bytes.  If
+		\ there is insufficient space, the buffer is flushed.
+		\ Note: it is an error to specify >#n-out-frame bytes.
+		\ Precondition: exclusive access and at least one buffer
+		\ preallocated.
+   #n-out-frame frame-len @ - u> if	\ if too large for current buf
+      flush-frame			\ flush current buf
+   then ;
+
+: alloc-space	\ ( u -- buf ) Allocate u bytes in frame.  Return address
+		\ of allocated space.
+		\ Precondition: space available.
+   frame-len @ dup >r + frame-len !	\ get current offset, step
+   r> frame-buffer + ;			\ return address of allocated buffer
+
+\ ------------------------------------------------------------------------
+\ * Framing - back end
+
+\ Historically, set-up for the next transfer occurs in the "dead time" at the
+\ end of the second, e.g. on a 1553-bus system.  On Juno, there is no
+\ dead time, but we continue to use the term for the sake of design and
+\ code reuse.  Note that the implementation below allows transmission to
+\ continue into the "dead time", event though transfer is sufficiently quick
+\ that this should never happen.
+
+\ No-op data (no IDP content)
+cip-head-struct constant noop-msg-struct
+
+\ Current and pending transfer frames
+variable curr-frame
+variable pend-frame
+
+public:
+
+: more-downlink? \ ( -- t/f ) Take a transfer frame that has been queued
+		\ for downlink and get it ready to send.  Return true if
+		\ more bandwidth is available.
+   get-mem tlm-mem# set-mem		\ frame data is in remote memory
+   down-frame-q farq-get ?dup if	\ if there is a frame ready
+      dup .frm-head complete-ip		\ complete frame header init
+      pend-frame !			\ remember it
+      false				\ there is no more bandwidth available
+   else
+      true				\ there is still bandwidth available
+   then
+   swap set-mem ;
+
+: start-downlink \ ( -- ) Start transfer frame transmission.
+		\ Note: this is called at the start of each second
+   get-mem tlm-mem# set-mem		\ frame data is in remote memory
+   curr-frame @ ?dup if			\ if a frame was sent last time
+      free-frame-q farq-put		\ return it to free list
+   then
+   pend-frame @ dup curr-frame !	\ move pending frame to current
+      0 pend-frame !
+   ?dup if				\ if there is a frame ready
+      .frm-head tlm-mem#		\ start transmitting it
+      over .h-ip .ip-len far@ start-frame
+   then
+   set-mem ;
+
+: proc-dead-time \ ( -- ) Do dead-time processing.  Refresh registers, etc.
+   refresh-regs				\ refresh common registers
+   init-host-reg 			\ refresh host I/O registers
+   ;
+
+private:
+
+\ ------------------------------------------------------------------------
+\ * Framing - front end
+
+public:
+: try-partial-frame \ ( -- ) Try to send a partially filled frame.
+   get-tlm				\ get exclusive access to telemetry
+   1 reserve-frames if			\ reserve buffer (always succeeds)
+      frame-len @ 0= if			\ if nothing in buffer,
+	 noop-msg-struct prepare-space	\   generate no-op
+	 noop-msg-struct alloc-space
+	 #cip-noop over prep-cip-hdr
+	 noop-msg-struct swap complete-cip-hdr
+      then
+      flush-frame			\ flush buffer
+   then					\ there must be something buffered
+   release-tlm ;
+private:
+
+\ ------------------------------------------------------------------------
+\ Safe request
+
+\ Safe request CIP structure
+structure safe-msg-struct
+   cip-head-struct
+      struct: .safe-cip-hdr		\ CIP header
+     2 cells: .safe-code		\ reason code
+endstructure
+
+public:
+: req-power-off	\ ( -- ) Request power off via safing message to S/C.
+		\ Note: could be delayed by telemetry already queued.
+   get-tlm				\ get exclusive access to telemetry
+   1 reserve-frames if			\ reserve buffer
+      safe-msg-struct prepare-space	\ generate safe request
+      safe-msg-struct alloc-space
+      #cip-safe over prep-cip-hdr
+      0 0 2pick .safe-code 2!		\ reason code always 0
+      safe-msg-struct swap complete-cip-hdr
+   then
+   release-tlm ;
+private:
+
+\ ------------------------------------------------------------------------
+\ * Telemetry volume counter
+
+\ Telemetry volume in fractions of kbytes; remaining volume counter in kbytes
+\ is tlm-volume in status database.
+variable frac-volume
+
+public:
+: clear-tlm-volume \ ( -- ) Reset telemetry volume counter.
+   get-tlm
+   0 frac-volume !  0 tlm-volume set
+   release-tlm ;
+private:
+
+: cnt-tlm-volume \ ( u -- ) Add u bytes to telemetry volume counter.
+		\ Precondition: access to telemetry data
+   40 um*				\ scale to kbytes and accumulate
+   frac-volume @ tlm-volume get d+ tlm-volume set frac-volume ! ;
+
+\ ------------------------------------------------------------------------
+\ * Front end - engineering/science telemetry
+
+\ * The user can create a packet descriptor.  The descriptor is a
+\ * repository for data about a packet, but not the packet itself.  The
+\ * descriptor is filled in, then passed to the telemetry subsystem via
+\ * send-pkt.  Since the values in the descriptor persist, it is possible
+\ * to only set those packet parameters that are different before each call
+\ * to send-pkt.
+\ *
+\ * Note: there are calls for setting packet grouping flags.  These are
+\ * dummies for compatibillity.  Lower level code usurps the grouping flags
+\ * for use in packet segmentation.
+
+structure subpkt-head-struct		\ structure of subpacket header
+   cip-head-struct
+      struct: .sub-cip-hdr		\ packet's CIP header
+	cell: .sub-idp-id		\ segmentation, instr id, and type id
+		1 d# 14 lshift constant #last-seg
+		1 d# 13 lshift constant #first-seg
+	cell: .sub-idp-len		\ length of subpacket data (bytes)
+     2 cells: .sub-idp-time		\ time tag
+endstructure
+
+\ Instrument ids, preshifted
+rom
+create instr-ids
+   d# 9 8 lshift ,			\ JEDI-090
+   d# 18 8 lshift ,			\ JEDI-A180
+   d# 27 8 lshift ,			\ JEDI-270
+ram
+
+\ Maximum unsegmented subpacket payload that will fit in a frame.
+#n-out-frame subpkt-head-struct -
+   constant #n-max-subpkt
+
+\ Pointer into frame buffer of start of subpacket message
+variable subpkt-msg
+
+structure pkt-struct			\ structure of packet descriptor
+	cell: .pkt-id			\ identifier
+     2 cells: .pkt-src			\ first source
+	cell: .pkt-len			\   and length
+     2 cells: .pkt-src2			\ second source
+	cell: .pkt-len2			\   and length
+	cell: .pkt-padlen		\ zero padding length, 0 - 3 bytes
+     2 cells: .pkt-time			\ time tag
+endstructure
+
+\ Source of zero padding
+rom
+create zeros 0 c, 0 c, 0 c,
+ram
+
+public:
+
+pkt-struct
+constant pkt-desc-size \ ( -- size ) Return size of a packet desciptor.  Useful
+		\ for creating a packet descriptor via makestruct.
+
+: time-tag-pkt  \ ( time-ls time-ms pkt -- ) Tag packet with given time.
+   .pkt-time 2! ;
+
+\ * These are the functions for filling in the packet's parameters.
+: tag-pkt	\ ( pkt -- ) Tag packet with current time.
+   >r get-time r> .pkt-time 2! ;
+
+: pkt-id!	\ ( id pkt -- ) Set id of given packet.
+   .pkt-id ! ;
+
+: pkt-group!	\ ( grouping pkt -- ) Set grouping flags of this packet to
+		\ first, continuation, last, or only packet in a group.
+   2drop ;
+
+0 constant #first-pkt			\ * Grouping flags for use with
+0 constant #cont-pkt			\ * pkt-group!.  Packets in a group
+0 constant #last-pkt			\ * may be first, continuation, or
+0 constant #none-pkt			\ * last.  Most packets are not grouped.
+
+: pkt-src!	\ ( addr page length pkt -- ) Set source and length of data
+		\ for given packet.
+   dup >r .pkt-len !
+   r> .pkt-src 2! ;
+
+: pkt-src-more!	\ ( addr page length pkt -- ) Set source and length of more
+		\ data for given packet. 
+   dup >r .pkt-len2 !
+   r> .pkt-src2 2! ;
+
+: init-pkt	\ ( addr page length id pkt -- ) Initialize packet descriptor
+		\ with given values.  The grouping flag defaults to none
+		\ and the secondary data source is empty.
+   dup >r pkt-id!			\ record id
+   r@ pkt-src!				\ record first source
+   0 0 0 r> pkt-src-more! ;		\ default: no second source
+
+private:
+
+: pad-subpkt	\ ( pkt -- length ) Return size of subpacket data after padding.
+		\ As a side-effect, the pad length is recorded in the
+		\ packet descriptor.
+   dup >r .pkt-len @ r@ .pkt-len2 @ +	\ compute size of packet
+   dup 3 + fffc and swap over swap -	\ compute pad needed, 0-3 bytes
+   r> .pkt-padlen ! ;			\ save in descriptor; return padded len
+
+: start-subpkt	\ ( pkt -- ) Start a supacket.  Generate CIP and IDP headers.
+		\ Precondition: exclusive access and header space available.
+   subpkt-head-struct alloc-space	\ allocate space for header
+   dup >r subpkt-msg !			\ remember where message starts
+   dup .pkt-id @ d# 16 u< if #cip-down else #cip-sci then
+      r@ .sub-cip-hdr prep-cip-hdr	\ prep CIP header, eng. vs. science
+   #first-seg				\ assemble segment flags (first),
+      #instr-code cells instr-ids + @ or \   instr. id, and subpacket id
+      over .pkt-id @ or r@ .sub-idp-id !
+   dup .pkt-len @ over .pkt-len2 @ +	\ compute subpacket length (no pad)
+      r@ .sub-idp-len !			\ record length and time-tag
+   .pkt-time 2@ r> .sub-idp-time 2! ;
+
+: suspend-subpkt \ ( -- len ) Suspend subpacket.  Finish filling in CIP header.
+		\ Returns remaining length of subpacket.
+		\ Precondition: exclusive access and space padded.
+   frame-len @ frame-buffer +		\ compute size of message
+      subpkt-msg @ dup >r -
+   dup cip-head-struct - cnt-tlm-volume	\ count tlm. volume (IDP + data + pad)
+   r@ .sub-idp-len @			\ get expected length from header
+      over subpkt-head-struct -		\ compute actual length and
+      dup r@ .sub-idp-len !  -		\   update header; compute new exp. len.
+   swap r> complete-cip-hdr ;		\ finish CIP header
+
+: resume-subpkt	\ ( len -- ) Resume a subpacket.  Copy headers filling in
+		\ expected length.
+		\ Precondition: exclusive access and header space available.
+   subpkt-msg @				\ previous message
+   subpkt-head-struct alloc-space	\ allocate space for header
+   dup >r subpkt-head-struct move	\ copy previous header
+   r@ .sub-idp-len !			\   but use new expected length
+   r@ .sub-idp-id @ #first-seg invert	\   and turn off first seg. flag
+      and r@ .sub-idp-id !
+   r> subpkt-msg ! ;			\ remember where message starts
+
+: stop-subpkt	\ ( -- ) Stop subpacket.  Finish filling in CIP header.
+		\ Precondition: exclusive access and space padded.
+   frame-len @ frame-buffer +		\ compute size of message
+      subpkt-msg @ dup >r -
+   dup cip-head-struct - cnt-tlm-volume	\ count tlm. volume (IDP + data + pad)
+   #last-seg r@ .sub-idp-id +!		\ turn on last seg. flag
+   r> complete-cip-hdr ;		\ finish CIP header
+
+: load-subpkt	\ ( src memid len -- ) Load current frame with given data.
+		\ Precondition: exclusive access and enough space available
+   get-mem >r swap set-mem		\ source data in remote memory
+   dup alloc-space swap bytes-in	\ copy in data, a byte at a time
+   r> set-mem ;
+
+: segment-subpkt \ ( src memid len -- ) Load current frame with given data.
+		\ Data may be segmented, i.e. split across multiple subpackets.
+		\ Precondition: exclusive access and sufficient frames prealloc.
+   begin
+      >r 2dup #n-out-frame frame-len @ - \ load data into subpacket, smaller
+	 r@ umin dup >r load-subpkt	\ of size available or size remaining
+      swap r@ + swap  r> r> swap -	\ update remaining data pointer, size
+   dup while				\ if there is data remaining
+      suspend-subpkt			\ close this message
+      subpkt-head-struct prepare-space	\   get space for header (flush), and
+      resume-subpkt			\   start next one
+   repeat drop 2drop ;
+
+: send-seg-subpkt \ ( pkt len -- ) Send given supacket, allowing segmentation.
+		\ Precondition: exclusive access and sufficient frames prealloc.
+   drop subpkt-head-struct prepare-space \ get space for header
+   dup >r start-subpkt			\ start a subpacket message
+   r@ .pkt-src 2@ r@ .pkt-len @		\ load data into subpacket
+      segment-subpkt			\   allowing segmentation
+   r@ .pkt-src2 2@ r@ .pkt-len2 @
+      segment-subpkt
+   zeros get-code r> .pkt-padlen @
+      segment-subpkt
+   stop-subpkt ;			\ end message
+
+: send-unseg-subpkt \ ( pkt len -- ) Send given supacket, with no segmentation.
+		\ Precondition: exclusive access, at least one frame prealloc.,
+		\ and subpacket fits in one message
+   subpkt-head-struct + prepare-space	\ get space for header, data, & padding
+   dup >r start-subpkt			\ start a subpacket message
+   r@ .pkt-src 2@ r@ .pkt-len @		\ load data into subpacket
+      load-subpkt
+   r@ .pkt-src2 2@ r@ .pkt-len2 @
+      load-subpkt
+   zeros get-code r> .pkt-padlen @
+      load-subpkt
+   stop-subpkt ;			\ end message
+
+: segment?	\ ( id len -- t/f) Return true iff packet can be segmented, or
+		\ if packet must be segmented because it is too large.
+   >r d# 16 u< not			\ if id indicates segmentable
+      r> #n-max-subpkt u> or ;		\ or length is too large for one message
+
+public:
+
+: send-pkt	\ ( pkt -- t/f ) Copy data described by given packet
+		\ descriptor into telemetry subsystem.  This call
+		\ never blocks.  If the call cannot be completed, e.g.
+		\ because of insufficient memory, a false flag is returned.
+   get-tlm				\ get exclusive access
+   dup pad-subpkt			\ pad packet; compute maximum number
+      dup #n-max-subpkt u/^		\   of frames needed
+   reserve-frames if			\ if there are enough available
+      over .pkt-id @ over segment? if	\ if packet could/must be
+	 send-seg-subpkt		\   segmented, allow segmentation
+      else				\ otherwise,
+	 send-unseg-subpkt		\   do not allow segmentation
+      then
+      true				\ return success flag
+   else					\ if no frames
+      drop drop false			\ return failure flag
+   then
+   release-tlm ;
+
+: init-packet	\ ( -- ) Initialize packet interface.
+;
+
+private:
+
+\ ------------------------------------------------------------------------
+\ Initialization
+
+: init-host-tlm	\ ( -- ) Initialize host telemetry.
+   init-default-ip			\ fill in default IP source data
+   get-mem tlm-mem# set-mem		\ frames are queued in remote memory
+   free-frame-q farq-empty		\ empty queues
+   down-frame-q farq-empty
+   allo-frame-q farq-empty  0 alloc-count !
+   telemetry-frames #frames 0 do	\ for each frame
+      dup free-frame-q farq-put		\   put it on free list
+      frame-struct +			\   step to next frame
+   loop drop
+   set-mem ;
+
+endmodule>

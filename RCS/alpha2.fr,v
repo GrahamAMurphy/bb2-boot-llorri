@@ -1,0 +1,400 @@
+head	0.1;
+access;
+symbols;
+locks
+	murphy:0.1.0.159; strict;
+comment	@# @;
+
+
+0.1
+date	2018.02.20.16.37.38;	author murphy;	state Exp;
+branches
+	0.1.0.29;
+next	;
+
+0.1.0.29
+date	2018.02.20.16.37.38;	author murphy;	state Exp;
+branches;
+next	0.1.0.32;
+
+0.1.0.32
+date	2018.02.20.16.54.27;	author murphy;	state Exp;
+branches;
+next	0.1.0.35;
+
+0.1.0.35
+date	2018.02.20.17.02.27;	author murphy;	state Exp;
+branches;
+next	0.1.0.36;
+
+0.1.0.36
+date	2018.02.21.16.04.09;	author murphy;	state Exp;
+branches;
+next	0.1.0.117;
+
+0.1.0.117
+date	2018.02.23.15.04.53;	author murphy;	state Exp;
+branches;
+next	0.1.0.118;
+
+0.1.0.118
+date	2018.04.02.17.03.58;	author murphy;	state Exp;
+branches;
+next	0.1.0.119;
+
+0.1.0.119
+date	2018.04.02.18.52.11;	author murphy;	state Exp;
+branches;
+next	0.1.0.123;
+
+0.1.0.123
+date	2018.04.13.02.04.43;	author murphy;	state Exp;
+branches;
+next	0.1.0.127;
+
+0.1.0.127
+date	2018.04.13.02.13.18;	author murphy;	state Exp;
+branches;
+next	0.1.0.130;
+
+0.1.0.130
+date	2018.04.13.02.29.52;	author murphy;	state Exp;
+branches;
+next	0.1.0.131;
+
+0.1.0.131
+date	2018.04.13.02.42.59;	author murphy;	state Exp;
+branches;
+next	0.1.0.137;
+
+0.1.0.137
+date	2018.04.13.19.52.00;	author murphy;	state Exp;
+branches;
+next	0.1.0.139;
+
+0.1.0.139
+date	2018.04.13.20.05.41;	author murphy;	state Exp;
+branches;
+next	0.1.0.147;
+
+0.1.0.147
+date	2018.04.14.01.16.26;	author murphy;	state Exp;
+branches;
+next	0.1.0.151;
+
+0.1.0.151
+date	2018.04.14.03.06.55;	author murphy;	state Exp;
+branches;
+next	0.1.0.157;
+
+0.1.0.157
+date	2018.04.15.21.00.56;	author murphy;	state Exp;
+branches;
+next	0.1.0.159;
+
+0.1.0.159
+date	2018.04.16.12.24.50;	author murphy;	state Exp;
+branches;
+next	;
+
+
+desc
+@2018-02-20 11:25:33 gam-1
+@
+
+
+0.1
+log
+@0.1
+@
+text
+@\ (c) 2001 Johns Hopkins University / Applied Physics Laboratory
+\ Simple memory monitor: accepts downloads, inspects memory, copies
+\ memory, and executes programs.
+\ This is intended to be a component for a boot ROM ...
+hex
+
+\ ------------------------------------------------------------------------
+\ Conversion utilities
+
+: .dig		\ ( n -- ) converts to ascii and emits one hex digit.
+   dup 0a - 0< not if 27 + then 30 + emit ;
+ 
+: h.		\ ( n p -- ) converts n to ascii and displays p ls digits.
+		\ Assumes 16 bit cell.
+   >r 4 r@@ - ?dup if 0 do 4 rotate loop then
+   r> 0 do 4 rotate dup 0f and .dig loop drop ;
+
+: convert-hex	\ ( addr u -- ud u ) Convert the given text string
+		\ to a double unsigned number.  The string is assumed
+		\ to be in hex.  Return number of unconverted characters.
+   0 0 2swap				\ initialize accumulator to zero
+   begin
+      dup >r while			\ while string not empty
+      dup >r c@@ hexdigit while		\ while digits found
+      >r 10 um*m r> 0 d+		\ accumulate
+      r> 1+ r> 1-			\ remove left char from string
+   repeat r> then drop r> ;		\ return number of characters left
+
+\ ------------------------------------------------------------------------
+\ I/O
+
+10 constant cmdbuf-size
+create cmdbuf  cmdbuf-size allot	\ holds command input arguments
+
+: warn		\ ( -- ) Display warning indicator (a '?').
+   [char] ? emit ;
+
+: read-hex32	\ ( -- ud ) Get one line of input and convert
+		\ it to a double unsigned number.
+   begin
+      cmdbuf cmdbuf-size accept		\ read a line
+      cmdbuf swap convert-hex		\ and try to convert to hex
+      while				\ if there is a problem
+      warn 2drop			\ display error indicator and try again
+   repeat ;
+
+: read-hex16	\ ( -- u ) Get one line of input and convert it to
+		\ an unsigned number.
+   begin
+      read-hex32 while			\ while larger than one cell
+      warn drop				\ display error indicator and try again
+   repeat ;
+
+: read-hex8	\ ( -- u ) Get one line of input and convert it to
+		\ an 8-bit unsigned number.
+   begin
+      read-hex16 dup ff u>
+      while				\ while larger than 8 bits
+      warn drop				\ display error indicator and try again
+   repeat ;
+
+\ ---------------------------------------------------------------------------
+\ commands
+
+: inspect	\ ( -- ) Inspect/change memory.
+   open-mem
+   read-hex32 seek-memid seek-memaddr
+   begin
+      cr mem-pos 2 h. [char] , emit 4 h.
+      [char] : emit mem-peek 2 h. space
+      key dup [char] q <> while		\ 'q' quits
+      sel
+	 << [char] - ==> -1 step-mem >> \ '-' moves back one byte
+	 << [char] m ==> [char] = emit	\ change; prompt
+			 read-hex8 >mem >> \ then read new value
+	 ( default )	 1 step-mem	\ move forward one byte
+      endsel
+   repeat drop
+   close-mem ;
+
+: copy-cmd	\ ( -- ) Copy memory.  Source, destination, and length
+		\ will be extracted from command line.
+   read-hex32 read-hex32 read-hex16 copy ;
+
+\ GAM !!! was >
+: interboot	\ ( boot-addr boot-mem -- entry-addr entry-mem ) Accept
+		\ single-letter commands from keyboard.  Attempt to find
+		\ a program to run.  On success, return program's entry point.
+   begin cr [char] < emit space		\ prompt
+      key dup bl 7f within		\ check for printable chr
+      if dup else bl then emit space	\ echo chr if printable
+      sel				\ execute appropriate cmd
+        << [char] b ==> 2dup bootload >>
+        << [char] g ==> read-hex32 bootload >>
+        << [char] e ==> read-hex32 true >>
+        << [char] c ==> copy-cmd false >>
+        << [char] i ==> inspect false >>
+        << [char] l ==> download false >>
+	<< eol      ==> ( nop ) false >>
+        ( default ) warn false swap
+      endsel
+   until
+   2swap 2drop ;
+ 
+@
+
+
+0.1.0.29
+log
+@0.1.0.29
+@
+text
+@@
+
+
+0.1.0.32
+log
+@0.1.0.32
+@
+text
+@d89 1
+a89 1
+   begin cr [char] # emit space		\ prompt
+@
+
+
+0.1.0.35
+log
+@0.1.0.35
+@
+text
+@d89 1
+a89 1
+   begin cr [char] @@ emit space		\ prompt
+@
+
+
+0.1.0.36
+log
+@0.1.0.36
+@
+text
+@d89 1
+a89 1
+   begin cr [char] # emit space		\ prompt
+@
+
+
+0.1.0.117
+log
+@0.1.0.117
+@
+text
+@d89 1
+a89 1
+   begin cr [char] @@ emit space		\ prompt
+@
+
+
+0.1.0.118
+log
+@0.1.0.118
+@
+text
+@d89 1
+a89 1
+   begin cr [char] > emit [char] > emit space		\ prompt
+@
+
+
+0.1.0.119
+log
+@0.1.0.119
+@
+text
+@d89 1
+a89 1
+   begin cr [char] # emit [char] > emit space		\ prompt
+@
+
+
+0.1.0.123
+log
+@0.1.0.123
+@
+text
+@@
+
+
+0.1.0.127
+log
+@0.1.0.127
+@
+text
+@d89 1
+a89 1
+   begin cr [char] > emit [char] > emit space		\ prompt
+@
+
+
+0.1.0.130
+log
+@0.1.0.130
+@
+text
+@a85 6
+
+: PROMPT
+   [char] > emit [char] > emit [char] > emit 
+   ;
+
+
+d89 1
+a89 1
+   begin cr PROMPT space		\ prompt
+@
+
+
+0.1.0.131
+log
+@0.1.0.131
+@
+text
+@d88 1
+a88 1
+   [char] > emit [char] > emit [char] > emit [char] > emit 
+@
+
+
+0.1.0.137
+log
+@0.1.0.137
+@
+text
+@d88 1
+a88 1
+   [char] # emit [char] > emit [char] > emit 
+@
+
+
+0.1.0.139
+log
+@0.1.0.139
+@
+text
+@@
+
+
+0.1.0.147
+log
+@0.1.0.147
+@
+text
+@d88 1
+a88 1
+   [char] > emit [char] # emit [char] > emit 
+@
+
+
+0.1.0.151
+log
+@0.1.0.151
+@
+text
+@d88 1
+a88 1
+   [char] > emit [char] # emit [char] # emit [char] > emit 
+@
+
+
+0.1.0.157
+log
+@0.1.0.157
+@
+text
+@d88 1
+a88 1
+   [char] > emit [char] 0 emit [char] > emit 
+@
+
+
+0.1.0.159
+log
+@0.1.0.159
+@
+text
+@d88 1
+a88 1
+   [char] # emit [char] 0 emit [char] 1 emit [char] > emit 
+@

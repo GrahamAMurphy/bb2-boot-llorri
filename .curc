@@ -1,0 +1,4 @@
+-port /dev/ttyUSB0
+-speed 19200
+-usr1 .setup.usr-1
+-usr2 .setup.usr-2

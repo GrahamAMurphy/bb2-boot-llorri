@@ -1,0 +1,215 @@
+\ (c) 2007 Johns Hopkins University / Applied Physics Laboratory
+\ Host I/O - Commands (and time, etc.)
+hex
+
+host extendmodule>
+
+\ ========================================================================
+\ Message uplink
+
+\ Note: The spacecraft ICD calls an IP/UDP packet a transaction and each
+\ CIP a message.  The code calls a packet a message; CIP messages are
+\ called CIPs.
+
+\ Maximum input packet size, including headers
+d# 1024 constant #max-in-frame
+
+\ Length of "sync" pattern, i.e. number of fixed bytes at start of IP.
+\ Includes two bytes for length, ignored during actual sync check.
+d# 10 constant #ipsync
+
+\ Frame buffer for receiving packets.
+#max-in-frame makestruct msg-buffer	\ message in local memory
+
+\ ------------------------------------------------------------------------
+\ Helpers
+
+\ Bad packet information codes:
+1 constant #ip/udp-bad			\ IP/UDP bad length, checksum, etc.
+2 constant #cip-bad			\ CIP bad format, etc.
+3 constant #cip-unknown			\ unknown CIP type
+4 constant #cip-len-wrong		\ CIP length wrong for type
+
+: rcv-alarm	\ ( info -- ) Issue "bad packet" alarm with given code.
+   #bad-pkt-alm sw-alarm ;
+
+\ ------------------------------------------------------------------------
+\ Time
+
+structure ext-time-struct		\ external time format
+     2 cells: .ext-time			\ time, in seconds
+	cell: .ext-time-sub		\ time, subseconds
+     2 chars reserved		 	\ pad
+endstructure
+
+: process-time	\ ( addr len -- ) Process time message.
+   ext-time-struct = if			\ if length is correct
+      dup >r .ext-time-sub @		\ set time
+	 r> .ext-time 2@ set-time
+   else					\ othewise, generate alarm
+      drop #cip-len-wrong rcv-alarm
+   then 
+   ;
+
+\ ------------------------------------------------------------------------
+\ Commands
+
+structure ext-cmd-struct		\ external command format
+	char: .ext-cmd-opcode		\ opcode
+	char: .ext-cmd-macro		\ macro flag
+#max-args
+       chars: .ext-cmd-args		\ arguments
+     3 + 4 / 4 *			\ pad out to multiple of 32-bits
+endstructure
+
+: real-time?	\ ( cmd -- t/f ) Return true if command is for immediate
+		\ execution.
+   .ext-cmd-macro c@ 0= ;
+
+: unwrap-command \ ( cmd len -- args len' opcode ) Return argument array and
+		\ opcode either from normal or wrapped command.
+		\ Precondition: len = [2..sizeof(ext-cmd-struct]
+   >r dup .ext-cmd-opcode c@
+   #cmd-wrap <> if			\ if not wrapped, return command
+      dup .ext-cmd-args r> 2 - #max-args min
+      rot .ext-cmd-opcode c@
+   else					\ if wrapped, command is in args
+      dup .ext-cmd-args 1 + r> 3 - 0 max #max-args min
+      rot .ext-cmd-args c@
+   then ;
+
+: process-command \ ( addr len -- ) Process command.  Save it in internal
+		\ format, then execute it or add it to a macro.
+		\ Note: len will be multiple of four.
+   dup 2 ext-cmd-struct between if	\ if size is legal: op + macro minimum
+      over >r unwrap-command save-cmd	\ convert external to internal format
+      r> real-time? handle-cmd ack-cmd	\ lookup, run command or macroize it
+      cmd-signal			\ signal command event: macro run?
+   else					\ othewise, generate alarm
+      2drop #cip-len-wrong rcv-alarm
+   then ;
+
+: do-macro-cmd	\ ( -- ) Run a macro command.  This is run by the host
+		\ module while waiting for input bytes.
+		\ Precondition: macro-ready? returns true.
+   get-mac-cmd				\ load next command from macro
+   handle-mac-cmd ack-mac-cmd		\ run macro command
+   cmd-signal ;				\ signal command event: macro continue?
+
+\ ------------------------------------------------------------------------
+\ Handle messages
+
+: get-msg-byte	\ ( -- byte ) Return next byte from message input interface.
+		\ Since the gaps between the bytes can be arbitrarily long,
+		\ try to run macro commands in the gaps.
+   begin
+      cmd-wait				\ wait for command event, byte, etc.
+      rcv-empty? while			\ if there are no bytes queued
+      macro-ready? if			\ see if a macro is ready to run
+	 do-macro-cmd			\ if so, run one command
+      then
+   repeat
+   rcv-byte 
+   ;				\ return queued byte
+
+: get-msg-bytes	\ ( addr len -- ) Receive message bytes into buffer.
+		\ Note: a zero length denotes 65536.
+   0 do get-msg-byte over c! 1+ loop drop 
+   ;
+
+: sync-good?	\ ( addr -- t/f ) Return true iff the data at the given
+		\ address contains a good sync pattern.  The test depends
+		\ on the first ten bytes of the IP packet (other than the
+		\ length field) having constant values.
+		
+   default-header >r			\ compare against default IP header
+   dup @ r@ @ =				\   skipping over length field
+   over 4 + @ r@ 4 + @ = and
+   over 6 + @ r@ 6 + @ = and
+   swap 8 + @ r> 8 + @ = and ;
+
+: find-msg-sync	\ ( addr -- ) Find synchronization pattern in incoming
+		\ message byte stream.  Usually we already are in sync.
+		\ Therefore, the sync pattern is loaded into the buffer
+		\ and verified.  If this fails, the data is moved down
+		\ one byte, another byte is received, and the sync is
+		\ rechecked.  This is repeated until sync is found.  The
+		\ routine returns with the sync pattern in the given buffer.
+   dup #ipsync get-msg-bytes		\ assume we are in sync: load sync pat.
+   begin				\ if we are indeed in sync, fall through
+      dup sync-good? not while		\ otherwise, discard first byte, get
+      dup 1+ over #ipsync 1- move	\  another byte, and try again
+      get-msg-byte over #ipsync + 1- c!
+   repeat drop ;
+
+: read-rest-msg	\ ( len addr -- ) Read in rest of message.
+		\ Precondition: sync already in buffer and length is good.
+   #ipsync + swap #ipsync - get-msg-bytes ;
+
+: ip-good?	\ ( packet -- t/f ) Return true if packet is good.
+   dup >r ip-head-checksum -zero = if	\ if IP header is ok
+      r@ .h-ip .ip-len @		\ if IP and UDP lengths match
+	 r@ .h-udp .udp-len @ ip-head-struct + =
+      r@ .h-udp .udp-sum @ if		\ if UDP checksum computed
+	 r@ udp-checksum -zero = and	\ and checksum is ok, then packet is ok
+      then
+   else					\ if IP header is bad
+      false				\ then packet is bad
+   then rdrop ;
+
+: process-cip	\ ( addr -- len ) Process CIP data.  Returns length of data.
+		\ Note: we shouldn't get noop; ignore them if we do.
+		\ Note: magnetometer and dynamics (i.e. spin) data are
+		\ processed elsewhere.
+   dup >r cip-head-struct +		\ get address and length of payload
+      r@ .cip-len @ cip-head-struct -
+   r@ .cip-type c@ sel		\ process payload data based on type:
+      << #cip-time ==> process-time >>		\ time
+      << #cip-cmd  ==> process-command >>	\ command
+      << #cip-noop ==> 2drop >>			\ noop: ignore
+      ( default: ) nip nip #cip-unknown rcv-alarm \ unknown; generate alarm
+   endsel
+   r> .cip-len @ 
+   ;
+
+: process-message \ ( addr -- ) Process message.
+   dup head-struct +			\ skip over IP/UDP headers
+      swap .h-ip .ip-len @ head-struct -
+   begin				\ scan payload
+      dup while				\   while there is more
+      2dup cip-good? while		\   and CIP header looks ok
+      over process-cip			\ process CIP
+      >r swap r@ + swap r> -		\ step to next CIP
+   repeat
+      #cip-bad rcv-alarm		\ issue alarm
+   then 2drop ;
+
+public:
+: handle-message \ ( -- ) Read in and process message from spacecraft.
+   msg-buffer find-msg-sync		\ find sync
+   msg-buffer .h-ip .ip-len @ dup	\ get size
+   head-struct #max-in-frame between if	\ if size is legal
+      msg-buffer read-rest-msg		\ read in rest of message
+      msg-buffer ip-good? if		\ if message well formated
+	 msg-buffer process-message	\   process it
+	 all-is-well			\   log that S/C is talking to us
+      else				\ otherwise, issue an alarm
+	 #ip/udp-bad rcv-alarm
+      then
+   else					\ if illegal size, issue an alarm
+      drop #ip/udp-bad rcv-alarm
+   then 
+   ;
+private:
+
+\ ------------------------------------------------------------------------
+\ Initialization
+
+public:
+: init-host	\ ( -- ) Initialize host interface.
+   init-host-io
+   init-host-tlm
+;
+private:
+
+endmodule>
