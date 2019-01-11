@@ -2,7 +2,7 @@ head	0.1;
 access;
 symbols;
 locks
-	murphy:0.1.0.139; strict;
+	murphy:0.1.0.260; strict;
 comment	@# @;
 
 
@@ -24,6 +24,41 @@ next	0.1.0.139;
 
 0.1.0.139
 date	2018.04.13.20.05.41;	author murphy;	state Exp;
+branches;
+next	0.1.0.175;
+
+0.1.0.175
+date	2018.09.14.14.38.02;	author murphy;	state Exp;
+branches;
+next	0.1.0.204;
+
+0.1.0.204
+date	2018.09.18.14.18.35;	author murphy;	state Exp;
+branches;
+next	0.1.0.213;
+
+0.1.0.213
+date	2018.09.18.14.38.52;	author murphy;	state Exp;
+branches;
+next	0.1.0.214;
+
+0.1.0.214
+date	2018.09.18.14.40.54;	author murphy;	state Exp;
+branches;
+next	0.1.0.236;
+
+0.1.0.236
+date	2018.09.18.22.04.47;	author murphy;	state Exp;
+branches;
+next	0.1.0.259;
+
+0.1.0.259
+date	2018.10.31.18.08.33;	author murphy;	state Exp;
+branches;
+next	0.1.0.260;
+
+0.1.0.260
+date	2018.11.02.14.44.43;	author murphy;	state Exp;
 branches;
 next	;
 
@@ -123,3 +158,90 @@ log
 @
 text
 @@
+
+
+0.1.0.175
+log
+@0.1.0.175
+@
+text
+@a21 2
+# NOTE: MAY NOT BE VALID FOR NON-BOOT LAUNCH.
+
+d26 1
+a26 1
+
+d28 3
+a30 3
+	    /bin/cp llorri-boot.bin SREC/llorri.bin.$${BUILD} ; \
+	    motor -d 5c0000 -g 5c0000 llorri-boot.bin > SREC/llorri.mot.$${BUILD} ; \
+	    /bin/cp SREC/llorri.mot.$${BUILD} SREC/llorri-e.mot.latest
+@
+
+
+0.1.0.204
+log
+@0.1.0.204
+@
+text
+@@
+
+
+0.1.0.213
+log
+@0.1.0.213
+@
+text
+@d52 4
+a55 1
+	    /bin/echo "d# $${BUILD} constant sw-build" > .version.fr ; 
+@
+
+
+0.1.0.214
+log
+@0.1.0.214
+@
+text
+@d52 1
+a52 1
+	    /bin/echo "d# $${BUILD} constant #sw-build" > .version.fr ; 
+@
+
+
+0.1.0.236
+log
+@0.1.0.236
+@
+text
+@d12 1
+a12 1
+SRC = *.fr t-load
+@
+
+
+0.1.0.259
+log
+@0.1.0.259
+@
+text
+@d32 1
+a32 4
+	    /bin/cp SREC/llorri.mot.$${BUILD} SREC/llorri-e.mot.latest \
+	    motor -d 5c0000 -g 5c0000 llorri-boot.bin > llorri-boot.5c.mot \
+	    motor -d 5f0000 -g 5f0000 llorri-boot.bin > llorri-boot.5f.mot
+
+@
+
+
+0.1.0.260
+log
+@0.1.0.260
+@
+text
+@d32 2
+a33 3
+	    /bin/cp SREC/llorri.mot.$${BUILD} SREC/llorri-e.mot.latest ; \
+	    motor -d 1c0000 -g 1c0000 llorri-boot.bin > llorri-boot.1c.mot ; \
+	    motor -d 5c0000 -g 5c0000 llorri-boot.bin > llorri-boot.5c.mot ; \
+@

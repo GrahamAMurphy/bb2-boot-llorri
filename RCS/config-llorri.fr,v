@@ -1,0 +1,414 @@
+head	0.1;
+access;
+symbols;
+locks
+	murphy:0.1.0.235; strict;
+comment	@# @;
+
+
+0.1
+date	2018.09.18.14.18.35;	author murphy;	state Exp;
+branches
+	0.1.0.204;
+next	;
+
+0.1.0.204
+date	2018.09.18.14.18.35;	author murphy;	state Exp;
+branches;
+next	0.1.0.205;
+
+0.1.0.205
+date	2018.09.18.14.19.12;	author murphy;	state Exp;
+branches;
+next	0.1.0.225;
+
+0.1.0.225
+date	2018.09.18.16.39.20;	author murphy;	state Exp;
+branches;
+next	0.1.0.226;
+
+0.1.0.226
+date	2018.09.18.16.40.57;	author murphy;	state Exp;
+branches;
+next	0.1.0.227;
+
+0.1.0.227
+date	2018.09.18.16.41.41;	author murphy;	state Exp;
+branches;
+next	0.1.0.228;
+
+0.1.0.228
+date	2018.09.18.16.42.05;	author murphy;	state Exp;
+branches;
+next	0.1.0.229;
+
+0.1.0.229
+date	2018.09.18.16.43.18;	author murphy;	state Exp;
+branches;
+next	0.1.0.230;
+
+0.1.0.230
+date	2018.09.18.16.44.46;	author murphy;	state Exp;
+branches;
+next	0.1.0.231;
+
+0.1.0.231
+date	2018.09.18.16.49.02;	author murphy;	state Exp;
+branches;
+next	0.1.0.232;
+
+0.1.0.232
+date	2018.09.18.17.03.14;	author murphy;	state Exp;
+branches;
+next	0.1.0.233;
+
+0.1.0.233
+date	2018.09.18.17.38.47;	author murphy;	state Exp;
+branches;
+next	0.1.0.234;
+
+0.1.0.234
+date	2018.09.18.17.50.47;	author murphy;	state Exp;
+branches;
+next	0.1.0.235;
+
+0.1.0.235
+date	2018.09.18.17.55.04;	author murphy;	state Exp;
+branches;
+next	;
+
+
+desc
+@2018-09-18 10:08:59 gam-1
+@
+
+
+0.1
+log
+@0.1
+@
+text
+@\ (c) 2018 Johns Hopkins University / Applied Physics Laboratory
+\ LLORRI common instrument (i.e. EPI-Lo & LLORRI) configuration constants
+hex
+
+\ Note: a subset of these constants are used by the LLORRI boot program.
+\ There is no overhead in defining constants for the boot program that
+\ are not used.  
+
+\ Ids for externally visible data structures.  These can be loaded and
+\ dumped via XXX_MEM_STR_LOAD and XXX_MEM_STR_READ.
+0 constant #limits-str			\ monitor limits
+1 constant #params-str			\ parameters
+
+\ Data product ids.
+\ 0x00 - 0x0f reserved for common
+\ 0x10 - 0x3f reserved for application-specific
+\ Note: 00 is unused
+01 constant #echo-pkt			\ command echo
+02 constant #alarm-pkt			\ alarm
+03 constant #checksum-pkt		\ checksum
+04 constant #dump-pkt			\ memory dumps
+07 constant #mac-dump-pkt		\ macro dump
+08 constant #mac-check-pkt		\ macro checksums
+09 constant #limits-pkt			\ monitor limits
+0a constant #params-pkt			\ parameters
+0b constant #text-pkt			\ text
+0c constant #crit-hsk-pkt		\ critical housekeeping
+
+\ Command opcodes
+\ 0x00 - 0x3f reserved for common
+\ 0x40 - 0xff reserved for application-specific
+\ Core command opcodes.
+\ The next free opcode = 27
+\ Note: 00 is not used.
+01 constant #cmd-null
+21 constant #cmd-text
+02 constant #cmd-wrap
+03 constant #mac-check
+04 constant #mac-def
+05 constant #mac-delay
+06 constant #mac-end
+07 constant #mac-enddef
+08 constant #mac-halt
+09 constant #mac-loop-begin
+0a constant #mac-loop-end
+0b constant #mac-nest
+0c constant #mac-pause
+0d constant #mac-read
+0e constant #mac-restore
+0f constant #mac-run
+10 constant #mac-run-silent
+11 constant #mac-save
+12 constant #mem-check
+13 constant #mem-copy
+14 constant #mem-load
+15 constant #mem-read
+16 constant #mem-read-abrt
+17 constant #mem-run
+18 constant #mem-str-load
+19 constant #mem-str-read
+1a constant #mem-write
+1b constant #mon-cntrl
+1c constant #stat-clr
+1d constant #stat-int
+\ 1e constant #rom-boot
+\ 1f constant #rom-go
+20 constant #stat-mem
+XXX
+
+22 constant #saf-off
+23 constant #saf-reset
+24 constant #saf-timeout
+26 constant #mem-nv-enb
+
+
+\ Maximum number of command arguments.  Determined by largest command:
+\ XXX_MEM_LOAD
+d# 264 constant #max-args
+
+\ Maximum number of argument bytes to echo
+d# 10 constant #max-echo-args
+
+\ Results from commands.
+\ 0x00 - 0x0f reserved for common
+\ 0x10 - 0x7f reserved for appication-specific
+00 constant #ok-cmd			\ no error, command executed
+01 constant #ok-macro-cmd		\ no error, command appended to macro
+02 constant #unknown-cmd		\ unknown opcode or bad length
+03 constant #badarg-cmd			\ bad argument
+04 constant #macro-run-cmd		\ cannot run macro; no contexts
+05 constant #need-macro-cmd		\ cannot be used outside of a macro
+06 constant #macro-comp-cmd		\ macro compilation error
+07 constant #macro-kill-cmd		\ macro not killed (not running?)
+09 constant #macro-check-cmd		\ cannot load macros; bad EEPROM cksum
+0a constant #mem-write-cmd		\ cannot load memory; write disabled
+
+\ Alarm ids.
+\ 0x00 - 0x0f and 0x80 - 0xff reserved for common
+\ 0x10 - 0x7f reserved for application-specific
+d#   1 constant #bad-pkt-alm		\ bad packet, e.g. checksum
+d#   2 constant #no-contexts-alm	\ out of macro contexts
+d#   3 constant #auto-op-alm		\ autonomous operations error
+d# 128 constant #too-low-alm		\ monitored value too low
+d# 192 constant #too-high-alm		\ monitored value too high
+
+\ Maximum macro memory address.  Examples are:
+\ A value of 0 (equivalent to 10000) uses all available macro memory.
+\ A value of h# c000 uses all but 16 kbytes.
+0 constant #max-macro-addr
+
+\ Number of 32-bit data words in a dump packet
+d# 256 2/ cell/ constant #dump-words
+
+\ Dump handshake function: always true
+true constant dump-ok?
+
+\ CRC parameters
+1021 constant #crc-poly			\ CRC-CCITT polynomial (X^16 not shown)
+ffff constant #crc-seed
+\ (c) 2013 Johns Hopkins University / Applied Physics Laboratory
+\ LLORRI common, LLORRI-specific, configuration constants
+hex
+
+\ ITF
+06 constant #itf-vc			\ vitual channel
+
+\ Telemetry
+
+\ APIDs
+\ Note: the entire range of APIDs are allowed for commands and telemetry;
+\ however, we only use the base APID for commands.
+3e0 constant #apid-instr		\ base of command and telemetry APIDs
+d# 64 constant #apids			\ number of APIDs availble
+
+\ Spacecraft status data
+\ Note: these customize parsing the status data.
+0002 constant start-mask#		\ bit mask for startup mode bit
+0080 constant pwr-down-mask#		\ bit mask for power down warning bit
+2 constant ssr-offset#			\ offset into ssr-alloc array
+
+\ Commands
+\ ... nothing
+\ (c) 2014 Johns Hopkins University / Applied Physics Laboratory
+\ Configure boot software
+hex
+
+\ ------------------------------------------------------------------------
+\ Telemetry configuration, product ids, etc.
+
+\ Ids for externally visible data structures.  These can be loaded and
+\ dumped via C_MEM_STR_LOAD and C_MEM_STR_READ.
+\ Note: not used by boot
+0 constant #struct			\ total number of structures
+
+\ Data product ids.
+\ 0x00 - 0x0f reserved for common
+\ 0x10 - 0xff reserved for application
+06 constant #status-pkt			\ boot status
+
+\ ------------------------------------------------------------------------
+\ Command configuration, opcodes, etc.
+
+\ Command opcodes.
+1e constant #rom-boot
+1f constant #rom-go
+
+\ Results from commands.
+08 constant #bad-eeprom-cmd		\ bad eeprom checksum
+
+\ ------------------------------------------------------------------------
+\ Alarms and monitoring
+
+\ Alarm ids.
+\ None.
+
+\ ------------------------------------------------------------------------
+\ Configure host interface:  the receive buffer is allocated first;
+\ then, whatever space is left over is allocated to telemetry output frames.
+\ Size of buffer between interrupt routine and command process.  Choice
+\ depends on process priorities, maximum command execution time, etc.
+\ d# 512 constant #rcv-buffer
+\ Size of maximum output frame (i.e. data part of telemetry ITF).  Size must
+\ be a multiple of 2.  Note: one buffer will be allocated in code space.
+d# 1024 constant #max-out-frame
+
+\ Maximum number of frames that can be transmitted each second.
+1 constant #max-frames				\ EPI-Lo specific
+@
+
+
+0.1.0.204
+log
+@0.1.0.204
+@
+text
+@@
+
+
+0.1.0.205
+log
+@0.1.0.205
+@
+text
+@d68 1
+@
+
+
+0.1.0.225
+log
+@0.1.0.225
+@
+text
+@d74 1
+d122 5
+@
+
+
+0.1.0.226
+log
+@0.1.0.226
+@
+text
+@d122 6
+@
+
+
+0.1.0.227
+log
+@0.1.0.227
+@
+text
+@d122 9
+@
+
+
+0.1.0.228
+log
+@0.1.0.228
+@
+text
+@d118 6
+@
+
+
+0.1.0.229
+log
+@0.1.0.229
+@
+text
+@a21 1
+06 constant #status-pkt			\ boot status
+d130 1
+@
+
+
+0.1.0.230
+log
+@0.1.0.230
+@
+text
+@d66 2
+a67 5
+
+\ Critical PROM commands!
+1e constant #rom-boot
+1f constant #rom-go
+
+a92 1
+08 constant #bad-eeprom-cmd		\ bad eeprom checksum
+d119 28
+@
+
+
+0.1.0.231
+log
+@0.1.0.231
+@
+text
+@d28 1
+a80 5
+
+\ Ids for externally visible data structures.  These can be loaded and
+\ dumped via C_MEM_STR_LOAD and C_MEM_STR_READ.
+\ Note: not used by boot
+0 constant #struct                      \ total number of structures
+@
+
+
+0.1.0.232
+log
+@0.1.0.232
+@
+text
+@d137 3
+@
+
+
+0.1.0.233
+log
+@0.1.0.233
+@
+text
+@d129 5
+@
+
+
+0.1.0.234
+log
+@0.1.0.234
+@
+text
+@a131 2
+
+
+@
+
+
+0.1.0.235
+log
+@0.1.0.235
+@
+text
+@d132 2
+@

@@ -2,7 +2,7 @@ head	0.1;
 access;
 symbols;
 locks
-	murphy:0.1.0.144; strict;
+	murphy:0.1.0.278; strict;
 comment	@# @;
 
 
@@ -34,6 +34,101 @@ next	0.1.0.144;
 
 0.1.0.144
 date	2018.04.14.01.12.44;	author murphy;	state Exp;
+branches;
+next	0.1.0.160;
+
+0.1.0.160
+date	2018.09.04.16.24.54;	author murphy;	state Exp;
+branches;
+next	0.1.0.161;
+
+0.1.0.161
+date	2018.09.10.11.52.15;	author murphy;	state Exp;
+branches;
+next	0.1.0.162;
+
+0.1.0.162
+date	2018.09.10.14.13.47;	author murphy;	state Exp;
+branches;
+next	0.1.0.204;
+
+0.1.0.204
+date	2018.09.18.14.18.35;	author murphy;	state Exp;
+branches;
+next	0.1.0.262;
+
+0.1.0.262
+date	2018.11.02.15.00.13;	author murphy;	state Exp;
+branches;
+next	0.1.0.265;
+
+0.1.0.265
+date	2018.11.08.21.41.30;	author murphy;	state Exp;
+branches;
+next	0.1.0.266;
+
+0.1.0.266
+date	2018.11.08.21.53.01;	author murphy;	state Exp;
+branches;
+next	0.1.0.267;
+
+0.1.0.267
+date	2018.11.08.21.55.18;	author murphy;	state Exp;
+branches;
+next	0.1.0.268;
+
+0.1.0.268
+date	2018.11.10.00.55.50;	author murphy;	state Exp;
+branches;
+next	0.1.0.269;
+
+0.1.0.269
+date	2018.11.10.00.56.25;	author murphy;	state Exp;
+branches;
+next	0.1.0.270;
+
+0.1.0.270
+date	2018.11.10.00.57.19;	author murphy;	state Exp;
+branches;
+next	0.1.0.271;
+
+0.1.0.271
+date	2018.11.10.00.58.32;	author murphy;	state Exp;
+branches;
+next	0.1.0.272;
+
+0.1.0.272
+date	2018.11.10.03.11.12;	author murphy;	state Exp;
+branches;
+next	0.1.0.273;
+
+0.1.0.273
+date	2018.11.10.03.13.44;	author murphy;	state Exp;
+branches;
+next	0.1.0.274;
+
+0.1.0.274
+date	2018.11.10.03.13.55;	author murphy;	state Exp;
+branches;
+next	0.1.0.275;
+
+0.1.0.275
+date	2018.11.10.03.14.13;	author murphy;	state Exp;
+branches;
+next	0.1.0.276;
+
+0.1.0.276
+date	2018.11.10.03.14.30;	author murphy;	state Exp;
+branches;
+next	0.1.0.277;
+
+0.1.0.277
+date	2018.11.10.03.17.35;	author murphy;	state Exp;
+branches;
+next	0.1.0.278;
+
+0.1.0.278
+date	2018.11.10.03.27.24;	author murphy;	state Exp;
 branches;
 next	;
 
@@ -700,4 +795,284 @@ d287 1
 a287 2
    init-host-reg 			\ refresh host I/O registers
    ;
+@
+
+
+0.1.0.160
+log
+@0.1.0.160
+@
+text
+@d43 2
+a44 2
+   d# 5003 ,				\ UDP: source port (JEDIx)
+   d# 5003 ,				\ destination port (Juno/JEDIx)
+d110 1
+a110 8
+
+
+
+   \ GAM 2018-06-04
+   \ >r 4def eefa r@@ .cip-marker 2!	\ fill in constants: marker constant,
+
+   >r afee fed4 r@@ .cip-marker 2!	\ fill in constants: marker constant,
+
+d121 2
+a122 2
+   swap .cip-marker 2@@ >r afee = and	\   and constant marker is correct
+   r> fed4 = and ;
+@
+
+
+0.1.0.161
+log
+@0.1.0.161
+@
+text
+@a81 2
+[ifdef] _X_
+\ GAM 2018-09-05 deleted
+a87 1
+[then]
+d473 1
+a473 4
+
+      \ GAM 2018-09-05
+      \ #instr-code cells instr-ids + @@ or \   instr. id, and subpacket id
+
+d588 1
+a588 1
+   \ init-default-ip			\ fill in default IP source data
+@
+
+
+0.1.0.162
+log
+@0.1.0.162
+@
+text
+@d388 8
+@
+
+
+0.1.0.204
+log
+@0.1.0.204
+@
+text
+@@
+
+
+0.1.0.262
+log
+@0.1.0.262
+@
+text
+@d82 10
+@
+
+
+0.1.0.265
+log
+@0.1.0.265
+@
+text
+@d455 1
+a455 11
+
+   dup .pkt-id @@ drop
+   #cip-proc
+   
+   
+   
+   
+   \ d# 16 u< if #cip-down else #cip-sci then
+
+
+
+@
+
+
+0.1.0.266
+log
+@0.1.0.266
+@
+text
+@a443 6
+: id-to-cip-type	( id -- cip-type )
+
+
+;
+
+
+d456 2
+a457 5
+   dup .pkt-id @@ #status-pkt = if
+       #cip-proc
+    else
+	#cip-down
+    then
+@
+
+
+0.1.0.267
+log
+@0.1.0.267
+@
+text
+@a467 1
+   xxxx
+@
+
+
+0.1.0.268
+log
+@0.1.0.268
+@
+text
+@a443 3
+cr
+.( NOTE: NOTE: ) #status-pkt u. cr
+
+a469 3
+\ WAS GAM 20181109   dup .pkt-id @@ d# 16 u< if #cip-down else #cip-sci then
+
+
+@
+
+
+0.1.0.269
+log
+@0.1.0.269
+@
+text
+@d465 8
+a472 3
+    dup .pkt-id @@ id-to-cip-type
+
+
+@
+
+
+0.1.0.270
+log
+@0.1.0.270
+@
+text
+@a446 4
+#status-pkt 0006 = [if]
+XXXXX
+[then]
+
+@
+
+
+0.1.0.271
+log
+@0.1.0.271
+@
+text
+@d448 2
+d451 1
+a451 1
+[else]
+a452 1
+[then]
+a453 1
+: id-to-cip-type	( id -- cip-type )
+@
+
+
+0.1.0.272
+log
+@0.1.0.272
+@
+text
+@a448 2
+cr .( NOTE NOTE: Status is ApId 6 )
+
+a449 2
+
+cr .( NOTE NOTE: Status is NOT ApId 6 )
+@
+
+
+0.1.0.273
+log
+@0.1.0.273
+@
+text
+@d444 3
+d449 1
+a449 9
+cr .( NOTE NOTE: Status is ApId 6. This is BOOT! )
+
+    : id-to-cip-type	( id -- cip-type )
+	#status-pkt = if
+	    cip-special
+	else
+	    cip-down
+	then
+    ;
+d453 1
+a453 1
+cr .( NOTE NOTE: Status is NOT ApId 6. This is APPLICATION! )
+d456 3
+@
+
+
+0.1.0.274
+log
+@0.1.0.274
+@
+text
+@a459 2
+    : id-to-cip-type	( id -- cip-type )
+
+@
+
+
+0.1.0.275
+log
+@0.1.0.275
+@
+text
+@d450 1
+a450 1
+	    cip-proc
+@
+
+
+0.1.0.276
+log
+@0.1.0.276
+@
+text
+@d450 1
+a450 1
+	    #cip-proc
+d452 1
+a452 1
+	    #cip-down
+@
+
+
+0.1.0.277
+log
+@0.1.0.277
+@
+text
+@a460 2
+       d# 16 u< if #cip-down else #cip-sci then
+    ;
+d483 3
+@
+
+
+0.1.0.278
+log
+@0.1.0.278
+@
+text
+@d608 1
 @

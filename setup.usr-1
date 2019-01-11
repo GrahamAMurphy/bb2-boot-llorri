@@ -1,5 +1,0 @@
-.EXE/program
-sleep 1
-open test.log
-sleep 1
-/bin/echo go

@@ -1,21 +1,12 @@
 \ (c) 2007 Johns Hopkins University / Applied Physics Laboratory
 \ Host interface: low-level I/O
+\ GAM 2018-09-05 Removed identification with Jedi heritage.
 decimal
 
 module> host
 
 \ ------------------------------------------------------------------------
 \ Identity
-
-\ Instrument code
-variable instr-code
-
-: init-identity	\ ( -- ) Find and record instrument id.
-   parin-a# io@ 8 rshift h# 03 and	\ read board jumpers: 2-bit
-      instr-code ! ;			\   instrument code
-
-: #instr-code	\ ( -- id ) Return instrument code.
-   instr-code @ ;
 
 \ ------------------------------------------------------------------------
 \ Spacecraft side
@@ -25,10 +16,11 @@ variable side-a
 variable side-b
 
 : init-side	\ ( -- ) Initialize: turn off transmitters to both sides.
+   \ GAM 2018-09-10 Enable baud rate clock.
+   uart-ena-mask# set-io-cfg
    iema-enb-mask#			\ turn off transmitters
-   iemb-enb-mask# or 
-   set-io-cfg ;
-   \ clr-io-cfg ;
+   iemb-enb-mask# or clr-io-cfg 
+   ;
 
 : side-select	\ ( -- ) Select side, if any, to transmit on.
    side-a @ if				\ if side A active
@@ -37,7 +29,8 @@ variable side-b
    else side-b @ if			\ otherwise, if side B active
       iemb-enb-mask# set-io-cfg	\ transmit on side B,
       iema-enb-mask# clr-io-cfg	\   but not on side A
-   then then ;
+   then then 
+   ;
 
 : use-side-a	\ ( -- ) Use spacecraft side A.  Start listening on side A
 		\ right now, but transmit on side A on next frame.  Delaying
@@ -84,6 +77,10 @@ variable rcv/cmd-event
 		\ Note: called from an interrupt routine.
    \ io-mem# set-mem			\ remote memory-mapped I/O already set
    comm-a# far@				\ read byte from receiver & reset int.
+
+   \ Debug point for receiving commands.
+   \ dup u.
+
    rcv-count @ dup #rcv-buffer <> if	\ if room available in input FIFO
       1+ rcv-count !			\ count new byte
       rcv-scan-put @ dup		\ store byte
@@ -95,7 +92,8 @@ variable rcv/cmd-event
    then ;
 
 comm-rx-int# int: \ ( -- ) Handle host byte receive interrupt.
-   handle-rcv ;int			\ receive byte
+   handle-rcv \ receive byte
+   ;int
 
 : rcv-empty?	\ ( -- t/f ) Return true iff there are no bytes in input buffer.
    rcv-count @ 0= ;			\ check counter
@@ -165,17 +163,12 @@ private:
 1pps-a-int# int: \ ( -- ) Handle host side A tick interrupt.
    use-side-a				\ use spacecraft side A
    sync-time				\ synchronize time
-   \ h# 41 xxx
    ;int
 
 1pps-b-int# int: \ ( -- ) Handle host side B tick interrupt.
    use-side-b				\ use spacecraft side B
    sync-time				\ synchronize time
-   \ h# 42 xxx
    ;int
-
-variable debug-timer-int
-0 debug-timer-int !
 
 timer-int# int: \ ( -- ) Handle timer interrupt.  Propogate time, signal
                 \ dead time, and run milli-schedule.
@@ -187,10 +180,16 @@ timer-int# int: \ ( -- ) Handle timer interrupt.  Propogate time, signal
                 \ per interrupt.
    prop-time                            \ propagate time
 
+[ifdef] __PROTOTYPE__
+   dup d#  1 = if
+	1 tickle-up
+   then
+   dup d# 501 = if
+	1 tickle-dn
+   then
+[then]
+
    dup  10 = if 
-        debug-timer-int @ if
-            h# 53 xxx 
-        then
         drop 1hz-sem signal		\ signal telemetry 1Hz, or
    else 
         d# 800 = if 
@@ -199,6 +198,7 @@ timer-int# int: \ ( -- ) Handle timer interrupt.  Propogate time, signal
 	   exec-slot                                \  execute next slot function
         then 
    then 
+
    ;int
 
 \ ------------------------------------------------------------------------
@@ -214,7 +214,6 @@ timer-int# int: \ ( -- ) Handle timer interrupt.  Propogate time, signal
       unmask-int ;
 
 : init-host-io	\ ( -- ) Initialize host I/O.
-   init-identity			\ initialize instrument identity
    init-side				\ initialize side
    init-host-input			\ initialize input
    init-slots

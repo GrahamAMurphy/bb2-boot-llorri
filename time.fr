@@ -21,11 +21,8 @@ decimal
 module> time
 
 \ Constants:
-1000 constant #1pps-nom			\ nomimal 1PPS-to-1PPS interval
-50 constant #1pps-maxerr		\   and maximum error to apply to
+d# 1000 constant #1pps-nom			\ nomimal 1PPS-to-1PPS interval
 					\ #1pps-nom (milliseconds)
-#1pps-nom 2/ constant #1pps-phase	\ goal phase between s/c whole second
-					\   and 1PPS (milliseconds)
 
 \ Variables: (subseconds are in milliseconds)
 2variable future-time			\ time of next sync, whole seconds
@@ -33,12 +30,11 @@ variable future-time-sub		\   and subseconds
 2variable s/c-time			\ current S/C time, whole seconds
 variable s/c-time-sub			\   and subseconds
 variable new-time			\ set when new time stamp arrives
-2variable 1pps-time			\ 1PPS time, S/C time at 1PPS
-variable delta-time			\   and subseconds wrt 1PPS
-variable 1pps-interval			\ interval between 1PPS-to-1PPS
-    #1pps-nom 1pps-interval !
 
 public:
+
+\ This is called when the time message arrives. The message 
+\ is scheduled to precede the associated PPS.
 
 : set-time	\ ( time-sub time-ls time-ms -- ) Set time of upcoming
 		\ sync-time.
@@ -48,6 +44,9 @@ public:
       #1pps-nom um* nip future-time-sub !
    true new-time !			\ flag that time should be set
    enable ;
+
+\ This word is called when the PPS arrives. This means that
+\ NOW is the time in the message received earlier.
 
 : sync-time	\ ( -- ) Set time (from set-time) to actual time.
 		\ Propogate this new time until another set-time occurs.
@@ -59,37 +58,18 @@ public:
    then ;
 
 : prop-time	\ ( -- delta ) Propogate time.  The S/C time is advanced.
-		\ The internal 1PPS time is also advanced.  The 1PPS time
-		\ is phase-locked to the S/C time; to do this, the interval
-		\ from 1PPS to 1PPS is varied.
 		\ Synchronization: called from interrupt routine.
 
    s/c-time-sub @ 1+ dup #1pps-nom = if	\ propogate s/c time
       drop 0
       s/c-time 2@ 1 0 d+ s/c-time 2!
-   then s/c-time-sub !
-
-   \ \\\ s/c-time-sub @ 
-
-[ifndef] ___TRAIN_TIME___
-
-   delta-time @ 1+ dup			\ step delta time
-   1pps-interval @ = if			\ if end of 1pps interval reached
-      s/c-time-sub @ #1pps-phase swap -	\ measure phase error
-	 #1pps-maxerr negate max #1pps-maxerr min
-      #1pps-nom + 1pps-interval !	\ adjust 1pps interval
-      drop 0
-      s/c-time 2@ 1 0 d+ 1pps-time 2!	\ sample s/c time for 1PPS time
-   then dup delta-time ! 
-
-[then]
-
-
+   then dup s/c-time-sub !
    ;
  
 : get-time	\ ( -- time-ls time-ms ) Return current 1PPS time.
 		\ Synchronization: disables interrupts.
-   disable 1pps-time 2@ enable ;
+   \ disable 1pps-time 2@ enable ; WAS GAM 2018-09-21
+   disable s/c-time 2@ enable ;
 
 : get-s/c-time	\ ( -- time-sub time-ls time-ms ) Return current S/C time with
 		\ fractional (subsecond) time.  Note: s/c-time-sub can be 1000;

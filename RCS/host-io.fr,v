@@ -2,7 +2,7 @@ head	0.1;
 access;
 symbols;
 locks
-	murphy:0.1.0.151; strict;
+	murphy:0.1.0.259; strict;
 comment	@# @;
 
 
@@ -244,6 +244,51 @@ next	0.1.0.151;
 
 0.1.0.151
 date	2018.04.14.03.06.55;	author murphy;	state Exp;
+branches;
+next	0.1.0.164;
+
+0.1.0.164
+date	2018.09.13.00.46.59;	author murphy;	state Exp;
+branches;
+next	0.1.0.165;
+
+0.1.0.165
+date	2018.09.13.00.48.39;	author murphy;	state Exp;
+branches;
+next	0.1.0.194;
+
+0.1.0.194
+date	2018.09.15.03.03.26;	author murphy;	state Exp;
+branches;
+next	0.1.0.204;
+
+0.1.0.204
+date	2018.09.18.14.18.35;	author murphy;	state Exp;
+branches;
+next	0.1.0.251;
+
+0.1.0.251
+date	2018.09.21.13.17.01;	author murphy;	state Exp;
+branches;
+next	0.1.0.252;
+
+0.1.0.252
+date	2018.09.21.13.18.11;	author murphy;	state Exp;
+branches;
+next	0.1.0.257;
+
+0.1.0.257
+date	2018.10.01.12.30.43;	author murphy;	state Exp;
+branches;
+next	0.1.0.258;
+
+0.1.0.258
+date	2018.10.04.13.55.08;	author murphy;	state Exp;
+branches;
+next	0.1.0.259;
+
+0.1.0.259
+date	2018.10.31.18.08.33;	author murphy;	state Exp;
 branches;
 next	;
 
@@ -1114,4 +1159,187 @@ a174 1
 d178 1
 a178 1
 0 debug-timer-int !
+@
+
+
+0.1.0.164
+log
+@0.1.0.164
+@
+text
+@a2 1
+\ GAM 2018-09-05 Removed identification with Jedi heritage.
+d10 10
+a27 3
+   \ GAM 2018-09-10 Enable baud rate clock. Not implemented yet on prototype.
+   uart-ena-mask# set-io-cfg
+
+d30 2
+a31 1
+   clr-io-cfg ;
+d40 1
+a40 2
+   then then 
+   ;
+a86 2
+   \ Debug point for receiving commands.
+   \ dup u.
+a96 2
+variable rx-debug 0 rx-debug !
+
+a97 1
+   rx-debug @@ if h# 47 xxx then
+d168 1
+a168 1
+   \ GAM Debug item h# 41 xxx
+d174 1
+a174 1
+   \ GAM Debug item h# 42 xxx
+d192 1
+a192 1
+            h# 57 xxx 
+a201 1
+
+d217 1
+a224 4
+
+init:
+." Initialize " cr
+;init
+@
+
+
+0.1.0.165
+log
+@0.1.0.165
+@
+text
+@d224 4
+@
+
+
+0.1.0.194
+log
+@0.1.0.194
+@
+text
+@d96 1
+d167 1
+d173 1
+d176 3
+d190 3
+@
+
+
+0.1.0.204
+log
+@0.1.0.204
+@
+text
+@@
+
+
+0.1.0.251
+log
+@0.1.0.251
+@
+text
+@a5 8
+: xxx	( byte -- )
+    get-mem >r
+    io-mem# set-mem
+    h# 0 far!
+    r> set-mem
+;
+
+
+a164 1
+   h# 51 xxx
+a169 1
+   h# 52 xxx
+d184 1
+a184 2
+        drop
+	1hz-sem signal		\ signal telemetry 1Hz, or
+@
+
+
+0.1.0.252
+log
+@0.1.0.252
+@
+text
+@d6 8
+d173 1
+d179 1
+@
+
+
+0.1.0.257
+log
+@0.1.0.257
+@
+text
+@d93 2
+@
+
+
+0.1.0.258
+log
+@0.1.0.258
+@
+text
+@d24 1
+a24 3
+   set-io-cfg 
+   iemb-sel-mask# clr-io-cfg		\ listen on side A, now
+   ;
+d29 1
+a29 1
+      iemb-enb-mask# set-io-cfg	\   but not on side B
+d32 1
+a32 1
+      iema-enb-mask# set-io-cfg	\   but not on side A
+@
+
+
+0.1.0.259
+log
+@0.1.0.259
+@
+text
+@d19 1
+a19 1
+   \ GAM 2018-09-10 Enable baud rate clock.
+d21 1
+d23 3
+a25 1
+   iemb-enb-mask# or clr-io-cfg 
+d31 1
+a31 1
+      iemb-enb-mask# clr-io-cfg	\   but not on side B
+d34 1
+a34 1
+      iema-enb-mask# clr-io-cfg	\   but not on side A
+a82 1
+
+a84 1
+
+d96 1
+a96 2
+   handle-rcv \ receive byte
+   ;int
+a182 9
+[ifdef] __PROTOTYPE__
+   dup d#  1 = if
+	1 tickle-up
+   then
+   dup d# 501 = if
+	1 tickle-dn
+   then
+[then]
+
+d184 2
+a185 1
+        drop 1hz-sem signal		\ signal telemetry 1Hz, or
 @

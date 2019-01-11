@@ -12820,8 +12820,9 @@
 <"> 0000 0804ec60
 <used> 0004 0807bde4
 <\> 0000 0804ee40
+<\> 0000 0804ee40
 <code> 0004 08076c04
-<c+> 0006 extend-mro.fr
+<c+> 0006 extend-llorri.fr
 <\> 0000 0804ee40
 <<alux> 0000 08052fa8
 <bplusa> 0000 08052d00
@@ -12831,7 +12832,7 @@
 <<exit>> 0004 08076c44
 <inline> 0000 0807624c
 <code> 0004 08076c04
-<+c> 0006 extend-mro.fr
+<+c> 0006 extend-llorri.fr
 <\> 0000 0804ee40
 <<alu> 0000 08052f94
 <bplusax> 0000 08052d1c
@@ -12840,7 +12841,7 @@
 <<exit>> 0004 08076c44
 <inline> 0000 0807624c
 <code> 0004 08076c04
-<c1+> 0006 extend-mro.fr
+<c1+> 0006 extend-llorri.fr
 <\> 0000 0804ee40
 <<alux> 0000 08052fa8
 <inca> 0000 08052de0
@@ -12849,7 +12850,7 @@
 <<exit>> 0004 08076c44
 <inline> 0000 0807624c
 <code> 0004 08076c04
-<0+c> 0006 extend-mro.fr
+<0+c> 0006 extend-llorri.fr
 <\> 0000 0804ee40
 <<lis> 0000 08052f58
 <+#> 0000 08052edc
@@ -12857,18 +12858,6 @@
 <>.> 0004 08076c2c
 <<exit>> 0004 08076c44
 <inline> 0000 0807624c
-<:> 0004 0807c554
-<8<<> 0006 extend-mro.fr
-    <lshift> 0006 0807b3e4
-    <||> 0005 0807be0c
-    <;> 0005 0807c424
-<inline> 0000 0807624c
-<:> 0004 0807c554
-<d<>> 0006 extend-mro.fr
-    <dnegate> 0006 0807b7a0
-    <d+> 0006 0807b780
-    <or> 0006 0807b488
-    <;> 0005 0807c424
 <"> 0000 0804ec60
 <used> 0004 0807bde4
 <\> 0000 0804ee40
@@ -12908,7 +12897,7 @@
 <set> 0006 outbits2a.fr
     <\> 0005 0807c05c
     <disable> 0006 0807b92c
-    <set-i> 0006 0807f784
+    <set-i> 0006 0807f73c
     <enable> 0006 0807b90c
     <;> 0005 0807c424
 <:> 0004 0807c554
@@ -12919,9 +12908,9 @@
     <\> 0005 0807c05c
     <disable> 0006 0807b92c
     <dup> 0006 0807b394
-    <get> 0006 0807f764
+    <get> 0006 0807f71c
     <swap> 0006 0807b5c8
-    <set-i> 0006 0807f784
+    <set-i> 0006 0807f73c
     <enable> 0006 0807b90c
     <;> 0005 0807c424
 <private:> 0004 0807e908
@@ -13037,10 +13026,10 @@
 <rom> 0004 08076948
 <here> 0004 08076800
 <'> 0004 08076a34
-<port-w@> 0006 0807f884
+<port-w@> 0006 0807f83c
 <,> 0004 0807685c
 <'> 0004 08076a34
-<port-w!> 0006 0807f864
+<port-w!> 0006 0807f81c
 <,> 0004 0807685c
 <\> 0000 0804ee40
 <constant> 0004 0807c4cc
@@ -13080,10 +13069,10 @@
 <rom> 0004 08076948
 <here> 0004 08076800
 <'> 0004 08076a34
-<port-b@> 0006 0807f904
+<port-b@> 0006 0807f8bc
 <,> 0004 0807685c
 <'> 0004 08076a34
-<port-b!> 0006 0807f8e4
+<port-b!> 0006 0807f89c
 <,> 0004 0807685c
 <\> 0000 0804ee40
 <constant> 0004 0807c4cc
@@ -13112,10 +13101,10 @@
     <@> 0006 0807b25c
     <dup> 0006 0807b394
     <>r> 0006 0807b234
-    <get> 0006 0807f764
-    <insert-bit> 0006 0807f7e4
+    <get> 0006 0807f71c
+    <insert-bit> 0006 0807f79c
     <r>> 0006 0807b4d8
-    <set-i> 0006 0807f784
+    <set-i> 0006 0807f73c
     <;> 0005 0807c424
 <:> 0004 0807c554
 <port-bit@> 0006 outbits2a.fr
@@ -13123,16 +13112,16 @@
     <cell+> 0006 0807b6e0
     <dup> 0006 0807b394
     <@> 0006 0807b25c
-    <get> 0006 0807f764
-    <extract-bit> 0006 0807f804
+    <get> 0006 0807f71c
+    <extract-bit> 0006 0807f7bc
     <;> 0005 0807c424
 <rom> 0004 08076948
 <here> 0004 08076800
 <'> 0004 08076a34
-<port-bit@> 0006 0807f984
+<port-bit@> 0006 0807f93c
 <,> 0004 0807685c
 <'> 0004 08076a34
-<port-bit!> 0006 0807f964
+<port-bit!> 0006 0807f91c
 <,> 0004 0807685c
 <\> 0000 0804ee40
 <constant> 0004 0807c4cc
@@ -13161,10 +13150,10 @@
     <@> 0006 0807b25c
     <dup> 0006 0807b394
     <>r> 0006 0807b234
-    <get> 0006 0807f764
-    <insert-field> 0006 0807f824
+    <get> 0006 0807f71c
+    <insert-field> 0006 0807f7dc
     <r>> 0006 0807b4d8
-    <set-i> 0006 0807f784
+    <set-i> 0006 0807f73c
     <;> 0005 0807c424
 <:> 0004 0807c554
 <port-field@> 0006 outbits2a.fr
@@ -13172,16 +13161,16 @@
     <cell+> 0006 0807b6e0
     <dup> 0006 0807b394
     <@> 0006 0807b25c
-    <get> 0006 0807f764
-    <extract-field> 0006 0807f844
+    <get> 0006 0807f71c
+    <extract-field> 0006 0807f7fc
     <;> 0005 0807c424
 <rom> 0004 08076948
 <here> 0004 08076800
 <'> 0004 08076a34
-<port-field@> 0006 0807fa04
+<port-field@> 0006 0807f9bc
 <,> 0004 0807685c
 <'> 0004 08076a34
-<port-field!> 0006 0807f9e4
+<port-field!> 0006 0807f99c
 <,> 0004 0807685c
 <\> 0000 0804ee40
 <constant> 0004 0807c4cc
@@ -13220,10 +13209,10 @@
 <rom> 0004 08076948
 <here> 0004 08076800
 <'> 0004 08076a34
-<mem-w@> 0006 0807fa84
+<mem-w@> 0006 0807fa3c
 <,> 0004 0807685c
 <'> 0004 08076a34
-<mem-w!> 0006 0807fa64
+<mem-w!> 0006 0807fa1c
 <,> 0004 0807685c
 <\> 0000 0804ee40
 <constant> 0004 0807c4cc
@@ -13251,10 +13240,10 @@
 <rom> 0004 08076948
 <here> 0004 08076800
 <'> 0004 08076a34
-<mem-b@> 0006 0807fb04
+<mem-b@> 0006 0807fabc
 <,> 0004 0807685c
 <'> 0004 08076a34
-<mem-b!> 0006 0807fae4
+<mem-b!> 0006 0807fa9c
 <,> 0004 0807685c
 <\> 0000 0804ee40
 <constant> 0004 0807c4cc
@@ -13285,7 +13274,7 @@
     <dup> 0006 0807b394
     <>r> 0006 0807b234
     <c@> 0006 0807b2f8
-    <insert-bit> 0006 0807f7e4
+    <insert-bit> 0006 0807f79c
     <r>> 0006 0807b4d8
     <c!> 0006 0807b2cc
     <;> 0005 0807c424
@@ -13296,15 +13285,15 @@
     <dup> 0006 0807b394
     <@> 0006 0807b25c
     <c@> 0006 0807b2f8
-    <extract-bit> 0006 0807f804
+    <extract-bit> 0006 0807f7bc
     <;> 0005 0807c424
 <rom> 0004 08076948
 <here> 0004 08076800
 <'> 0004 08076a34
-<mem-bit@> 0006 0807fb84
+<mem-bit@> 0006 0807fb3c
 <,> 0004 0807685c
 <'> 0004 08076a34
-<mem-bit!> 0006 0807fb64
+<mem-bit!> 0006 0807fb1c
 <,> 0004 0807685c
 <\> 0000 0804ee40
 <constant> 0004 0807c4cc
@@ -13335,7 +13324,7 @@
     <dup> 0006 0807b394
     <>r> 0006 0807b234
     <c@> 0006 0807b2f8
-    <insert-field> 0006 0807f824
+    <insert-field> 0006 0807f7dc
     <r>> 0006 0807b4d8
     <c!> 0006 0807b2cc
     <;> 0005 0807c424
@@ -13346,15 +13335,15 @@
     <dup> 0006 0807b394
     <@> 0006 0807b25c
     <c@> 0006 0807b2f8
-    <extract-field> 0006 0807f844
+    <extract-field> 0006 0807f7fc
     <;> 0005 0807c424
 <rom> 0004 08076948
 <here> 0004 08076800
 <'> 0004 08076a34
-<mem-field@> 0006 0807fc04
+<mem-field@> 0006 0807fbbc
 <,> 0004 0807685c
 <'> 0004 08076a34
-<mem-field!> 0006 0807fbe4
+<mem-field!> 0006 0807fb9c
 <,> 0004 0807685c
 <\> 0000 0804ee40
 <constant> 0004 0807c4cc
@@ -13381,7 +13370,7 @@
 <get> 0004 outbits2.mfr
 <\> 0000 0804ee40
 <[host]> 0000 08075614
-<'get> 0004 0807fc64
+<'get> 0004 0807fc1c
 <[forth]> 0000 080755fc
 <@> 0000 0804d3a4
 <[host]> 0000 08075614
@@ -13392,7 +13381,7 @@
 <set> 0004 outbits2.mfr
 <\> 0000 0804ee40
 <[host]> 0000 08075614
-<'set> 0004 0807fc78
+<'set> 0004 0807fc30
 <[forth]> 0000 080755fc
 <@> 0000 0804d3a4
 <[host]> 0000 08075614
@@ -13508,7 +13497,7 @@
 <\> 0000 0804ee40
 <[host]> 0000 08075614
 <create> 0004 0807c758
-<port-word-access> 0004 0807f8a4
+<port-word-access> 0004 0807f85c
 <,> 0004 0807685c
 <,> 0004 0807685c
 <\> 0000 0804ee40
@@ -13548,7 +13537,7 @@
 <\> 0000 0804ee40
 <[host]> 0000 08075614
 <create> 0004 0807c758
-<port-byte-access> 0004 0807f924
+<port-byte-access> 0004 0807f8dc
 <,> 0004 0807685c
 <,> 0004 0807685c
 <\> 0000 0804ee40
@@ -13567,10 +13556,10 @@
 <@> 0004 08076968
 <dup> 0000 0804d4f8
 <>r> 0000 0804d384
-<get> 0004 0807fc8c
-<insert-bit> 0004 0807fccc
+<get> 0004 0807fc44
+<insert-bit> 0004 0807fc84
 <r>> 0000 0804d578
-<set> 0004 0807fcac
+<set> 0004 0807fc64
 <;> 0000 0804fb20
 <forth> 0002 08052290
 <:> 0000 0804faa0
@@ -13580,8 +13569,8 @@
 <cell+> 0004 08076720
 <dup> 0000 0804d4f8
 <@> 0004 08076968
-<get> 0004 0807fc8c
-<extract-bit> 0004 0807fd1c
+<get> 0004 0807fc44
+<extract-bit> 0004 0807fcd4
 <;> 0000 0804fb20
 <forth> 0002 08052290
 <:> 0000 0804faa0
@@ -13590,7 +13579,7 @@
 <\> 0000 0804ee40
 <[host]> 0000 08075614
 <t-create> 0004 0807c5c0
-<port-bit-access> 0004 0807f9a4
+<port-bit-access> 0004 0807f95c
 <t-,> 0000 0807342c
 <swap> 0000 0804d5fc
 <t-,> 0000 0807342c
@@ -13611,10 +13600,10 @@
 <@> 0004 08076968
 <dup> 0000 0804d4f8
 <>r> 0000 0804d384
-<get> 0004 0807fc8c
-<insert-field> 0004 0807fd58
+<get> 0004 0807fc44
+<insert-field> 0004 0807fd10
 <r>> 0000 0804d578
-<set> 0004 0807fcac
+<set> 0004 0807fc64
 <;> 0000 0804fb20
 <forth> 0002 08052290
 <:> 0000 0804faa0
@@ -13624,8 +13613,8 @@
 <cell+> 0004 08076720
 <dup> 0000 0804d4f8
 <@> 0004 08076968
-<get> 0004 0807fc8c
-<extract-field> 0004 0807fdac
+<get> 0004 0807fc44
+<extract-field> 0004 0807fd64
 <;> 0000 0804fb20
 <forth> 0002 08052290
 <:> 0000 0804faa0
@@ -13635,7 +13624,7 @@
 <\> 0000 0804ee40
 <[host]> 0000 08075614
 <t-create> 0004 0807c5c0
-<port-field-access> 0004 0807fa24
+<port-field-access> 0004 0807f9dc
 <t-,> 0000 0807342c
 <rot> 0000 0804d5c8
 <t-,> 0000 0807342c
@@ -13676,7 +13665,7 @@
 <\> 0000 0804ee40
 <[host]> 0000 08075614
 <t-create> 0004 0807c5c0
-<mem-word-access> 0004 0807faa4
+<mem-word-access> 0004 0807fa5c
 <t-,> 0000 0807342c
 <t-,> 0000 0807342c
 <s"> 0000 0804ed80
@@ -13712,7 +13701,7 @@
 <\> 0000 0804ee40
 <[host]> 0000 08075614
 <t-create> 0004 0807c5c0
-<mem-byte-access> 0004 0807fb24
+<mem-byte-access> 0004 0807fadc
 <t-,> 0000 0807342c
 <t-,> 0000 0807342c
 <s"> 0000 0804ed80
@@ -13731,7 +13720,7 @@
 <dup> 0000 0804d4f8
 <>r> 0000 0804d384
 <c@> 0004 08076998
-<insert-bit> 0004 0807fccc
+<insert-bit> 0004 0807fc84
 <r>> 0000 0804d578
 <c!> 0004 080769b0
 <;> 0000 0804fb20
@@ -13744,7 +13733,7 @@
 <dup> 0000 0804d4f8
 <@> 0004 08076968
 <c@> 0004 08076998
-<extract-bit> 0004 0807fd1c
+<extract-bit> 0004 0807fcd4
 <;> 0000 0804fb20
 <forth> 0002 08052290
 <:> 0000 0804faa0
@@ -13753,7 +13742,7 @@
 <\> 0000 0804ee40
 <[host]> 0000 08075614
 <t-create> 0004 0807c5c0
-<mem-bit-access> 0004 0807fba4
+<mem-bit-access> 0004 0807fb5c
 <t-,> 0000 0807342c
 <swap> 0000 0804d5fc
 <t-,> 0000 0807342c
@@ -13775,7 +13764,7 @@
 <dup> 0000 0804d4f8
 <>r> 0000 0804d384
 <c@> 0004 08076998
-<insert-field> 0004 0807fd58
+<insert-field> 0004 0807fd10
 <r>> 0000 0804d578
 <c!> 0004 080769b0
 <;> 0000 0804fb20
@@ -13788,7 +13777,7 @@
 <dup> 0000 0804d4f8
 <@> 0004 08076968
 <c@> 0004 08076998
-<extract-field> 0004 0807fdac
+<extract-field> 0004 0807fd64
 <;> 0000 0804fb20
 <forth> 0002 08052290
 <:> 0000 0804faa0
@@ -13797,7 +13786,7 @@
 <\> 0000 0804ee40
 <[host]> 0000 08075614
 <t-create> 0004 0807c5c0
-<mem-field-access> 0004 0807fc24
+<mem-field-access> 0004 0807fbdc
 <t-,> 0000 0807342c
 <rot> 0000 0804d5c8
 <t-,> 0000 0807342c
@@ -13821,44 +13810,44 @@
 <sel> 0000 0804e954
 <\> 0000 0804ee40
 <<<> 0000 0804e96c
-<port-word-access> 0004 0807f8a4
+<port-word-access> 0004 0807f85c
 <==>> 0000 0804e9e0
-<port-w@> 0004 0807fe04
+<port-w@> 0004 0807fdbc
 <>>> 0000 0804ea00
 <<<> 0000 0804e96c
-<port-byte-access> 0004 0807f924
+<port-byte-access> 0004 0807f8dc
 <==>> 0000 0804e9e0
-<port-b@> 0004 0807fe7c
+<port-b@> 0004 0807fe34
 <>>> 0000 0804ea00
 <<<> 0000 0804e96c
-<port-bit-access> 0004 0807f9a4
+<port-bit-access> 0004 0807f95c
 <==>> 0000 0804e9e0
-<port-bit@> 0004 0807ff0c
+<port-bit@> 0004 0807fec4
 <>>> 0000 0804ea00
 <<<> 0000 0804e96c
-<port-field-access> 0004 0807fa24
+<port-field-access> 0004 0807f9dc
 <==>> 0000 0804e9e0
-<port-field@> 0004 0807ffb0
+<port-field@> 0004 0807ff68
 <>>> 0000 0804ea00
 <<<> 0000 0804e96c
-<mem-word-access> 0004 0807faa4
+<mem-word-access> 0004 0807fa5c
 <==>> 0000 0804e9e0
-<mem-w@> 0004 08080048
+<mem-w@> 0004 08080000
 <>>> 0000 0804ea00
 <<<> 0000 0804e96c
-<mem-byte-access> 0004 0807fb24
+<mem-byte-access> 0004 0807fadc
 <==>> 0000 0804e9e0
-<mem-b@> 0004 080800c0
+<mem-b@> 0004 08080078
 <>>> 0000 0804ea00
 <<<> 0000 0804e96c
-<mem-bit-access> 0004 0807fba4
+<mem-bit-access> 0004 0807fb5c
 <==>> 0000 0804e9e0
-<mem-bit@> 0004 08080150
+<mem-bit@> 0004 08080108
 <>>> 0000 0804ea00
 <<<> 0000 0804e96c
-<mem-field-access> 0004 0807fc24
+<mem-field-access> 0004 0807fbdc
 <==>> 0000 0804e9e0
-<mem-field@> 0004 080801f4
+<mem-field@> 0004 080801ac
 <>>> 0000 0804ea00
 <endsel> 0000 0804ea20
 <;> 0000 0804fb20
@@ -13872,59 +13861,58 @@
 <sel> 0000 0804e954
 <\> 0000 0804ee40
 <<<> 0000 0804e96c
-<port-word-access> 0004 0807f8a4
+<port-word-access> 0004 0807f85c
 <==>> 0000 0804e9e0
-<port-w!> 0004 0807fde4
+<port-w!> 0004 0807fd9c
 <>>> 0000 0804ea00
 <<<> 0000 0804e96c
-<port-byte-access> 0004 0807f924
+<port-byte-access> 0004 0807f8dc
 <==>> 0000 0804e9e0
-<port-b!> 0004 0807fe5c
+<port-b!> 0004 0807fe14
 <>>> 0000 0804ea00
 <<<> 0000 0804e96c
-<port-bit-access> 0004 0807f9a4
+<port-bit-access> 0004 0807f95c
 <==>> 0000 0804e9e0
-<port-bit!> 0004 0807fed4
+<port-bit!> 0004 0807fe8c
 <>>> 0000 0804ea00
 <<<> 0000 0804e96c
-<port-field-access> 0004 0807fa24
+<port-field-access> 0004 0807f9dc
 <==>> 0000 0804e9e0
-<port-field!> 0004 0807ff78
+<port-field!> 0004 0807ff30
 <>>> 0000 0804ea00
 <<<> 0000 0804e96c
-<mem-word-access> 0004 0807faa4
+<mem-word-access> 0004 0807fa5c
 <==>> 0000 0804e9e0
-<mem-w!> 0004 08080028
+<mem-w!> 0004 0807ffe0
 <>>> 0000 0804ea00
 <<<> 0000 0804e96c
-<mem-byte-access> 0004 0807fb24
+<mem-byte-access> 0004 0807fadc
 <==>> 0000 0804e9e0
-<mem-b!> 0004 080800a0
+<mem-b!> 0004 08080058
 <>>> 0000 0804ea00
 <<<> 0000 0804e96c
-<mem-bit-access> 0004 0807fba4
+<mem-bit-access> 0004 0807fb5c
 <==>> 0000 0804e9e0
-<mem-bit!> 0004 08080118
+<mem-bit!> 0004 080800d0
 <>>> 0000 0804ea00
 <<<> 0000 0804e96c
-<mem-field-access> 0004 0807fc24
+<mem-field-access> 0004 0807fbdc
 <==>> 0000 0804e9e0
-<mem-field!> 0004 080801bc
+<mem-field!> 0004 08080174
 <>>> 0000 0804ea00
 <endsel> 0000 0804ea20
 <;> 0000 0804fb20
 <also> 0000 080521c4
 <forth> 0002 08052290
 <'> 0000 0804ffe0
-<(get)> 0004 0808026c
-<'get> 0004 0807fc64
+<(get)> 0004 08080224
+<'get> 0004 0807fc1c
 <!> 0000 0804d1a4
 <'> 0000 0804ffe0
-<(set)> 0004 080803ac
-<'set> 0004 0807fc78
+<(set)> 0004 08080364
+<'set> 0004 0807fc30
 <!> 0000 0804d1a4
 <hostinterp> 0000 08075c70
-<\> 0000 0804ee40
 <"> 0000 0804ec60
 <used> 0004 0807bde4
 <\> 0000 0804ee40
@@ -13935,33 +13923,77 @@
 <\> 0000 0804ee40
 <\> 0000 0804ee40
 <constant> 0004 0807c4cc
-<tlm-mem#> 0004 hw.fr
+<tlm-mem#> 0004 hw-llorri.fr
 <\> 0000 0804ee40
 <\> 0000 0804ee40
 <\> 0000 0804ee40
 <\> 0000 0804ee40
+<h#> 0000 080506a0
 <constant> 0004 0807c4cc
-<wd-a#> 0004 hw.fr
+<wd-a#> 0004 hw-llorri.fr
 <\> 0000 0804ee40
 <\> 0000 0804ee40
 <\> 0000 0804ee40
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<\> 0000 0804ee40
+<h#> 0000 080506a0
 <constant> 0004 0807c4cc
-<total-mem#> 0004 hw.fr
+<comm-a#> 0004 hw-llorri.fr
+<\> 0000 0804ee40
+<h#> 0000 080506a0
+<constant> 0004 0807c4cc
+<sccfg-a#> 0004 hw-llorri.fr
+<h#> 0000 080506a0
+<constant> 0004 0807c4cc
+<sccfg-clr-a#> 0004 hw-llorri.fr
+<h#> 0000 080506a0
+<constant> 0004 0807c4cc
+<control-a#> 0004 hw-llorri.fr
+<\> 0000 0804ee40
+<h#> 0000 080506a0
+<constant> 0004 0807c4cc
+<strobe-s-a#> 0004 hw-llorri.fr
+<\> 0000 0804ee40
+<h#> 0000 080506a0
+<constant> 0004 0807c4cc
+<strobe-r-a#> 0004 hw-llorri.fr
 <\> 0000 0804ee40
 <\> 0000 0804ee40
 <\> 0000 0804ee40
 <\> 0000 0804ee40
 <\> 0000 0804ee40
+<\> 0000 0804ee40
+<h#> 0000 080506a0
+<constant> 0004 0807c4cc
+<total-mem#> 0004 hw-llorri.fr
+<\> 0000 0804ee40
+<\> 0000 0804ee40
+<\> 0000 0804ee40
+<\> 0000 0804ee40
+<\> 0000 0804ee40
+<\> 0000 0804ee40
+<d#> 0000 080506e0
+<constant> 0004 0807c4cc
+<1pps-a-int#> 0004 hw-llorri.fr
+<\> 0000 0804ee40
+<d#> 0000 080506e0
+<constant> 0004 0807c4cc
+<1pps-b-int#> 0004 hw-llorri.fr
+<\> 0000 0804ee40
+<d#> 0000 080506e0
+<constant> 0004 0807c4cc
+<timer-int#> 0004 hw-llorri.fr
+<\> 0000 0804ee40
+<d#> 0000 080506e0
+<constant> 0004 0807c4cc
+<comm-rx-int#> 0004 hw-llorri.fr
+<\> 0000 0804ee40
+<d#> 0000 080506e0
+<constant> 0004 0807c4cc
+<comm-tx-int#> 0004 hw-llorri.fr
 <\> 0000 0804ee40
 <\> 0000 0804ee40
 <\> 0000 0804ee40
 <:> 0004 0807c554
-<io@> 0006 hw.fr
+<io@> 0006 hw-llorri.fr
     <\> 0005 0807c05c
     <get-mem> 0006 0807ba14
     <>r> 0006 0807b234
@@ -13975,7 +14007,7 @@
     <set-mem> 0006 0807b9ec
     <;> 0005 0807c424
 <:> 0004 0807c554
-<io!> 0006 hw.fr
+<io!> 0006 hw-llorri.fr
     <\> 0005 0807c05c
     <get-mem> 0006 0807ba14
     <>r> 0006 0807b234
@@ -13988,220 +14020,82 @@
     <r>> 0006 0807b4d8
     <set-mem> 0006 0807b9ec
     <;> 0005 0807c424
-<h#> 0000 080506a0
+<:> 0004 0807c554
+<set-io-cfg> 0006 hw-llorri.fr
+    <\> 0005 0807c05c
+    <sccfg-a#> 0006 0808056c
+    <io!> 0006 08080810
+    <;> 0005 0807c424
+<\> 0000 0804ee40
+<:> 0004 0807c554
+<clr-io-cfg> 0006 hw-llorri.fr
+    <\> 0005 0807c05c
+    <sccfg-a#> 0006 0808056c
+    <+> 0006 0807af1c
+    <io!> 0006 08080810
+    <;> 0005 0807c424
+<\> 0000 0804ee40
+<\> 0000 0804ee40
+<d#> 0000 080506e0
+<lshift> 0000 0804d518
 <constant> 0004 0807c4cc
-<sccfg-a#> 0004 hw.fr
-<:> 0004 0807c554
-<set-io-cfg> 0006 hw.fr
-    <\> 0005 0807c05c
-    <sccfg-a#> 0006 080805f8
-    <io!> 0006 080805c4
-    <;> 0005 0807c424
+<uart-ena-mask#> 0004 hw-llorri.fr
+<d#> 0000 080506e0
+<lshift> 0000 0804d518
+<constant> 0004 0807c4cc
+<iemb-sel-mask#> 0004 hw-llorri.fr
+<d#> 0000 080506e0
+<lshift> 0000 0804d518
+<constant> 0004 0807c4cc
+<iemb-enb-mask#> 0004 hw-llorri.fr
+<d#> 0000 080506e0
+<lshift> 0000 0804d518
+<constant> 0004 0807c4cc
+<iema-enb-mask#> 0004 hw-llorri.fr
 <\> 0000 0804ee40
 <:> 0004 0807c554
-<clr-io-cfg> 0006 hw.fr
-    <\> 0005 0807c05c
-    <sccfg-a#> 0006 080805f8
-    <+> 0006 0807af1c
-    <io!> 0006 080805c4
-    <;> 0005 0807c424
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<:> 0004 0807c554
-<set-Dpu-cfg> 0006 hw.fr
-    <\> 0005 0807c05c
-    <int-a#> 0006 0807d7ec
-    <io!> 0006 080805c4
-    <;> 0005 0807c424
-<\> 0000 0804ee40
-<:> 0004 0807c554
-<clr-Dpu-cfg> 0006 hw.fr
-    <\> 0005 0807c05c
-    <int-a#> 0006 0807d7ec
-    <+> 0006 0807af1c
-    <io!> 0006 080805c4
-    <;> 0005 0807c424
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<:> 0004 0807c554
-<seconds> 0006 hw.fr
+<seconds> 0006 hw-llorri.fr
     <\> 0005 0807c05c
     <\> 0005 0807c05c
     <||> 0005 0807be0c
     <;> 0005 0807c424
 <inline> 0000 0807624c
+<h#> 0000 080506a0
+<constant> 0004 0807c4cc
+<#rcv-buffer> 0004 hw-llorri.fr
+<\> 0000 0804ee40
 <:> 0004 0807c554
-<seconds-d> 0006 hw.fr
-    <\> 0005 0807c05c
-    <\> 0005 0807c05c
+<refresh-regs> 0006 hw-llorri.fr
     <;> 0005 0807c424
-<\> 0000 0804ee40
-<"> 0000 0804ec60
-<used> 0004 0807bde4
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<hex> 0000 0804e300
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<constant> 0004 0807c4cc
-<comm-a#> 0004 hw-hybrid.fr
-<\> 0000 0804ee40
-<constant> 0004 0807c4cc
-<comm-cfg-a#> 0004 hw-hybrid.fr
-<\> 0000 0804ee40
-<\> 0000 0804ee40
 <\> 0000 0804ee40
 <h#> 0000 080506a0
 <constant> 0004 0807c4cc
-<#rcv-buffer> 0004 hw-hybrid.fr
-<:> 0004 0807c554
-<xxx> 0006 hw-hybrid.fr
-    <get-mem> 0006 0807ba14
-    <>r> 0006 0807b234
-    <io-mem#> 0006 0807d774
-    <set-mem> 0006 0807b9ec
-    <h#> 0005 0807bf2c
-    <far!> 0006 0807ee70
-    <r>> 0006 0807b4d8
-    <set-mem> 0006 0807b9ec
-    <;> 0005 0807c424
-<:> 0004 0807c554
-<refresh-regs> 0006 hw-hybrid.fr
-    <;> 0005 0807c424
+<dog-enb-mask#> 0004 hw-llorri.fr
 <\> 0000 0804ee40
-<d#> 0000 080506e0
 <constant> 0004 0807c4cc
-<1pps-a-int#> 0004 hw-hybrid.fr
-<\> 0000 0804ee40
-<d#> 0000 080506e0
-<constant> 0004 0807c4cc
-<1pps-b-int#> 0004 hw-hybrid.fr
-<\> 0000 0804ee40
-<d#> 0000 080506e0
-<constant> 0004 0807c4cc
-<timer-int#> 0004 hw-hybrid.fr
-<\> 0000 0804ee40
-<d#> 0000 080506e0
-<constant> 0004 0807c4cc
-<comm-rx-int#> 0004 hw-hybrid.fr
-<\> 0000 0804ee40
-<d#> 0000 080506e0
-<constant> 0004 0807c4cc
-<comm-tx-int#> 0004 hw-hybrid.fr
+<boot-mem#> 0004 hw-llorri.fr
 <\> 0000 0804ee40
 <h#> 0000 080506a0
 <constant> 0004 0807c4cc
-<dog-enb-mask#> 0004 hw-hybrid.fr
+<#boot-words> 0004 hw-llorri.fr
+<\> 0000 0804ee40
+<\> 0000 0804ee40
+<constant> 0004 0807c4cc
+<eeprom-prog-mem#> 0004 hw-llorri.fr
+<\> 0000 0804ee40
+<\> 0000 0804ee40
+<constant> 0004 0807c4cc
+<eeprom-prog-addr> 0004 hw-llorri.fr
+<\> 0000 0804ee40
+<\> 0000 0804ee40
+<\> 0000 0804ee40
 <\> 0000 0804ee40
 <d#> 0000 080506e0
 <lshift> 0000 0804d518
 <constant> 0004 0807c4cc
-<iemb-sel-mask#> 0004 hw-hybrid.fr
+<cause-msk#> 0004 hw-llorri.fr
 <\> 0000 0804ee40
-<d#> 0000 080506e0
-<lshift> 0000 0804d518
-<constant> 0004 0807c4cc
-<iemb-enb-mask#> 0004 hw-hybrid.fr
-<\> 0000 0804ee40
-<d#> 0000 080506e0
-<lshift> 0000 0804d518
-<constant> 0004 0807c4cc
-<iema-enb-mask#> 0004 hw-hybrid.fr
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<"> 0000 0804ec60
-<fload> 0004 0807bd90
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<hex> 0000 0804e300
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<constant> 0004 0807c4cc
-<boot-mem#> 0004 hw-boot.fr
-<\> 0000 0804ee40
-<constant> 0004 0807c4cc
-<#boot-words> 0004 hw-boot.fr
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<constant> 0004 0807c4cc
-<eeprom-prog-mem#> 0004 hw-boot.fr
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<constant> 0004 0807c4cc
-<eeprom-prog-addr> 0004 hw-boot.fr
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<lshift> 0000 0804d518
-<constant> 0004 0807c4cc
-<cause-msk#> 0004 hw-boot.fr
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<"> 0000 0804ec60
-<fload> 0004 0807bd90
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<hex> 0000 0804e300
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<constant> 0004 0807c4cc
-<control-a#> 0004 hw-boot-hybrid.fr
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<:> 0004 0807c554
-<set-io> 0006 hw-boot-hybrid.fr
-    <\> 0005 0807c05c
-    <\> 0005 0807c05c
-    <@> 0006 0807b25c
-    <io!> 0006 080805c4
-    <;> 0005 0807c424
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<create> 0004 0807c758
-<more-status> 0004 hw-boot-hybrid.fr
-<cells> 0004 080766f0
-<allot> 0004 0807681c
-<more-status> 0004 08080b90
-<cells> 0004 080766f0
-<fill> 0004 0807f494
-<more-status> 0004 08080b90
-<dup> 0000 0804d4f8
-<+> 0000 0804d1c4
-<port-word:> 0004 0807fe24
-<instr-control> 0004 hw-boot-hybrid.fr
-<'> 0004 08076a34
-<set-io> 0006 08080b70
-<,> 0004 0807685c
-<control-a#> 0004 08080b34
-<,> 0004 0807685c
-<\> 0000 0804ee40
-<instr-control> 0004 08080bc8
-<port-bit:> 0004 0807ff34
-<nv-enb> 0004 hw-boot-hybrid.fr
-<drop> 0000 0804d4e8
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<:> 0004 0807c554
-<init-specific> 0006 hw-boot-hybrid.fr
-    <\> 0005 0807c05c
-    <\> 0005 0807c05c
-    <;> 0005 0807c424
+<[ifdef]> 0000 08052564
 <\> 0000 0804ee40
 <"> 0000 0804ec60
 <used> 0004 0807bde4
@@ -14213,47 +14107,45 @@
 <\> 0000 0804ee40
 <\> 0000 0804ee40
 <\> 0000 0804ee40
-<\> 0000 0804ee40
+<constant> 0004 0807c4cc
+<#limits-str> 0004 config-llorri.fr
 <\> 0000 0804ee40
 <constant> 0004 0807c4cc
-<#limits-str> 0004 config.fr
-<\> 0000 0804ee40
-<constant> 0004 0807c4cc
-<#params-str> 0004 config.fr
+<#params-str> 0004 config-llorri.fr
 <\> 0000 0804ee40
 <\> 0000 0804ee40
 <\> 0000 0804ee40
 <\> 0000 0804ee40
 <\> 0000 0804ee40
 <constant> 0004 0807c4cc
-<#echo-pkt> 0004 config.fr
+<#echo-pkt> 0004 config-llorri.fr
 <\> 0000 0804ee40
 <constant> 0004 0807c4cc
-<#alarm-pkt> 0004 config.fr
+<#alarm-pkt> 0004 config-llorri.fr
 <\> 0000 0804ee40
 <constant> 0004 0807c4cc
-<#checksum-pkt> 0004 config.fr
+<#checksum-pkt> 0004 config-llorri.fr
 <\> 0000 0804ee40
 <constant> 0004 0807c4cc
-<#dump-pkt> 0004 config.fr
+<#dump-pkt> 0004 config-llorri.fr
 <\> 0000 0804ee40
 <constant> 0004 0807c4cc
-<#mac-dump-pkt> 0004 config.fr
+<#status-pkt> 0004 config-llorri.fr
 <\> 0000 0804ee40
 <constant> 0004 0807c4cc
-<#mac-check-pkt> 0004 config.fr
+<#mac-dump-pkt> 0004 config-llorri.fr
 <\> 0000 0804ee40
 <constant> 0004 0807c4cc
-<#limits-pkt> 0004 config.fr
+<#mac-check-pkt> 0004 config-llorri.fr
 <\> 0000 0804ee40
 <constant> 0004 0807c4cc
-<#params-pkt> 0004 config.fr
+<#limits-pkt> 0004 config-llorri.fr
 <\> 0000 0804ee40
 <constant> 0004 0807c4cc
-<#text-pkt> 0004 config.fr
+<#params-pkt> 0004 config-llorri.fr
 <\> 0000 0804ee40
 <constant> 0004 0807c4cc
-<#crit-hsk-pkt> 0004 config.fr
+<#text-pkt> 0004 config-llorri.fr
 <\> 0000 0804ee40
 <\> 0000 0804ee40
 <\> 0000 0804ee40
@@ -14262,249 +14154,181 @@
 <\> 0000 0804ee40
 <\> 0000 0804ee40
 <constant> 0004 0807c4cc
-<#cmd-null> 0004 config.fr
+<#cmd-null> 0004 config-llorri.fr
 <constant> 0004 0807c4cc
-<#cmd-text> 0004 config.fr
+<#cmd-text> 0004 config-llorri.fr
 <constant> 0004 0807c4cc
-<#cmd-wrap> 0004 config.fr
+<#cmd-wrap> 0004 config-llorri.fr
 <constant> 0004 0807c4cc
-<#mac-check> 0004 config.fr
+<#mac-check> 0004 config-llorri.fr
 <constant> 0004 0807c4cc
-<#mac-def> 0004 config.fr
+<#mac-def> 0004 config-llorri.fr
 <constant> 0004 0807c4cc
-<#mac-delay> 0004 config.fr
+<#mac-delay> 0004 config-llorri.fr
 <constant> 0004 0807c4cc
-<#mac-end> 0004 config.fr
+<#mac-end> 0004 config-llorri.fr
 <constant> 0004 0807c4cc
-<#mac-enddef> 0004 config.fr
+<#mac-enddef> 0004 config-llorri.fr
 <constant> 0004 0807c4cc
-<#mac-halt> 0004 config.fr
+<#mac-halt> 0004 config-llorri.fr
 <constant> 0004 0807c4cc
-<#mac-loop-begin> 0004 config.fr
+<#mac-loop-begin> 0004 config-llorri.fr
 <constant> 0004 0807c4cc
-<#mac-loop-end> 0004 config.fr
+<#mac-loop-end> 0004 config-llorri.fr
 <constant> 0004 0807c4cc
-<#mac-nest> 0004 config.fr
+<#mac-nest> 0004 config-llorri.fr
 <constant> 0004 0807c4cc
-<#mac-pause> 0004 config.fr
+<#mac-pause> 0004 config-llorri.fr
 <constant> 0004 0807c4cc
-<#mac-read> 0004 config.fr
+<#mac-read> 0004 config-llorri.fr
 <constant> 0004 0807c4cc
-<#mac-restore> 0004 config.fr
+<#mac-restore> 0004 config-llorri.fr
 <constant> 0004 0807c4cc
-<#mac-run> 0004 config.fr
+<#mac-run> 0004 config-llorri.fr
 <constant> 0004 0807c4cc
-<#mac-run-silent> 0004 config.fr
+<#mac-run-silent> 0004 config-llorri.fr
 <constant> 0004 0807c4cc
-<#mac-save> 0004 config.fr
+<#mac-save> 0004 config-llorri.fr
 <constant> 0004 0807c4cc
-<#mem-check> 0004 config.fr
+<#mem-check> 0004 config-llorri.fr
 <constant> 0004 0807c4cc
-<#mem-copy> 0004 config.fr
+<#mem-copy> 0004 config-llorri.fr
 <constant> 0004 0807c4cc
-<#mem-load> 0004 config.fr
+<#mem-load> 0004 config-llorri.fr
 <constant> 0004 0807c4cc
-<#mem-nv-enb> 0004 config.fr
+<#mem-read> 0004 config-llorri.fr
 <constant> 0004 0807c4cc
-<#mem-read> 0004 config.fr
+<#mem-read-abrt> 0004 config-llorri.fr
 <constant> 0004 0807c4cc
-<#mem-read-abrt> 0004 config.fr
+<#mem-run> 0004 config-llorri.fr
 <constant> 0004 0807c4cc
-<#mem-run> 0004 config.fr
+<#mem-str-load> 0004 config-llorri.fr
 <constant> 0004 0807c4cc
-<#mem-str-load> 0004 config.fr
+<#mem-str-read> 0004 config-llorri.fr
 <constant> 0004 0807c4cc
-<#mem-str-read> 0004 config.fr
+<#mem-write> 0004 config-llorri.fr
 <constant> 0004 0807c4cc
-<#mem-write> 0004 config.fr
+<#mon-cntrl> 0004 config-llorri.fr
 <constant> 0004 0807c4cc
-<#mon-cntrl> 0004 config.fr
-<\> 0000 0804ee40
-<\> 0000 0804ee40
+<#stat-clr> 0004 config-llorri.fr
 <constant> 0004 0807c4cc
-<#saf-cycle> 0004 config.fr
-<constant> 0004 0807c4cc
-<#saf-off> 0004 config.fr
-<constant> 0004 0807c4cc
-<#saf-reset> 0004 config.fr
-<constant> 0004 0807c4cc
-<#saf-timeout> 0004 config.fr
-<constant> 0004 0807c4cc
-<#stat-clr> 0004 config.fr
-<constant> 0004 0807c4cc
-<#stat-int> 0004 config.fr
-<constant> 0004 0807c4cc
-<#stat-mem> 0004 config.fr
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<d#> 0000 080506e0
-<constant> 0004 0807c4cc
-<#max-args> 0004 config.fr
-<\> 0000 0804ee40
-<d#> 0000 080506e0
-<constant> 0004 0807c4cc
-<#max-echo-args> 0004 config.fr
-<\> 0000 0804ee40
-<\> 0000 0804ee40
+<#stat-int> 0004 config-llorri.fr
 <\> 0000 0804ee40
 <constant> 0004 0807c4cc
-<#ok-cmd> 0004 config.fr
-<\> 0000 0804ee40
+<#rom-boot> 0004 config-llorri.fr
 <constant> 0004 0807c4cc
-<#ok-macro-cmd> 0004 config.fr
-<\> 0000 0804ee40
+<#rom-go> 0004 config-llorri.fr
 <constant> 0004 0807c4cc
-<#unknown-cmd> 0004 config.fr
-<\> 0000 0804ee40
+<#stat-mem> 0004 config-llorri.fr
 <constant> 0004 0807c4cc
-<#badarg-cmd> 0004 config.fr
-<\> 0000 0804ee40
+<#saf-off> 0004 config-llorri.fr
 <constant> 0004 0807c4cc
-<#macro-run-cmd> 0004 config.fr
-<\> 0000 0804ee40
+<#saf-reset> 0004 config-llorri.fr
 <constant> 0004 0807c4cc
-<#need-macro-cmd> 0004 config.fr
-<\> 0000 0804ee40
+<#saf-timeout> 0004 config-llorri.fr
 <constant> 0004 0807c4cc
-<#macro-comp-cmd> 0004 config.fr
-<\> 0000 0804ee40
-<constant> 0004 0807c4cc
-<#macro-kill-cmd> 0004 config.fr
-<\> 0000 0804ee40
-<constant> 0004 0807c4cc
-<#macro-check-cmd> 0004 config.fr
-<\> 0000 0804ee40
-<constant> 0004 0807c4cc
-<#mem-write-cmd> 0004 config.fr
-<\> 0000 0804ee40
-<\> 0000 0804ee40
+<#mem-nv-enb> 0004 config-llorri.fr
 <\> 0000 0804ee40
 <\> 0000 0804ee40
 <d#> 0000 080506e0
 <constant> 0004 0807c4cc
-<#bad-pkt-alm> 0004 config.fr
+<#max-args> 0004 config-llorri.fr
+<\> 0000 0804ee40
+<\> 0000 0804ee40
+<\> 0000 0804ee40
+<constant> 0004 0807c4cc
+<#struct> 0004 config-llorri.fr
+<\> 0000 0804ee40
 <\> 0000 0804ee40
 <d#> 0000 080506e0
 <constant> 0004 0807c4cc
-<#no-contexts-alm> 0004 config.fr
+<#max-echo-args> 0004 config-llorri.fr
+<\> 0000 0804ee40
+<\> 0000 0804ee40
+<\> 0000 0804ee40
+<constant> 0004 0807c4cc
+<#ok-cmd> 0004 config-llorri.fr
+<\> 0000 0804ee40
+<constant> 0004 0807c4cc
+<#ok-macro-cmd> 0004 config-llorri.fr
+<\> 0000 0804ee40
+<constant> 0004 0807c4cc
+<#unknown-cmd> 0004 config-llorri.fr
+<\> 0000 0804ee40
+<constant> 0004 0807c4cc
+<#badarg-cmd> 0004 config-llorri.fr
+<\> 0000 0804ee40
+<constant> 0004 0807c4cc
+<#macro-run-cmd> 0004 config-llorri.fr
+<\> 0000 0804ee40
+<constant> 0004 0807c4cc
+<#need-macro-cmd> 0004 config-llorri.fr
+<\> 0000 0804ee40
+<constant> 0004 0807c4cc
+<#macro-comp-cmd> 0004 config-llorri.fr
+<\> 0000 0804ee40
+<constant> 0004 0807c4cc
+<#macro-kill-cmd> 0004 config-llorri.fr
+<\> 0000 0804ee40
+<constant> 0004 0807c4cc
+<#bad-eeprom-cmd> 0004 config-llorri.fr
+<\> 0000 0804ee40
+<constant> 0004 0807c4cc
+<#macro-check-cmd> 0004 config-llorri.fr
+<\> 0000 0804ee40
+<constant> 0004 0807c4cc
+<#mem-write-cmd> 0004 config-llorri.fr
+<\> 0000 0804ee40
+<\> 0000 0804ee40
+<\> 0000 0804ee40
 <\> 0000 0804ee40
 <d#> 0000 080506e0
 <constant> 0004 0807c4cc
-<#auto-op-alm> 0004 config.fr
+<#bad-pkt-alm> 0004 config-llorri.fr
 <\> 0000 0804ee40
 <d#> 0000 080506e0
 <constant> 0004 0807c4cc
-<#too-low-alm> 0004 config.fr
+<#no-contexts-alm> 0004 config-llorri.fr
 <\> 0000 0804ee40
 <d#> 0000 080506e0
 <constant> 0004 0807c4cc
-<#too-high-alm> 0004 config.fr
+<#auto-op-alm> 0004 config-llorri.fr
+<\> 0000 0804ee40
+<d#> 0000 080506e0
+<constant> 0004 0807c4cc
+<#too-low-alm> 0004 config-llorri.fr
+<\> 0000 0804ee40
+<d#> 0000 080506e0
+<constant> 0004 0807c4cc
+<#too-high-alm> 0004 config-llorri.fr
 <\> 0000 0804ee40
 <\> 0000 0804ee40
 <\> 0000 0804ee40
 <\> 0000 0804ee40
 <constant> 0004 0807c4cc
-<#max-macro-addr> 0004 config.fr
+<#max-macro-addr> 0004 config-llorri.fr
 <\> 0000 0804ee40
 <d#> 0000 080506e0
 <2/> 0000 0804d2c4
 <cell/> 0004 08076708
 <constant> 0004 0807c4cc
-<#dump-words> 0004 config.fr
+<#dump-words> 0004 config-llorri.fr
 <\> 0000 0804ee40
 <true> 0000 0804dc14
 <constant> 0004 0807c4cc
-<dump-ok?> 0004 config.fr
+<dump-ok?> 0004 config-llorri.fr
 <\> 0000 0804ee40
 <constant> 0004 0807c4cc
-<#crc-poly> 0004 config.fr
+<#crc-poly> 0004 config-llorri.fr
 <\> 0000 0804ee40
 <constant> 0004 0807c4cc
-<#crc-seed> 0004 config.fr
-<\> 0000 0804ee40
-<"> 0000 0804ec60
-<used> 0004 0807bde4
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<hex> 0000 0804e300
-<\> 0000 0804ee40
-<constant> 0004 0807c4cc
-<#itf-vc> 0004 config-hybrid.fr
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<constant> 0004 0807c4cc
-<#apid-instr> 0004 config-hybrid.fr
-<\> 0000 0804ee40
-<d#> 0000 080506e0
-<constant> 0004 0807c4cc
-<#apids> 0004 config-hybrid.fr
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<constant> 0004 0807c4cc
-<start-mask#> 0004 config-hybrid.fr
-<\> 0000 0804ee40
-<constant> 0004 0807c4cc
-<pwr-down-mask#> 0004 config-hybrid.fr
-<\> 0000 0804ee40
-<constant> 0004 0807c4cc
-<ssr-offset#> 0004 config-hybrid.fr
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<"> 0000 0804ec60
-<fload> 0004 0807bd90
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<hex> 0000 0804e300
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<constant> 0004 0807c4cc
-<#struct> 0004 config-boot.fr
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<constant> 0004 0807c4cc
-<#status-pkt> 0004 config-boot.fr
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<constant> 0004 0807c4cc
-<#rom-boot> 0004 config-boot.fr
-<constant> 0004 0807c4cc
-<#rom-go> 0004 config-boot.fr
-<\> 0000 0804ee40
-<constant> 0004 0807c4cc
-<#bad-eeprom-cmd> 0004 config-boot.fr
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<\> 0000 0804ee40
+<#crc-seed> 0004 config-llorri.fr
 <\> 0000 0804ee40
 <\> 0000 0804ee40
 <\> 0000 0804ee40
 <d#> 0000 080506e0
 <constant> 0004 0807c4cc
-<#max-out-frame> 0004 config-boot.fr
-<\> 0000 0804ee40
-<constant> 0004 0807c4cc
-<#max-frames> 0004 config-boot.fr
-<\> 0000 0804ee40
+<#max-out-frame> 0004 config-llorri.fr
 <\> 0000 0804ee40
 <"> 0000 0804ec60
 <used> 0004 0807bde4
@@ -14519,11 +14343,11 @@
 <\> 0000 0804ee40
 <create> 0004 0807c758
 <far-mem-set> 0004 farallot3.fr
-<total-mem#> 0004 08080564
+<total-mem#> 0004 08080684
 <cells> 0004 080766f0
 <allot> 0004 0807681c
-<far-mem-set> 0004 0808200c
-<total-mem#> 0004 08080564
+<far-mem-set> 0004 08081ce4
+<total-mem#> 0004 08080684
 <cells> 0004 080766f0
 <erase> 0004 0807f4cc
 <:> 0004 0807c554
@@ -14531,20 +14355,20 @@
     <\> 0005 0807c05c
     <\> 0005 0807c05c
     <cells> 0006 0807b730
-    <far-mem-set> 0006 08082024
+    <far-mem-set> 0006 08081cfc
     <+> 0006 0807af1c
     <;> 0005 0807c424
 <:> 0004 0807c554
 <far-here> 0006 farallot3.fr
     <\> 0005 0807c05c
-    <far-h> 0006 08082044
+    <far-h> 0006 08081d1c
     <@> 0006 0807b25c
     <;> 0005 0807c424
 <:> 0004 0807c554
 <far-allot> 0006 farallot3.fr
     <\> 0005 0807c05c
     <\> 0005 0807c05c
-    <far-h> 0006 08082044
+    <far-h> 0006 08081d1c
     <dup> 0006 0807b394
     <>r> 0006 0807b234
     <@> 0006 0807b25c
@@ -14567,7 +14391,7 @@
 <\> 0000 0804ee40
 <[host]> 0000 08075614
 <cells> 0004 080766f0
-<far-mem-set> 0004 0808200c
+<far-mem-set> 0004 08081ce4
 <+> 0000 0804d1c4
 <;> 0000 0804fb20
 <forth> 0002 08052290
@@ -14575,7 +14399,7 @@
 <far-here> 0004 farallot3.mfr
 <\> 0000 0804ee40
 <[host]> 0000 08075614
-<far-h> 0004 080820a4
+<far-h> 0004 08081d7c
 <@> 0004 08076968
 <;> 0000 0804fb20
 <forth> 0002 08052290
@@ -14584,7 +14408,7 @@
 <\> 0000 0804ee40
 <\> 0000 0804ee40
 <[host]> 0000 08075614
-<far-h> 0004 080820a4
+<far-h> 0004 08081d7c
 <dup> 0000 0804d4f8
 <>r> 0000 0804d384
 <@> 0004 08076968
@@ -14601,7 +14425,7 @@
 <\> 0000 0804ee40
 <[host]> 0000 08075614
 <>log> 0000 08075d0c
-<total-mem#> 0004 08080564
+<total-mem#> 0004 08080684
 <do> 0000 0804e8a0
 <\> 0000 0804ee40
 <."> 0000 0804ed40
@@ -14609,7 +14433,7 @@
 <.> 0000 0804fee4
 <."> 0000 0804ed40
 <i> 0000 0804d118
-<far-here> 0004 080820c4
+<far-here> 0004 08081d9c
 <u.lz> 0000 0804ff20
 <cr> 0000 0804d980
 <loop> 0000 0804e8e0
@@ -14622,129 +14446,170 @@
 <decimal> 0000 0804e340
 <module>> 0004 0807e8c0
 <status> 0004 stat-db.fr
+<:> 0004 0807c554
+<set-io> 0006 stat-db.fr
+    <@> 0006 0807b25c
+    <io!> 0006 08080810
+    <;> 0005 0807c424
 <\> 0000 0804ee40
 <\> 0000 0804ee40
 <\> 0000 0804ee40
+<d#> 0000 080506e0
 <constant> 0004 0807c4cc
 <#config/status> 0004 stat-db.fr
 <\> 0000 0804ee40
+<d#> 0000 080506e0
 <constant> 0004 0807c4cc
 <#more-config/status> 0004 stat-db.fr
 <\> 0000 0804ee40
 <\> 0000 0804ee40
 <create> 0004 0807c758
 <config/status> 0004 stat-db.fr
-<#config/status> 0004 080821bc
+<#config/status> 0004 08081eb4
 <allot> 0004 0807681c
 <\> 0000 0804ee40
 <\> 0000 0804ee40
 <create> 0004 0807c758
 <more-config/status> 0004 stat-db.fr
-<#more-config/status> 0004 080821f8
+<#more-config/status> 0004 08081ef0
 <allot> 0004 0807681c
 <\> 0000 0804ee40
 <\> 0000 0804ee40
 <\> 0000 0804ee40
 <public:> 0004 0807e8f4
 <\> 0000 0804ee40
-<config/status> 0004 08082234
+<config/status> 0004 08081f2c
 <+> 0000 0804d1c4
-<mem-word:> 0004 08080068
+<mem-word:> 0004 08080020
 <status-int> 0004 stat-db.fr
 <\> 0000 0804ee40
-<config/status> 0004 08082234
+<config/status> 0004 08081f2c
 <+> 0000 0804d1c4
-<mem-word:> 0004 08080068
+<mem-word:> 0004 08080020
 <tlm-volume> 0004 stat-db.fr
 <\> 0000 0804ee40
-<config/status> 0004 08082234
+<config/status> 0004 08081f2c
 <+> 0000 0804d1c4
-<mem-word:> 0004 08080068
+<mem-word:> 0004 08080020
 <watch-addr> 0004 stat-db.fr
 <\> 0000 0804ee40
-<config/status> 0004 08082234
+<config/status> 0004 08081f2c
 <+> 0000 0804d1c4
-<mem-byte:> 0004 080800e0
+<mem-byte:> 0004 08080098
 <watch-mem> 0004 stat-db.fr
 <\> 0000 0804ee40
-<config/status> 0004 08082234
+<config/status> 0004 08081f2c
 <+> 0000 0804d1c4
-<mem-byte:> 0004 080800e0
+<mem-byte:> 0004 08080098
 <watch-byte1> 0004 stat-db.fr
 <\> 0000 0804ee40
-<config/status> 0004 08082234
+<config/status> 0004 08081f2c
 <+> 0000 0804d1c4
-<mem-byte:> 0004 080800e0
+<mem-byte:> 0004 08080098
 <watch-byte2> 0004 stat-db.fr
 <\> 0000 0804ee40
-<config/status> 0004 08082234
+<config/status> 0004 08081f2c
 <+> 0000 0804d1c4
-<mem-byte:> 0004 080800e0
+<mem-byte:> 0004 08080098
 <sw-version> 0004 stat-db.fr
 <\> 0000 0804ee40
-<config/status> 0004 08082234
+<config/status> 0004 08081f2c
 <+> 0000 0804d1c4
-<mem-byte:> 0004 080800e0
+<mem-byte:> 0004 08080098
 <alarm-id> 0004 stat-db.fr
 <\> 0000 0804ee40
-<config/status> 0004 08082234
+<config/status> 0004 08081f2c
 <+> 0000 0804d1c4
-<mem-bit:> 0004 08080178
+<mem-bit:> 0004 08080130
 <alarm-type> 0004 stat-db.fr
 <\> 0000 0804ee40
-<config/status> 0004 08082234
+<config/status> 0004 08081f2c
 <+> 0000 0804d1c4
-<mem-field:> 0004 0808021c
+<mem-field:> 0004 080801d4
 <alarm-count> 0004 stat-db.fr
 <\> 0000 0804ee40
-<config/status> 0004 08082234
+<config/status> 0004 08081f2c
 <+> 0000 0804d1c4
-<mem-byte:> 0004 080800e0
+<mem-byte:> 0004 08080098
 <cmds-executed> 0004 stat-db.fr
 <\> 0000 0804ee40
-<config/status> 0004 08082234
+<config/status> 0004 08081f2c
 <+> 0000 0804d1c4
-<mem-byte:> 0004 080800e0
+<mem-byte:> 0004 08080098
 <cmds-rejected> 0004 stat-db.fr
 <\> 0000 0804ee40
-<config/status> 0004 08082234
+<config/status> 0004 08081f2c
 <+> 0000 0804d1c4
-<mem-bit:> 0004 08080178
+<mem-bit:> 0004 08080130
 <cause> 0004 stat-db.fr
 <\> 0000 0804ee40
-<config/status> 0004 08082234
+<config/status> 0004 08081f2c
 <+> 0000 0804d1c4
-<mem-bit:> 0004 08080178
+<mem-bit:> 0004 08080130
 <mem-write-enb> 0004 stat-db.fr
 <\> 0000 0804ee40
-<config/status> 0004 08082234
+<config/status> 0004 08081f2c
 <+> 0000 0804d1c4
-<mem-field:> 0004 0808021c
+<mem-field:> 0004 080801d4
 <code-ram> 0004 stat-db.fr
 <\> 0000 0804ee40
 <\> 0000 0804ee40
-<more-config/status> 0004 0808226c
+<config/status> 0004 08081f2c
 <+> 0000 0804d1c4
-<mem-byte:> 0004 080800e0
+<port-word:> 0004 0807fddc
+<instr-control> 0004 stat-db.fr
+<'> 0004 08076a34
+<set-io> 0006 08081e94
+<,> 0004 0807685c
+<control-a#> 0004 080805d0
+<,> 0004 0807685c
+<instr-control> 0004 080822e4
+<port-bit:> 0004 0807feec
+<nv-enb> 0004 stat-db.fr
+<config/status> 0004 08081f2c
+<+> 0000 0804d1c4
+<mem-word:> 0004 08080020
+<instr-status> 0004 stat-db.fr
+<\> 0000 0804ee40
+<config/status> 0004 08081f2c
+<+> 0000 0804d1c4
+<mem-word:> 0004 08080020
+<sccfg-status> 0004 stat-db.fr
+<\> 0000 0804ee40
+<\> 0000 0804ee40
+<more-config/status> 0004 08081f64
+<+> 0000 0804d1c4
+<mem-byte:> 0004 08080098
 <macro-cmds-exec> 0004 stat-db.fr
 <\> 0000 0804ee40
-<more-config/status> 0004 0808226c
+<more-config/status> 0004 08081f64
 <+> 0000 0804d1c4
-<mem-byte:> 0004 080800e0
+<mem-byte:> 0004 08080098
 <macro-cmds-rej> 0004 stat-db.fr
 <\> 0000 0804ee40
 <private:> 0004 0807e908
 <\> 0000 0804ee40
 <\> 0000 0804ee40
 <\> 0000 0804ee40
-<config/status> 0004 08082234
-<#config/status> 0004 080821bc
+<config/status> 0004 08081f2c
+<#config/status> 0004 08081eb4
 <fill> 0004 0807f494
 <\> 0000 0804ee40
-<status-int> 0004 080822a4
-<set> 0004 0807fcac
-<sw-version> 0004 080823f4
-<set> 0004 0807fcac
+<status-int> 0004 08081f9c
+<set> 0004 0807fc64
+<sw-version> 0004 080820ec
+<set> 0004 0807fc64
+<:> 0004 0807c554
+<update-digital-status> 0006 stat-db.fr
+    <control-a#> 0006 080805e4
+    <io@> 0006 080807f0
+    <instr-status> 0006 0808236c
+    <set> 0006 0807f75c
+    <sccfg-a#> 0006 0808056c
+    <io@> 0006 080807f0
+    <sccfg-status> 0006 080823a4
+    <set> 0006 0807f75c
+    <;> 0005 0807c424
 <endmodule>> 0004 0807e91c
 <\> 0000 0804ee40
 <"> 0000 0804ec60
@@ -14764,7 +14629,7 @@
     <0<> 0006 0807afac
     <if> 0005 0807c074
     <2*> 0006 0807b074
-    <#crc-poly> 0006 08081c88
+    <#crc-poly> 0006 08081c3c
     <xor> 0006 0807b690
     <else> 0005 0807c090
     <2*> 0006 0807b074
@@ -14780,13 +14645,13 @@
     <swap> 0006 0807b5c8
     <set-mem> 0006 0807b9ec
     <\> 0005 0807c05c
-    <#crc-seed> 0006 08081cc8
+    <#crc-seed> 0006 08081c7c
     <-rot> 0006 0807af8c
     <far> 0006 0807ba64
     <for> 0005 0807c304
     <@+> 0006 0807e930
     <>r> 0006 0807b234
-    <crc> 0006 0808265c
+    <crc> 0006 08082454
     <r>> 0006 0807b4d8
     <next> 0005 0807c328
     <drop> 0006 0807b36c
@@ -14875,17 +14740,9 @@
 <module>> 0004 0807e8c0
 <time> 0004 time.fr
 <\> 0000 0804ee40
+<d#> 0000 080506e0
 <constant> 0004 0807c4cc
 <#1pps-nom> 0004 time.fr
-<\> 0000 0804ee40
-<constant> 0004 0807c4cc
-<#1pps-maxerr> 0004 time.fr
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<#1pps-nom> 0004 080827f8
-<2/> 0000 0804d2c4
-<constant> 0004 0807c4cc
-<#1pps-phase> 0004 time.fr
 <\> 0000 0804ee40
 <\> 0000 0804ee40
 <\> 0000 0804ee40
@@ -14904,19 +14761,9 @@
 <variable> 0004 0807c7b0
 <new-time> 0004 time.fr
 <\> 0000 0804ee40
-<2variable> 0004 0807c7ec
-<1pps-time> 0004 time.fr
-<\> 0000 0804ee40
-<variable> 0004 0807c7b0
-<delta-time> 0004 time.fr
-<\> 0000 0804ee40
-<variable> 0004 0807c7b0
-<1pps-interval> 0004 time.fr
-<\> 0000 0804ee40
-<#1pps-nom> 0004 080827f8
-<1pps-interval> 0004 08082a78
-<!> 0004 08076980
 <public:> 0004 0807e8f4
+<\> 0000 0804ee40
+<\> 0000 0804ee40
 <:> 0004 0807c554
 <set-time> 0006 time.fr
     <\> 0005 0807c05c
@@ -14924,40 +14771,42 @@
     <\> 0005 0807c05c
     <disable> 0006 0807b92c
     <\> 0005 0807c05c
-    <future-time> 0006 080828cc
+    <future-time> 0006 08082644
     <2!> 0006 0807cdf0
     <\> 0005 0807c05c
-    <#1pps-nom> 0006 0808280c
+    <#1pps-nom> 0006 08082604
     <um*> 0006 0807b8cc
     <nip> 0006 0807b438
-    <future-time-sub> 0006 0808290c
+    <future-time-sub> 0006 08082684
     <!> 0006 0807aef0
     <true> 0006 0807cbe0
-    <new-time> 0006 080829cc
+    <new-time> 0006 08082744
     <!> 0006 0807aef0
     <\> 0005 0807c05c
     <enable> 0006 0807b90c
     <;> 0005 0807c424
+<\> 0000 0804ee40
+<\> 0000 0804ee40
 <:> 0004 0807c554
 <sync-time> 0006 time.fr
     <\> 0005 0807c05c
     <\> 0005 0807c05c
     <\> 0005 0807c05c
-    <new-time> 0006 080829cc
+    <new-time> 0006 08082744
     <@> 0006 0807b25c
     <if> 0005 0807c074
     <\> 0005 0807c05c
     <false> 0006 0807cc08
-    <new-time> 0006 080829cc
+    <new-time> 0006 08082744
     <!> 0006 0807aef0
-    <future-time-sub> 0006 0808290c
+    <future-time-sub> 0006 08082684
     <@> 0006 0807b25c
-    <s/c-time-sub> 0006 0808298c
+    <s/c-time-sub> 0006 08082704
     <!> 0006 0807aef0
     <\> 0005 0807c05c
-    <future-time> 0006 080828cc
+    <future-time> 0006 08082644
     <2@> 0006 0807ce10
-    <s/c-time> 0006 0808294c
+    <s/c-time> 0006 080826c4
     <2!> 0006 0807cdf0
     <\> 0005 0807c05c
     <then> 0005 0807c0b4
@@ -14966,73 +14815,32 @@
 <prop-time> 0006 time.fr
     <\> 0005 0807c05c
     <\> 0005 0807c05c
-    <\> 0005 0807c05c
-    <\> 0005 0807c05c
-    <\> 0005 0807c05c
-    <s/c-time-sub> 0006 0808298c
+    <s/c-time-sub> 0006 08082704
     <@> 0006 0807b25c
     <1+> 0006 0807b024
     <dup> 0006 0807b394
-    <#1pps-nom> 0006 0808280c
+    <#1pps-nom> 0006 08082604
     <=> 0006 0807b1e4
     <if> 0005 0807c074
     <\> 0005 0807c05c
     <drop> 0006 0807b36c
-    <s/c-time> 0006 0808294c
+    <s/c-time> 0006 080826c4
     <2@> 0006 0807ce10
     <d+> 0006 0807b780
-    <s/c-time> 0006 0808294c
+    <s/c-time> 0006 080826c4
     <2!> 0006 0807cdf0
     <then> 0005 0807c0b4
-    <s/c-time-sub> 0006 0808298c
-    <!> 0006 0807aef0
-    <\> 0005 0807c05c
-    <[ifndef]> 0005 0807c3d0
-    <delta-time> 0006 08082a4c
-    <@> 0006 0807b25c
-    <1+> 0006 0807b024
     <dup> 0006 0807b394
-    <\> 0005 0807c05c
-    <1pps-interval> 0006 08082a8c
-    <@> 0006 0807b25c
-    <=> 0006 0807b1e4
-    <if> 0005 0807c074
-    <\> 0005 0807c05c
-    <s/c-time-sub> 0006 0808298c
-    <@> 0006 0807b25c
-    <#1pps-phase> 0006 0808288c
-    <swap> 0006 0807b5c8
-    <-> 0006 0807af64
-    <\> 0005 0807c05c
-    <#1pps-maxerr> 0006 0808284c
-    <negate> 0006 0807b410
-    <max> 0006 0807cd70
-    <#1pps-maxerr> 0006 0808284c
-    <min> 0006 0807cd90
-    <#1pps-nom> 0006 0808280c
-    <+> 0006 0807af1c
-    <1pps-interval> 0006 08082a8c
+    <s/c-time-sub> 0006 08082704
     <!> 0006 0807aef0
-    <\> 0005 0807c05c
-    <drop> 0006 0807b36c
-    <s/c-time> 0006 0808294c
-    <2@> 0006 0807ce10
-    <d+> 0006 0807b780
-    <1pps-time> 0006 08082a0c
-    <2!> 0006 0807cdf0
-    <\> 0005 0807c05c
-    <then> 0005 0807c0b4
-    <dup> 0006 0807b394
-    <delta-time> 0006 08082a4c
-    <!> 0006 0807aef0
-    <[then]> 0005 0807c3a0
     <;> 0005 0807c424
 <:> 0004 0807c554
 <get-time> 0006 time.fr
     <\> 0005 0807c05c
     <\> 0005 0807c05c
+    <\> 0005 0807c05c
     <disable> 0006 0807b92c
-    <1pps-time> 0006 08082a0c
+    <s/c-time> 0006 080826c4
     <2@> 0006 0807ce10
     <enable> 0006 0807b90c
     <;> 0005 0807c424
@@ -15044,22 +14852,20 @@
     <\> 0005 0807c05c
     <\> 0005 0807c05c
     <disable> 0006 0807b92c
-    <s/c-time-sub> 0006 0808298c
+    <s/c-time-sub> 0006 08082704
     <@> 0006 0807b25c
-    <#1pps-nom> 0006 0808280c
+    <#1pps-nom> 0006 08082604
     <um/mod> 0006 0807b8ec
     <nip> 0006 0807b438
-    <s/c-time> 0006 0808294c
+    <s/c-time> 0006 080826c4
     <2@> 0006 0807ce10
     <enable> 0006 0807b90c
     <;> 0005 0807c424
 <private:> 0004 0807e908
 <endmodule>> 0004 0807e91c
-<\> 0000 0804ee40
-<\> 0000 0804ee40
-<\> 0000 0804ee40
 <"> 0000 0804ec60
 <used> 0004 0807bde4
+<\> 0000 0804ee40
 <\> 0000 0804ee40
 <\> 0000 0804ee40
 <decimal> 0000 0804e340
@@ -15067,28 +14873,6 @@
 <host> 0004 host-io.fr
 <\> 0000 0804ee40
 <\> 0000 0804ee40
-<\> 0000 0804ee40
-<variable> 0004 0807c7b0
-<instr-code> 0004 host-io.fr
-<:> 0004 0807c554
-<init-identity> 0006 host-io.fr
-    <\> 0005 0807c05c
-    <parin-a#> 0006 0807d828
-    <io@> 0006 080805a4
-    <rshift> 0006 0807b59c
-    <h#> 0005 0807bf2c
-    <and> 0006 0807b2a4
-    <\> 0005 0807c05c
-    <instr-code> 0006 08082ba8
-    <!> 0006 0807aef0
-    <;> 0005 0807c424
-<\> 0000 0804ee40
-<:> 0004 0807c554
-<#instr-code> 0006 host-io.fr
-    <\> 0005 0807c05c
-    <instr-code> 0006 08082ba8
-    <@> 0006 0807b25c
-    <;> 0005 0807c424
 <\> 0000 0804ee40
 <\> 0000 0804ee40
 <\> 0000 0804ee40
@@ -15099,36 +14883,38 @@
 <:> 0004 0807c554
 <init-side> 0006 host-io.fr
     <\> 0005 0807c05c
-    <iema-enb-mask#> 0006 080809d4
     <\> 0005 0807c05c
-    <iemb-enb-mask#> 0006 08080998
+    <uart-ena-mask#> 0006 08080884
+    <set-io-cfg> 0006 08080830
+    <iema-enb-mask#> 0006 08080938
+    <\> 0005 0807c05c
+    <iemb-enb-mask#> 0006 080808fc
     <or> 0006 0807b488
-    <set-io-cfg> 0006 08080620
+    <clr-io-cfg> 0006 08080850
     <;> 0005 0807c424
-<\> 0000 0804ee40
 <:> 0004 0807c554
 <side-select> 0006 host-io.fr
     <\> 0005 0807c05c
-    <side-a> 0006 08082c28
+    <side-a> 0006 08082860
     <@> 0006 0807b25c
     <if> 0005 0807c074
     <\> 0005 0807c05c
-    <iema-enb-mask#> 0006 080809d4
-    <set-io-cfg> 0006 08080620
+    <iema-enb-mask#> 0006 08080938
+    <set-io-cfg> 0006 08080830
     <\> 0005 0807c05c
-    <iemb-enb-mask#> 0006 08080998
-    <clr-io-cfg> 0006 08080640
+    <iemb-enb-mask#> 0006 080808fc
+    <clr-io-cfg> 0006 08080850
     <\> 0005 0807c05c
     <else> 0005 0807c090
-    <side-b> 0006 08082c68
+    <side-b> 0006 080828a0
     <@> 0006 0807b25c
     <if> 0005 0807c074
     <\> 0005 0807c05c
-    <iemb-enb-mask#> 0006 08080998
-    <set-io-cfg> 0006 08080620
+    <iemb-enb-mask#> 0006 080808fc
+    <set-io-cfg> 0006 08080830
     <\> 0005 0807c05c
-    <iema-enb-mask#> 0006 080809d4
-    <clr-io-cfg> 0006 08080640
+    <iema-enb-mask#> 0006 08080938
+    <clr-io-cfg> 0006 08080850
     <\> 0005 0807c05c
     <then> 0005 0807c0b4
     <then> 0005 0807c0b4
@@ -15140,15 +14926,15 @@
     <\> 0005 0807c05c
     <\> 0005 0807c05c
     <\> 0005 0807c05c
-    <iemb-sel-mask#> 0006 0808095c
-    <clr-io-cfg> 0006 08080640
+    <iemb-sel-mask#> 0006 080808c0
+    <clr-io-cfg> 0006 08080850
     <\> 0005 0807c05c
     <true> 0006 0807cbe0
-    <side-a> 0006 08082c28
+    <side-a> 0006 08082860
     <!> 0006 0807aef0
     <\> 0005 0807c05c
     <false> 0006 0807cc08
-    <side-b> 0006 08082c68
+    <side-b> 0006 080828a0
     <!> 0006 0807aef0
     <;> 0005 0807c424
 <:> 0004 0807c554
@@ -15158,29 +14944,29 @@
     <\> 0005 0807c05c
     <\> 0005 0807c05c
     <\> 0005 0807c05c
-    <iemb-sel-mask#> 0006 0808095c
-    <set-io-cfg> 0006 08080620
+    <iemb-sel-mask#> 0006 080808c0
+    <set-io-cfg> 0006 08080830
     <\> 0005 0807c05c
     <true> 0006 0807cbe0
-    <side-b> 0006 08082c68
+    <side-b> 0006 080828a0
     <!> 0006 0807aef0
     <\> 0005 0807c05c
     <false> 0006 0807cc08
-    <side-a> 0006 08082c28
+    <side-a> 0006 08082860
     <!> 0006 0807aef0
     <;> 0005 0807c424
 <\> 0000 0804ee40
 <\> 0000 0804ee40
 <\> 0000 0804ee40
-<#rcv-buffer> 0004 0808075c
-<tlm-mem#> 0004 080804ec
-<far-allot> 0004 080820e0
+<#rcv-buffer> 0004 08080984
+<tlm-mem#> 0004 080804a4
+<far-allot> 0004 08081db8
 <\> 0000 0804ee40
 <constant> 0004 0807c4cc
 <rcv-buffer> 0004 host-io.fr
 <\> 0000 0804ee40
-<tlm-mem#> 0004 080804ec
-<far-here> 0004 080820c4
+<tlm-mem#> 0004 080804a4
+<far-here> 0004 08081d9c
 <constant> 0004 0807c4cc
 <rcv-buffer-end> 0004 host-io.fr
 <variable> 0004 0807c7b0
@@ -15201,13 +14987,13 @@
 <:> 0004 0807c554
 <cmd-signal> 0006 host-io.fr
     <\> 0005 0807c05c
-    <rcv/cmd-event> 0006 08082e64
+    <rcv/cmd-event> 0006 08082a9c
     <signal> 0006 0807d6a0
     <;> 0005 0807c424
 <:> 0004 0807c554
 <cmd-wait> 0006 host-io.fr
     <\> 0005 0807c05c
-    <rcv/cmd-event> 0006 08082e64
+    <rcv/cmd-event> 0006 08082a9c
     <wait> 0006 0807d680
     <;> 0005 0807c424
 <:> 0004 0807c554
@@ -15215,55 +15001,57 @@
     <\> 0005 0807c05c
     <\> 0005 0807c05c
     <\> 0005 0807c05c
-    <comm-a#> 0006 080806f8
+    <comm-a#> 0006 08080530
     <far@> 0006 0807ee50
     <\> 0005 0807c05c
-    <rcv-count> 0006 08082e24
+    <\> 0005 0807c05c
+    <\> 0005 0807c05c
+    <rcv-count> 0006 08082a5c
     <@> 0006 0807b25c
     <dup> 0006 0807b394
-    <#rcv-buffer> 0006 08080770
+    <#rcv-buffer> 0006 08080998
     <<>> 0006 0807b20c
     <if> 0005 0807c074
     <\> 0005 0807c05c
     <1+> 0006 0807b024
-    <rcv-count> 0006 08082e24
+    <rcv-count> 0006 08082a5c
     <!> 0006 0807aef0
     <\> 0005 0807c05c
-    <rcv-scan-put> 0006 08082de4
+    <rcv-scan-put> 0006 08082a1c
     <@> 0006 0807b25c
     <dup> 0006 0807b394
     <\> 0005 0807c05c
     <1+> 0006 0807b024
     <dup> 0006 0807b394
-    <rcv-buffer-end> 0006 08082d64
+    <rcv-buffer-end> 0006 0808299c
     <=> 0006 0807b1e4
     <if> 0005 0807c074
     <drop> 0006 0807b36c
-    <rcv-buffer> 0006 08082d28
+    <rcv-buffer> 0006 08082960
     <then> 0005 0807c0b4
-    <rcv-scan-put> 0006 08082de4
+    <rcv-scan-put> 0006 08082a1c
     <!> 0006 0807aef0
     <\> 0005 0807c05c
-    <tlm-mem#> 0006 08080500
+    <tlm-mem#> 0006 080804b8
     <set-mem> 0006 0807b9ec
     <farc!> 0006 0807eeb0
     <\> 0005 0807c05c
-    <cmd-signal> 0006 08082e90
+    <cmd-signal> 0006 08082ac8
     <\> 0005 0807c05c
     <else> 0005 0807c090
     <2drop> 0006 0807cd44
     <then> 0005 0807c0b4
     <;> 0005 0807c424
-<comm-rx-int#> 0004 08080890
+<comm-rx-int#> 0004 08080778
 <int:> 0004 0807dac0
 <\> 0005 0807c05c
-<handle-rcv> 0006 08082ed0
+<handle-rcv> 0006 08082b08
+<\> 0005 0807c05c
 <;int> 0005 0807db14
-<\> 0000 0804ee40
 <:> 0004 0807c554
 <rcv-empty?> 0006 host-io.fr
     <\> 0005 0807c05c
-    <rcv-count> 0006 08082e24
+    <rcv-count> 0006 08082a5c
     <@> 0006 0807b25c
     <0=> 0006 0807afd4
     <;> 0005 0807c424
@@ -15273,11 +15061,11 @@
     <\> 0005 0807c05c
     <\> 0005 0807c05c
     <get-mem> 0006 0807ba14
-    <tlm-mem#> 0006 08080500
+    <tlm-mem#> 0006 080804b8
     <set-mem> 0006 0807b9ec
     <\> 0005 0807c05c
     <disable> 0006 0807b92c
-    <rcv-scan-get> 0006 08082da4
+    <rcv-scan-get> 0006 080829dc
     <@> 0006 0807b25c
     <dup> 0006 0807b394
     <farc@> 0006 0807ee90
@@ -15285,16 +15073,16 @@
     <\> 0005 0807c05c
     <1+> 0006 0807b024
     <dup> 0006 0807b394
-    <rcv-buffer-end> 0006 08082d64
+    <rcv-buffer-end> 0006 0808299c
     <=> 0006 0807b1e4
     <if> 0005 0807c074
     <drop> 0006 0807b36c
-    <rcv-buffer> 0006 08082d28
+    <rcv-buffer> 0006 08082960
     <then> 0005 0807c0b4
-    <rcv-scan-get> 0006 08082da4
+    <rcv-scan-get> 0006 080829dc
     <!> 0006 0807aef0
     <\> 0005 0807c05c
-    <rcv-count> 0006 08082e24
+    <rcv-count> 0006 08082a5c
     <+!> 0006 0807af44
     <enable> 0006 0807b90c
     <swap> 0006 0807b5c8
@@ -15303,20 +15091,20 @@
 <do:> 0004 0807edf0
 <timeout-event> 0004 host-io.fr
     <\> 0005 0807c05c
-    <cmd-signal> 0006 08082e90
+    <cmd-signal> 0006 08082ac8
     <;do> 0005 0807ee2c
 <:> 0004 0807c554
 <init-host-input> 0006 host-io.fr
     <\> 0005 0807c05c
-    <rcv-buffer> 0006 08082d28
-    <rcv-scan-put> 0006 08082de4
+    <rcv-buffer> 0006 08082960
+    <rcv-scan-put> 0006 08082a1c
     <!> 0006 0807aef0
-    <rcv-buffer> 0006 08082d28
-    <rcv-scan-get> 0006 08082da4
+    <rcv-buffer> 0006 08082960
+    <rcv-scan-get> 0006 080829dc
     <!> 0006 0807aef0
-    <timeout-event> 0006 08082f48
+    <timeout-event> 0006 08082b80
     <every> 0006 0807ead4
-    <seconds> 0006 080806a0
+    <seconds> 0006 08080960
     <doit> 0006 0807edb0
     <;> 0005 0807c424
 <\> 0000 0804ee40
@@ -15332,16 +15120,16 @@
 <handle-xmit> 0006 host-io.fr
     <\> 0005 0807c05c
     <\> 0005 0807c05c
-    <xmit-left> 0006 08082fdc
+    <xmit-left> 0006 08082c14
     <@> 0006 0807b25c
     <?dup> 0006 0807cc30
     <if> 0005 0807c074
     <\> 0005 0807c05c
     <1-> 0006 0807b04c
-    <xmit-left> 0006 08082fdc
+    <xmit-left> 0006 08082c14
     <!> 0006 0807aef0
     <\> 0005 0807c05c
-    <xmit-scan> 0006 08082f9c
+    <xmit-scan> 0006 08082bd4
     <2@> 0006 0807ce10
     <set-mem> 0006 0807b9ec
     <\> 0005 0807c05c
@@ -15349,35 +15137,35 @@
     <farc@> 0006 0807ee90
     <io-mem#> 0006 0807d774
     <set-mem> 0006 0807b9ec
-    <comm-a#> 0006 080806f8
+    <comm-a#> 0006 08080530
     <far!> 0006 0807ee70
     <1+> 0006 0807b024
-    <xmit-scan> 0006 08082f9c
+    <xmit-scan> 0006 08082bd4
     <cell+> 0006 0807b6e0
     <!> 0006 0807aef0
     <\> 0005 0807c05c
     <then> 0005 0807c0b4
     <;> 0005 0807c424
-<comm-tx-int#> 0004 080808cc
+<comm-tx-int#> 0004 080807b4
 <int:> 0004 0807dac0
 <\> 0005 0807c05c
-<handle-xmit> 0006 08083008
+<handle-xmit> 0006 08082c40
 <;int> 0005 0807db14
 <\> 0000 0804ee40
 <:> 0004 0807c554
 <start-frame> 0006 host-io.fr
     <\> 0005 0807c05c
-    <side-select> 0006 08082cb4
+    <side-select> 0006 080828ec
     <\> 0005 0807c05c
-    <xmit-left> 0006 08082fdc
+    <xmit-left> 0006 08082c14
     <!> 0006 0807aef0
-    <xmit-scan> 0006 08082f9c
+    <xmit-scan> 0006 08082bd4
     <2!> 0006 0807cdf0
     <\> 0005 0807c05c
     <get-mem> 0006 0807ba14
     <disable> 0006 0807b92c
     <\> 0005 0807c05c
-    <handle-xmit> 0006 08083008
+    <handle-xmit> 0006 08082c40
     <\> 0005 0807c05c
     <enable> 0006 0807b90c
     <set-mem> 0006 0807b9ec
@@ -15392,43 +15180,37 @@
 <:> 0004 0807c554
 <sync-1hz> 0006 host-io.fr
     <\> 0005 0807c05c
-    <1hz-sem> 0006 0808305c
+    <1hz-sem> 0006 08082c94
     <!> 0006 0807aef0
-    <1hz-sem> 0006 0808305c
+    <1hz-sem> 0006 08082c94
     <wait> 0006 0807d680
-    <dt-sem> 0006 0808309c
+    <dt-sem> 0006 08082cd4
     <!> 0006 0807aef0
     <;> 0005 0807c424
 <:> 0004 0807c554
 <sync-dead-time> 0006 host-io.fr
     <\> 0005 0807c05c
-    <dt-sem> 0006 0808309c
+    <dt-sem> 0006 08082cd4
     <wait> 0006 0807d680
     <;> 0005 0807c424
 <private:> 0004 0807e908
-<1pps-a-int#> 0004 080807dc
+<1pps-a-int#> 0004 080806c4
 <int:> 0004 0807dac0
 <\> 0005 0807c05c
-<use-side-a> 0006 08082cd4
+<use-side-a> 0006 0808290c
 <\> 0005 0807c05c
-<sync-time> 0006 08082ad8
-<\> 0005 0807c05c
+<sync-time> 0006 08082790
 <\> 0005 0807c05c
 <;int> 0005 0807db14
-<1pps-b-int#> 0004 08080818
+<1pps-b-int#> 0004 08080700
 <int:> 0004 0807dac0
 <\> 0005 0807c05c
-<use-side-b> 0006 08082cf4
+<use-side-b> 0006 0808292c
 <\> 0005 0807c05c
-<sync-time> 0006 08082ad8
-<\> 0005 0807c05c
+<sync-time> 0006 08082790
 <\> 0005 0807c05c
 <;int> 0005 0807db14
-<variable> 0004 0807c7b0
-<debug-timer-int> 0004 host-io.fr
-<debug-timer-int> 0004 08083108
-<!> 0004 08076980
-<timer-int#> 0004 08080854
+<timer-int#> 0004 0808073c
 <int:> 0004 0807dac0
 <\> 0005 0807c05c
 <\> 0005 0807c05c
@@ -15438,30 +15220,25 @@
 <\> 0005 0807c05c
 <\> 0005 0807c05c
 <\> 0005 0807c05c
-<prop-time> 0006 08082af8
+<prop-time> 0006 080827b0
 <\> 0005 0807c05c
+<[ifdef]> 0005 0807c3b8
 <dup> 0006 0807b394
 <=> 0006 0807b1e4
 <if> 0005 0807c074
-<debug-timer-int> 0006 0808311c
-<@> 0006 0807b25c
-<if> 0005 0807c074
-<h#> 0005 0807bf2c
-<xxx> 0006 0808079c
-<then> 0005 0807c0b4
 <drop> 0006 0807b36c
-<1hz-sem> 0006 0808305c
+<1hz-sem> 0006 08082c94
 <signal> 0006 0807d6a0
 <\> 0005 0807c05c
 <else> 0005 0807c090
 <d#> 0005 0807bf84
 <=> 0006 0807b1e4
 <if> 0005 0807c074
-<dt-sem> 0006 0808309c
+<dt-sem> 0006 08082cd4
 <signal> 0006 0807d6a0
 <else> 0005 0807c090
 <\> 0005 0807c05c
-<exec-slot> 0006 0808277c
+<exec-slot> 0006 08082574
 <\> 0005 0807c05c
 <then> 0005 0807c0b4
 <then> 0005 0807c0b4
@@ -15472,22 +15249,22 @@
 <init-host-reg> 0006 host-io.fr
     <\> 0005 0807c05c
     <\> 0005 0807c05c
-    <timer-int#> 0006 08080868
+    <timer-int#> 0006 08080750
     <get-mask> 0006 0807da54
     <\> 0005 0807c05c
-    <1pps-a-int#> 0006 080807f0
-    <get-mask> 0006 0807da54
-    <or> 0006 0807b488
-    <\> 0005 0807c05c
-    <1pps-b-int#> 0006 0808082c
+    <1pps-a-int#> 0006 080806d8
     <get-mask> 0006 0807da54
     <or> 0006 0807b488
     <\> 0005 0807c05c
-    <comm-tx-int#> 0006 080808e0
+    <1pps-b-int#> 0006 08080714
     <get-mask> 0006 0807da54
     <or> 0006 0807b488
     <\> 0005 0807c05c
-    <comm-rx-int#> 0006 080808a4
+    <comm-tx-int#> 0006 080807c8
+    <get-mask> 0006 0807da54
+    <or> 0006 0807b488
+    <\> 0005 0807c05c
+    <comm-rx-int#> 0006 0808078c
     <get-mask> 0006 0807da54
     <or> 0006 0807b488
     <\> 0005 0807c05c
@@ -15496,24 +15273,21 @@
 <:> 0004 0807c554
 <init-host-io> 0006 host-io.fr
     <\> 0005 0807c05c
-    <init-identity> 0006 08082bd4
+    <init-side> 0006 080828cc
     <\> 0005 0807c05c
-    <init-side> 0006 08082c94
+    <init-host-input> 0006 08082ba0
     <\> 0005 0807c05c
-    <init-host-input> 0006 08082f68
-    <\> 0005 0807c05c
-    <init-slots> 0006 0808279c
-    <init-host-reg> 0006 08083148
+    <init-slots> 0006 08082594
+    <init-host-reg> 0006 08082d40
     <\> 0005 0807c05c
     <;> 0005 0807c424
 <endmodule>> 0004 0807e91c
-<\> 0000 0804ee40
 <"> 0000 0804ec60
 <used> 0004 0807bde4
 <\> 0000 0804ee40
 <\> 0000 0804ee40
 <hex> 0000 0804e300
-<host> 0004 08082b58
+<host> 0004 08082810
 <extendmodule>> 0004 0807e8dc
 <\> 0000 0804ee40
 <\> 0000 0804ee40
@@ -15558,11 +15332,11 @@
 <udp-head-struct> 0004 host-tlm.fr
 <structure> 0004 0807c920
 <\> 0000 0804ee40
-<ip-head-struct> 0004 080832b4
+<ip-head-struct> 0004 08082eac
 <struct:> 0004 0807caa8
 <.h-ip> 0004 host-tlm.fr
 <\> 0000 0804ee40
-<udp-head-struct> 0004 080833e0
+<udp-head-struct> 0004 08082fd8
 <struct:> 0004 0807caa8
 <.h-udp> 0004 host-tlm.fr
 <\> 0000 0804ee40
@@ -15640,7 +15414,7 @@
     <dup> 0006 0807b394
     <>r> 0006 0807b234
     <@> 0006 0807b25c
-    <+ones> 0006 08083544
+    <+ones> 0006 0808313c
     <r>> 0006 0807b4d8
     <cell+> 0006 0807b6e0
     <next> 0005 0807c328
@@ -15653,8 +15427,8 @@
     <\> 0005 0807c05c
     <\> 0005 0807c05c
     <swap> 0006 0807b5c8
-    <ip-head-struct> 0006 080832c8
-    <ones-sum> 0006 08083570
+    <ip-head-struct> 0006 08082ec0
+    <ones-sum> 0006 08083168
     <;> 0005 0807c424
 <:> 0004 0807c554
 <udp-checksum> 0006 host-tlm.fr
@@ -15663,67 +15437,39 @@
     <>r> 0006 0807b234
     <\> 0005 0807c05c
     <r@> 0006 0807b500
-    <.h-ip> 0006 08083430
-    <.ip-src> 0006 08083250
+    <.h-ip> 0006 08083028
+    <.ip-src> 0006 08082e48
     <2@> 0006 0807ce10
-    <+ones> 0006 08083544
-    <+ones> 0006 08083544
+    <+ones> 0006 0808313c
+    <+ones> 0006 0808313c
     <\> 0005 0807c05c
     <r@> 0006 0807b500
-    <.h-ip> 0006 08083430
-    <.ip-dst> 0006 0808328c
+    <.h-ip> 0006 08083028
+    <.ip-dst> 0006 08082e84
     <2@> 0006 0807ce10
-    <+ones> 0006 08083544
-    <+ones> 0006 08083544
+    <+ones> 0006 0808313c
+    <+ones> 0006 0808313c
     <\> 0005 0807c05c
     <r@> 0006 0807b500
-    <.h-ip> 0006 08083430
-    <.ip-proto> 0006 080831d8
+    <.h-ip> 0006 08083028
+    <.ip-proto> 0006 08082dd0
     <c@> 0006 0807b2f8
-    <+ones> 0006 08083544
+    <+ones> 0006 0808313c
     <\> 0005 0807c05c
     <r@> 0006 0807b500
-    <.h-udp> 0006 0808346c
-    <.udp-len> 0006 0808337c
+    <.h-udp> 0006 08083064
+    <.udp-len> 0006 08082f74
     <@> 0006 0807b25c
-    <+ones> 0006 08083544
+    <+ones> 0006 0808313c
     <\> 0005 0807c05c
     <r@> 0006 0807b500
-    <.h-udp> 0006 0808346c
+    <.h-udp> 0006 08083064
     <r>> 0006 0807b4d8
-    <.h-udp> 0006 0808346c
-    <.udp-len> 0006 0808337c
+    <.h-udp> 0006 08083064
+    <.udp-len> 0006 08082f74
     <@> 0006 0807b25c
     <\> 0005 0807c05c
-    <ones-sum> 0006 08083570
-    <;> 0005 0807c424
-<:> 0004 0807c554
-<init-default-ip> 0006 host-tlm.fr
-    <\> 0005 0807c05c
-    <\> 0005 0807c05c
-    <default-header> 0006 080834e8
-    <.h-ip> 0006 08083430
-    <.ip-src> 0006 08083250
-    <+> 0006 0807af1c
-    <\> 0005 0807c05c
-    <dup> 0006 0807b394
-    <>r> 0006 0807b234
-    <c@> 0006 0807b2f8
-    <#instr-code> 0006 08082bf4
-    <+> 0006 0807af1c
-    <r>> 0006 0807b4d8
-    <c!> 0006 0807b2cc
-    <\> 0005 0807c05c
-    <#instr-code> 0006 08082bf4
-    <default-header> 0006 080834e8
-    <.h-udp> 0006 0808346c
-    <.udp-src> 0006 08083304
-    <+!> 0006 0807af44
-    <#instr-code> 0006 08082bf4
-    <default-header> 0006 080834e8
-    <.h-udp> 0006 0808346c
-    <.udp-dst> 0006 08083340
-    <+!> 0006 0807af44
+    <ones-sum> 0006 08083168
     <;> 0005 0807c424
 <\> 0000 0804ee40
 <\> 0000 0804ee40
@@ -15769,43 +15515,45 @@
 <prep-cip-hdr> 0006 host-tlm.fr
     <\> 0005 0807c05c
     <\> 0005 0807c05c
+    <\> 0005 0807c05c
+    <\> 0005 0807c05c
     <>r> 0006 0807b234
     <r@> 0006 0807b500
-    <.cip-marker> 0006 08083604
+    <.cip-marker> 0006 080831dc
     <2!> 0006 0807cdf0
     <\> 0005 0807c05c
     <r@> 0006 0807b500
-    <.cip-trans> 0006 0808385c
+    <.cip-trans> 0006 08083434
     <c!> 0006 0807b2cc
     <\> 0005 0807c05c
     <r>> 0006 0807b4d8
-    <.cip-type> 0006 0808367c
+    <.cip-type> 0006 08083254
     <c!> 0006 0807b2cc
     <;> 0005 0807c424
 <\> 0000 0804ee40
 <:> 0004 0807c554
 <complete-cip-hdr> 0006 host-tlm.fr
     <\> 0005 0807c05c
-    <.cip-len> 0006 08083640
+    <.cip-len> 0006 08083218
     <!> 0006 0807aef0
     <;> 0005 0807c424
 <:> 0004 0807c554
 <cip-good?> 0006 host-tlm.fr
     <\> 0005 0807c05c
     <over> 0006 0807b4b0
-    <.cip-len> 0006 08083640
+    <.cip-len> 0006 08083218
     <@> 0006 0807b25c
     <u>=> 0006 0807f38c
     <\> 0005 0807c05c
     <over> 0006 0807b4b0
-    <.cip-len> 0006 08083640
+    <.cip-len> 0006 08083218
     <@> 0006 0807b25c
-    <cip-head-struct> 0006 08083898
+    <cip-head-struct> 0006 08083470
     <u>=> 0006 0807f38c
     <and> 0006 0807b2a4
     <\> 0005 0807c05c
     <over> 0006 0807b4b0
-    <.cip-len> 0006 08083640
+    <.cip-len> 0006 08083218
     <@> 0006 0807b25c
     <h#> 0005 0807bf2c
     <and> 0006 0807b2a4
@@ -15813,7 +15561,7 @@
     <and> 0006 0807b2a4
     <\> 0005 0807c05c
     <swap> 0006 0807b5c8
-    <.cip-marker> 0006 08083604
+    <.cip-marker> 0006 080831dc
     <2@> 0006 0807ce10
     <>r> 0006 0807b234
     <=> 0006 0807b1e4
@@ -15825,11 +15573,11 @@
     <;> 0005 0807c424
 <\> 0000 0804ee40
 <\> 0000 0804ee40
-<#max-out-frame> 0004 08081f90
+<#max-out-frame> 0004 08081ca4
 <d#> 0000 080506e0
 <umin> 0000 0804dea0
 <\> 0000 0804ee40
-<head-struct> 0004 08083494
+<head-struct> 0004 0808308c
 <-> 0000 0804d1e4
 <\> 0000 0804ee40
 <constant> 0004 0807c4cc
@@ -15841,11 +15589,11 @@
 <.next> 0004 0807e994
 <.next> 0006 0807e9a8
 <\> 0000 0804ee40
-<head-struct> 0004 08083494
+<head-struct> 0004 0808308c
 <struct:> 0004 0807caa8
 <.frm-head> 0004 host-tlm.fr
 <\> 0000 0804ee40
-<#n-out-frame> 0004 08083920
+<#n-out-frame> 0004 080834f8
 <chars:> 0004 0807ca28
 <.frm-data> 0004 host-tlm.fr
 <\> 0000 0804ee40
@@ -15856,23 +15604,23 @@
 <\> 0000 0804ee40
 <\> 0000 0804ee40
 <\> 0000 0804ee40
-<tlm-mem#> 0004 080804ec
-<far-here> 0004 080820c4
+<tlm-mem#> 0004 080804a4
+<far-here> 0004 08081d9c
 <negate> 0000 0804d528
 <\> 0000 0804ee40
 <h#> 0000 080506a0
 <and> 0000 0804d3c4
 <(> 0000 0804edc0
-<frame-struct> 0004 08083a14
+<frame-struct> 0004 080835ec
 <u/> 0004 0807f574
 <constant> 0004 0807c4cc
 <#frames> 0004 host-tlm.fr
 <\> 0000 0804ee40
-<#frames> 0004 08083a54
-<frame-struct> 0004 08083a14
+<#frames> 0004 0808362c
+<frame-struct> 0004 080835ec
 <*> 0000 0804dcd0
-<tlm-mem#> 0004 080804ec
-<far-allot> 0004 080820e0
+<tlm-mem#> 0004 080804a4
+<far-allot> 0004 08081db8
 <constant> 0004 0807c4cc
 <telemetry-frames> 0004 host-tlm.fr
 <\> 0000 0804ee40
@@ -15892,18 +15640,18 @@
 <alloc-count> 0004 host-tlm.fr
 <\> 0000 0804ee40
 <\> 0000 0804ee40
-<#n-out-frame> 0004 08083920
+<#n-out-frame> 0004 080834f8
 <makestruct> 0004 0807cae8
 <frame-buffer> 0004 host-tlm.fr
 <variable> 0004 0807c7b0
 <frame-len> 0004 host-tlm.fr
 <\> 0000 0804ee40
-<frame-len> 0004 08083c14
+<frame-len> 0004 080837ec
 <!> 0004 08076980
 <\> 0000 0804ee40
 <variable> 0004 0807c7b0
 <frame-sem> 0004 host-tlm.fr
-<frame-sem> 0004 08083c54
+<frame-sem> 0004 0808382c
 <!> 0004 08076980
 <\> 0000 0804ee40
 <\> 0000 0804ee40
@@ -15915,29 +15663,29 @@
     <\> 0005 0807c05c
     <\> 0005 0807c05c
     <>r> 0006 0807b234
-    <default-header> 0006 080834e8
+    <default-header> 0006 080830e0
     <\> 0005 0807c05c
     <r@> 0006 0807b500
-    <head-struct> 0006 080834a8
+    <head-struct> 0006 080830a0
     <cell/> 0006 0807b758
     <words-out> 0006 0807ef70
     <far> 0006 0807ba64
     <\> 0005 0807c05c
     <dup> 0006 0807b394
-    <udp-head-struct> 0006 080833f4
+    <udp-head-struct> 0006 08082fec
     <+> 0006 0807af1c
     <r@> 0006 0807b500
-    <.h-udp> 0006 0808346c
-    <.udp-len> 0006 0808337c
+    <.h-udp> 0006 08083064
+    <.udp-len> 0006 08082f74
     <!> 0006 0807aef0
     <\> 0005 0807c05c
-    <ip-head-struct> 0006 080832c8
+    <ip-head-struct> 0006 08082ec0
     <+> 0006 0807af1c
-    <udp-head-struct> 0006 080833f4
+    <udp-head-struct> 0006 08082fec
     <+> 0006 0807af1c
     <r>> 0006 0807b4d8
-    <.h-ip> 0006 08083430
-    <.ip-len> 0006 0808319c
+    <.h-ip> 0006 08083028
+    <.ip-len> 0006 08082d94
     <!> 0006 0807aef0
     <;> 0005 0807c424
 <:> 0004 0807c554
@@ -15949,15 +15697,15 @@
     <\> 0005 0807c05c
     <dup> 0006 0807b394
     <>r> 0006 0807b234
-    <ip-head-checksum> 0006 08083590
+    <ip-head-checksum> 0006 08083188
     <invert> 0006 0807b3bc
     <\> 0005 0807c05c
     <r@> 0006 0807b500
-    <.h-ip> 0006 08083430
-    <.ip-sum> 0006 08083214
+    <.h-ip> 0006 08083028
+    <.ip-sum> 0006 08082e0c
     <!> 0006 0807aef0
     <r@> 0006 0807b500
-    <udp-checksum> 0006 080835b0
+    <udp-checksum> 0006 080831a8
     <invert> 0006 0807b3bc
     <\> 0005 0807c05c
     <dup> 0006 0807b394
@@ -15967,20 +15715,20 @@
     <then> 0005 0807c0b4
     <\> 0005 0807c05c
     <r>> 0006 0807b4d8
-    <.h-udp> 0006 0808346c
-    <.udp-sum> 0006 080833b8
+    <.h-udp> 0006 08083064
+    <.udp-sum> 0006 08082fb0
     <!> 0006 0807aef0
     <;> 0005 0807c424
 <:> 0004 0807c554
 <get-tlm> 0006 host-tlm.fr
     <\> 0005 0807c05c
-    <frame-sem> 0006 08083c68
+    <frame-sem> 0006 08083840
     <wait> 0006 0807d680
     <;> 0005 0807c424
 <:> 0004 0807c554
 <release-tlm> 0006 host-tlm.fr
     <\> 0005 0807c05c
-    <frame-sem> 0006 08083c68
+    <frame-sem> 0006 08083840
     <signal> 0006 0807d6a0
     <;> 0005 0807c424
 <:> 0004 0807c554
@@ -15990,22 +15738,22 @@
     <\> 0005 0807c05c
     <get-mem> 0006 0807ba14
     <swap> 0006 0807b5c8
-    <tlm-mem#> 0006 08080500
+    <tlm-mem#> 0006 080804b8
     <set-mem> 0006 0807b9ec
     <\> 0005 0807c05c
-    <alloc-count> 0006 08083ba8
+    <alloc-count> 0006 08083780
     <@> 0006 0807b25c
     <begin> 0005 0807c0cc
     <2dup> 0006 0807cc50
     <u>> 0006 0807b1bc
     <while> 0005 0807c0e4
     <\> 0005 0807c05c
-    <free-frame-q> 0006 08083ae8
+    <free-frame-q> 0006 080836c0
     <farq-get> 0006 0807f0e4
     <?dup> 0006 0807cc30
     <while> 0005 0807c0e4
     <\> 0005 0807c05c
-    <allo-frame-q> 0006 08083b68
+    <allo-frame-q> 0006 08083740
     <farq-put> 0006 0807f104
     <\> 0005 0807c05c
     <1+> 0006 0807b024
@@ -16017,7 +15765,7 @@
     <then> 0005 0807c0b4
     <\> 0005 0807c05c
     <swap> 0006 0807b5c8
-    <alloc-count> 0006 08083ba8
+    <alloc-count> 0006 08083780
     <!> 0006 0807aef0
     <nip> 0006 0807b438
     <\> 0005 0807c05c
@@ -16031,35 +15779,35 @@
     <\> 0005 0807c05c
     <\> 0005 0807c05c
     <get-mem> 0006 0807ba14
-    <tlm-mem#> 0006 08080500
+    <tlm-mem#> 0006 080804b8
     <set-mem> 0006 0807b9ec
     <\> 0005 0807c05c
-    <allo-frame-q> 0006 08083b68
+    <allo-frame-q> 0006 08083740
     <farq-get> 0006 0807f0e4
     <?dup> 0006 0807cc30
     <if> 0005 0807c074
     <\> 0005 0807c05c
-    <alloc-count> 0006 08083ba8
+    <alloc-count> 0006 08083780
     <+!> 0006 0807af44
-    <frame-len> 0006 08083c28
+    <frame-len> 0006 08083800
     <@> 0006 0807b25c
     <over> 0006 0807b4b0
-    <.frm-head> 0006 080839b0
-    <init-ip> 0006 08083c94
+    <.frm-head> 0006 08083588
+    <init-ip> 0006 0808386c
     <\> 0005 0807c05c
-    <frame-buffer> 0006 08083be8
+    <frame-buffer> 0006 080837c0
     <over> 0006 0807b4b0
-    <.frm-data> 0006 080839ec
+    <.frm-data> 0006 080835c4
     <\> 0005 0807c05c
-    <frame-len> 0006 08083c28
+    <frame-len> 0006 08083800
     <@> 0006 0807b25c
     <cell/> 0006 0807b758
     <words-out> 0006 0807ef70
     <\> 0005 0807c05c
-    <down-frame-q> 0006 08083b28
+    <down-frame-q> 0006 08083700
     <farq-put> 0006 0807f104
     <\> 0005 0807c05c
-    <frame-len> 0006 08083c28
+    <frame-len> 0006 08083800
     <!> 0006 0807aef0
     <\> 0005 0807c05c
     <then> 0005 0807c0b4
@@ -16072,14 +15820,14 @@
     <\> 0005 0807c05c
     <\> 0005 0807c05c
     <\> 0005 0807c05c
-    <#n-out-frame> 0006 08083934
-    <frame-len> 0006 08083c28
+    <#n-out-frame> 0006 0808350c
+    <frame-len> 0006 08083800
     <@> 0006 0807b25c
     <-> 0006 0807af64
     <u>> 0006 0807b1bc
     <if> 0005 0807c074
     <\> 0005 0807c05c
-    <flush-frame> 0006 08083d34
+    <flush-frame> 0006 0808390c
     <\> 0005 0807c05c
     <then> 0005 0807c0b4
     <;> 0005 0807c424
@@ -16088,16 +15836,16 @@
     <\> 0005 0807c05c
     <\> 0005 0807c05c
     <\> 0005 0807c05c
-    <frame-len> 0006 08083c28
+    <frame-len> 0006 08083800
     <@> 0006 0807b25c
     <dup> 0006 0807b394
     <>r> 0006 0807b234
     <+> 0006 0807af1c
-    <frame-len> 0006 08083c28
+    <frame-len> 0006 08083800
     <!> 0006 0807aef0
     <\> 0005 0807c05c
     <r>> 0006 0807b4d8
-    <frame-buffer> 0006 08083be8
+    <frame-buffer> 0006 080837c0
     <+> 0006 0807af1c
     <;> 0005 0807c424
 <\> 0000 0804ee40
@@ -16110,7 +15858,7 @@
 <\> 0000 0804ee40
 <\> 0000 0804ee40
 <\> 0000 0804ee40
-<cip-head-struct> 0004 08083884
+<cip-head-struct> 0004 0808345c
 <constant> 0004 0807c4cc
 <noop-msg-struct> 0004 host-tlm.fr
 <\> 0000 0804ee40
@@ -16125,19 +15873,19 @@
     <\> 0005 0807c05c
     <\> 0005 0807c05c
     <get-mem> 0006 0807ba14
-    <tlm-mem#> 0006 08080500
+    <tlm-mem#> 0006 080804b8
     <set-mem> 0006 0807b9ec
     <\> 0005 0807c05c
-    <down-frame-q> 0006 08083b28
+    <down-frame-q> 0006 08083700
     <farq-get> 0006 0807f0e4
     <?dup> 0006 0807cc30
     <if> 0005 0807c074
     <\> 0005 0807c05c
     <dup> 0006 0807b394
-    <.frm-head> 0006 080839b0
-    <complete-ip> 0006 08083cb4
+    <.frm-head> 0006 08083588
+    <complete-ip> 0006 0808388c
     <\> 0005 0807c05c
-    <pend-frame> 0006 08083e24
+    <pend-frame> 0006 080839fc
     <!> 0006 0807aef0
     <\> 0005 0807c05c
     <false> 0006 0807cc08
@@ -16154,46 +15902,46 @@
     <\> 0005 0807c05c
     <\> 0005 0807c05c
     <get-mem> 0006 0807ba14
-    <tlm-mem#> 0006 08080500
+    <tlm-mem#> 0006 080804b8
     <set-mem> 0006 0807b9ec
     <\> 0005 0807c05c
-    <curr-frame> 0006 08083de4
+    <curr-frame> 0006 080839bc
     <@> 0006 0807b25c
     <?dup> 0006 0807cc30
     <if> 0005 0807c074
     <\> 0005 0807c05c
-    <free-frame-q> 0006 08083ae8
+    <free-frame-q> 0006 080836c0
     <farq-put> 0006 0807f104
     <\> 0005 0807c05c
     <then> 0005 0807c0b4
-    <pend-frame> 0006 08083e24
+    <pend-frame> 0006 080839fc
     <@> 0006 0807b25c
     <dup> 0006 0807b394
-    <curr-frame> 0006 08083de4
+    <curr-frame> 0006 080839bc
     <!> 0006 0807aef0
     <\> 0005 0807c05c
-    <pend-frame> 0006 08083e24
+    <pend-frame> 0006 080839fc
     <!> 0006 0807aef0
     <?dup> 0006 0807cc30
     <if> 0005 0807c074
     <\> 0005 0807c05c
-    <.frm-head> 0006 080839b0
-    <tlm-mem#> 0006 08080500
+    <.frm-head> 0006 08083588
+    <tlm-mem#> 0006 080804b8
     <\> 0005 0807c05c
     <over> 0006 0807b4b0
-    <.h-ip> 0006 08083430
-    <.ip-len> 0006 0808319c
+    <.h-ip> 0006 08083028
+    <.ip-len> 0006 08082d94
     <far@> 0006 0807ee50
-    <start-frame> 0006 08083028
+    <start-frame> 0006 08082c60
     <then> 0005 0807c0b4
     <set-mem> 0006 0807b9ec
     <;> 0005 0807c424
 <:> 0004 0807c554
 <proc-dead-time> 0006 host-tlm.fr
     <\> 0005 0807c05c
-    <refresh-regs> 0006 080807bc
+    <refresh-regs> 0006 080809c4
     <\> 0005 0807c05c
-    <init-host-reg> 0006 08083148
+    <init-host-reg> 0006 08082d40
     <\> 0005 0807c05c
     <;> 0005 0807c424
 <private:> 0004 0807e908
@@ -16203,40 +15951,40 @@
 <:> 0004 0807c554
 <try-partial-frame> 0006 host-tlm.fr
     <\> 0005 0807c05c
-    <get-tlm> 0006 08083cd4
+    <get-tlm> 0006 080838ac
     <\> 0005 0807c05c
-    <reserve-frames> 0006 08083d14
+    <reserve-frames> 0006 080838ec
     <if> 0005 0807c074
     <\> 0005 0807c05c
-    <frame-len> 0006 08083c28
+    <frame-len> 0006 08083800
     <@> 0006 0807b25c
     <0=> 0006 0807afd4
     <if> 0005 0807c074
     <\> 0005 0807c05c
-    <noop-msg-struct> 0006 08083da8
-    <prepare-space> 0006 08083d54
+    <noop-msg-struct> 0006 08083980
+    <prepare-space> 0006 0808392c
     <\> 0005 0807c05c
-    <noop-msg-struct> 0006 08083da8
-    <alloc-space> 0006 08083d74
-    <#cip-noop> 0006 08083730
+    <noop-msg-struct> 0006 08083980
+    <alloc-space> 0006 0808394c
+    <#cip-noop> 0006 08083308
     <over> 0006 0807b4b0
-    <prep-cip-hdr> 0006 080838c0
-    <noop-msg-struct> 0006 08083da8
+    <prep-cip-hdr> 0006 08083498
+    <noop-msg-struct> 0006 08083980
     <swap> 0006 0807b5c8
-    <complete-cip-hdr> 0006 080838e0
+    <complete-cip-hdr> 0006 080834b8
     <then> 0005 0807c0b4
-    <flush-frame> 0006 08083d34
+    <flush-frame> 0006 0808390c
     <\> 0005 0807c05c
     <then> 0005 0807c0b4
     <\> 0005 0807c05c
-    <release-tlm> 0006 08083cf4
+    <release-tlm> 0006 080838cc
     <;> 0005 0807c424
 <private:> 0004 0807e908
 <\> 0000 0804ee40
 <\> 0000 0804ee40
 <\> 0000 0804ee40
 <structure> 0004 0807c920
-<cip-head-struct> 0004 08083884
+<cip-head-struct> 0004 0808345c
 <struct:> 0004 0807caa8
 <.safe-cip-hdr> 0004 host-tlm.fr
 <\> 0000 0804ee40
@@ -16250,28 +15998,28 @@
 <req-power-off> 0006 host-tlm.fr
     <\> 0005 0807c05c
     <\> 0005 0807c05c
-    <get-tlm> 0006 08083cd4
+    <get-tlm> 0006 080838ac
     <\> 0005 0807c05c
-    <reserve-frames> 0006 08083d14
+    <reserve-frames> 0006 080838ec
     <if> 0005 0807c074
     <\> 0005 0807c05c
-    <safe-msg-struct> 0006 08083f5c
-    <prepare-space> 0006 08083d54
+    <safe-msg-struct> 0006 08083b34
+    <prepare-space> 0006 0808392c
     <\> 0005 0807c05c
-    <safe-msg-struct> 0006 08083f5c
-    <alloc-space> 0006 08083d74
-    <#cip-safe> 0006 08083820
+    <safe-msg-struct> 0006 08083b34
+    <alloc-space> 0006 0808394c
+    <#cip-safe> 0006 080833f8
     <over> 0006 0807b4b0
-    <prep-cip-hdr> 0006 080838c0
+    <prep-cip-hdr> 0006 08083498
     <2pick> 0006 0807b104
-    <.safe-code> 0006 08083f20
+    <.safe-code> 0006 08083af8
     <2!> 0006 0807cdf0
     <\> 0005 0807c05c
-    <safe-msg-struct> 0006 08083f5c
+    <safe-msg-struct> 0006 08083b34
     <swap> 0006 0807b5c8
-    <complete-cip-hdr> 0006 080838e0
+    <complete-cip-hdr> 0006 080834b8
     <then> 0005 0807c0b4
-    <release-tlm> 0006 08083cf4
+    <release-tlm> 0006 080838cc
     <;> 0005 0807c424
 <private:> 0004 0807e908
 <\> 0000 0804ee40
@@ -16284,12 +16032,12 @@
 <:> 0004 0807c554
 <clear-tlm-volume> 0006 host-tlm.fr
     <\> 0005 0807c05c
-    <get-tlm> 0006 08083cd4
-    <frac-volume> 0006 08083fb8
+    <get-tlm> 0006 080838ac
+    <frac-volume> 0006 08083b90
     <!> 0006 0807aef0
-    <tlm-volume> 0006 080822f4
-    <set> 0006 0807f7a4
-    <release-tlm> 0006 08083cf4
+    <tlm-volume> 0006 08081fec
+    <set> 0006 0807f75c
+    <release-tlm> 0006 080838cc
     <;> 0005 0807c424
 <private:> 0004 0807e908
 <:> 0004 0807c554
@@ -16298,14 +16046,14 @@
     <\> 0005 0807c05c
     <um*> 0006 0807b8cc
     <\> 0005 0807c05c
-    <frac-volume> 0006 08083fb8
+    <frac-volume> 0006 08083b90
     <@> 0006 0807b25c
-    <tlm-volume> 0006 080822f4
-    <get> 0006 0807f764
+    <tlm-volume> 0006 08081fec
+    <get> 0006 0807f71c
     <d+> 0006 0807b780
-    <tlm-volume> 0006 080822f4
-    <set> 0006 0807f7a4
-    <frac-volume> 0006 08083fb8
+    <tlm-volume> 0006 08081fec
+    <set> 0006 0807f75c
+    <frac-volume> 0006 08083b90
     <!> 0006 0807aef0
     <;> 0005 0807c424
 <\> 0000 0804ee40
@@ -16322,7 +16070,7 @@
 <\> 0000 0804ee40
 <structure> 0004 0807c920
 <\> 0000 0804ee40
-<cip-head-struct> 0004 08083884
+<cip-head-struct> 0004 0808345c
 <struct:> 0004 0807caa8
 <.sub-cip-hdr> 0004 host-tlm.fr
 <\> 0000 0804ee40
@@ -16346,25 +16094,8 @@
 <endstructure> 0004 0807c958
 <subpkt-head-struct> 0004 host-tlm.fr
 <\> 0000 0804ee40
-<rom> 0004 08076948
-<create> 0004 0807c758
-<instr-ids> 0004 host-tlm.fr
-<d#> 0000 080506e0
-<lshift> 0000 0804d518
-<,> 0004 0807685c
-<\> 0000 0804ee40
-<d#> 0000 080506e0
-<lshift> 0000 0804d518
-<,> 0004 0807685c
-<\> 0000 0804ee40
-<d#> 0000 080506e0
-<lshift> 0000 0804d518
-<,> 0004 0807685c
-<\> 0000 0804ee40
-<ram> 0004 0807690c
-<\> 0000 0804ee40
-<#n-out-frame> 0004 08083920
-<subpkt-head-struct> 0004 08084194
+<#n-out-frame> 0004 080834f8
+<subpkt-head-struct> 0004 08083d6c
 <-> 0000 0804d1e4
 <constant> 0004 0807c4cc
 <#n-max-subpkt> 0004 host-tlm.fr
@@ -16405,7 +16136,7 @@
 <c,> 0004 08076880
 <ram> 0004 0807690c
 <public:> 0004 0807e8f4
-<pkt-struct> 0004 0808442c
+<pkt-struct> 0004 08083fcc
 <constant> 0004 0807c4cc
 <pkt-desc-size> 0004 host-tlm.fr
 <\> 0000 0804ee40
@@ -16413,7 +16144,7 @@
 <:> 0004 0807c554
 <time-tag-pkt> 0006 host-tlm.fr
     <\> 0005 0807c05c
-    <.pkt-time> 0006 08084404
+    <.pkt-time> 0006 08083fa4
     <2!> 0006 0807cdf0
     <;> 0005 0807c424
 <\> 0000 0804ee40
@@ -16421,15 +16152,15 @@
 <tag-pkt> 0006 host-tlm.fr
     <\> 0005 0807c05c
     <>r> 0006 0807b234
-    <get-time> 0006 08082b18
+    <get-time> 0006 080827d0
     <r>> 0006 0807b4d8
-    <.pkt-time> 0006 08084404
+    <.pkt-time> 0006 08083fa4
     <2!> 0006 0807cdf0
     <;> 0005 0807c424
 <:> 0004 0807c554
 <pkt-id!> 0006 host-tlm.fr
     <\> 0005 0807c05c
-    <.pkt-id> 0006 0808429c
+    <.pkt-id> 0006 08083e3c
     <!> 0006 0807aef0
     <;> 0005 0807c424
 <:> 0004 0807c554
@@ -16456,10 +16187,10 @@
     <\> 0005 0807c05c
     <dup> 0006 0807b394
     <>r> 0006 0807b234
-    <.pkt-len> 0006 08084314
+    <.pkt-len> 0006 08083eb4
     <!> 0006 0807aef0
     <r>> 0006 0807b4d8
-    <.pkt-src> 0006 080842d8
+    <.pkt-src> 0006 08083e78
     <2!> 0006 0807cdf0
     <;> 0005 0807c424
 <:> 0004 0807c554
@@ -16468,10 +16199,10 @@
     <\> 0005 0807c05c
     <dup> 0006 0807b394
     <>r> 0006 0807b234
-    <.pkt-len2> 0006 0808438c
+    <.pkt-len2> 0006 08083f2c
     <!> 0006 0807aef0
     <r>> 0006 0807b4d8
-    <.pkt-src2> 0006 08084350
+    <.pkt-src2> 0006 08083ef0
     <2!> 0006 0807cdf0
     <;> 0005 0807c424
 <:> 0004 0807c554
@@ -16481,16 +16212,33 @@
     <\> 0005 0807c05c
     <dup> 0006 0807b394
     <>r> 0006 0807b234
-    <pkt-id!> 0006 0808451c
+    <pkt-id!> 0006 080840bc
     <\> 0005 0807c05c
     <r@> 0006 0807b500
-    <pkt-src!> 0006 0808464c
+    <pkt-src!> 0006 080841ec
     <\> 0005 0807c05c
     <r>> 0006 0807b4d8
-    <pkt-src-more!> 0006 0808466c
+    <pkt-src-more!> 0006 0808420c
     <;> 0005 0807c424
 <\> 0000 0804ee40
 <private:> 0004 0807e908
+<#status-pkt> 0004 08080cc4
+<=> 0000 0804d354
+<[if]> 0000 080524ec
+<cr> 0000 0804d980
+<.(> 0000 0804ee00
+<:> 0004 0807c554
+<id-to-cip-type> 0006 host-tlm.fr
+    <(> 0005 0807c038
+    <#status-pkt> 0006 08080cd8
+    <=> 0006 0807b1e4
+    <if> 0005 0807c074
+    <#cip-proc> 0006 08083380
+    <else> 0005 0807c090
+    <#cip-down> 0006 08083344
+    <then> 0005 0807c0b4
+    <;> 0005 0807c424
+<[else]> 0000 08052388
 <:> 0004 0807c554
 <pad-subpkt> 0006 host-tlm.fr
     <\> 0005 0807c05c
@@ -16498,10 +16246,10 @@
     <\> 0005 0807c05c
     <dup> 0006 0807b394
     <>r> 0006 0807b234
-    <.pkt-len> 0006 08084314
+    <.pkt-len> 0006 08083eb4
     <@> 0006 0807b25c
     <r@> 0006 0807b500
-    <.pkt-len2> 0006 0808438c
+    <.pkt-len2> 0006 08083f2c
     <@> 0006 0807b25c
     <+> 0006 0807af1c
     <\> 0005 0807c05c
@@ -16514,7 +16262,7 @@
     <-> 0006 0807af64
     <\> 0005 0807c05c
     <r>> 0006 0807b4d8
-    <.pkt-padlen> 0006 080843c8
+    <.pkt-padlen> 0006 08083f68
     <!> 0006 0807aef0
     <;> 0005 0807c424
 <\> 0000 0804ee40
@@ -16522,60 +16270,50 @@
 <start-subpkt> 0006 host-tlm.fr
     <\> 0005 0807c05c
     <\> 0005 0807c05c
-    <subpkt-head-struct> 0006 080841a8
-    <alloc-space> 0006 08083d74
+    <subpkt-head-struct> 0006 08083d80
+    <alloc-space> 0006 0808394c
     <\> 0005 0807c05c
     <dup> 0006 0807b394
     <>r> 0006 0807b234
-    <subpkt-msg> 0006 0808425c
+    <subpkt-msg> 0006 08083dfc
     <!> 0006 0807aef0
     <\> 0005 0807c05c
     <dup> 0006 0807b394
-    <.pkt-id> 0006 0808429c
+    <.pkt-id> 0006 08083e3c
     <@> 0006 0807b25c
-    <d#> 0005 0807bf84
-    <u<> 0006 0807b194
-    <if> 0005 0807c074
-    <#cip-down> 0006 0808376c
-    <else> 0005 0807c090
-    <#cip-sci> 0006 080837e4
-    <then> 0005 0807c0b4
+    <id-to-cip-type> 0006 0808424c
+    <\> 0005 0807c05c
     <r@> 0006 0807b500
-    <.sub-cip-hdr> 0006 08084038
-    <prep-cip-hdr> 0006 080838c0
+    <.sub-cip-hdr> 0006 08083c10
+    <prep-cip-hdr> 0006 08083498
     <\> 0005 0807c05c
-    <#first-seg> 0006 080840f0
+    <#first-seg> 0006 08083cc8
     <\> 0005 0807c05c
-    <#instr-code> 0006 08082bf4
-    <cells> 0006 0807b730
-    <instr-ids> 0006 080841e8
-    <+> 0006 0807af1c
-    <@> 0006 0807b25c
-    <or> 0006 0807b488
+    <\> 0005 0807c05c
     <\> 0005 0807c05c
     <over> 0006 0807b4b0
-    <.pkt-id> 0006 0808429c
+    <.pkt-id> 0006 08083e3c
     <@> 0006 0807b25c
     <or> 0006 0807b488
     <r@> 0006 0807b500
-    <.sub-idp-id> 0006 08084074
+    <.sub-idp-id> 0006 08083c4c
     <!> 0006 0807aef0
     <dup> 0006 0807b394
-    <.pkt-len> 0006 08084314
+    <.pkt-len> 0006 08083eb4
     <@> 0006 0807b25c
     <over> 0006 0807b4b0
-    <.pkt-len2> 0006 0808438c
+    <.pkt-len2> 0006 08083f2c
     <@> 0006 0807b25c
     <+> 0006 0807af1c
     <\> 0005 0807c05c
     <r@> 0006 0807b500
-    <.sub-idp-len> 0006 08084130
+    <.sub-idp-len> 0006 08083d08
     <!> 0006 0807aef0
     <\> 0005 0807c05c
-    <.pkt-time> 0006 08084404
+    <.pkt-time> 0006 08083fa4
     <2@> 0006 0807ce10
     <r>> 0006 0807b4d8
-    <.sub-idp-time> 0006 0808416c
+    <.sub-idp-time> 0006 08083d44
     <2!> 0006 0807cdf0
     <;> 0005 0807c424
 <:> 0004 0807c554
@@ -16583,38 +16321,38 @@
     <\> 0005 0807c05c
     <\> 0005 0807c05c
     <\> 0005 0807c05c
-    <frame-len> 0006 08083c28
+    <frame-len> 0006 08083800
     <@> 0006 0807b25c
-    <frame-buffer> 0006 08083be8
+    <frame-buffer> 0006 080837c0
     <+> 0006 0807af1c
     <\> 0005 0807c05c
-    <subpkt-msg> 0006 0808425c
+    <subpkt-msg> 0006 08083dfc
     <@> 0006 0807b25c
     <dup> 0006 0807b394
     <>r> 0006 0807b234
     <-> 0006 0807af64
     <dup> 0006 0807b394
-    <cip-head-struct> 0006 08083898
+    <cip-head-struct> 0006 08083470
     <-> 0006 0807af64
-    <cnt-tlm-volume> 0006 08084004
+    <cnt-tlm-volume> 0006 08083bdc
     <\> 0005 0807c05c
     <r@> 0006 0807b500
-    <.sub-idp-len> 0006 08084130
+    <.sub-idp-len> 0006 08083d08
     <@> 0006 0807b25c
     <\> 0005 0807c05c
     <over> 0006 0807b4b0
-    <subpkt-head-struct> 0006 080841a8
+    <subpkt-head-struct> 0006 08083d80
     <-> 0006 0807af64
     <\> 0005 0807c05c
     <dup> 0006 0807b394
     <r@> 0006 0807b500
-    <.sub-idp-len> 0006 08084130
+    <.sub-idp-len> 0006 08083d08
     <!> 0006 0807aef0
     <-> 0006 0807af64
     <\> 0005 0807c05c
     <swap> 0006 0807b5c8
     <r>> 0006 0807b4d8
-    <complete-cip-hdr> 0006 080838e0
+    <complete-cip-hdr> 0006 080834b8
     <;> 0005 0807c424
 <\> 0000 0804ee40
 <:> 0004 0807c554
@@ -16622,33 +16360,33 @@
     <\> 0005 0807c05c
     <\> 0005 0807c05c
     <\> 0005 0807c05c
-    <subpkt-msg> 0006 0808425c
+    <subpkt-msg> 0006 08083dfc
     <@> 0006 0807b25c
     <\> 0005 0807c05c
-    <subpkt-head-struct> 0006 080841a8
-    <alloc-space> 0006 08083d74
+    <subpkt-head-struct> 0006 08083d80
+    <alloc-space> 0006 0808394c
     <\> 0005 0807c05c
     <dup> 0006 0807b394
     <>r> 0006 0807b234
-    <subpkt-head-struct> 0006 080841a8
+    <subpkt-head-struct> 0006 08083d80
     <move> 0006 0807b820
     <\> 0005 0807c05c
     <r@> 0006 0807b500
-    <.sub-idp-len> 0006 08084130
+    <.sub-idp-len> 0006 08083d08
     <!> 0006 0807aef0
     <\> 0005 0807c05c
     <r@> 0006 0807b500
-    <.sub-idp-id> 0006 08084074
+    <.sub-idp-id> 0006 08083c4c
     <@> 0006 0807b25c
-    <#first-seg> 0006 080840f0
+    <#first-seg> 0006 08083cc8
     <invert> 0006 0807b3bc
     <\> 0005 0807c05c
     <and> 0006 0807b2a4
     <r@> 0006 0807b500
-    <.sub-idp-id> 0006 08084074
+    <.sub-idp-id> 0006 08083c4c
     <!> 0006 0807aef0
     <r>> 0006 0807b4d8
-    <subpkt-msg> 0006 0808425c
+    <subpkt-msg> 0006 08083dfc
     <!> 0006 0807aef0
     <;> 0005 0807c424
 <\> 0000 0804ee40
@@ -16656,28 +16394,28 @@
 <stop-subpkt> 0006 host-tlm.fr
     <\> 0005 0807c05c
     <\> 0005 0807c05c
-    <frame-len> 0006 08083c28
+    <frame-len> 0006 08083800
     <@> 0006 0807b25c
-    <frame-buffer> 0006 08083be8
+    <frame-buffer> 0006 080837c0
     <+> 0006 0807af1c
     <\> 0005 0807c05c
-    <subpkt-msg> 0006 0808425c
+    <subpkt-msg> 0006 08083dfc
     <@> 0006 0807b25c
     <dup> 0006 0807b394
     <>r> 0006 0807b234
     <-> 0006 0807af64
     <dup> 0006 0807b394
-    <cip-head-struct> 0006 08083898
+    <cip-head-struct> 0006 08083470
     <-> 0006 0807af64
-    <cnt-tlm-volume> 0006 08084004
+    <cnt-tlm-volume> 0006 08083bdc
     <\> 0005 0807c05c
-    <#last-seg> 0006 080840b0
+    <#last-seg> 0006 08083c88
     <r@> 0006 0807b500
-    <.sub-idp-id> 0006 08084074
+    <.sub-idp-id> 0006 08083c4c
     <+!> 0006 0807af44
     <\> 0005 0807c05c
     <r>> 0006 0807b4d8
-    <complete-cip-hdr> 0006 080838e0
+    <complete-cip-hdr> 0006 080834b8
     <;> 0005 0807c424
 <\> 0000 0804ee40
 <:> 0004 0807c554
@@ -16690,7 +16428,7 @@
     <set-mem> 0006 0807b9ec
     <\> 0005 0807c05c
     <dup> 0006 0807b394
-    <alloc-space> 0006 08083d74
+    <alloc-space> 0006 0808394c
     <swap> 0006 0807b5c8
     <bytes-in> 0006 0807ef50
     <\> 0005 0807c05c
@@ -16705,8 +16443,8 @@
     <begin> 0005 0807c0cc
     <>r> 0006 0807b234
     <2dup> 0006 0807cc50
-    <#n-out-frame> 0006 08083934
-    <frame-len> 0006 08083c28
+    <#n-out-frame> 0006 0808350c
+    <frame-len> 0006 08083800
     <@> 0006 0807b25c
     <-> 0006 0807af64
     <\> 0005 0807c05c
@@ -16714,7 +16452,7 @@
     <umin> 0006 0807cdd0
     <dup> 0006 0807b394
     <>r> 0006 0807b234
-    <load-subpkt> 0006 0808474c
+    <load-subpkt> 0006 0808430c
     <\> 0005 0807c05c
     <swap> 0006 0807b5c8
     <r@> 0006 0807b500
@@ -16728,12 +16466,12 @@
     <dup> 0006 0807b394
     <while> 0005 0807c0e4
     <\> 0005 0807c05c
-    <suspend-subpkt> 0006 080846ec
+    <suspend-subpkt> 0006 080842ac
     <\> 0005 0807c05c
-    <subpkt-head-struct> 0006 080841a8
-    <prepare-space> 0006 08083d54
+    <subpkt-head-struct> 0006 08083d80
+    <prepare-space> 0006 0808392c
     <\> 0005 0807c05c
-    <resume-subpkt> 0006 0808470c
+    <resume-subpkt> 0006 080842cc
     <\> 0005 0807c05c
     <repeat> 0005 0807c120
     <drop> 0006 0807b36c
@@ -16744,36 +16482,36 @@
     <\> 0005 0807c05c
     <\> 0005 0807c05c
     <drop> 0006 0807b36c
-    <subpkt-head-struct> 0006 080841a8
-    <prepare-space> 0006 08083d54
+    <subpkt-head-struct> 0006 08083d80
+    <prepare-space> 0006 0808392c
     <\> 0005 0807c05c
     <dup> 0006 0807b394
     <>r> 0006 0807b234
-    <start-subpkt> 0006 080846cc
+    <start-subpkt> 0006 0808428c
     <\> 0005 0807c05c
     <r@> 0006 0807b500
-    <.pkt-src> 0006 080842d8
+    <.pkt-src> 0006 08083e78
     <2@> 0006 0807ce10
     <r@> 0006 0807b500
-    <.pkt-len> 0006 08084314
+    <.pkt-len> 0006 08083eb4
     <@> 0006 0807b25c
     <\> 0005 0807c05c
-    <segment-subpkt> 0006 0808476c
+    <segment-subpkt> 0006 0808432c
     <\> 0005 0807c05c
     <r@> 0006 0807b500
-    <.pkt-src2> 0006 08084350
+    <.pkt-src2> 0006 08083ef0
     <2@> 0006 0807ce10
     <r@> 0006 0807b500
-    <.pkt-len2> 0006 0808438c
+    <.pkt-len2> 0006 08083f2c
     <@> 0006 0807b25c
-    <segment-subpkt> 0006 0808476c
-    <zeros> 0006 08084480
+    <segment-subpkt> 0006 0808432c
+    <zeros> 0006 08084020
     <get-code> 0006 0807b9c4
     <r>> 0006 0807b4d8
-    <.pkt-padlen> 0006 080843c8
+    <.pkt-padlen> 0006 08083f68
     <@> 0006 0807b25c
-    <segment-subpkt> 0006 0808476c
-    <stop-subpkt> 0006 0808472c
+    <segment-subpkt> 0006 0808432c
+    <stop-subpkt> 0006 080842ec
     <;> 0005 0807c424
 <\> 0000 0804ee40
 <:> 0004 0807c554
@@ -16781,36 +16519,36 @@
     <\> 0005 0807c05c
     <\> 0005 0807c05c
     <\> 0005 0807c05c
-    <subpkt-head-struct> 0006 080841a8
+    <subpkt-head-struct> 0006 08083d80
     <+> 0006 0807af1c
-    <prepare-space> 0006 08083d54
+    <prepare-space> 0006 0808392c
     <\> 0005 0807c05c
     <dup> 0006 0807b394
     <>r> 0006 0807b234
-    <start-subpkt> 0006 080846cc
+    <start-subpkt> 0006 0808428c
     <\> 0005 0807c05c
     <r@> 0006 0807b500
-    <.pkt-src> 0006 080842d8
+    <.pkt-src> 0006 08083e78
     <2@> 0006 0807ce10
     <r@> 0006 0807b500
-    <.pkt-len> 0006 08084314
+    <.pkt-len> 0006 08083eb4
     <@> 0006 0807b25c
     <\> 0005 0807c05c
-    <load-subpkt> 0006 0808474c
+    <load-subpkt> 0006 0808430c
     <r@> 0006 0807b500
-    <.pkt-src2> 0006 08084350
+    <.pkt-src2> 0006 08083ef0
     <2@> 0006 0807ce10
     <r@> 0006 0807b500
-    <.pkt-len2> 0006 0808438c
+    <.pkt-len2> 0006 08083f2c
     <@> 0006 0807b25c
-    <load-subpkt> 0006 0808474c
-    <zeros> 0006 08084480
+    <load-subpkt> 0006 0808430c
+    <zeros> 0006 08084020
     <get-code> 0006 0807b9c4
     <r>> 0006 0807b4d8
-    <.pkt-padlen> 0006 080843c8
+    <.pkt-padlen> 0006 08083f68
     <@> 0006 0807b25c
-    <load-subpkt> 0006 0808474c
-    <stop-subpkt> 0006 0808472c
+    <load-subpkt> 0006 0808430c
+    <stop-subpkt> 0006 080842ec
     <;> 0005 0807c424
 <\> 0000 0804ee40
 <:> 0004 0807c554
@@ -16823,7 +16561,7 @@
     <not> 0006 0807b460
     <\> 0005 0807c05c
     <r>> 0006 0807b4d8
-    <#n-max-subpkt> 0006 0808421c
+    <#n-max-subpkt> 0006 08083dbc
     <u>> 0006 0807b1bc
     <or> 0006 0807b488
     <;> 0005 0807c424
@@ -16835,30 +16573,30 @@
     <\> 0005 0807c05c
     <\> 0005 0807c05c
     <\> 0005 0807c05c
-    <get-tlm> 0006 08083cd4
+    <get-tlm> 0006 080838ac
     <\> 0005 0807c05c
     <dup> 0006 0807b394
-    <pad-subpkt> 0006 080846ac
+    <pad-subpkt> 0006 0808426c
     <\> 0005 0807c05c
     <dup> 0006 0807b394
-    <#n-max-subpkt> 0006 0808421c
+    <#n-max-subpkt> 0006 08083dbc
     <u/^> 0006 0807f3f4
     <\> 0005 0807c05c
-    <reserve-frames> 0006 08083d14
+    <reserve-frames> 0006 080838ec
     <if> 0005 0807c074
     <\> 0005 0807c05c
     <over> 0006 0807b4b0
-    <.pkt-id> 0006 0808429c
+    <.pkt-id> 0006 08083e3c
     <@> 0006 0807b25c
     <over> 0006 0807b4b0
-    <segment?> 0006 080847cc
+    <segment?> 0006 0808438c
     <if> 0005 0807c074
     <\> 0005 0807c05c
-    <send-seg-subpkt> 0006 0808478c
+    <send-seg-subpkt> 0006 0808434c
     <\> 0005 0807c05c
     <else> 0005 0807c090
     <\> 0005 0807c05c
-    <send-unseg-subpkt> 0006 080847ac
+    <send-unseg-subpkt> 0006 0808436c
     <\> 0005 0807c05c
     <then> 0005 0807c0b4
     <true> 0006 0807cbe0
@@ -16870,7 +16608,7 @@
     <false> 0006 0807cc08
     <\> 0005 0807c05c
     <then> 0005 0807c0b4
-    <release-tlm> 0006 08083cf4
+    <release-tlm> 0006 080838cc
     <;> 0005 0807c424
 <:> 0004 0807c554
 <init-packet> 0006 host-tlm.fr
@@ -16882,30 +16620,28 @@
 <:> 0004 0807c554
 <init-host-tlm> 0006 host-tlm.fr
     <\> 0005 0807c05c
-    <init-default-ip> 0006 080835d0
-    <\> 0005 0807c05c
     <get-mem> 0006 0807ba14
-    <tlm-mem#> 0006 08080500
+    <tlm-mem#> 0006 080804b8
     <set-mem> 0006 0807b9ec
     <\> 0005 0807c05c
-    <free-frame-q> 0006 08083ae8
+    <free-frame-q> 0006 080836c0
     <farq-empty> 0006 0807f0c4
     <\> 0005 0807c05c
-    <down-frame-q> 0006 08083b28
+    <down-frame-q> 0006 08083700
     <farq-empty> 0006 0807f0c4
-    <allo-frame-q> 0006 08083b68
+    <allo-frame-q> 0006 08083740
     <farq-empty> 0006 0807f0c4
-    <alloc-count> 0006 08083ba8
+    <alloc-count> 0006 08083780
     <!> 0006 0807aef0
-    <telemetry-frames> 0006 08083aa8
-    <#frames> 0006 08083a68
+    <telemetry-frames> 0006 08083680
+    <#frames> 0006 08083640
     <do> 0005 0807c15c
     <\> 0005 0807c05c
     <dup> 0006 0807b394
-    <free-frame-q> 0006 08083ae8
+    <free-frame-q> 0006 080836c0
     <farq-put> 0006 0807f104
     <\> 0005 0807c05c
-    <frame-struct> 0006 08083a28
+    <frame-struct> 0006 08083600
     <+> 0006 0807af1c
     <\> 0005 0807c05c
     <loop> 0005 0807c18c
@@ -16913,8 +16649,6 @@
     <set-mem> 0006 0807b9ec
     <;> 0005 0807c424
 <endmodule>> 0004 0807e91c
-<\> 0000 0804ee40
-<[ifdef]> 0000 08052564
 <\> 0000 0804ee40
 <"> 0000 0804ec60
 <used> 0004 0807bde4
@@ -16941,9 +16675,9 @@
     <\> 0005 0807c05c
     <\> 0005 0807c05c
     <get-code> 0006 0807b9c4
-    <m-memid> 0006 08084860
+    <m-memid> 0006 08084420
     <!> 0006 0807aef0
-    <m-addr> 0006 080848a0
+    <m-addr> 0006 08084460
     <!> 0006 0807aef0
     <;> 0005 0807c424
 <\> 0000 0804ee40
@@ -16951,39 +16685,39 @@
 <seek-memid> 0006 memory1.fr
     <\> 0005 0807c05c
     <\> 0005 0807c05c
-    <m-memid> 0006 08084860
+    <m-memid> 0006 08084420
     <!> 0006 0807aef0
     <;> 0005 0807c424
 <:> 0004 0807c554
 <seek-memaddr> 0006 memory1.fr
     <\> 0005 0807c05c
     <\> 0005 0807c05c
-    <m-addr> 0006 080848a0
+    <m-addr> 0006 08084460
     <!> 0006 0807aef0
     <;> 0005 0807c424
 <:> 0004 0807c554
 <step-mem> 0006 memory1.fr
     <\> 0005 0807c05c
     <\> 0005 0807c05c
-    <m-addr> 0006 080848a0
+    <m-addr> 0006 08084460
     <+!> 0006 0807af44
     <;> 0005 0807c424
 <:> 0004 0807c554
 <mem-pos> 0006 memory1.fr
     <\> 0005 0807c05c
-    <m-addr> 0006 080848a0
+    <m-addr> 0006 08084460
     <@> 0006 0807b25c
-    <m-memid> 0006 08084860
+    <m-memid> 0006 08084420
     <@> 0006 0807b25c
     <;> 0005 0807c424
 <:> 0004 0807c554
 <mem-peek> 0006 memory1.fr
     <\> 0005 0807c05c
     <get-mem> 0006 0807ba14
-    <m-memid> 0006 08084860
+    <m-memid> 0006 08084420
     <@> 0006 0807b25c
     <set-mem> 0006 0807b9ec
-    <m-addr> 0006 080848a0
+    <m-addr> 0006 08084460
     <@> 0006 0807b25c
     <farc@> 0006 0807ee90
     <swap> 0006 0807b5c8
@@ -16995,14 +16729,14 @@
     <\> 0005 0807c05c
     <get-mem> 0006 0807ba14
     <swap> 0006 0807b5c8
-    <m-memid> 0006 08084860
+    <m-memid> 0006 08084420
     <@> 0006 0807b25c
     <set-mem> 0006 0807b9ec
-    <m-addr> 0006 080848a0
+    <m-addr> 0006 08084460
     <@> 0006 0807b25c
     <farc!> 0006 0807eeb0
     <set-mem> 0006 0807b9ec
-    <step-mem> 0006 0808492c
+    <step-mem> 0006 080844ec
     <;> 0005 0807c424
 <:> 0004 0807c554
 <close-mem> 0006 memory1.fr
@@ -17027,11 +16761,11 @@
     <get-mem> 0006 0807ba14
     <>r> 0006 0807b234
     <\> 0005 0807c05c
-    <open-mem> 0006 080848cc
+    <open-mem> 0006 0808448c
     <\> 0005 0807c05c
     <>r> 0006 0807b234
-    <seek-memid> 0006 080848ec
-    <seek-memaddr> 0006 0808490c
+    <seek-memid> 0006 080844ac
+    <seek-memaddr> 0006 080844cc
     <\> 0005 0807c05c
     <set-mem> 0006 0807b9ec
     <\> 0005 0807c05c
@@ -17042,13 +16776,13 @@
     <far> 0006 0807ba64
     <c@> 0006 0807b2f8
     <near> 0006 0807ba3c
-    <>mem> 0006 0808498c
+    <>mem> 0006 0808454c
     <\> 0005 0807c05c
     <1+> 0006 0807b024
     <\> 0005 0807c05c
     <loop> 0005 0807c18c
     <drop> 0006 0807b36c
-    <close-mem> 0006 080849ac
+    <close-mem> 0006 0808456c
     <r>> 0006 0807b4d8
     <set-mem> 0006 0807b9ec
     <;> 0005 0807c424
@@ -17069,7 +16803,7 @@
 <cell:> 0004 0807ca8c
 <.cmd-opcode> 0004 cmd-dict1.fr
 <\> 0000 0804ee40
-<#max-args> 0004 080817b4
+<#max-args> 0004 080816f0
 <chars:> 0004 0807ca28
 <.cmd-args> 0004 cmd-dict1.fr
 <\> 0000 0804ee40
@@ -17079,7 +16813,7 @@
 <endstructure> 0004 0807c958
 <command-struct> 0004 cmd-dict1.fr
 <\> 0000 0804ee40
-<command-struct> 0004 08084ae0
+<command-struct> 0004 080846a0
 <makestruct> 0004 0807cae8
 <command-buffer> 0004 cmd-dict1.fr
 <\> 0000 0804ee40
@@ -17092,8 +16826,8 @@
 <:> 0004 0807c554
 <set-opcode> 0006 cmd-dict1.fr
     <\> 0005 0807c05c
-    <command-buffer> 0006 08084b34
-    <.cmd-opcode> 0006 08084a3c
+    <command-buffer> 0006 080846f4
+    <.cmd-opcode> 0006 080845fc
     <!> 0006 0807aef0
     <;> 0005 0807c424
 <:> 0004 0807c554
@@ -17101,14 +16835,14 @@
     <\> 0005 0807c05c
     <\> 0005 0807c05c
     <>r> 0006 0807b234
-    <command-buffer> 0006 08084b34
-    <.cmd-args> 0006 08084a78
+    <command-buffer> 0006 080846f4
+    <.cmd-args> 0006 08084638
     <r@> 0006 0807b500
     <move> 0006 0807b820
     <\> 0005 0807c05c
     <r>> 0006 0807b4d8
-    <command-buffer> 0006 08084b34
-    <.cmd-nargs> 0006 08084ab4
+    <command-buffer> 0006 080846f4
+    <.cmd-nargs> 0006 08084674
     <!> 0006 0807aef0
     <;> 0005 0807c424
 <:> 0004 0807c554
@@ -17116,102 +16850,102 @@
     <\> 0005 0807c05c
     <\> 0005 0807c05c
     <cell-> 0006 0807b708
-    <command-buffer> 0006 08084b34
-    <.cmd-nargs> 0006 08084ab4
+    <command-buffer> 0006 080846f4
+    <.cmd-nargs> 0006 08084674
     <!> 0006 0807aef0
     <;> 0005 0807c424
 <:> 0004 0807c554
 <get-command> 0006 cmd-dict1.fr
     <\> 0005 0807c05c
     <\> 0005 0807c05c
-    <command-buffer> 0006 08084b34
+    <command-buffer> 0006 080846f4
     <dup> 0006 0807b394
-    <.cmd-nargs> 0006 08084ab4
+    <.cmd-nargs> 0006 08084674
     <@> 0006 0807b25c
     <cell+> 0006 0807b6e0
     <;> 0005 0807c424
 <:> 0004 0807c554
 <n-args> 0006 cmd-dict1.fr
     <\> 0005 0807c05c
-    <command-buffer> 0006 08084b34
-    <.cmd-nargs> 0006 08084ab4
+    <command-buffer> 0006 080846f4
+    <.cmd-nargs> 0006 08084674
     <@> 0006 0807b25c
     <;> 0005 0807c424
 <public:> 0004 0807e8f4
 <:> 0004 0807c554
 <opcode> 0006 cmd-dict1.fr
     <\> 0005 0807c05c
-    <command-buffer> 0006 08084b34
-    <.cmd-opcode> 0006 08084a3c
+    <command-buffer> 0006 080846f4
+    <.cmd-opcode> 0006 080845fc
     <@> 0006 0807b25c
     <;> 0005 0807c424
 <:> 0004 0807c554
 <args> 0006 cmd-dict1.fr
     <\> 0005 0807c05c
     <\> 0005 0807c05c
-    <command-buffer> 0006 08084b34
-    <.cmd-args> 0006 08084a78
-    <n-args> 0006 08084c60
+    <command-buffer> 0006 080846f4
+    <.cmd-args> 0006 08084638
+    <n-args> 0006 08084820
     <;> 0005 0807c424
 <:> 0004 0807c554
 <arg0> 0006 cmd-dict1.fr
-    <command-buffer> 0006 08084b34
-    <.cmd-args> 0006 08084a78
+    <command-buffer> 0006 080846f4
+    <.cmd-args> 0006 08084638
     <c@> 0006 0807b2f8
     <;> 0005 0807c424
 <\> 0000 0804ee40
 <:> 0004 0807c554
 <arg1> 0006 cmd-dict1.fr
-    <command-buffer> 0006 08084b34
-    <.cmd-args> 0006 08084a78
+    <command-buffer> 0006 080846f4
+    <.cmd-args> 0006 08084638
     <1+> 0006 0807b024
     <c@> 0006 0807b2f8
     <;> 0005 0807c424
 <\> 0000 0804ee40
 <:> 0004 0807c554
 <arg2> 0006 cmd-dict1.fr
-    <command-buffer> 0006 08084b34
-    <.cmd-args> 0006 08084a78
+    <command-buffer> 0006 080846f4
+    <.cmd-args> 0006 08084638
     <+> 0006 0807af1c
     <c@> 0006 0807b2f8
     <;> 0005 0807c424
 <\> 0000 0804ee40
 <:> 0004 0807c554
 <arg3> 0006 cmd-dict1.fr
-    <command-buffer> 0006 08084b34
-    <.cmd-args> 0006 08084a78
+    <command-buffer> 0006 080846f4
+    <.cmd-args> 0006 08084638
     <+> 0006 0807af1c
     <c@> 0006 0807b2f8
     <;> 0005 0807c424
 <\> 0000 0804ee40
 <:> 0004 0807c554
 <arg4> 0006 cmd-dict1.fr
-    <command-buffer> 0006 08084b34
-    <.cmd-args> 0006 08084a78
+    <command-buffer> 0006 080846f4
+    <.cmd-args> 0006 08084638
     <+> 0006 0807af1c
     <c@> 0006 0807b2f8
     <;> 0005 0807c424
 <\> 0000 0804ee40
 <:> 0004 0807c554
 <arg5> 0006 cmd-dict1.fr
-    <command-buffer> 0006 08084b34
-    <.cmd-args> 0006 08084a78
+    <command-buffer> 0006 080846f4
+    <.cmd-args> 0006 08084638
     <+> 0006 0807af1c
     <c@> 0006 0807b2f8
     <;> 0005 0807c424
 <\> 0000 0804ee40
 <:> 0004 0807c554
 <arg6> 0006 cmd-dict1.fr
-    <command-buffer> 0006 08084b34
-    <.cmd-args> 0006 08084a78
+    <command-buffer> 0006 080846f4
+    <.cmd-args> 0006 08084638
     <+> 0006 0807af1c
     <c@> 0006 0807b2f8
     <;> 0005 0807c424
 <\> 0000 0804ee40
 <:> 0004 0807c554
 <arg7> 0006 cmd-dict1.fr
-    <command-buffer> 0006 08084b34
-    <.cmd-args> 0006 08084a78
+    <command-buffer> 0006 080846f4
+    <.cmd-args> 0006 08084638
     <+> 0006 0807af1c
     <c@> 0006 0807b2f8
     <;> 0005 0807c424
@@ -17219,8 +16953,8 @@
 <:> 0004 0807c554
 <th-arg> 0006 cmd-dict1.fr
     <\> 0005 0807c05c
-    <command-buffer> 0006 08084b34
-    <.cmd-args> 0006 08084a78
+    <command-buffer> 0006 080846f4
+    <.cmd-args> 0006 08084638
     <+> 0006 0807af1c
     <c@> 0006 0807b2f8
     <;> 0005 0807c424
@@ -17232,7 +16966,7 @@
 <cmd-error> 0006 cmd-dict1.fr
     <\> 0005 0807c05c
     <\> 0005 0807c05c
-    <command-result> 0006 08084b74
+    <command-result> 0006 08084734
     <!> 0006 0807aef0
     <;> 0005 0807c424
 <private:> 0004 0807e908
@@ -17242,8 +16976,8 @@
 <structure> 0004 0807c920
 <\> 0000 0804ee40
 <cell:> 0004 0807ca8c
-<.next> 0004 08083960
-<.next> 0006 08083974
+<.next> 0004 08083538
+<.next> 0006 0808354c
 <\> 0000 0804ee40
 <cell:> 0004 0807ca8c
 <.opcode> 0004 cmd-dict1.fr
@@ -17272,16 +17006,16 @@
     <\> 0005 0807c05c
     <and> 0006 0807b2a4
     <cells> 0006 0807b730
-    <hash-table> 0006 08084f84
+    <hash-table> 0006 08084b44
     <+> 0006 0807af1c
     <;> 0005 0807c424
 <:> 0004 0807c554
 <check-cmd> 0006 cmd-dict1.fr
     <\> 0005 0807c05c
     <dup> 0006 0807b394
-    <.nargs> 0006 08084e8c
+    <.nargs> 0006 08084a4c
     <@> 0006 0807b25c
-    <n-args> 0006 08084c60
+    <n-args> 0006 08084820
     <>> 0006 0807b16c
     <\> 0005 0807c05c
     <if> 0005 0807c074
@@ -17293,9 +17027,9 @@
 <lookup-cmd> 0006 cmd-dict1.fr
     <\> 0005 0807c05c
     <\> 0005 0807c05c
-    <opcode> 0006 08084c80
+    <opcode> 0006 08084840
     <dup> 0006 0807b394
-    <hash-opcode> 0006 08084fa4
+    <hash-opcode> 0006 08084b64
     <\> 0005 0807c05c
     <begin> 0005 0807c0cc
     <@> 0006 0807b25c
@@ -17303,13 +17037,13 @@
     <while> 0005 0807c0e4
     <\> 0005 0807c05c
     <2dup> 0006 0807cc50
-    <.opcode> 0006 08084e50
+    <.opcode> 0006 08084a10
     <@> 0006 0807b25c
     <=> 0006 0807b1e4
     <\> 0005 0807c05c
     <until> 0005 0807c104
     <nip> 0006 0807b438
-    <check-cmd> 0006 08084fc4
+    <check-cmd> 0006 08084b84
     <\> 0005 0807c05c
     <else> 0005 0807c090
     <nip> 0006 0807b438
@@ -17319,14 +17053,14 @@
 <:> 0004 0807c554
 <trim-args> 0006 cmd-dict1.fr
     <\> 0005 0807c05c
-    <.nargs> 0006 08084e8c
+    <.nargs> 0006 08084a4c
     <@> 0006 0807b25c
     <dup> 0006 0807b394
     <<>> 0006 0807b20c
     <if> 0005 0807c074
     <\> 0005 0807c05c
-    <command-buffer> 0006 08084b34
-    <.cmd-nargs> 0006 08084ab4
+    <command-buffer> 0006 080846f4
+    <.cmd-nargs> 0006 08084674
     <!> 0006 0807aef0
     <\> 0005 0807c05c
     <else> 0005 0807c090
@@ -17336,13 +17070,13 @@
 <:> 0004 0807c554
 <exec-cmd> 0006 cmd-dict1.fr
     <\> 0005 0807c05c
-    <#ok-cmd> 0006 08081844
-    <cmd-error> 0006 08084de0
+    <#ok-cmd> 0006 080817bc
+    <cmd-error> 0006 080849a0
     <\> 0005 0807c05c
-    <.vector> 0006 08084ec8
+    <.vector> 0006 08084a88
     <@> 0006 0807b25c
     <execute> 0006 0807ad6c
-    <command-result> 0006 08084b74
+    <command-result> 0006 08084734
     <@> 0006 0807b25c
     <;> 0005 0807c424
 <\> 0000 0804ee40
@@ -17350,25 +17084,25 @@
 <rt-cmd> 0006 cmd-dict1.fr
     <\> 0005 0807c05c
     <false> 0006 0807cc08
-    <in-macro> 0006 08084bb4
+    <in-macro> 0006 08084774
     <!> 0006 0807aef0
-    <exec-cmd> 0006 08085024
+    <exec-cmd> 0006 08084be4
     <;> 0005 0807c424
 <:> 0004 0807c554
 <macro-cmd> 0006 cmd-dict1.fr
     <\> 0005 0807c05c
     <true> 0006 0807cbe0
-    <in-macro> 0006 08084bb4
+    <in-macro> 0006 08084774
     <!> 0006 0807aef0
-    <exec-cmd> 0006 08085024
+    <exec-cmd> 0006 08084be4
     <;> 0005 0807c424
 <:> 0004 0807c554
 <init-cmd-table> 0006 cmd-dict1.fr
     <\> 0005 0807c05c
-    <hash-access> 0006 08084f40
+    <hash-access> 0006 08084b00
     <!> 0006 0807aef0
     <\> 0005 0807c05c
-    <hash-table> 0006 08084f84
+    <hash-table> 0006 08084b44
     <cells> 0006 0807b730
     <erase> 0006 0807f284
     <;> 0005 0807c424
@@ -17376,7 +17110,7 @@
 <:> 0004 0807c554
 <in-macro?> 0006 cmd-dict1.fr
     <\> 0005 0807c05c
-    <in-macro> 0006 08084bb4
+    <in-macro> 0006 08084774
     <@> 0006 0807b25c
     <;> 0005 0807c424
 <:> 0004 0807c554
@@ -17388,40 +17122,40 @@
     <\> 0005 0807c05c
     <\> 0005 0807c05c
     <\> 0005 0807c05c
-    <hash-command-struct> 0006 08084f04
+    <hash-command-struct> 0006 08084ac4
     <here-allot> 0006 0807f304
     <\> 0005 0807c05c
     <dup> 0006 0807b394
     <>r> 0006 0807b234
-    <.nargs> 0006 08084e8c
+    <.nargs> 0006 08084a4c
     <!> 0006 0807aef0
     <\> 0005 0807c05c
     <r@> 0006 0807b500
-    <.opcode> 0006 08084e50
+    <.opcode> 0006 08084a10
     <!> 0006 0807aef0
     <r@> 0006 0807b500
-    <.vector> 0006 08084ec8
+    <.vector> 0006 08084a88
     <!> 0006 0807aef0
     <\> 0005 0807c05c
     <r@> 0006 0807b500
-    <.opcode> 0006 08084e50
+    <.opcode> 0006 08084a10
     <@> 0006 0807b25c
-    <hash-opcode> 0006 08084fa4
+    <hash-opcode> 0006 08084b64
     <\> 0005 0807c05c
-    <hash-access> 0006 08084f40
+    <hash-access> 0006 08084b00
     <wait> 0006 0807d680
     <\> 0005 0807c05c
     <dup> 0006 0807b394
     <@> 0006 0807b25c
     <r@> 0006 0807b500
-    <.next> 0006 08084e14
+    <.next> 0006 080849d4
     <!> 0006 0807aef0
     <\> 0005 0807c05c
     <r>> 0006 0807b4d8
     <swap> 0006 0807b5c8
     <!> 0006 0807aef0
     <\> 0005 0807c05c
-    <hash-access> 0006 08084f40
+    <hash-access> 0006 08084b00
     <signal> 0006 0807d6a0
     <;> 0005 0807c424
 <:> 0004 0807c554
@@ -17432,7 +17166,7 @@
     <\> 0005 0807c05c
     <\> 0005 0807c05c
     <\> 0005 0807c05c
-    <register-cmd/args> 0006 080850c4
+    <register-cmd/args> 0006 08084c84
     <;> 0005 0807c424
 <private:> 0004 0807e908
 <endmodule>> 0004 0807e91c
@@ -17462,13 +17196,13 @@
 <endstructure> 0004 0807c958
 <dump-hdr-struct> 0004 dump1.fr
 <\> 0000 0804ee40
-<dump-hdr-struct> 0004 080851b8
+<dump-hdr-struct> 0004 08084d78
 <makestruct> 0004 0807cae8
-<dump-header> 0004 080851f4
-<dump-hdr-struct> 0004 080851b8
+<dump-header> 0004 08084db4
+<dump-hdr-struct> 0004 08084d78
 <erase> 0004 0807f4cc
 <\> 0000 0804ee40
-<pkt-desc-size> 0004 080844a0
+<pkt-desc-size> 0004 08084040
 <makestruct> 0004 0807cae8
 <dump-pkt> 0004 dump1.fr
 <\> 0000 0804ee40
@@ -17481,49 +17215,49 @@
 <variable> 0004 0807c7b0
 <dump-sem> 0004 dump1.fr
 <\> 0000 0804ee40
-<dump-sem> 0004 080852f4
+<dump-sem> 0004 08084eb4
 <!> 0004 08076980
 <\> 0000 0804ee40
 <\> 0000 0804ee40
 <:> 0004 0807c554
 <gather-dump> 0006 dump1.fr
     <\> 0005 0807c05c
-    <dump-src> 0006 08085288
+    <dump-src> 0006 08084e48
     <2@> 0006 0807ce10
     <2dup> 0006 0807cc50
-    <dump-header> 0006 08085208
-    <.dump-src> 0006 08085154
+    <dump-header> 0006 08084dc8
+    <.dump-src> 0006 08084d14
     <2!> 0006 0807cdf0
     <\> 0005 0807c05c
-    <dump-len> 0006 080852c8
+    <dump-len> 0006 08084e88
     <@> 0006 0807b25c
-    <#dump-words> 0006 08081c0c
+    <#dump-words> 0006 08081bc0
     <umin> 0006 0807cdd0
     <\> 0005 0807c05c
     <2*> 0006 0807b074
     <cells> 0006 0807b730
     <dup> 0006 0807b394
-    <dump-header> 0006 08085208
-    <.dump-len> 0006 08085190
+    <dump-header> 0006 08084dc8
+    <.dump-len> 0006 08084d50
     <!> 0006 0807aef0
     <;> 0005 0807c424
 <:> 0004 0807c554
 <update-dump> 0006 dump1.fr
     <\> 0005 0807c05c
-    <dump-header> 0006 08085208
-    <.dump-len> 0006 08085190
+    <dump-header> 0006 08084dc8
+    <.dump-len> 0006 08084d50
     <@> 0006 0807b25c
     <\> 0005 0807c05c
-    <dump-len> 0006 080852c8
+    <dump-len> 0006 08084e88
     <@> 0006 0807b25c
     <over> 0006 0807b4b0
     <2/> 0006 0807b09c
     <cell/> 0006 0807b758
     <-> 0006 0807af64
-    <dump-len> 0006 080852c8
+    <dump-len> 0006 08084e88
     <!> 0006 0807aef0
     <\> 0005 0807c05c
-    <dump-src> 0006 08085288
+    <dump-src> 0006 08084e48
     <cell+> 0006 0807b6e0
     <+!> 0006 0807af44
     <;> 0005 0807c424
@@ -17531,18 +17265,18 @@
 <:> 0004 0807c554
 <send-dump> 0006 dump1.fr
     <\> 0005 0807c05c
-    <gather-dump> 0006 08085334
-    <dump-pkt> 0006 08085248
-    <pkt-src-more!> 0006 0808466c
+    <gather-dump> 0006 08084ef4
+    <dump-pkt> 0006 08084e08
+    <pkt-src-more!> 0006 0808420c
     <\> 0005 0807c05c
-    <dump-pkt> 0006 08085248
-    <tag-pkt> 0006 080844fc
+    <dump-pkt> 0006 08084e08
+    <tag-pkt> 0006 0808409c
     <\> 0005 0807c05c
-    <dump-pkt> 0006 08085248
-    <send-pkt> 0006 080847ec
+    <dump-pkt> 0006 08084e08
+    <send-pkt> 0006 080843ac
     <\> 0005 0807c05c
     <if> 0005 0807c074
-    <update-dump> 0006 08085354
+    <update-dump> 0006 08084f14
     <then> 0005 0807c0b4
     <;> 0005 0807c424
 <\> 0000 0804ee40
@@ -17551,29 +17285,29 @@
 <start-dump> 0006 dump1.fr
     <\> 0005 0807c05c
     <\> 0005 0807c05c
-    <dump-sem> 0006 08085308
+    <dump-sem> 0006 08084ec8
     <wait> 0006 0807d680
     <\> 0005 0807c05c
     <cell> 0006 0807b6b8
     <2*> 0006 0807b074
     <u/^> 0006 0807f3f4
-    <dump-len> 0006 080852c8
+    <dump-len> 0006 08084e88
     <!> 0006 0807aef0
-    <dump-src> 0006 08085288
+    <dump-src> 0006 08084e48
     <2!> 0006 0807cdf0
     <\> 0005 0807c05c
-    <dump-sem> 0006 08085308
+    <dump-sem> 0006 08084ec8
     <signal> 0006 0807d6a0
     <;> 0005 0807c424
 <:> 0004 0807c554
 <abort-dump> 0006 dump1.fr
     <\> 0005 0807c05c
-    <dump-sem> 0006 08085308
+    <dump-sem> 0006 08084ec8
     <wait> 0006 0807d680
     <\> 0005 0807c05c
-    <dump-len> 0006 080852c8
+    <dump-len> 0006 08084e88
     <!> 0006 0807aef0
-    <dump-sem> 0006 08085308
+    <dump-sem> 0006 08084ec8
     <signal> 0006 0807d6a0
     <;> 0005 0807c424
 <private:> 0004 0807e908
@@ -17583,21 +17317,21 @@
 <:> 0004 0807c554
 <try-dump-pkt> 0006 dump1.fr
     <\> 0005 0807c05c
-    <dump-sem> 0006 08085308
+    <dump-sem> 0006 08084ec8
     <wait> 0006 0807d680
     <\> 0005 0807c05c
-    <dump-len> 0006 080852c8
+    <dump-len> 0006 08084e88
     <@> 0006 0807b25c
     <if> 0005 0807c074
     <\> 0005 0807c05c
-    <dump-ok?> 0006 08081c4c
+    <dump-ok?> 0006 08081c00
     <if> 0005 0807c074
     <\> 0005 0807c05c
-    <send-dump> 0006 08085374
+    <send-dump> 0006 08084f34
     <\> 0005 0807c05c
     <then> 0005 0807c0b4
     <then> 0005 0807c0b4
-    <dump-sem> 0006 08085308
+    <dump-sem> 0006 08084ec8
     <signal> 0006 0807d6a0
     <;> 0005 0807c424
 <private:> 0004 0807e908
@@ -17607,12 +17341,12 @@
 <:> 0004 0807c554
 <init-dump> 0006 dump1.fr
     <\> 0005 0807c05c
-    <dump-header> 0006 08085208
+    <dump-header> 0006 08084dc8
     <get-code> 0006 0807b9c4
-    <dump-hdr-struct> 0006 080851cc
-    <#dump-pkt> 0006 08080d98
-    <dump-pkt> 0006 08085248
-    <init-pkt> 0006 0808468c
+    <dump-hdr-struct> 0006 08084d8c
+    <#dump-pkt> 0006 08080c9c
+    <dump-pkt> 0006 08084e08
+    <init-pkt> 0006 0808422c
     <;> 0005 0807c424
 <endmodule>> 0004 0807e91c
 <"> 0000 0804ec60
@@ -17639,65 +17373,65 @@
 <endstructure> 0004 0807c958
 <alarm-struct> 0004 alarm1.fr
 <\> 0000 0804ee40
-<alarm-struct> 0004 08085540
+<alarm-struct> 0004 08085100
 <makestruct> 0004 0807cae8
 <alarm-buffer> 0004 alarm1.fr
 <\> 0000 0804ee40
-<pkt-desc-size> 0004 080844a0
+<pkt-desc-size> 0004 08084040
 <makestruct> 0004 0807cae8
 <alarm-pkt> 0004 alarm1.fr
 <\> 0000 0804ee40
 <variable> 0004 0807c7b0
 <alarm-access> 0004 alarm1.fr
-<alarm-access> 0004 080855fc
+<alarm-access> 0004 080851bc
 <!> 0004 08076980
 <\> 0000 0804ee40
 <:> 0004 0807c554
 <record-alarm> 0006 alarm1.fr
     <\> 0005 0807c05c
-    <alarm-type> 0006 0808247c
-    <set> 0006 0807f7a4
-    <alarm-id> 0006 08082444
-    <set> 0006 0807f7a4
-    <alarm-count> 0006 080824b4
-    <get> 0006 0807f764
+    <alarm-type> 0006 08082174
+    <set> 0006 0807f75c
+    <alarm-id> 0006 0808213c
+    <set> 0006 0807f75c
+    <alarm-count> 0006 080821ac
+    <get> 0006 0807f71c
     <1+> 0006 0807b024
-    <alarm-count> 0006 080824b4
-    <set> 0006 0807f7a4
+    <alarm-count> 0006 080821ac
+    <set> 0006 0807f75c
     <;> 0005 0807c424
 <:> 0004 0807c554
 <gen-alarm> 0006 alarm1.fr
     <\> 0005 0807c05c
-    <alarm-access> 0006 08085610
+    <alarm-access> 0006 080851d0
     <wait> 0006 0807d680
     <\> 0005 0807c05c
     <2dup> 0006 0807cc50
-    <record-alarm> 0006 0808563c
+    <record-alarm> 0006 080851fc
     <\> 0005 0807c05c
-    <alarm-buffer> 0006 08085590
-    <.alarm-flag> 0006 080854a0
+    <alarm-buffer> 0006 08085150
+    <.alarm-flag> 0006 08085060
     <c!> 0006 0807b2cc
     <\> 0005 0807c05c
-    <alarm-buffer> 0006 08085590
-    <.alarm-id> 0006 08085464
+    <alarm-buffer> 0006 08085150
+    <.alarm-id> 0006 08085024
     <c!> 0006 0807b2cc
     <\> 0005 0807c05c
-    <alarm-buffer> 0006 08085590
-    <.alarm-limit> 0006 08085518
+    <alarm-buffer> 0006 08085150
+    <.alarm-limit> 0006 080850d8
     <c!> 0006 0807b2cc
     <\> 0005 0807c05c
-    <alarm-buffer> 0006 08085590
-    <.alarm-value> 0006 080854dc
+    <alarm-buffer> 0006 08085150
+    <.alarm-value> 0006 0808509c
     <c!> 0006 0807b2cc
     <\> 0005 0807c05c
-    <alarm-pkt> 0006 080855d0
-    <tag-pkt> 0006 080844fc
+    <alarm-pkt> 0006 08085190
+    <tag-pkt> 0006 0808409c
     <\> 0005 0807c05c
-    <alarm-pkt> 0006 080855d0
-    <send-pkt> 0006 080847ec
+    <alarm-pkt> 0006 08085190
+    <send-pkt> 0006 080843ac
     <drop> 0006 0807b36c
     <\> 0005 0807c05c
-    <alarm-access> 0006 08085610
+    <alarm-access> 0006 080851d0
     <signal> 0006 0807d6a0
     <;> 0005 0807c424
 <\> 0000 0804ee40
@@ -17707,19 +17441,19 @@
 <trans-alarm> 0006 alarm1.fr
     <\> 0005 0807c05c
     <\> 0005 0807c05c
-    <gen-alarm> 0006 0808565c
+    <gen-alarm> 0006 0808521c
     <;> 0005 0807c424
 <:> 0004 0807c554
 <persist-alarm> 0006 alarm1.fr
     <\> 0005 0807c05c
     <\> 0005 0807c05c
-    <gen-alarm> 0006 0808565c
+    <gen-alarm> 0006 0808521c
     <;> 0005 0807c424
 <:> 0004 0807c554
 <sw-alarm> 0006 alarm1.fr
     <\> 0005 0807c05c
     <swap> 0006 0807b5c8
-    <trans-alarm> 0006 0808567c
+    <trans-alarm> 0006 0808523c
     <;> 0005 0807c424
 <private:> 0004 0807e908
 <\> 0000 0804ee40
@@ -17727,13 +17461,13 @@
 <:> 0004 0807c554
 <init-alarm> 0006 alarm1.fr
     <\> 0005 0807c05c
-    <alarm-buffer> 0006 08085590
+    <alarm-buffer> 0006 08085150
     <get-code> 0006 0807b9c4
-    <alarm-struct> 0006 08085554
+    <alarm-struct> 0006 08085114
     <\> 0005 0807c05c
-    <#alarm-pkt> 0006 08080d20
-    <alarm-pkt> 0006 080855d0
-    <init-pkt> 0006 0808468c
+    <#alarm-pkt> 0006 08080c24
+    <alarm-pkt> 0006 08085190
+    <init-pkt> 0006 0808422c
     <;> 0005 0807c424
 <private:> 0004 0807e908
 <endmodule>> 0004 0807e91c
@@ -17751,11 +17485,11 @@
     <\> 0005 0807c05c
     <\> 0005 0807c05c
     <\> 0005 0807c05c
-    <arg3> 0006 08084d20
-    <arg2> 0006 08084d00
+    <arg3> 0006 080848e0
+    <arg2> 0006 080848c0
     <join> 0006 0807f434
-    <arg1> 0006 08084ce0
-    <arg0> 0006 08084cc0
+    <arg1> 0006 080848a0
+    <arg0> 0006 08084880
     <join> 0006 0807f434
     <;> 0005 0807c424
 <\> 0000 0804ee40
@@ -17774,43 +17508,43 @@
 <endstructure> 0004 0807c958
 <checksum-pkt-struct> 0004 mem-cmd2.fr
 <\> 0000 0804ee40
-<checksum-pkt-struct> 0004 0808580c
+<checksum-pkt-struct> 0004 080853cc
 <makestruct> 0004 0807cae8
 <checksum-buffer> 0004 mem-cmd2.fr
 <\> 0000 0804ee40
-<pkt-desc-size> 0004 080844a0
+<pkt-desc-size> 0004 08084040
 <makestruct> 0004 0807cae8
 <checksum-pkt> 0004 mem-cmd2.fr
 <:> 0004 0807c554
 <c-mem-check> 0006 mem-cmd2.fr
     <\> 0005 0807c05c
     <\> 0005 0807c05c
-    <first-address> 0006 08085738
-    <arg5> 0006 08084d60
-    <arg4> 0006 08084d40
+    <first-address> 0006 080852f8
+    <arg5> 0006 08084920
+    <arg4> 0006 08084900
     <join> 0006 0807f434
     <\> 0005 0807c05c
     <>r> 0006 0807b234
     <2dup> 0006 0807cc50
-    <checksum-buffer> 0006 0808585c
-    <.sum-src> 0006 0808576c
+    <checksum-buffer> 0006 0808541c
+    <.sum-src> 0006 0808532c
     <2!> 0006 0807cdf0
     <\> 0005 0807c05c
     <r@> 0006 0807b500
-    <checksum-buffer> 0006 0808585c
-    <.sum-len> 0006 080857a8
+    <checksum-buffer> 0006 0808541c
+    <.sum-len> 0006 08085368
     <!> 0006 0807aef0
     <r>> 0006 0807b4d8
-    <checksum> 0006 0808267c
-    <checksum-buffer> 0006 0808585c
-    <.sum-checksum> 0006 080857e4
+    <checksum> 0006 08082474
+    <checksum-buffer> 0006 0808541c
+    <.sum-checksum> 0006 080853a4
     <!> 0006 0807aef0
     <\> 0005 0807c05c
-    <checksum-pkt> 0006 0808589c
-    <tag-pkt> 0006 080844fc
+    <checksum-pkt> 0006 0808545c
+    <tag-pkt> 0006 0808409c
     <\> 0005 0807c05c
-    <checksum-pkt> 0006 0808589c
-    <send-pkt> 0006 080847ec
+    <checksum-pkt> 0006 0808545c
+    <send-pkt> 0006 080843ac
     <drop> 0006 0807b36c
     <;> 0005 0807c424
 <\> 0000 0804ee40
@@ -17819,28 +17553,28 @@
 <:> 0004 0807c554
 <c-mem-copy> 0006 mem-cmd2.fr
     <\> 0005 0807c05c
-    <mem-write-enb> 0006 08082594
-    <get> 0006 0807f764
+    <mem-write-enb> 0006 0808228c
+    <get> 0006 0807f71c
     <if> 0005 0807c074
     <\> 0005 0807c05c
-    <first-address> 0006 08085738
+    <first-address> 0006 080852f8
     <\> 0005 0807c05c
-    <arg7> 0006 08084da0
-    <arg6> 0006 08084d80
+    <arg7> 0006 08084960
+    <arg6> 0006 08084940
     <join> 0006 0807f434
-    <arg5> 0006 08084d60
-    <arg4> 0006 08084d40
+    <arg5> 0006 08084920
+    <arg4> 0006 08084900
     <join> 0006 0807f434
     <\> 0005 0807c05c
-    <th-arg> 0006 08084dc0
-    <th-arg> 0006 08084dc0
+    <th-arg> 0006 08084980
+    <th-arg> 0006 08084980
     <join> 0006 0807f434
-    <copy> 0006 080849cc
+    <copy> 0006 0808458c
     <\> 0005 0807c05c
     <else> 0005 0807c090
     <\> 0005 0807c05c
-    <#mem-write-cmd> 0006 08081a60
-    <cmd-error> 0006 08084de0
+    <#mem-write-cmd> 0006 08081a14
+    <cmd-error> 0006 080849a0
     <\> 0005 0807c05c
     <then> 0005 0807c0b4
     <;> 0005 0807c424
@@ -17861,23 +17595,23 @@
 <:> 0004 0807c554
 <c-mem-load> 0006 mem-cmd2.fr
     <\> 0005 0807c05c
-    <mem-write-enb> 0006 08082594
-    <get> 0006 0807f764
+    <mem-write-enb> 0006 0808228c
+    <get> 0006 0807f71c
     <if> 0005 0807c074
     <\> 0005 0807c05c
-    <args> 0006 08084ca0
+    <args> 0006 08084860
     <drop> 0006 0807b36c
     <+> 0006 0807af1c
-    <first-address> 0006 08085738
+    <first-address> 0006 080852f8
     <\> 0005 0807c05c
-    <arg5> 0006 08084d60
-    <arg4> 0006 08084d40
+    <arg5> 0006 08084920
+    <arg4> 0006 08084900
     <join> 0006 0807f434
-    <load-mem> 0006 08085908
+    <load-mem> 0006 080854c8
     <else> 0005 0807c090
     <\> 0005 0807c05c
-    <#mem-write-cmd> 0006 08081a60
-    <cmd-error> 0006 08084de0
+    <#mem-write-cmd> 0006 08081a14
+    <cmd-error> 0006 080849a0
     <\> 0005 0807c05c
     <then> 0005 0807c0b4
     <;> 0005 0807c424
@@ -17886,11 +17620,11 @@
 <:> 0004 0807c554
 <c-mem-read> 0006 mem-cmd2.fr
     <\> 0005 0807c05c
-    <first-address> 0006 08085738
-    <arg7> 0006 08084da0
-    <arg6> 0006 08084d80
+    <first-address> 0006 080852f8
+    <arg7> 0006 08084960
+    <arg6> 0006 08084940
     <join> 0006 0807f434
-    <start-dump> 0006 08085394
+    <start-dump> 0006 08084f54
     <;> 0005 0807c424
 <\> 0000 0804ee40
 <\> 0000 0804ee40
@@ -17898,7 +17632,7 @@
 <:> 0004 0807c554
 <c-mem-read-abrt> 0006 mem-cmd2.fr
     <\> 0005 0807c05c
-    <abort-dump> 0006 080853b4
+    <abort-dump> 0006 08084f74
     <;> 0005 0807c424
 <\> 0000 0804ee40
 <\> 0000 0804ee40
@@ -17909,7 +17643,7 @@
     <\> 0005 0807c05c
     <disable> 0006 0807b92c
     <\> 0005 0807c05c
-    <first-address> 0006 08085738
+    <first-address> 0006 080852f8
     <far-execute> 0006 0807ef10
     <\> 0005 0807c05c
     <enable> 0006 0807b90c
@@ -17931,108 +17665,108 @@
 <endstructure> 0004 0807c958
 <struct-load-struct> 0004 mem-cmd2.fr
 <\> 0000 0804ee40
-<struct-load-struct> 0004 08085a5c
-<#struct> 0004 08081e64
+<struct-load-struct> 0004 0808561c
+<#struct> 0004 08081730
 <*> 0000 0804dcd0
 <makestruct> 0004 0807cae8
 <data-structures> 0004 mem-cmd2.fr
 <\> 0000 0804ee40
-<pkt-desc-size> 0004 080844a0
+<pkt-desc-size> 0004 08084040
 <makestruct> 0004 0807cae8
 <structure-pkt> 0004 mem-cmd2.fr
 <:> 0004 0807c554
 <c-mem-str-load> 0006 mem-cmd2.fr
     <\> 0005 0807c05c
-    <arg0> 0006 08084cc0
-    <#struct> 0006 08081e78
+    <arg0> 0006 08084880
+    <#struct> 0006 08081744
     <u<> 0006 0807b194
     <if> 0005 0807c074
     <\> 0005 0807c05c
-    <arg0> 0006 08084cc0
-    <struct-load-struct> 0006 08085a70
+    <arg0> 0006 08084880
+    <struct-load-struct> 0006 08085630
     <*> 0006 0807cd24
     <\> 0005 0807c05c
-    <data-structures> 0006 08085aac
+    <data-structures> 0006 0808566c
     <+> 0006 0807af1c
     <>r> 0006 0807b234
-    <arg3> 0006 08084d20
-    <arg2> 0006 08084d00
+    <arg3> 0006 080848e0
+    <arg2> 0006 080848c0
     <join> 0006 0807f434
     <\> 0005 0807c05c
     <dup> 0006 0807b394
     <r@> 0006 0807b500
-    <.str-len> 0006 080859f8
+    <.str-len> 0006 080855b8
     <@> 0006 0807b25c
     <u<> 0006 0807b194
     <\> 0005 0807c05c
     <over> 0006 0807b4b0
-    <arg1> 0006 08084ce0
+    <arg1> 0006 080848a0
     <+> 0006 0807af1c
     <r@> 0006 0807b500
-    <.str-len> 0006 080859f8
+    <.str-len> 0006 080855b8
     <@> 0006 0807b25c
     <u<=> 0006 0807f364
     <and> 0006 0807b2a4
     <if> 0005 0807c074
-    <args> 0006 08084ca0
+    <args> 0006 08084860
     <drop> 0006 0807b36c
     <+> 0006 0807af1c
     <\> 0005 0807c05c
     <swap> 0006 0807b5c8
     <r>> 0006 0807b4d8
-    <.str-src> 0006 080859bc
+    <.str-src> 0006 0808557c
     <2@> 0006 0807ce10
     <d+> 0006 0807b780
-    <arg1> 0006 08084ce0
-    <load-mem> 0006 08085908
+    <arg1> 0006 080848a0
+    <load-mem> 0006 080854c8
     <else> 0005 0807c090
     <rdrop> 0006 0807b528
     <drop> 0006 0807b36c
-    <#badarg-cmd> 0006 080818f8
-    <cmd-error> 0006 08084de0
+    <#badarg-cmd> 0006 08081870
+    <cmd-error> 0006 080849a0
     <then> 0005 0807c0b4
     <else> 0005 0807c090
-    <#badarg-cmd> 0006 080818f8
-    <cmd-error> 0006 08084de0
+    <#badarg-cmd> 0006 08081870
+    <cmd-error> 0006 080849a0
     <then> 0005 0807c0b4
     <;> 0005 0807c424
 <:> 0004 0807c554
 <c-mem-str-read> 0006 mem-cmd2.fr
     <\> 0005 0807c05c
-    <arg0> 0006 08084cc0
-    <#struct> 0006 08081e78
+    <arg0> 0006 08084880
+    <#struct> 0006 08081744
     <u<> 0006 0807b194
     <if> 0005 0807c074
     <\> 0005 0807c05c
-    <arg0> 0006 08084cc0
-    <struct-load-struct> 0006 08085a70
+    <arg0> 0006 08084880
+    <struct-load-struct> 0006 08085630
     <*> 0006 0807cd24
     <\> 0005 0807c05c
-    <data-structures> 0006 08085aac
+    <data-structures> 0006 0808566c
     <+> 0006 0807af1c
     <\> 0005 0807c05c
     <dup> 0006 0807b394
     <>r> 0006 0807b234
-    <.str-src> 0006 080859bc
+    <.str-src> 0006 0808557c
     <2@> 0006 0807ce10
     <\> 0005 0807c05c
     <r@> 0006 0807b500
-    <.str-len> 0006 080859f8
+    <.str-len> 0006 080855b8
     <@> 0006 0807b25c
     <r>> 0006 0807b4d8
-    <.str-id> 0006 08085a34
+    <.str-id> 0006 080855f4
     <@> 0006 0807b25c
-    <structure-pkt> 0006 08085aec
-    <init-pkt> 0006 0808468c
-    <structure-pkt> 0006 08085aec
-    <tag-pkt> 0006 080844fc
+    <structure-pkt> 0006 080856ac
+    <init-pkt> 0006 0808422c
+    <structure-pkt> 0006 080856ac
+    <tag-pkt> 0006 0808409c
     <\> 0005 0807c05c
-    <structure-pkt> 0006 08085aec
-    <send-pkt> 0006 080847ec
+    <structure-pkt> 0006 080856ac
+    <send-pkt> 0006 080843ac
     <drop> 0006 0807b36c
     <else> 0005 0807c090
-    <#badarg-cmd> 0006 080818f8
-    <cmd-error> 0006 08084de0
+    <#badarg-cmd> 0006 08081870
+    <cmd-error> 0006 080849a0
     <then> 0005 0807c0b4
     <;> 0005 0807c424
 <public:> 0004 0807e8f4
@@ -18041,19 +17775,19 @@
     <\> 0005 0807c05c
     <\> 0005 0807c05c
     <\> 0005 0807c05c
-    <struct-load-struct> 0006 08085a70
+    <struct-load-struct> 0006 08085630
     <*> 0006 0807cd24
-    <data-structures> 0006 08085aac
+    <data-structures> 0006 0808566c
     <+> 0006 0807af1c
     <>r> 0006 0807b234
     <r@> 0006 0807b500
-    <.str-id> 0006 08085a34
+    <.str-id> 0006 080855f4
     <!> 0006 0807aef0
     <r@> 0006 0807b500
-    <.str-len> 0006 080859f8
+    <.str-len> 0006 080855b8
     <!> 0006 0807aef0
     <r>> 0006 0807b4d8
-    <.str-src> 0006 080859bc
+    <.str-src> 0006 0808557c
     <2!> 0006 0807cdf0
     <;> 0005 0807c424
 <private:> 0004 0807e908
@@ -18063,9 +17797,9 @@
 <c-mem-write> 0006 mem-cmd2.fr
     <\> 0005 0807c05c
     <\> 0005 0807c05c
-    <arg0> 0006 08084cc0
-    <mem-write-enb> 0006 08082594
-    <set> 0006 0807f7a4
+    <arg0> 0006 08084880
+    <mem-write-enb> 0006 0808228c
+    <set> 0006 0807f75c
     <;> 0005 0807c424
 <\> 0000 0804ee40
 <\> 0000 0804ee40
@@ -18074,49 +17808,49 @@
 <init-memory> 0006 mem-cmd2.fr
     <\> 0005 0807c05c
     <\> 0005 0807c05c
-    <checksum-buffer> 0006 0808585c
+    <checksum-buffer> 0006 0808541c
     <get-code> 0006 0807b9c4
-    <checksum-pkt-struct> 0006 08085820
-    <#checksum-pkt> 0006 08080d5c
-    <checksum-pkt> 0006 0808589c
-    <init-pkt> 0006 0808468c
+    <checksum-pkt-struct> 0006 080853e0
+    <#checksum-pkt> 0006 08080c60
+    <checksum-pkt> 0006 0808545c
+    <init-pkt> 0006 0808422c
     <\> 0005 0807c05c
     <[']> 0005 0807c350
-    <c-mem-check> 0006 080858c8
-    <#mem-check> 0006 08081378
-    <register-cmd/args> 0006 080850c4
+    <c-mem-check> 0006 08085488
+    <#mem-check> 0006 0808127c
+    <register-cmd/args> 0006 08084c84
     <[']> 0005 0807c350
-    <c-mem-copy> 0006 080858e8
-    <#mem-copy> 0006 080813b4
-    <register-cmd/args> 0006 080850c4
+    <c-mem-copy> 0006 080854a8
+    <#mem-copy> 0006 080812b8
+    <register-cmd/args> 0006 08084c84
     <[']> 0005 0807c350
-    <c-mem-load> 0006 08085928
-    <#mem-load> 0006 080813f0
-    <register-cmd> 0006 080850e4
+    <c-mem-load> 0006 080854e8
+    <#mem-load> 0006 080812f4
+    <register-cmd> 0006 08084ca4
     <[']> 0005 0807c350
-    <c-mem-read> 0006 08085948
-    <#mem-read> 0006 0808146c
-    <register-cmd/args> 0006 080850c4
+    <c-mem-read> 0006 08085508
+    <#mem-read> 0006 08081330
+    <register-cmd/args> 0006 08084c84
     <[']> 0005 0807c350
-    <c-mem-read-abrt> 0006 08085968
-    <#mem-read-abrt> 0006 080814a8
-    <register-cmd/args> 0006 080850c4
+    <c-mem-read-abrt> 0006 08085528
+    <#mem-read-abrt> 0006 0808136c
+    <register-cmd/args> 0006 08084c84
     <[']> 0005 0807c350
-    <c-mem-run> 0006 08085988
-    <#mem-run> 0006 080814e4
-    <register-cmd/args> 0006 080850c4
+    <c-mem-run> 0006 08085548
+    <#mem-run> 0006 080813a8
+    <register-cmd/args> 0006 08084c84
     <[']> 0005 0807c350
-    <c-mem-str-load> 0006 08085b18
-    <#mem-str-load> 0006 08081520
-    <register-cmd> 0006 080850e4
+    <c-mem-str-load> 0006 080856d8
+    <#mem-str-load> 0006 080813e4
+    <register-cmd> 0006 08084ca4
     <[']> 0005 0807c350
-    <c-mem-str-read> 0006 08085b38
-    <#mem-str-read> 0006 0808155c
-    <register-cmd/args> 0006 080850c4
+    <c-mem-str-read> 0006 080856f8
+    <#mem-str-read> 0006 08081420
+    <register-cmd/args> 0006 08084c84
     <[']> 0005 0807c350
-    <c-mem-write> 0006 08085b78
-    <#mem-write> 0006 08081598
-    <register-cmd/args> 0006 080850c4
+    <c-mem-write> 0006 08085738
+    <#mem-write> 0006 0808145c
+    <register-cmd/args> 0006 08084c84
     <;> 0005 0807c424
 <private:> 0004 0807e908
 <endmodule>> 0004 0807e91c
@@ -18125,23 +17859,23 @@
 <\> 0000 0804ee40
 <\> 0000 0804ee40
 <decimal> 0000 0804e340
-<memory> 0004 080856fc
+<memory> 0004 080852bc
 <extendmodule>> 0004 0807e8dc
 <:> 0004 0807c554
 <c-mem-nv-enb> 0006 mem-cmd-extend.fr
     <\> 0005 0807c05c
-    <arg0> 0006 08084cc0
-    <nv-enb> 0006 08080c18
-    <set> 0006 0807f7a4
+    <arg0> 0006 08084880
+    <nv-enb> 0006 08082334
+    <set> 0006 0807f75c
     <;> 0005 0807c424
 <public:> 0004 0807e8f4
 <:> 0004 0807c554
 <init-mem-extend> 0006 mem-cmd-extend.fr
     <\> 0005 0807c05c
     <[']> 0005 0807c350
-    <c-mem-nv-enb> 0006 08085bb8
-    <#mem-nv-enb> 0006 0808142c
-    <register-cmd/args> 0006 080850c4
+    <c-mem-nv-enb> 0006 08085778
+    <#mem-nv-enb> 0006 080816c4
+    <register-cmd/args> 0006 08084c84
     <;> 0005 0807c424
 <private:> 0004 0807e908
 <endmodule>> 0004 0807e91c
@@ -18151,37 +17885,37 @@
 <\> 0000 0804ee40
 <\> 0000 0804ee40
 <hex> 0000 0804e300
-<commands> 0004 080849ec
+<commands> 0004 080845ac
 <extendmodule>> 0004 0807e8dc
 <\> 0000 0804ee40
 <\> 0000 0804ee40
 <\> 0000 0804ee40
-<pkt-desc-size> 0004 080844a0
+<pkt-desc-size> 0004 08084040
 <makestruct> 0004 0807cae8
 <echo-pkt> 0004 cmd-echo1.fr
 <:> 0004 0807c554
 <echo-cmd> 0006 cmd-echo1.fr
     <\> 0005 0807c05c
     <\> 0005 0807c05c
-    <command-buffer> 0006 08084b34
+    <command-buffer> 0006 080846f4
     <c!> 0006 0807b2cc
     <\> 0005 0807c05c
-    <get-command> 0006 08084c40
-    <#max-echo-args> 0006 08081808
+    <get-command> 0006 08084800
+    <#max-echo-args> 0006 08081780
     <+> 0006 0807af1c
     <umin> 0006 0807cdd0
     <\> 0005 0807c05c
     <get-code> 0006 0807b9c4
     <swap> 0006 0807b5c8
     <\> 0005 0807c05c
-    <#echo-pkt> 0006 08080ce4
-    <echo-pkt> 0006 08085c0c
-    <init-pkt> 0006 0808468c
-    <echo-pkt> 0006 08085c0c
-    <tag-pkt> 0006 080844fc
+    <#echo-pkt> 0006 08080be8
+    <echo-pkt> 0006 080857cc
+    <init-pkt> 0006 0808422c
+    <echo-pkt> 0006 080857cc
+    <tag-pkt> 0006 0808409c
     <\> 0005 0807c05c
-    <echo-pkt> 0006 08085c0c
-    <send-pkt> 0006 080847ec
+    <echo-pkt> 0006 080857cc
+    <send-pkt> 0006 080843ac
     <drop> 0006 0807b36c
     <;> 0005 0807c424
 <\> 0000 0804ee40
@@ -18196,7 +17930,7 @@
 <\> 0000 0804ee40
 <\> 0000 0804ee40
 <hex> 0000 0804e300
-<commands> 0004 080849ec
+<commands> 0004 080845ac
 <extendmodule>> 0004 0807e8dc
 <\> 0000 0804ee40
 <\> 0000 0804ee40
@@ -18205,70 +17939,70 @@
     <\> 0005 0807c05c
     <\> 0005 0807c05c
     <\> 0005 0807c05c
-    <#ok-cmd> 0006 08081844
+    <#ok-cmd> 0006 080817bc
     <u>> 0006 0807b1bc
     <if> 0005 0807c074
-    <macro-cmds-rej> 0006 0808263c
+    <macro-cmds-rej> 0006 08082414
     <else> 0005 0807c090
-    <macro-cmds-exec> 0006 08082604
+    <macro-cmds-exec> 0006 080823dc
     <then> 0005 0807c0b4
     <dup> 0006 0807b394
-    <get> 0006 0807f764
+    <get> 0006 0807f71c
     <1+> 0006 0807b024
     <swap> 0006 0807b5c8
-    <set> 0006 0807f7a4
+    <set> 0006 0807f75c
     <;> 0005 0807c424
 <\> 0000 0804ee40
 <public:> 0004 0807e8f4
 <:> 0004 0807c554
 <learn-macro> 0006 cmd-proc1.fr
     <\> 0005 0807c05c
-    <get-command> 0006 08084c40
-    <append-cmd> 0006 0808269c
+    <get-command> 0006 08084800
+    <append-cmd> 0006 08082494
     <\> 0005 0807c05c
     <if> 0005 0807c074
-    <#ok-macro-cmd> 0006 08081880
+    <#ok-macro-cmd> 0006 080817f8
     <else> 0005 0807c090
-    <#macro-comp-cmd> 0006 080819ac
+    <#macro-comp-cmd> 0006 08081924
     <then> 0005 0807c0b4
     <;> 0005 0807c424
 <\> 0000 0804ee40
 <:> 0004 0807c554
 <get-mac-cmd> 0006 cmd-proc1.fr
     <\> 0005 0807c05c
-    <get-command> 0006 08084c40
+    <get-command> 0006 08084800
     <drop> 0006 0807b36c
-    <macro-load> 0006 080826dc
+    <macro-load> 0006 080824d4
     <\> 0005 0807c05c
-    <set-cmd-length> 0006 08084c20
+    <set-cmd-length> 0006 080847e0
     <;> 0005 0807c424
 <\> 0000 0804ee40
 <:> 0004 0807c554
 <handle-mac-cmd> 0006 cmd-proc1.fr
     <\> 0005 0807c05c
-    <lookup-cmd> 0006 08084fe4
+    <lookup-cmd> 0006 08084ba4
     <?dup> 0006 0807cc30
     <if> 0005 0807c074
     <\> 0005 0807c05c
-    <macro-cmd> 0006 08085064
+    <macro-cmd> 0006 08084c24
     <\> 0005 0807c05c
     <else> 0005 0807c090
     <\> 0005 0807c05c
-    <#unknown-cmd> 0006 080818bc
+    <#unknown-cmd> 0006 08081834
     <\> 0005 0807c05c
     <then> 0005 0807c0b4
     <;> 0005 0807c424
 <:> 0004 0807c554
 <ack-mac-cmd> 0006 cmd-proc1.fr
     <\> 0005 0807c05c
-    <macro-echo?> 0006 080826fc
+    <macro-echo?> 0006 080824f4
     <if> 0005 0807c074
     <\> 0005 0807c05c
     <dup> 0006 0807b394
-    <count-mac-cmd> 0006 08085c78
+    <count-mac-cmd> 0006 08085838
     <\> 0005 0807c05c
     <or> 0006 0807b488
-    <echo-cmd> 0006 08085c38
+    <echo-cmd> 0006 080857f8
     <\> 0005 0807c05c
     <else> 0005 0807c090
     <drop> 0006 0807b36c
@@ -18284,12 +18018,12 @@
     <\> 0005 0807c05c
     <if> 0005 0807c074
     <\> 0005 0807c05c
-    <rt-cmd> 0006 08085044
+    <rt-cmd> 0006 08084c04
     <\> 0005 0807c05c
     <else> 0005 0807c090
     <\> 0005 0807c05c
     <drop> 0006 0807b36c
-    <learn-macro> 0006 08085c98
+    <learn-macro> 0006 08085858
     <\> 0005 0807c05c
     <then> 0005 0807c0b4
     <;> 0005 0807c424
@@ -18298,38 +18032,38 @@
     <\> 0005 0807c05c
     <\> 0005 0807c05c
     <\> 0005 0807c05c
-    <#ok-macro-cmd> 0006 08081880
+    <#ok-macro-cmd> 0006 080817f8
     <u>> 0006 0807b1bc
     <if> 0005 0807c074
-    <cmds-rejected> 0006 08082524
+    <cmds-rejected> 0006 0808221c
     <else> 0005 0807c090
-    <cmds-executed> 0006 080824ec
+    <cmds-executed> 0006 080821e4
     <then> 0005 0807c0b4
     <dup> 0006 0807b394
-    <get> 0006 0807f764
+    <get> 0006 0807f71c
     <1+> 0006 0807b024
     <swap> 0006 0807b5c8
-    <set> 0006 0807f7a4
+    <set> 0006 0807f75c
     <;> 0005 0807c424
 <\> 0000 0804ee40
 <public:> 0004 0807e8f4
 <:> 0004 0807c554
 <handle-cmd> 0006 cmd-proc1.fr
     <\> 0005 0807c05c
-    <lookup-cmd> 0006 08084fe4
+    <lookup-cmd> 0006 08084ba4
     <?dup> 0006 0807cc30
     <if> 0005 0807c074
     <\> 0005 0807c05c
     <dup> 0006 0807b394
-    <trim-args> 0006 08085004
+    <trim-args> 0006 08084bc4
     <\> 0005 0807c05c
     <swap> 0006 0807b5c8
-    <process-cmd> 0006 08085d18
+    <process-cmd> 0006 080858d8
     <\> 0005 0807c05c
     <else> 0005 0807c090
     <\> 0005 0807c05c
     <drop> 0006 0807b36c
-    <#unknown-cmd> 0006 080818bc
+    <#unknown-cmd> 0006 08081834
     <\> 0005 0807c05c
     <then> 0005 0807c0b4
     <;> 0005 0807c424
@@ -18337,16 +18071,16 @@
 <ack-cmd> 0006 cmd-proc1.fr
     <\> 0005 0807c05c
     <dup> 0006 0807b394
-    <count-cmd> 0006 08085d38
+    <count-cmd> 0006 080858f8
     <\> 0005 0807c05c
-    <echo-cmd> 0006 08085c38
+    <echo-cmd> 0006 080857f8
     <;> 0005 0807c424
 <\> 0000 0804ee40
 <:> 0004 0807c554
 <save-cmd> 0006 cmd-proc1.fr
     <\> 0005 0807c05c
-    <set-opcode> 0006 08084be0
-    <load-args> 0006 08084c00
+    <set-opcode> 0006 080847a0
+    <load-args> 0006 080847c0
     <;> 0005 0807c424
 <\> 0000 0804ee40
 <private:> 0004 0807e908
@@ -18363,14 +18097,14 @@
 <:> 0004 0807c554
 <init-command> 0006 cmd-proc1.fr
     <\> 0005 0807c05c
-    <init-cmd-table> 0006 08085084
+    <init-cmd-table> 0006 08084c44
     <\> 0005 0807c05c
-    <init-echo-pkt> 0006 08085c58
+    <init-echo-pkt> 0006 08085818
     <\> 0005 0807c05c
     <[']> 0005 0807c350
-    <c-cmd-null> 0006 08085db8
-    <#cmd-null> 0006 08080f3c
-    <register-cmd/args> 0006 080850c4
+    <c-cmd-null> 0006 08085978
+    <#cmd-null> 0006 08080e40
+    <register-cmd/args> 0006 08084c84
     <;> 0005 0807c424
 <private:> 0004 0807e908
 <endmodule>> 0004 0807e91c
@@ -18379,7 +18113,7 @@
 <\> 0000 0804ee40
 <\> 0000 0804ee40
 <hex> 0000 0804e300
-<status> 0004 08082180
+<status> 0004 08081e58
 <extendmodule>> 0004 0807e8dc
 <\> 0000 0804ee40
 <\> 0000 0804ee40
@@ -18387,57 +18121,59 @@
 <variable> 0004 0807c7b0
 <status-cnt> 0004 stat-proc1.fr
 <\> 0000 0804ee40
-<pkt-desc-size> 0004 080844a0
+<pkt-desc-size> 0004 08084040
 <makestruct> 0004 0807cae8
 <status-pkt> 0004 stat-proc1.fr
 <:> 0004 0807c554
 <watch-memory> 0006 stat-proc1.fr
     <\> 0005 0807c05c
     <get-mem> 0006 0807ba14
-    <watch-mem> 0006 08082364
-    <get> 0006 0807f764
+    <watch-mem> 0006 0808205c
+    <get> 0006 0807f71c
     <set-mem> 0006 0807b9ec
     <\> 0005 0807c05c
-    <watch-addr> 0006 0808232c
-    <get> 0006 0807f764
+    <watch-addr> 0006 08082024
+    <get> 0006 0807f71c
     <dup> 0006 0807b394
     <farc@> 0006 0807ee90
-    <watch-byte1> 0006 0808239c
-    <set> 0006 0807f7a4
+    <watch-byte1> 0006 08082094
+    <set> 0006 0807f75c
     <\> 0005 0807c05c
     <1+> 0006 0807b024
     <farc@> 0006 0807ee90
-    <watch-byte2> 0006 080823d4
-    <set> 0006 0807f7a4
+    <watch-byte2> 0006 080820cc
+    <set> 0006 0807f75c
     <set-mem> 0006 0807b9ec
     <;> 0005 0807c424
 <public:> 0004 0807e8f4
 <:> 0004 0807c554
 <send-status> 0006 stat-proc1.fr
     <\> 0005 0807c05c
-    <status-cnt> 0006 08085e0c
+    <status-cnt> 0006 080859cc
     <@> 0006 0807b25c
     <1+> 0006 0807b024
     <\> 0005 0807c05c
     <dup> 0006 0807b394
-    <status-int> 0006 080822bc
-    <get> 0006 0807f764
+    <status-int> 0006 08081fb4
+    <get> 0006 0807f71c
     <1-> 0006 0807b04c
     <u>> 0006 0807b1bc
     <if> 0005 0807c074
     <\> 0005 0807c05c
-    <watch-memory> 0006 08085e78
+    <watch-memory> 0006 08085a38
     <\> 0005 0807c05c
-    <status-pkt> 0006 08085e4c
-    <tag-pkt> 0006 080844fc
+    <update-digital-status> 0006 08082434
     <\> 0005 0807c05c
-    <status-pkt> 0006 08085e4c
-    <send-pkt> 0006 080847ec
+    <status-pkt> 0006 08085a0c
+    <tag-pkt> 0006 0808409c
+    <\> 0005 0807c05c
+    <status-pkt> 0006 08085a0c
+    <send-pkt> 0006 080843ac
     <drop> 0006 0807b36c
     <\> 0005 0807c05c
     <drop> 0006 0807b36c
     <then> 0005 0807c0b4
-    <status-cnt> 0006 08085e0c
+    <status-cnt> 0006 080859cc
     <!> 0006 0807aef0
     <;> 0005 0807c424
 <private:> 0004 0807e908
@@ -18446,95 +18182,95 @@
 <:> 0004 0807c554
 <clear-all-cnts> 0006 stat-proc1.fr
     <\> 0005 0807c05c
-    <cmds-executed> 0006 080824ec
-    <set> 0006 0807f7a4
+    <cmds-executed> 0006 080821e4
+    <set> 0006 0807f75c
     <\> 0005 0807c05c
-    <cmds-rejected> 0006 08082524
-    <set> 0006 0807f7a4
+    <cmds-rejected> 0006 0808221c
+    <set> 0006 0807f75c
     <\> 0005 0807c05c
-    <macro-cmds-exec> 0006 08082604
-    <set> 0006 0807f7a4
+    <macro-cmds-exec> 0006 080823dc
+    <set> 0006 0807f75c
     <\> 0005 0807c05c
-    <macro-cmds-rej> 0006 0808263c
-    <set> 0006 0807f7a4
+    <macro-cmds-rej> 0006 08082414
+    <set> 0006 0807f75c
     <\> 0005 0807c05c
-    <alarm-count> 0006 080824b4
-    <set> 0006 0807f7a4
+    <alarm-count> 0006 080821ac
+    <set> 0006 0807f75c
     <\> 0005 0807c05c
-    <clear-tlm-volume> 0006 08083fe4
+    <clear-tlm-volume> 0006 08083bbc
     <;> 0005 0807c424
 <\> 0000 0804ee40
 <:> 0004 0807c554
 <c-stat-clr> 0006 stat-proc1.fr
     <\> 0005 0807c05c
-    <arg0> 0006 08084cc0
+    <arg0> 0006 08084880
     <sel> 0005 0807c23c
     <<<> 0005 0807c254
     <==>> 0005 0807c28c
-    <cmds-executed> 0006 080824ec
-    <set> 0006 0807f7a4
+    <cmds-executed> 0006 080821e4
+    <set> 0006 0807f75c
     <>>> 0005 0807c2a8
     <\> 0005 0807c05c
     <<<> 0005 0807c254
     <==>> 0005 0807c28c
-    <cmds-rejected> 0006 08082524
-    <set> 0006 0807f7a4
+    <cmds-rejected> 0006 0808221c
+    <set> 0006 0807f75c
     <>>> 0005 0807c2a8
     <\> 0005 0807c05c
     <<<> 0005 0807c254
     <==>> 0005 0807c28c
-    <macro-cmds-exec> 0006 08082604
-    <set> 0006 0807f7a4
+    <macro-cmds-exec> 0006 080823dc
+    <set> 0006 0807f75c
     <>>> 0005 0807c2a8
     <\> 0005 0807c05c
     <<<> 0005 0807c254
     <==>> 0005 0807c28c
-    <macro-cmds-rej> 0006 0808263c
-    <set> 0006 0807f7a4
+    <macro-cmds-rej> 0006 08082414
+    <set> 0006 0807f75c
     <>>> 0005 0807c2a8
     <\> 0005 0807c05c
     <<<> 0005 0807c254
     <==>> 0005 0807c28c
-    <clear-tlm-volume> 0006 08083fe4
+    <clear-tlm-volume> 0006 08083bbc
     <>>> 0005 0807c2a8
     <\> 0005 0807c05c
     <<<> 0005 0807c254
     <==>> 0005 0807c28c
-    <alarm-count> 0006 080824b4
-    <set> 0006 0807f7a4
+    <alarm-count> 0006 080821ac
+    <set> 0006 0807f75c
     <>>> 0005 0807c2a8
     <\> 0005 0807c05c
     <<<> 0005 0807c254
     <==>> 0005 0807c28c
-    <clear-all-cnts> 0006 08085eb8
+    <clear-all-cnts> 0006 08085a78
     <>>> 0005 0807c2a8
     <\> 0005 0807c05c
     <(> 0005 0807c038
-    <#badarg-cmd> 0006 080818f8
-    <cmd-error> 0006 08084de0
+    <#badarg-cmd> 0006 08081870
+    <cmd-error> 0006 080849a0
     <\> 0005 0807c05c
     <endsel> 0005 0807c2e8
     <;> 0005 0807c424
 <:> 0004 0807c554
 <c-stat-int> 0006 stat-proc1.fr
     <\> 0005 0807c05c
-    <arg1> 0006 08084ce0
-    <arg0> 0006 08084cc0
+    <arg1> 0006 080848a0
+    <arg0> 0006 08084880
     <join> 0006 0807f434
-    <status-int> 0006 080822bc
-    <set> 0006 0807f7a4
+    <status-int> 0006 08081fb4
+    <set> 0006 0807f75c
     <;> 0005 0807c424
 <:> 0004 0807c554
 <c-stat-mem> 0006 stat-proc1.fr
     <\> 0005 0807c05c
-    <arg1> 0006 08084ce0
-    <watch-mem> 0006 08082364
-    <set> 0006 0807f7a4
-    <arg3> 0006 08084d20
-    <arg2> 0006 08084d00
+    <arg1> 0006 080848a0
+    <watch-mem> 0006 0808205c
+    <set> 0006 0807f75c
+    <arg3> 0006 080848e0
+    <arg2> 0006 080848c0
     <join> 0006 0807f434
-    <watch-addr> 0006 0808232c
-    <set> 0006 0807f7a4
+    <watch-addr> 0006 08082024
+    <set> 0006 0807f75c
     <;> 0005 0807c424
 <\> 0000 0804ee40
 <\> 0000 0804ee40
@@ -18542,35 +18278,34 @@
 <:> 0004 0807c554
 <init-status> 0006 stat-proc1.fr
     <\> 0005 0807c05c
-    <config/status> 0006 0808224c
+    <config/status> 0006 08081f44
     <get-code> 0006 0807b9c4
-    <#config/status> 0006 080821d0
-    <#status-pkt> 0006 08081eb4
-    <status-pkt> 0006 08085e4c
-    <init-pkt> 0006 0808468c
+    <#config/status> 0006 08081ec8
+    <#status-pkt> 0006 08080cd8
+    <status-pkt> 0006 08085a0c
+    <init-pkt> 0006 0808422c
     <[']> 0005 0807c350
-    <c-stat-clr> 0006 08085ed8
-    <#stat-clr> 0006 08081710
-    <register-cmd/args> 0006 080850c4
+    <c-stat-clr> 0006 08085a98
+    <#stat-clr> 0006 080814d4
+    <register-cmd/args> 0006 08084c84
     <[']> 0005 0807c350
-    <c-stat-int> 0006 08085ef8
-    <#stat-int> 0006 0808174c
-    <register-cmd/args> 0006 080850c4
+    <c-stat-int> 0006 08085ab8
+    <#stat-int> 0006 08081510
+    <register-cmd/args> 0006 08084c84
     <[']> 0005 0807c350
-    <c-stat-mem> 0006 08085f18
-    <#stat-mem> 0006 08081788
-    <register-cmd/args> 0006 080850c4
+    <c-stat-mem> 0006 08085ad8
+    <#stat-mem> 0006 080815c4
+    <register-cmd/args> 0006 08084c84
     <;> 0005 0807c424
 <private:> 0004 0807e908
 <endmodule>> 0004 0807e91c
-<\> 0000 0804ee40
 <\> 0000 0804ee40
 <"> 0000 0804ec60
 <used> 0004 0807bde4
 <\> 0000 0804ee40
 <\> 0000 0804ee40
 <hex> 0000 0804e300
-<host> 0004 08082b58
+<host> 0004 08082810
 <extendmodule>> 0004 0807e8dc
 <\> 0000 0804ee40
 <\> 0000 0804ee40
@@ -18587,7 +18322,7 @@
 <constant> 0004 0807c4cc
 <#ipsync> 0004 host-cmd.fr
 <\> 0000 0804ee40
-<#max-in-frame> 0004 08085f58
+<#max-in-frame> 0004 08085b18
 <makestruct> 0004 0807cae8
 <msg-buffer> 0004 host-cmd.fr
 <\> 0000 0804ee40
@@ -18609,8 +18344,8 @@
 <:> 0004 0807c554
 <rcv-alarm> 0006 host-cmd.fr
     <\> 0005 0807c05c
-    <#bad-pkt-alm> 0006 08081a9c
-    <sw-alarm> 0006 080856bc
+    <#bad-pkt-alm> 0006 08081a50
+    <sw-alarm> 0006 0808527c
     <;> 0005 0807c424
 <\> 0000 0804ee40
 <\> 0000 0804ee40
@@ -18630,24 +18365,24 @@
 <:> 0004 0807c554
 <process-time> 0006 host-cmd.fr
     <\> 0005 0807c05c
-    <ext-time-struct> 0006 080861b0
+    <ext-time-struct> 0006 08085d70
     <=> 0006 0807b1e4
     <if> 0005 0807c074
     <\> 0005 0807c05c
     <dup> 0006 0807b394
     <>r> 0006 0807b234
-    <.ext-time-sub> 0006 08086174
+    <.ext-time-sub> 0006 08085d34
     <@> 0006 0807b25c
     <\> 0005 0807c05c
     <r>> 0006 0807b4d8
-    <.ext-time> 0006 08086138
+    <.ext-time> 0006 08085cf8
     <2@> 0006 0807ce10
-    <set-time> 0006 08082ab8
+    <set-time> 0006 08082770
     <else> 0005 0807c090
     <\> 0005 0807c05c
     <drop> 0006 0807b36c
-    <#cip-len-wrong> 0006 080860dc
-    <rcv-alarm> 0006 08086104
+    <#cip-len-wrong> 0006 08085c9c
+    <rcv-alarm> 0006 08085cc4
     <then> 0005 0807c0b4
     <;> 0005 0807c424
 <\> 0000 0804ee40
@@ -18660,7 +18395,7 @@
 <char:> 0004 0807ca44
 <.ext-cmd-macro> 0004 host-cmd.fr
 <\> 0000 0804ee40
-<#max-args> 0004 080817b4
+<#max-args> 0004 080816f0
 <chars:> 0004 0807ca28
 <.ext-cmd-args> 0004 host-cmd.fr
 <\> 0000 0804ee40
@@ -18674,7 +18409,7 @@
 <real-time?> 0006 host-cmd.fr
     <\> 0005 0807c05c
     <\> 0005 0807c05c
-    <.ext-cmd-macro> 0006 08086248
+    <.ext-cmd-macro> 0006 08085e08
     <c@> 0006 0807b2f8
     <0=> 0006 0807afd4
     <;> 0005 0807c424
@@ -18685,33 +18420,33 @@
     <\> 0005 0807c05c
     <>r> 0006 0807b234
     <dup> 0006 0807b394
-    <.ext-cmd-opcode> 0006 0808620c
+    <.ext-cmd-opcode> 0006 08085dcc
     <c@> 0006 0807b2f8
-    <#cmd-wrap> 0006 08080fb8
+    <#cmd-wrap> 0006 08080ebc
     <<>> 0006 0807b20c
     <if> 0005 0807c074
     <\> 0005 0807c05c
     <dup> 0006 0807b394
-    <.ext-cmd-args> 0006 08086284
+    <.ext-cmd-args> 0006 08085e44
     <r>> 0006 0807b4d8
     <-> 0006 0807af64
-    <#max-args> 0006 080817c8
+    <#max-args> 0006 08081704
     <min> 0006 0807cd90
     <rot> 0006 0807b550
-    <.ext-cmd-opcode> 0006 0808620c
+    <.ext-cmd-opcode> 0006 08085dcc
     <c@> 0006 0807b2f8
     <else> 0005 0807c090
     <\> 0005 0807c05c
     <dup> 0006 0807b394
-    <.ext-cmd-args> 0006 08086284
+    <.ext-cmd-args> 0006 08085e44
     <+> 0006 0807af1c
     <r>> 0006 0807b4d8
     <-> 0006 0807af64
     <max> 0006 0807cd70
-    <#max-args> 0006 080817c8
+    <#max-args> 0006 08081704
     <min> 0006 0807cd90
     <rot> 0006 0807b550
-    <.ext-cmd-args> 0006 08086284
+    <.ext-cmd-args> 0006 08085e44
     <c@> 0006 0807b2f8
     <then> 0005 0807c0b4
     <;> 0005 0807c424
@@ -18721,27 +18456,27 @@
     <\> 0005 0807c05c
     <\> 0005 0807c05c
     <dup> 0006 0807b394
-    <ext-cmd-struct> 0006 080862c0
+    <ext-cmd-struct> 0006 08085e80
     <between> 0006 0807f344
     <if> 0005 0807c074
     <\> 0005 0807c05c
     <over> 0006 0807b4b0
     <>r> 0006 0807b234
-    <unwrap-command> 0006 0808630c
-    <save-cmd> 0006 08085d98
+    <unwrap-command> 0006 08085ecc
+    <save-cmd> 0006 08085958
     <\> 0005 0807c05c
     <r>> 0006 0807b4d8
-    <real-time?> 0006 080862ec
-    <handle-cmd> 0006 08085d58
-    <ack-cmd> 0006 08085d78
+    <real-time?> 0006 08085eac
+    <handle-cmd> 0006 08085918
+    <ack-cmd> 0006 08085938
     <\> 0005 0807c05c
-    <cmd-signal> 0006 08082e90
+    <cmd-signal> 0006 08082ac8
     <\> 0005 0807c05c
     <else> 0005 0807c090
     <\> 0005 0807c05c
     <2drop> 0006 0807cd44
-    <#cip-len-wrong> 0006 080860dc
-    <rcv-alarm> 0006 08086104
+    <#cip-len-wrong> 0006 08085c9c
+    <rcv-alarm> 0006 08085cc4
     <then> 0005 0807c0b4
     <;> 0005 0807c424
 <:> 0004 0807c554
@@ -18749,12 +18484,12 @@
     <\> 0005 0807c05c
     <\> 0005 0807c05c
     <\> 0005 0807c05c
-    <get-mac-cmd> 0006 08085cb8
+    <get-mac-cmd> 0006 08085878
     <\> 0005 0807c05c
-    <handle-mac-cmd> 0006 08085cd8
-    <ack-mac-cmd> 0006 08085cf8
+    <handle-mac-cmd> 0006 08085898
+    <ack-mac-cmd> 0006 080858b8
     <\> 0005 0807c05c
-    <cmd-signal> 0006 08082e90
+    <cmd-signal> 0006 08082ac8
     <;> 0005 0807c424
 <\> 0000 0804ee40
 <\> 0000 0804ee40
@@ -18765,19 +18500,19 @@
     <\> 0005 0807c05c
     <\> 0005 0807c05c
     <begin> 0005 0807c0cc
-    <cmd-wait> 0006 08082eb0
+    <cmd-wait> 0006 08082ae8
     <\> 0005 0807c05c
-    <rcv-empty?> 0006 08082ef0
+    <rcv-empty?> 0006 08082b28
     <while> 0005 0807c0e4
     <\> 0005 0807c05c
-    <macro-ready?> 0006 080826bc
+    <macro-ready?> 0006 080824b4
     <if> 0005 0807c074
     <\> 0005 0807c05c
-    <do-macro-cmd> 0006 0808634c
+    <do-macro-cmd> 0006 08085f0c
     <\> 0005 0807c05c
     <then> 0005 0807c0b4
     <repeat> 0005 0807c120
-    <rcv-byte> 0006 08082f10
+    <rcv-byte> 0006 08082b48
     <;> 0005 0807c424
 <\> 0000 0804ee40
 <:> 0004 0807c554
@@ -18785,7 +18520,7 @@
     <\> 0005 0807c05c
     <\> 0005 0807c05c
     <do> 0005 0807c15c
-    <get-msg-byte> 0006 0808636c
+    <get-msg-byte> 0006 08085f2c
     <over> 0006 0807b4b0
     <c!> 0006 0807b2cc
     <1+> 0006 0807b024
@@ -18798,7 +18533,7 @@
     <\> 0005 0807c05c
     <\> 0005 0807c05c
     <\> 0005 0807c05c
-    <default-header> 0006 080834e8
+    <default-header> 0006 080830e0
     <>r> 0006 0807b234
     <\> 0005 0807c05c
     <dup> 0006 0807b394
@@ -18842,26 +18577,26 @@
     <\> 0005 0807c05c
     <\> 0005 0807c05c
     <dup> 0006 0807b394
-    <#ipsync> 0006 08085fac
-    <get-msg-bytes> 0006 0808638c
+    <#ipsync> 0006 08085b6c
+    <get-msg-bytes> 0006 08085f4c
     <\> 0005 0807c05c
     <begin> 0005 0807c0cc
     <\> 0005 0807c05c
     <dup> 0006 0807b394
-    <sync-good?> 0006 080863ac
+    <sync-good?> 0006 08085f6c
     <not> 0006 0807b460
     <while> 0005 0807c0e4
     <\> 0005 0807c05c
     <dup> 0006 0807b394
     <1+> 0006 0807b024
     <over> 0006 0807b4b0
-    <#ipsync> 0006 08085fac
+    <#ipsync> 0006 08085b6c
     <1-> 0006 0807b04c
     <move> 0006 0807b820
     <\> 0005 0807c05c
-    <get-msg-byte> 0006 0808636c
+    <get-msg-byte> 0006 08085f2c
     <over> 0006 0807b4b0
-    <#ipsync> 0006 08085fac
+    <#ipsync> 0006 08085b6c
     <+> 0006 0807af1c
     <1-> 0006 0807b04c
     <c!> 0006 0807b2cc
@@ -18872,44 +18607,44 @@
 <read-rest-msg> 0006 host-cmd.fr
     <\> 0005 0807c05c
     <\> 0005 0807c05c
-    <#ipsync> 0006 08085fac
+    <#ipsync> 0006 08085b6c
     <+> 0006 0807af1c
     <swap> 0006 0807b5c8
-    <#ipsync> 0006 08085fac
+    <#ipsync> 0006 08085b6c
     <-> 0006 0807af64
-    <get-msg-bytes> 0006 0808638c
+    <get-msg-bytes> 0006 08085f4c
     <;> 0005 0807c424
 <:> 0004 0807c554
 <ip-good?> 0006 host-cmd.fr
     <\> 0005 0807c05c
     <dup> 0006 0807b394
     <>r> 0006 0807b234
-    <ip-head-checksum> 0006 08083590
-    <-zero> 0006 0808351c
+    <ip-head-checksum> 0006 08083188
+    <-zero> 0006 08083114
     <=> 0006 0807b1e4
     <if> 0005 0807c074
     <\> 0005 0807c05c
     <r@> 0006 0807b500
-    <.h-ip> 0006 08083430
-    <.ip-len> 0006 0808319c
+    <.h-ip> 0006 08083028
+    <.ip-len> 0006 08082d94
     <@> 0006 0807b25c
     <\> 0005 0807c05c
     <r@> 0006 0807b500
-    <.h-udp> 0006 0808346c
-    <.udp-len> 0006 0808337c
+    <.h-udp> 0006 08083064
+    <.udp-len> 0006 08082f74
     <@> 0006 0807b25c
-    <ip-head-struct> 0006 080832c8
+    <ip-head-struct> 0006 08082ec0
     <+> 0006 0807af1c
     <=> 0006 0807b1e4
     <r@> 0006 0807b500
-    <.h-udp> 0006 0808346c
-    <.udp-sum> 0006 080833b8
+    <.h-udp> 0006 08083064
+    <.udp-sum> 0006 08082fb0
     <@> 0006 0807b25c
     <if> 0005 0807c074
     <\> 0005 0807c05c
     <r@> 0006 0807b500
-    <udp-checksum> 0006 080835b0
-    <-zero> 0006 0808351c
+    <udp-checksum> 0006 080831a8
+    <-zero> 0006 08083114
     <=> 0006 0807b1e4
     <and> 0006 0807b2a4
     <\> 0005 0807c05c
@@ -18929,33 +18664,33 @@
     <\> 0005 0807c05c
     <dup> 0006 0807b394
     <>r> 0006 0807b234
-    <cip-head-struct> 0006 08083898
+    <cip-head-struct> 0006 08083470
     <+> 0006 0807af1c
     <\> 0005 0807c05c
     <r@> 0006 0807b500
-    <.cip-len> 0006 08083640
+    <.cip-len> 0006 08083218
     <@> 0006 0807b25c
-    <cip-head-struct> 0006 08083898
+    <cip-head-struct> 0006 08083470
     <-> 0006 0807af64
     <r@> 0006 0807b500
-    <.cip-type> 0006 0808367c
+    <.cip-type> 0006 08083254
     <c@> 0006 0807b2f8
     <sel> 0005 0807c23c
     <\> 0005 0807c05c
     <<<> 0005 0807c254
-    <#cip-time> 0006 080836b8
+    <#cip-time> 0006 08083290
     <==>> 0005 0807c28c
-    <process-time> 0006 080861d8
+    <process-time> 0006 08085d98
     <>>> 0005 0807c2a8
     <\> 0005 0807c05c
     <<<> 0005 0807c254
-    <#cip-cmd> 0006 080836f4
+    <#cip-cmd> 0006 080832cc
     <==>> 0005 0807c28c
-    <process-command> 0006 0808632c
+    <process-command> 0006 08085eec
     <>>> 0005 0807c2a8
     <\> 0005 0807c05c
     <<<> 0005 0807c254
-    <#cip-noop> 0006 08083730
+    <#cip-noop> 0006 08083308
     <==>> 0005 0807c28c
     <2drop> 0006 0807cd44
     <>>> 0005 0807c2a8
@@ -18963,26 +18698,26 @@
     <(> 0005 0807c038
     <nip> 0006 0807b438
     <nip> 0006 0807b438
-    <#cip-unknown> 0006 080860a0
-    <rcv-alarm> 0006 08086104
+    <#cip-unknown> 0006 08085c60
+    <rcv-alarm> 0006 08085cc4
     <\> 0005 0807c05c
     <endsel> 0005 0807c2e8
     <r>> 0006 0807b4d8
-    <.cip-len> 0006 08083640
+    <.cip-len> 0006 08083218
     <@> 0006 0807b25c
     <;> 0005 0807c424
 <:> 0004 0807c554
 <process-message> 0006 host-cmd.fr
     <\> 0005 0807c05c
     <dup> 0006 0807b394
-    <head-struct> 0006 080834a8
+    <head-struct> 0006 080830a0
     <+> 0006 0807af1c
     <\> 0005 0807c05c
     <swap> 0006 0807b5c8
-    <.h-ip> 0006 08083430
-    <.ip-len> 0006 0808319c
+    <.h-ip> 0006 08083028
+    <.ip-len> 0006 08082d94
     <@> 0006 0807b25c
-    <head-struct> 0006 080834a8
+    <head-struct> 0006 080830a0
     <-> 0006 0807af64
     <begin> 0005 0807c0cc
     <\> 0005 0807c05c
@@ -18990,11 +18725,11 @@
     <while> 0005 0807c0e4
     <\> 0005 0807c05c
     <2dup> 0006 0807cc50
-    <cip-good?> 0006 08083900
+    <cip-good?> 0006 080834d8
     <while> 0005 0807c0e4
     <\> 0005 0807c05c
     <over> 0006 0807b4b0
-    <process-cip> 0006 0808642c
+    <process-cip> 0006 08085fec
     <\> 0005 0807c05c
     <>r> 0006 0807b234
     <swap> 0006 0807b5c8
@@ -19005,8 +18740,8 @@
     <-> 0006 0807af64
     <\> 0005 0807c05c
     <repeat> 0005 0807c120
-    <#cip-bad> 0006 08086064
-    <rcv-alarm> 0006 08086104
+    <#cip-bad> 0006 08085c24
+    <rcv-alarm> 0006 08085cc4
     <\> 0005 0807c05c
     <then> 0005 0807c0b4
     <2drop> 0006 0807cd44
@@ -19015,42 +18750,42 @@
 <:> 0004 0807c554
 <handle-message> 0006 host-cmd.fr
     <\> 0005 0807c05c
-    <msg-buffer> 0006 08085fe8
-    <find-msg-sync> 0006 080863cc
+    <msg-buffer> 0006 08085ba8
+    <find-msg-sync> 0006 08085f8c
     <\> 0005 0807c05c
-    <msg-buffer> 0006 08085fe8
-    <.h-ip> 0006 08083430
-    <.ip-len> 0006 0808319c
+    <msg-buffer> 0006 08085ba8
+    <.h-ip> 0006 08083028
+    <.ip-len> 0006 08082d94
     <@> 0006 0807b25c
     <dup> 0006 0807b394
     <\> 0005 0807c05c
-    <head-struct> 0006 080834a8
-    <#max-in-frame> 0006 08085f6c
+    <head-struct> 0006 080830a0
+    <#max-in-frame> 0006 08085b2c
     <between> 0006 0807f344
     <if> 0005 0807c074
     <\> 0005 0807c05c
-    <msg-buffer> 0006 08085fe8
-    <read-rest-msg> 0006 080863ec
+    <msg-buffer> 0006 08085ba8
+    <read-rest-msg> 0006 08085fac
     <\> 0005 0807c05c
-    <msg-buffer> 0006 08085fe8
-    <ip-good?> 0006 0808640c
+    <msg-buffer> 0006 08085ba8
+    <ip-good?> 0006 08085fcc
     <if> 0005 0807c074
     <\> 0005 0807c05c
-    <msg-buffer> 0006 08085fe8
-    <process-message> 0006 0808644c
+    <msg-buffer> 0006 08085ba8
+    <process-message> 0006 0808600c
     <\> 0005 0807c05c
-    <all-is-well> 0006 0808275c
+    <all-is-well> 0006 08082554
     <\> 0005 0807c05c
     <else> 0005 0807c090
     <\> 0005 0807c05c
-    <#ip/udp-bad> 0006 08086028
-    <rcv-alarm> 0006 08086104
+    <#ip/udp-bad> 0006 08085be8
+    <rcv-alarm> 0006 08085cc4
     <then> 0005 0807c0b4
     <else> 0005 0807c090
     <\> 0005 0807c05c
     <drop> 0006 0807b36c
-    <#ip/udp-bad> 0006 08086028
-    <rcv-alarm> 0006 08086104
+    <#ip/udp-bad> 0006 08085be8
+    <rcv-alarm> 0006 08085cc4
     <then> 0005 0807c0b4
     <;> 0005 0807c424
 <private:> 0004 0807e908
@@ -19060,12 +18795,11 @@
 <:> 0004 0807c554
 <init-host> 0006 host-cmd.fr
     <\> 0005 0807c05c
-    <init-host-io> 0006 08083168
-    <init-host-tlm> 0006 0808482c
+    <init-host-io> 0006 08082d60
+    <init-host-tlm> 0006 080843ec
     <;> 0005 0807c424
 <private:> 0004 0807e908
 <endmodule>> 0004 0807e91c
-<\> 0000 0804ee40
 <\> 0000 0804ee40
 <"> 0000 0804ec60
 <used> 0004 0807bde4
@@ -19083,7 +18817,7 @@
     <begin> 0005 0807c0cc
     <check-stack> 0006 0807d984
     <\> 0005 0807c05c
-    <handle-message> 0006 0808646c
+    <handle-message> 0006 0808602c
     <\> 0005 0807c05c
     <again> 0005 0807c140
     <;process> 0005 0807e718
@@ -19101,18 +18835,18 @@
 <:> 0004 0807c554
 <send-telemetry> 0006 telemetry1.fr
     <\> 0005 0807c05c
-    <send-status> 0006 08085e98
+    <send-status> 0006 08085a58
     <\> 0005 0807c05c
-    <try-dump-pkt> 0006 080853d4
+    <try-dump-pkt> 0006 08084f94
     <\> 0005 0807c05c
-    <try-mac-dump> 0006 0808273c
+    <try-mac-dump> 0006 08082534
     <\> 0005 0807c05c
-    <more-downlink?> 0006 08083e50
+    <more-downlink?> 0006 08083a28
     <if> 0005 0807c074
     <\> 0005 0807c05c
-    <try-partial-frame> 0006 08083eb0
+    <try-partial-frame> 0006 08083a88
     <\> 0005 0807c05c
-    <more-downlink?> 0006 08083e50
+    <more-downlink?> 0006 08083a28
     <drop> 0006 0807b36c
     <then> 0005 0807c0b4
     <;> 0005 0807c424
@@ -19123,18 +18857,18 @@
     <begin> 0005 0807c0cc
     <check-stack> 0006 0807d984
     <\> 0005 0807c05c
-    <sync-1hz> 0006 080830c8
+    <sync-1hz> 0006 08082d00
     <\> 0005 0807c05c
-    <start-downlink> 0006 08083e70
+    <start-downlink> 0006 08083a48
     <\> 0005 0807c05c
     <signaltimers> 0006 0807ec90
     <executedoers> 0006 0807ed90
     <\> 0005 0807c05c
-    <sync-dead-time> 0006 080830e8
+    <sync-dead-time> 0006 08082d20
     <\> 0005 0807c05c
-    <send-telemetry> 0006 0808655c
+    <send-telemetry> 0006 0808611c
     <\> 0005 0807c05c
-    <proc-dead-time> 0006 08083e90
+    <proc-dead-time> 0006 08083a68
     <\> 0005 0807c05c
     <again> 0005 0807c140
     <;process> 0005 0807e718
@@ -19197,9 +18931,9 @@
     <dup> 0006 0807b394
     <set-mem> 0006 0807b9ec
     <over> 0006 0807b4b0
-    <.prog-length> 0006 0808667c
+    <.prog-length> 0006 0808623c
     <far@> 0006 0807ee50
-    <checksum+> 0006 0808671c
+    <checksum+> 0006 080862dc
     <0=> 0006 0807afd4
     <;> 0005 0807c424
 <:> 0004 0807c554
@@ -19207,7 +18941,7 @@
     <\> 0005 0807c05c
     <\> 0005 0807c05c
     <set-mem> 0006 0807b9ec
-    <.prog-mem> 0006 080865c8
+    <.prog-mem> 0006 08086188
     <far@> 0006 0807ee50
     <get-code> 0006 0807b9c4
     <<>> 0006 0807b20c
@@ -19220,21 +18954,21 @@
     <dup> 0006 0807b394
     <>r> 0006 0807b234
     <\> 0005 0807c05c
-    <prog-head-struct> 0006 080866f4
+    <prog-head-struct> 0006 080862b4
     <+> 0006 0807af1c
     <get-mem> 0006 0807ba14
     <r@> 0006 0807b500
-    <.prog-dst> 0006 08086604
+    <.prog-dst> 0006 080861c4
     <far@> 0006 0807ee50
     <r@> 0006 0807b500
-    <.prog-mem> 0006 080865c8
+    <.prog-mem> 0006 08086188
     <far@> 0006 0807ee50
     <\> 0005 0807c05c
     <r>> 0006 0807b4d8
-    <.prog-length> 0006 0808667c
+    <.prog-length> 0006 0808623c
     <far@> 0006 0807ee50
     <\> 0005 0807c05c
-    <prog-head-struct> 0006 080866f4
+    <prog-head-struct> 0006 080862b4
     <cell/> 0006 0807b758
     <-> 0006 0807af64
     <far> 0006 0807ba64
@@ -19268,25 +19002,25 @@
     <dup> 0006 0807b394
     <>r> 0006 0807b234
     <\> 0005 0807c05c
-    <prog-head-struct> 0006 080866f4
+    <prog-head-struct> 0006 080862b4
     <cell/> 0006 0807b758
-    <checksum+> 0006 0808671c
+    <checksum+> 0006 080862dc
     <r>> 0006 0807b4d8
     <set-mem> 0006 0807b9ec
     <r@> 0006 0807b500
-    <.prog-dst> 0006 08086604
+    <.prog-dst> 0006 080861c4
     <far@> 0006 0807ee50
     <\> 0005 0807c05c
     <r@> 0006 0807b500
-    <.prog-mem> 0006 080865c8
+    <.prog-mem> 0006 08086188
     <far@> 0006 0807ee50
     <r>> 0006 0807b4d8
-    <.prog-length> 0006 0808667c
+    <.prog-length> 0006 0808623c
     <far@> 0006 0807ee50
-    <prog-head-struct> 0006 080866f4
+    <prog-head-struct> 0006 080862b4
     <cell/> 0006 0807b758
     <-> 0006 0807af64
-    <checksum+> 0006 0808671c
+    <checksum+> 0006 080862dc
     <0=> 0006 0807afd4
     <;> 0005 0807c424
 <\> 0000 0804ee40
@@ -19296,10 +19030,10 @@
     <\> 0005 0807c05c
     <set-mem> 0006 0807b9ec
     <dup> 0006 0807b394
-    <.prog-exec> 0006 08086640
+    <.prog-exec> 0006 08086200
     <far@> 0006 0807ee50
     <swap> 0006 0807b5c8
-    <.prog-mem> 0006 080865c8
+    <.prog-mem> 0006 08086188
     <far@> 0006 0807ee50
     <;> 0005 0807c424
 <:> 0004 0807c554
@@ -19309,21 +19043,21 @@
     <\> 0005 0807c05c
     <\> 0005 0807c05c
     <2dup> 0006 0807cc50
-    <eeprom-good?> 0006 0808673c
+    <eeprom-good?> 0006 080862fc
     <if> 0005 0807c074
     <\> 0005 0807c05c
     <2dup> 0006 0807cc50
-    <dst-ok?> 0006 0808675c
+    <dst-ok?> 0006 0808631c
     <if> 0005 0807c074
     <\> 0005 0807c05c
     <2dup> 0006 0807cc50
-    <eeprom-copy> 0006 0808677c
+    <eeprom-copy> 0006 0808633c
     <\> 0005 0807c05c
     <2dup> 0006 0807cc50
-    <copy-ok?> 0006 0808679c
+    <copy-ok?> 0006 0808635c
     <if> 0005 0807c074
     <\> 0005 0807c05c
-    <eeprom-entry> 0006 080867bc
+    <eeprom-entry> 0006 0808637c
     <true> 0006 0807cbe0
     <exit> 0005 0807c408
     <\> 0005 0807c05c
@@ -19396,8 +19130,8 @@
     <\> 0005 0807c05c
     <\> 0005 0807c05c
     <key> 0006 0807e2fc
-    <tolower> 0006 080867fc
-    <hexdigit> 0006 0808681c
+    <tolower> 0006 080863bc
+    <hexdigit> 0006 080863dc
     <not> 0006 0807b460
     <if> 0005 0807c074
     <then> 0005 0807c0b4
@@ -19415,12 +19149,12 @@
 <read-byte> 0006 motor2.fr
     <\> 0005 0807c05c
     <\> 0005 0807c05c
-    <read-digit> 0006 0808683c
+    <read-digit> 0006 080863fc
     <rotate> 0006 0807b570
-    <read-digit> 0006 0808683c
+    <read-digit> 0006 080863fc
     <or> 0006 0807b488
     <dup> 0006 0807b394
-    <rchecksum> 0006 080868a8
+    <rchecksum> 0006 08086468
     <+!> 0006 0807af44
     <;> 0005 0807c424
 <:> 0004 0807c554
@@ -19428,40 +19162,40 @@
     <\> 0005 0807c05c
     <begin> 0005 0807c0cc
     <key> 0006 0807e2fc
-    <tolower> 0006 080867fc
+    <tolower> 0006 080863bc
     <[char]> 0005 0807bfdc
     <=> 0006 0807b1e4
     <until> 0005 0807c104
-    <read-digit> 0006 0808683c
+    <read-digit> 0006 080863fc
     <;> 0005 0807c424
 <:> 0004 0807c554
 <read-record> 0006 motor2.fr
     <\> 0005 0807c05c
     <\> 0005 0807c05c
-    <rchecksum> 0006 080868a8
+    <rchecksum> 0006 08086468
     <!> 0006 0807aef0
     <\> 0005 0807c05c
-    <read-byte> 0006 080868d4
+    <read-byte> 0006 08086494
     <1-> 0006 0807b04c
     <dup> 0006 0807b394
-    <rbuffer> 0006 08086874
+    <rbuffer> 0006 08086434
     <c!> 0006 0807b2cc
     <\> 0005 0807c05c
-    <rbuffer> 0006 08086874
+    <rbuffer> 0006 08086434
     <1+> 0006 0807b024
     <swap> 0006 0807b5c8
     <do> 0005 0807c15c
     <\> 0005 0807c05c
-    <read-byte> 0006 080868d4
+    <read-byte> 0006 08086494
     <over> 0006 0807b4b0
     <c!> 0006 0807b2cc
     <1+> 0006 0807b024
     <\> 0005 0807c05c
     <loop> 0005 0807c18c
     <drop> 0006 0807b36c
-    <read-byte> 0006 080868d4
+    <read-byte> 0006 08086494
     <drop> 0006 0807b36c
-    <rchecksum> 0006 080868a8
+    <rchecksum> 0006 08086468
     <@> 0006 0807b25c
     <1+> 0006 0807b024
     <and> 0006 0807b2a4
@@ -19508,7 +19242,7 @@
     <do> 0005 0807c15c
     <dup> 0006 0807b394
     <c@> 0006 0807b2f8
-    <>mem> 0006 0808498c
+    <>mem> 0006 0808454c
     <1+> 0006 0807b024
     <loop> 0005 0807c18c
     <then> 0005 0807c0b4
@@ -19517,60 +19251,60 @@
 <:> 0004 0807c554
 <s1> 0006 motor2.fr
     <\> 0005 0807c05c
-    <rbuffer> 0006 08086874
+    <rbuffer> 0006 08086434
     <count> 0006 0807f244
-    <seek-memid> 0006 080848ec
-    <get-16bits> 0006 08086954
-    <seek-memaddr> 0006 0808490c
-    <save-data> 0006 08086974
+    <seek-memid> 0006 080844ac
+    <get-16bits> 0006 08086514
+    <seek-memaddr> 0006 080844cc
+    <save-data> 0006 08086534
     <;> 0005 0807c424
 <:> 0004 0807c554
 <s2> 0006 motor2.fr
     <\> 0005 0807c05c
-    <rbuffer> 0006 08086874
+    <rbuffer> 0006 08086434
     <count> 0006 0807f244
-    <get-8bits> 0006 08086934
-    <seek-memid> 0006 080848ec
-    <get-16bits> 0006 08086954
-    <seek-memaddr> 0006 0808490c
-    <save-data> 0006 08086974
+    <get-8bits> 0006 080864f4
+    <seek-memid> 0006 080844ac
+    <get-16bits> 0006 08086514
+    <seek-memaddr> 0006 080844cc
+    <save-data> 0006 08086534
     <;> 0005 0807c424
 <:> 0004 0807c554
 <s3> 0006 motor2.fr
     <\> 0005 0807c05c
-    <rbuffer> 0006 08086874
+    <rbuffer> 0006 08086434
     <count> 0006 0807f244
-    <get-16bits> 0006 08086954
-    <seek-memid> 0006 080848ec
-    <get-16bits> 0006 08086954
-    <seek-memaddr> 0006 0808490c
-    <save-data> 0006 08086974
+    <get-16bits> 0006 08086514
+    <seek-memid> 0006 080844ac
+    <get-16bits> 0006 08086514
+    <seek-memaddr> 0006 080844cc
+    <save-data> 0006 08086534
     <;> 0005 0807c424
 <:> 0004 0807c554
 <s-recs> 0006 motor2.fr
     <\> 0005 0807c05c
     <begin> 0005 0807c0cc
-    <search-for-record> 0006 080868f4
+    <search-for-record> 0006 080864b4
     <\> 0005 0807c05c
-    <read-record> 0006 08086914
+    <read-record> 0006 080864d4
     <if> 0005 0807c074
     <\> 0005 0807c05c
     <sel> 0005 0807c23c
     <\> 0005 0807c05c
     <<<> 0005 0807c254
     <==>> 0005 0807c28c
-    <s1> 0006 08086994
+    <s1> 0006 08086554
     <false> 0006 0807cc08
     <>>> 0005 0807c2a8
     <\> 0005 0807c05c
     <<<> 0005 0807c254
     <==>> 0005 0807c28c
-    <s2> 0006 080869b4
+    <s2> 0006 08086574
     <false> 0006 0807cc08
     <>>> 0005 0807c2a8
     <<<> 0005 0807c254
     <==>> 0005 0807c28c
-    <s3> 0006 080869d4
+    <s3> 0006 08086594
     <false> 0006 0807cc08
     <>>> 0005 0807c2a8
     <<<> 0005 0807c254
@@ -19602,11 +19336,11 @@
 <:> 0004 0807c554
 <download> 0006 motor2.fr
     <\> 0005 0807c05c
-    <open-mem> 0006 080848cc
+    <open-mem> 0006 0808448c
     <\> 0005 0807c05c
-    <s-recs> 0006 080869f4
+    <s-recs> 0006 080865b4
     <\> 0005 0807c05c
-    <close-mem> 0006 080849ac
+    <close-mem> 0006 0808456c
     <;> 0005 0807c424
 <"> 0000 0804ec60
 <used> 0004 0807bde4
@@ -19648,7 +19382,7 @@
     <rotate> 0006 0807b570
     <dup> 0006 0807b394
     <and> 0006 0807b2a4
-    <.dig> 0006 08086a34
+    <.dig> 0006 080865f4
     <loop> 0005 0807c18c
     <drop> 0006 0807b36c
     <;> 0005 0807c424
@@ -19667,7 +19401,7 @@
     <dup> 0006 0807b394
     <>r> 0006 0807b234
     <c@> 0006 0807b2f8
-    <hexdigit> 0006 0808681c
+    <hexdigit> 0006 080863dc
     <while> 0005 0807c0e4
     <\> 0005 0807c05c
     <>r> 0006 0807b234
@@ -19693,7 +19427,7 @@
 <cmdbuf-size> 0004 alpha2.fr
 <create> 0004 0807c758
 <cmdbuf> 0004 alpha2.fr
-<cmdbuf-size> 0004 08086a94
+<cmdbuf-size> 0004 08086654
 <allot> 0004 0807681c
 <\> 0000 0804ee40
 <:> 0004 0807c554
@@ -19707,17 +19441,17 @@
     <\> 0005 0807c05c
     <\> 0005 0807c05c
     <begin> 0005 0807c0cc
-    <cmdbuf> 0006 08086ae8
-    <cmdbuf-size> 0006 08086aa8
+    <cmdbuf> 0006 080866a8
+    <cmdbuf-size> 0006 08086668
     <accept> 0006 0807e8a0
     <\> 0005 0807c05c
-    <cmdbuf> 0006 08086ae8
+    <cmdbuf> 0006 080866a8
     <swap> 0006 0807b5c8
-    <convert-hex> 0006 08086a74
+    <convert-hex> 0006 08086634
     <\> 0005 0807c05c
     <while> 0005 0807c0e4
     <\> 0005 0807c05c
-    <warn> 0006 08086b08
+    <warn> 0006 080866c8
     <2drop> 0006 0807cd44
     <\> 0005 0807c05c
     <repeat> 0005 0807c120
@@ -19727,10 +19461,10 @@
     <\> 0005 0807c05c
     <\> 0005 0807c05c
     <begin> 0005 0807c0cc
-    <read-hex32> 0006 08086b28
+    <read-hex32> 0006 080866e8
     <while> 0005 0807c0e4
     <\> 0005 0807c05c
-    <warn> 0006 08086b08
+    <warn> 0006 080866c8
     <drop> 0006 0807b36c
     <\> 0005 0807c05c
     <repeat> 0005 0807c120
@@ -19740,12 +19474,12 @@
     <\> 0005 0807c05c
     <\> 0005 0807c05c
     <begin> 0005 0807c0cc
-    <read-hex16> 0006 08086b48
+    <read-hex16> 0006 08086708
     <dup> 0006 0807b394
     <u>> 0006 0807b1bc
     <while> 0005 0807c0e4
     <\> 0005 0807c05c
-    <warn> 0006 08086b08
+    <warn> 0006 080866c8
     <drop> 0006 0807b36c
     <\> 0005 0807c05c
     <repeat> 0005 0807c120
@@ -19755,21 +19489,21 @@
 <:> 0004 0807c554
 <inspect> 0006 alpha2.fr
     <\> 0005 0807c05c
-    <open-mem> 0006 080848cc
-    <read-hex32> 0006 08086b28
-    <seek-memid> 0006 080848ec
-    <seek-memaddr> 0006 0808490c
+    <open-mem> 0006 0808448c
+    <read-hex32> 0006 080866e8
+    <seek-memid> 0006 080844ac
+    <seek-memaddr> 0006 080844cc
     <begin> 0005 0807c0cc
     <cr> 0006 0807e7e8
-    <mem-pos> 0006 0808494c
-    <h.> 0006 08086a54
+    <mem-pos> 0006 0808450c
+    <h.> 0006 08086614
     <[char]> 0005 0807bfdc
     <emit> 0006 0807e2dc
-    <h.> 0006 08086a54
+    <h.> 0006 08086614
     <[char]> 0005 0807bfdc
     <emit> 0006 0807e2dc
-    <mem-peek> 0006 0808496c
-    <h.> 0006 08086a54
+    <mem-peek> 0006 0808452c
+    <h.> 0006 08086614
     <space> 0006 0807f224
     <key> 0006 0807e2fc
     <dup> 0006 0807b394
@@ -19781,7 +19515,7 @@
     <<<> 0005 0807c254
     <[char]> 0005 0807bfdc
     <==>> 0005 0807c28c
-    <step-mem> 0006 0808492c
+    <step-mem> 0006 080844ec
     <>>> 0005 0807c2a8
     <\> 0005 0807c05c
     <<<> 0005 0807c254
@@ -19790,38 +19524,26 @@
     <[char]> 0005 0807bfdc
     <emit> 0006 0807e2dc
     <\> 0005 0807c05c
-    <read-hex8> 0006 08086b68
-    <>mem> 0006 0808498c
+    <read-hex8> 0006 08086728
+    <>mem> 0006 0808454c
     <>>> 0005 0807c2a8
     <\> 0005 0807c05c
     <(> 0005 0807c038
-    <step-mem> 0006 0808492c
+    <step-mem> 0006 080844ec
     <\> 0005 0807c05c
     <endsel> 0005 0807c2e8
     <repeat> 0005 0807c120
     <drop> 0006 0807b36c
-    <close-mem> 0006 080849ac
+    <close-mem> 0006 0808456c
     <;> 0005 0807c424
 <:> 0004 0807c554
 <copy-cmd> 0006 alpha2.fr
     <\> 0005 0807c05c
     <\> 0005 0807c05c
-    <read-hex32> 0006 08086b28
-    <read-hex32> 0006 08086b28
-    <read-hex16> 0006 08086b48
-    <copy> 0006 080849cc
-    <;> 0005 0807c424
-<\> 0000 0804ee40
-<:> 0004 0807c554
-<PROMPT> 0006 alpha2.fr
-    <[char]> 0005 0807bfdc
-    <emit> 0006 0807e2dc
-    <[char]> 0005 0807bfdc
-    <emit> 0006 0807e2dc
-    <[char]> 0005 0807bfdc
-    <emit> 0006 0807e2dc
-    <[char]> 0005 0807bfdc
-    <emit> 0006 0807e2dc
+    <read-hex32> 0006 080866e8
+    <read-hex32> 0006 080866e8
+    <read-hex16> 0006 08086708
+    <copy> 0006 0808458c
     <;> 0005 0807c424
 <:> 0004 0807c554
 <interboot> 0006 alpha2.fr
@@ -19830,7 +19552,8 @@
     <\> 0005 0807c05c
     <begin> 0005 0807c0cc
     <cr> 0006 0807e7e8
-    <PROMPT> 0006 08086bc8
+    <[char]> 0005 0807bfdc
+    <emit> 0006 0807e2dc
     <space> 0006 0807f224
     <\> 0005 0807c05c
     <key> 0006 0807e2fc
@@ -19852,36 +19575,36 @@
     <[char]> 0005 0807bfdc
     <==>> 0005 0807c28c
     <2dup> 0006 0807cc50
-    <bootload> 0006 080867dc
+    <bootload> 0006 0808639c
     <>>> 0005 0807c2a8
     <<<> 0005 0807c254
     <[char]> 0005 0807bfdc
     <==>> 0005 0807c28c
-    <read-hex32> 0006 08086b28
-    <bootload> 0006 080867dc
+    <read-hex32> 0006 080866e8
+    <bootload> 0006 0808639c
     <>>> 0005 0807c2a8
     <<<> 0005 0807c254
     <[char]> 0005 0807bfdc
     <==>> 0005 0807c28c
-    <read-hex32> 0006 08086b28
+    <read-hex32> 0006 080866e8
     <true> 0006 0807cbe0
     <>>> 0005 0807c2a8
     <<<> 0005 0807c254
     <[char]> 0005 0807bfdc
     <==>> 0005 0807c28c
-    <copy-cmd> 0006 08086ba8
+    <copy-cmd> 0006 08086768
     <false> 0006 0807cc08
     <>>> 0005 0807c2a8
     <<<> 0005 0807c254
     <[char]> 0005 0807bfdc
     <==>> 0005 0807c28c
-    <inspect> 0006 08086b88
+    <inspect> 0006 08086748
     <false> 0006 0807cc08
     <>>> 0005 0807c2a8
     <<<> 0005 0807c254
     <[char]> 0005 0807bfdc
     <==>> 0005 0807c28c
-    <download> 0006 08086a14
+    <download> 0006 080865d4
     <false> 0006 0807cc08
     <>>> 0005 0807c2a8
     <<<> 0005 0807c254
@@ -19891,7 +19614,7 @@
     <false> 0006 0807cc08
     <>>> 0005 0807c2a8
     <(> 0005 0807c038
-    <warn> 0006 08086b08
+    <warn> 0006 080866c8
     <false> 0006 0807cc08
     <swap> 0006 0807b5c8
     <endsel> 0005 0807c2e8
@@ -19913,7 +19636,7 @@
 <boot-program> 0006 boot-cmd1.fr
     <\> 0005 0807c05c
     <\> 0005 0807c05c
-    <bootload> 0006 080867dc
+    <bootload> 0006 0808639c
     <if> 0005 0807c074
     <\> 0005 0807c05c
     <disable> 0006 0807b92c
@@ -19922,8 +19645,8 @@
     <\> 0005 0807c05c
     <else> 0005 0807c090
     <\> 0005 0807c05c
-    <#bad-eeprom-cmd> 0006 08081f68
-    <cmd-error> 0006 08084de0
+    <#bad-eeprom-cmd> 0006 0808199c
+    <cmd-error> 0006 080849a0
     <\> 0005 0807c05c
     <then> 0005 0807c0b4
     <;> 0005 0807c424
@@ -19932,22 +19655,22 @@
 <:> 0004 0807c554
 <c-rom-boot> 0006 boot-cmd1.fr
     <\> 0005 0807c05c
-    <eeprom-prog-addr> 0006 08080acc
-    <eeprom-prog-mem#> 0006 08080a8c
-    <boot-program> 0006 08086c44
+    <eeprom-prog-addr> 0006 08080af4
+    <eeprom-prog-mem#> 0006 08080ab4
+    <boot-program> 0006 080867e4
     <;> 0005 0807c424
 <\> 0000 0804ee40
 <\> 0000 0804ee40
 <:> 0004 0807c554
 <c-rom-go> 0006 boot-cmd1.fr
     <\> 0005 0807c05c
-    <arg3> 0006 08084d20
-    <arg2> 0006 08084d00
+    <arg3> 0006 080848e0
+    <arg2> 0006 080848c0
     <join> 0006 0807f434
-    <arg1> 0006 08084ce0
-    <arg0> 0006 08084cc0
+    <arg1> 0006 080848a0
+    <arg0> 0006 08084880
     <join> 0006 0807f434
-    <boot-program> 0006 08086c44
+    <boot-program> 0006 080867e4
     <;> 0005 0807c424
 <\> 0000 0804ee40
 <\> 0000 0804ee40
@@ -19956,18 +19679,16 @@
 <init-boot> 0006 boot-cmd1.fr
     <\> 0005 0807c05c
     <[']> 0005 0807c350
-    <c-rom-boot> 0006 08086c64
-    <#rom-boot> 0006 08081ef0
-    <register-cmd/args> 0006 080850c4
+    <c-rom-boot> 0006 08086804
+    <#rom-boot> 0006 0808154c
+    <register-cmd/args> 0006 08084c84
     <[']> 0005 0807c350
-    <c-rom-go> 0006 08086c84
-    <#rom-go> 0006 08081f2c
-    <register-cmd/args> 0006 080850c4
+    <c-rom-go> 0006 08086824
+    <#rom-go> 0006 08081588
+    <register-cmd/args> 0006 08084c84
     <;> 0005 0807c424
 <private:> 0004 0807e908
 <endmodule>> 0004 0807e91c
-<\> 0000 0804ee40
-<[ifdef]> 0000 08052564
 <"> 0000 0804ec60
 <fload> 0004 0807bd90
 <\> 0000 0804ee40
@@ -19980,23 +19701,23 @@
     <\> 0005 0807c05c
     <enable> 0006 0807b90c
     <\> 0005 0807c05c
-    <init-host> 0006 0808648c
+    <init-host> 0006 0808604c
     <\> 0005 0807c05c
-    <init-command> 0006 08085dd8
+    <init-command> 0006 08085998
     <\> 0005 0807c05c
-    <init-packet> 0006 0808480c
+    <init-packet> 0006 080843cc
     <\> 0005 0807c05c
-    <init-alarm> 0006 080856dc
+    <init-alarm> 0006 0808529c
     <\> 0005 0807c05c
-    <init-status> 0006 08085f38
+    <init-status> 0006 08085af8
     <\> 0005 0807c05c
-    <init-dump> 0006 080853f4
+    <init-dump> 0006 08084fb4
     <\> 0005 0807c05c
-    <init-memory> 0006 08085b98
+    <init-memory> 0006 08085758
     <\> 0005 0807c05c
-    <init-mem-extend> 0006 08085bd8
+    <init-mem-extend> 0006 08085798
     <\> 0005 0807c05c
-    <init-boot> 0006 08086ca4
+    <init-boot> 0006 08086844
     <\> 0005 0807c05c
     <;> 0005 0807c424
 <:> 0004 0807c554
@@ -20004,36 +19725,33 @@
     <\> 0005 0807c05c
     <\> 0005 0807c05c
     <parin-a#> 0006 0807d828
-    <io@> 0006 080805a4
-    <cause-msk#> 0006 08080b08
+    <io@> 0006 080807f0
+    <cause-msk#> 0006 08080b30
     <and> 0006 0807b2a4
     <if> 0005 0807c074
     <\> 0005 0807c05c
-    <start-dump> 0006 08085394
+    <start-dump> 0006 08084f54
     <\> 0005 0807c05c
     <1+> 0006 0807b024
-    <seconds> 0006 080806a0
+    <seconds> 0006 08080960
     <\> 0005 0807c05c
     <else> 0005 0807c090
     <\> 0005 0807c05c
-    <seconds> 0006 080806a0
+    <seconds> 0006 08080960
     <\> 0005 0807c05c
     <then> 0005 0807c0b4
-    <cause> 0006 0808255c
-    <set> 0006 0807f7a4
+    <cause> 0006 08082254
+    <set> 0006 0807f75c
     <\> 0005 0807c05c
-    <[ifdef]> 0005 0807c3b8
     <get-code> 0006 0807b9c4
-    <code-ram> 0006 080825cc
-    <set> 0006 0807f7a4
+    <code-ram> 0006 080822c4
+    <set> 0006 0807f75c
     <;> 0005 0807c424
 <\> 0000 0804ee40
 <:> 0004 0807c554
 <init-app> 0006 main.fr
     <\> 0005 0807c05c
-    <check-cause> 0006 08086ce4
-    <\> 0005 0807c05c
-    <init-specific> 0006 08080c38
+    <check-cause> 0006 08086884
     <\> 0005 0807c05c
     <;> 0005 0807c424
 <\> 0000 0804ee40
@@ -20041,15 +19759,15 @@
 <:> 0004 0807c554
 <go> 0006 main.fr
     <\> 0005 0807c05c
-    <init-common> 0006 08086cc4
+    <init-common> 0006 08086864
     <\> 0005 0807c05c
-    <init-app> 0006 08086d04
+    <init-app> 0006 080868a4
     <\> 0005 0807c05c
-    <telemetry-process> 0006 08086594
+    <telemetry-process> 0006 08086154
     <nextprocess> 0006 0807e5e8
     <\> 0005 0807c05c
-    <command-process> 0006 08086500
-    <telemetry-process> 0006 08086594
+    <command-process> 0006 080860c0
+    <telemetry-process> 0006 08086154
     <nextprocess> 0006 0807e5e8
     <resched> 0006 0807d660
     <key> 0006 0807e2fc
@@ -20057,18 +19775,18 @@
     <\> 0005 0807c05c
     <begin> 0005 0807c0cc
     <\> 0005 0807c05c
-    <eeprom-prog-addr> 0006 08080acc
-    <eeprom-prog-mem#> 0006 08080a8c
+    <eeprom-prog-addr> 0006 08080af4
+    <eeprom-prog-mem#> 0006 08080ab4
     <\> 0005 0807c05c
-    <interboot> 0006 08086be8
+    <interboot> 0006 08086788
     <disable> 0006 0807b92c
     <far-execute> 0006 0807ef10
     <enable> 0006 0807b90c
     <\> 0005 0807c05c
     <again> 0005 0807c140
     <;> 0005 0807c424
-<mem-write-enb> 0004 0808257c
-<set> 0004 0807fcac
+<mem-write-enb> 0004 08082274
+<set> 0004 0807fc64
 <"> 0000 0804ec60
 <ftload> 0004 0807bdc8
 <\> 0000 0804ee40
@@ -20130,7 +19848,7 @@
 <\> 0000 0804ee40
 <[host]> 0000 08075614
 <*callop*> 0000 080736a0
-<app-vector> 0004 08086d74
+<app-vector> 0004 08086914
 <!> 0004 08076980
 <;> 0000 0804fb20
 <[ifdef]> 0000 08052564
@@ -20139,8 +19857,8 @@
 <!> 0004 08076980
 <\> 0000 0804ee40
 <'> 0004 08076a34
-<go> 0006 08086d24
-<is-startup> 0004 08086da4
+<go> 0006 080868c4
+<is-startup> 0004 08086944
 <\> 0000 0804ee40
 <"> 0000 0804ec60
 <used> 0004 0807bde4
@@ -20162,7 +19880,7 @@
     <far> 0006 0807ba64
     <true> 0006 0807cbe0
     <\> 0005 0807c05c
-    <#boot-words> 0006 08080a4c
+    <#boot-words> 0006 08080a74
     <cells> 0006 0807b730
     <do> 0005 0807c15c
     <\> 0005 0807c05c
@@ -20193,7 +19911,7 @@
     <begin> 0005 0807c0cc
     <\> 0005 0807c05c
     <dup> 0006 0807b394
-    <good-page?> 0006 08086dc4
+    <good-page?> 0006 08086964
     <not> 0006 0807b460
     <while> 0005 0807c0e4
     <\> 0005 0807c05c
@@ -20215,7 +19933,7 @@
     <\> 0005 0807c05c
     <set-mem> 0006 0807b9ec
     <reset-vector> 0006 0807aca4
-    <#boot-words> 0006 08080a4c
+    <#boot-words> 0006 08080a74
     <do> 0005 0807c15c
     <\> 0005 0807c05c
     <dup> 0006 0807b394
@@ -20240,10 +19958,10 @@
 <ram> 0004 0807690c
 <\> 0000 0804ee40
 <]> 0004 0807bc40
-<boot-mem#> 0006 08080a10
-<select-ram> 0006 08086de4
+<boot-mem#> 0006 08080a38
+<select-ram> 0006 08086984
 <dup> 0006 0807b394
-<copy-out> 0006 08086e04
+<copy-out> 0006 080869a4
 <\> 0005 0807c05c
 <set-code> 0006 0807b99c
 <reboot> 0006 0807acec

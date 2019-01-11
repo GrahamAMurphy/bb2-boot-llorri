@@ -2,7 +2,7 @@ head	0.1;
 access;
 symbols;
 locks
-	murphy:0.1.0.159; strict;
+	murphy:0.1.0.260; strict;
 comment	@# @;
 
 
@@ -94,6 +94,111 @@ next	0.1.0.159;
 
 0.1.0.159
 date	2018.04.16.12.24.50;	author murphy;	state Exp;
+branches;
+next	0.1.0.167;
+
+0.1.0.167
+date	2018.09.13.00.50.25;	author murphy;	state Exp;
+branches;
+next	0.1.0.169;
+
+0.1.0.169
+date	2018.09.13.01.59.03;	author murphy;	state Exp;
+branches;
+next	0.1.0.170;
+
+0.1.0.170
+date	2018.09.13.11.59.20;	author murphy;	state Exp;
+branches;
+next	0.1.0.173;
+
+0.1.0.173
+date	2018.09.13.17.10.58;	author murphy;	state Exp;
+branches;
+next	0.1.0.176;
+
+0.1.0.176
+date	2018.09.14.14.38.58;	author murphy;	state Exp;
+branches;
+next	0.1.0.177;
+
+0.1.0.177
+date	2018.09.14.16.24.29;	author murphy;	state Exp;
+branches;
+next	0.1.0.181;
+
+0.1.0.181
+date	2018.09.14.16.48.40;	author murphy;	state Exp;
+branches;
+next	0.1.0.182;
+
+0.1.0.182
+date	2018.09.14.17.17.34;	author murphy;	state Exp;
+branches;
+next	0.1.0.183;
+
+0.1.0.183
+date	2018.09.14.17.18.20;	author murphy;	state Exp;
+branches;
+next	0.1.0.195;
+
+0.1.0.195
+date	2018.09.15.03.05.43;	author murphy;	state Exp;
+branches;
+next	0.1.0.204;
+
+0.1.0.204
+date	2018.09.18.14.18.35;	author murphy;	state Exp;
+branches;
+next	0.1.0.206;
+
+0.1.0.206
+date	2018.09.18.14.25.19;	author murphy;	state Exp;
+branches;
+next	0.1.0.207;
+
+0.1.0.207
+date	2018.09.18.14.25.31;	author murphy;	state Exp;
+branches;
+next	0.1.0.208;
+
+0.1.0.208
+date	2018.09.18.14.27.26;	author murphy;	state Exp;
+branches;
+next	0.1.0.209;
+
+0.1.0.209
+date	2018.09.18.14.29.01;	author murphy;	state Exp;
+branches;
+next	0.1.0.210;
+
+0.1.0.210
+date	2018.09.18.14.30.04;	author murphy;	state Exp;
+branches;
+next	0.1.0.211;
+
+0.1.0.211
+date	2018.09.18.14.30.20;	author murphy;	state Exp;
+branches;
+next	0.1.0.212;
+
+0.1.0.212
+date	2018.09.18.14.36.58;	author murphy;	state Exp;
+branches;
+next	0.1.0.213;
+
+0.1.0.213
+date	2018.09.18.14.38.52;	author murphy;	state Exp;
+branches;
+next	0.1.0.214;
+
+0.1.0.214
+date	2018.09.18.14.40.54;	author murphy;	state Exp;
+branches;
+next	0.1.0.260;
+
+0.1.0.260
+date	2018.11.02.14.44.43;	author murphy;	state Exp;
 branches;
 next	;
 
@@ -397,4 +502,240 @@ text
 @d88 1
 a88 1
    [char] # emit [char] 0 emit [char] 1 emit [char] > emit 
+@
+
+
+0.1.0.167
+log
+@0.1.0.167
+@
+text
+@d88 1
+a88 1
+   [char] # emit [char] 0 emit [char] 3 emit [char] > emit 
+@
+
+
+0.1.0.169
+log
+@0.1.0.169
+@
+text
+@d88 1
+a88 1
+   [char] # emit [char] 0 emit [char] 5 emit [char] > emit 
+@
+
+
+0.1.0.170
+log
+@0.1.0.170
+@
+text
+@d88 1
+a88 1
+   [char] # emit [char] 0 emit [char] 3 emit [char] > emit 
+@
+
+
+0.1.0.173
+log
+@0.1.0.173
+@
+text
+@d88 1
+a88 1
+   [char] # emit [char] 0 emit [char] 4 emit [char] > emit 
+@
+
+
+0.1.0.176
+log
+@0.1.0.176
+@
+text
+@d88 1
+a88 1
+   [char] # emit [char] 0 emit [char] 6 emit [char] > emit 
+@
+
+
+0.1.0.177
+log
+@0.1.0.177
+@
+text
+@d88 1
+a88 1
+   [char] # emit [char] 0 emit [char] 7 emit [char] > emit 
+@
+
+
+0.1.0.181
+log
+@0.1.0.181
+@
+text
+@d88 1
+a88 1
+   [char] # emit [char] 0 emit [char] 4 emit [char] > emit 
+@
+
+
+0.1.0.182
+log
+@0.1.0.182
+@
+text
+@d88 1
+a88 1
+   [char] # emit [char] 0 emit [char] 5 emit [char] > emit 
+@
+
+
+0.1.0.183
+log
+@0.1.0.183
+@
+text
+@d88 1
+a88 1
+   [char] # emit [char] 0 emit [char] 3 emit [char] > emit 
+@
+
+
+0.1.0.195
+log
+@0.1.0.195
+@
+text
+@d88 1
+a88 1
+   [char] # emit [char] 0 emit [char] 4 emit [char] > emit 
+@
+
+
+0.1.0.204
+log
+@0.1.0.204
+@
+text
+@@
+
+
+0.1.0.206
+log
+@0.1.0.206
+@
+text
+@d88 1
+a88 2
+   h# 123 u.
+   [char] # emit [char] 0 emit [char] 5 emit [char] > emit 
+@
+
+
+0.1.0.207
+log
+@0.1.0.207
+@
+text
+@d88 1
+a88 1
+   h# 123 .
+@
+
+
+0.1.0.208
+log
+@0.1.0.208
+@
+text
+@d88 1
+a88 1
+   h# 123 h.
+@
+
+
+0.1.0.209
+log
+@0.1.0.209
+@
+text
+@d88 1
+a88 1
+   h# 123 3 h.
+@
+
+
+0.1.0.210
+log
+@0.1.0.210
+@
+text
+@d88 1
+a88 1
+   h# 123 4 h.
+@
+
+
+0.1.0.211
+log
+@0.1.0.211
+@
+text
+@d88 1
+a88 1
+   d# 123 4 h.
+@
+
+
+0.1.0.212
+log
+@0.1.0.212
+@
+text
+@a85 1
+" .version.fr" used
+d88 1
+a88 1
+   h# 123 4 h.
+@
+
+
+0.1.0.213
+log
+@0.1.0.213
+@
+text
+@d89 1
+a89 1
+   #sw-build 4 h.
+@
+
+
+0.1.0.214
+log
+@0.1.0.214
+@
+text
+@d85 1
+a88 1
+   [char] # emit
+d90 2
+a91 2
+   [char] # emit [char] > emit 
+;
+@
+
+
+0.1.0.260
+log
+@0.1.0.260
+@
+text
+@d85 9
+d97 1
+a97 1
+   begin cr [char] > emit space		\ prompt
 @

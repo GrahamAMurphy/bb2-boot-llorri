@@ -1,0 +1,196 @@
+head	0.1;
+access;
+symbols;
+locks
+	murphy:0.1.0.256; strict;
+comment	@# @;
+
+
+0.1
+date	2018.09.18.14.18.35;	author murphy;	state Exp;
+branches
+	0.1.0.204;
+next	;
+
+0.1.0.204
+date	2018.09.18.14.18.35;	author murphy;	state Exp;
+branches;
+next	0.1.0.249;
+
+0.1.0.249
+date	2018.09.20.12.56.03;	author murphy;	state Exp;
+branches;
+next	0.1.0.253;
+
+0.1.0.253
+date	2018.09.21.13.18.42;	author murphy;	state Exp;
+branches;
+next	0.1.0.256;
+
+0.1.0.256
+date	2018.09.21.14.17.38;	author murphy;	state Exp;
+branches;
+next	;
+
+
+desc
+@2018-09-18 10:08:59 gam-1
+@
+
+
+0.1
+log
+@0.1
+@
+text
+@\ (c) 2013 Johns Hopkins University / Applied Physics Laboratory
+\ SPP common instrument (i.e. EPI-Lo & WISPR) hardware interfaces
+hex
+
+\ ------------------------------------------------------------------------
+\ Memory map
+
+\ RAM
+\ 01 constant macro-mem#		\ macro database
+02 constant tlm-mem#			\ telemetry frame buffer
+\ I/O
+\ 10 constant io-mem#			\ memory-mapped I/O
+\  0000 constant uart-a#		\ RW: UART
+h# 0002 constant wd-a#			\ R: ping watchdog
+\  0004 constant int-a#			\ R: interrupt vector W: mode/mask set
+\  0006 constant parin-a#		\ R: reset cause, jumpers, polled ints
+
+h# 000a constant comm-a#		\ R/W: S/C UART
+h# 000c constant sccfg-a#
+h# 000e constant sccfg-clr-a#
+
+h# 001a constant control-a#		\ W: instrument control
+
+\ MRAM
+\ 40 constant eeprom-prog-mem#		\ default program
+\ 41 - 42				\   and backups
+
+\ Address space
+\ Note: RAM0 appears twice in the this space
+h# 60 constant total-mem#			\ total memory (address space) size
+
+\ ------------------------------------------------------------------------
+\ Interrupts and interrupt mask register
+
+\ Interrupts
+\ d# 0 constant uart-rx-int#		\ TP receive
+\ d# 1 constant uart-tx-int#		\ TP transmit
+d#  2 constant 1pps-a-int#              \ 1PPS side A interrupt
+d#  3 constant 1pps-b-int#              \ 1PPS side B interrupt
+d#  4 constant timer-int#                \ timing interrupt
+
+d# 10 constant comm-rx-int#             \ S/C comm. input interrupt
+d# 11 constant comm-tx-int#             \ S/C comm. output interrupt
+
+
+
+\ ------------------------------------------------------------------------
+\ Memory-mapped I/O access functions
+
+: io@@		\ ( addr -- x ) Fetch x from given address in io-mem#.
+   get-mem >r io-mem# set-mem far	\ remote memory-mapped I/O
+   @@					\ fetch
+   r> set-mem ;
+
+: io!		\ ( x addr -- ) Store x to given address in io-mem#.
+   get-mem >r io-mem# set-mem far	\ remote memory-mapped I/O
+   !					\ store
+   r> set-mem ;
+
+: set-io-cfg   \ ( mask -- ) Set given bits in DPU configuration register.
+   sccfg-a# io! ;                         \ set given bits
+
+: clr-io-cfg   \ ( mask -- ) Clear given bits in DPU configuration register.
+   sccfg-a# 2 + io! ;                     \ clear given bits
+
+\ S/C configuration register masks
+1 d# 3 lshift constant uart-ena-mask#    
+1 d# 2 lshift constant iemb-sel-mask#    
+1 d# 1 lshift constant iemb-enb-mask#   
+1 d# 0 lshift constant iema-enb-mask#   
+
+
+\ Time
+
+: seconds	\ ( seconds -- ticks ) Given a time in seconds, compute
+		\ corresponding number of 'ticks' of hardwareclock.
+   || ; inline
+
+h# 200 constant #rcv-buffer
+
+\ NOP ... for now, no registers need refreshing.
+: refresh-regs ;
+
+\ 
+h# 8000 constant dog-enb-mask#
+
+\ RAM
+7 constant boot-mem#			\ default RAM page to copy to
+h#  4000 constant #boot-words		\ size of boot ROM (16-bit words)
+\ MRAM
+40 constant eeprom-prog-mem#		\ default program
+\ 41 - 42				\   and backups
+   0000 constant eeprom-prog-addr	\ address of source program header
+\ I/O (formerly G-bus)
+\ 10 constant io-mem#			\ memory-mapped I/O
+\  6 constant stat-a#			\ R: interrupt (and cause) status
+1 d# 5 lshift constant cause-msk#	\ reset cause mask
+
+@
+
+
+0.1.0.204
+log
+@0.1.0.204
+@
+text
+@@
+
+
+0.1.0.249
+log
+@0.1.0.249
+@
+text
+@a22 2
+h# 001c constant strobe-s-a#		\ W: instrument strobe set bit
+h# 001e constant strobe-r-a#		\ W: instrument strobe reset bit
+@
+
+
+0.1.0.253
+log
+@0.1.0.253
+@
+text
+@a100 9
+
+: xxx ( byte -- )
+    get-mem >r
+    io-mem# set-mem
+    h# 0 far!
+    r> set-mem
+;
+
+
+@
+
+
+0.1.0.256
+log
+@0.1.0.256
+@
+text
+@d102 1
+a102 2
+[ifdef] __DEBUG__
+: EMIT ( byte -- )
+d108 2
+a109 1
+[then]
+@

@@ -1,0 +1,224 @@
+\ (c) 2007 Johns Hopkins University / Applied Physics Laboratory
+\ Host interface: low-level I/O
+decimal
+
+module> host
+
+\ ------------------------------------------------------------------------
+\ Identity
+
+\ Instrument code
+variable instr-code
+
+: init-identity	\ ( -- ) Find and record instrument id.
+   parin-a# io@ 8 rshift h# 03 and	\ read board jumpers: 2-bit
+      instr-code ! ;			\   instrument code
+
+: #instr-code	\ ( -- id ) Return instrument code.
+   instr-code @ ;
+
+\ ------------------------------------------------------------------------
+\ Spacecraft side
+
+\ Variables to control side selection.  Note: initially both sides are disabled.
+variable side-a
+variable side-b
+
+: init-side	\ ( -- ) Initialize: turn off transmitters to both sides.
+   iema-enb-mask#			\ turn off transmitters
+   iemb-enb-mask# or 
+   set-io-cfg ;
+   \ clr-io-cfg ;
+
+: side-select	\ ( -- ) Select side, if any, to transmit on.
+   side-a @ if				\ if side A active
+      iema-enb-mask# set-io-cfg	\ transmit on side A,
+      iemb-enb-mask# clr-io-cfg	\   but not on side B
+   else side-b @ if			\ otherwise, if side B active
+      iemb-enb-mask# set-io-cfg	\ transmit on side B,
+      iema-enb-mask# clr-io-cfg	\   but not on side A
+   then then ;
+
+: use-side-a	\ ( -- ) Use spacecraft side A.  Start listening on side A
+		\ right now, but transmit on side A on next frame.  Delaying
+		\ prevents possibility of turning on transmitter in middle
+		\ of a frame.
+		\ Note: called from an interrupt routine.
+   iemb-sel-mask# clr-io-cfg		\ listen on side A, now
+   true side-a !			\ transmit on side A, next frame
+   false side-b ! ;
+
+: use-side-b	\ ( -- ) Use spacecraft side B.  Start listening on side B
+		\ right now, but transmit on side B on next frame.  Delaying
+		\ prevents possibility of turning on transmitter in middle
+		\ of a frame.
+		\ Note: called from an interrupt routine.
+   iemb-sel-mask# set-io-cfg		\ listen on side B, now
+   true side-b !			\ transmit on side B, next frame
+   false side-a ! ;
+
+\ ------------------------------------------------------------------------
+\ Telemetry input
+
+\ Input byte queue.  Note: space is "stolen" from telemetry.
+#rcv-buffer tlm-mem# far-allot		\ remotely allocate buffer
+   constant rcv-buffer			\ input buffer
+   tlm-mem# far-here constant rcv-buffer-end
+variable rcv-scan-get			\ pointer to next byte to read
+variable rcv-scan-put			\ pointer to next free slot
+variable rcv-count			\ number of bytes in buffer
+
+\ Receive/command event semaphore.  Semaphore is signalled by bytes
+\ received as well as no bytes received timeout (to trigger poll of
+\ macros), a real-time command (in case of macro run), and macro commands
+\ (to keep macro going).
+variable rcv/cmd-event
+
+: cmd-signal	\ ( -- ) Signal next command event.
+   rcv/cmd-event signal ;
+
+: cmd-wait	\ ( -- ) Wait for next command event.
+   rcv/cmd-event wait ;
+
+: handle-rcv	\ ( -- ) Handle receive interrupt.
+		\ Note: called from an interrupt routine.
+   \ io-mem# set-mem			\ remote memory-mapped I/O already set
+   comm-a# far@				\ read byte from receiver & reset int.
+   rcv-count @ dup #rcv-buffer <> if	\ if room available in input FIFO
+      1+ rcv-count !			\ count new byte
+      rcv-scan-put @ dup		\ store byte
+      1+ dup rcv-buffer-end = if drop rcv-buffer then
+      rcv-scan-put !			\ stepping pointer
+      tlm-mem# set-mem farc!		\ save byte (int. code restores DPR)
+      cmd-signal			\ signal event
+   else 2drop
+   then ;
+
+comm-rx-int# int: \ ( -- ) Handle host byte receive interrupt.
+   handle-rcv ;int			\ receive byte
+
+: rcv-empty?	\ ( -- t/f ) Return true iff there are no bytes in input buffer.
+   rcv-count @ 0= ;			\ check counter
+
+: rcv-byte	\ ( -- byte ) Return next byte.
+		\ Precondition: rcv-empty? returns false.
+   get-mem tlm-mem# set-mem		\ data in remote memory
+   disable
+   rcv-scan-get @ dup farc@ swap	\ get byte
+   1+ dup rcv-buffer-end = if drop rcv-buffer then
+   rcv-scan-get !			\ step scanner
+   -1 rcv-count +!
+   enable
+   swap set-mem ;
+
+do: timeout-event \ ( -- ) Timeout byte arrival.
+   cmd-signal ;do
+
+: init-host-input \ ( -- ) Initialize receive.  Interrupt is enabled elsewhere.
+   rcv-buffer rcv-scan-put !  rcv-buffer rcv-scan-get !
+   timeout-event every 1 seconds doit ;
+
+\ ------------------------------------------------------------------------
+\ Telemetry output
+
+\ Transmit data:
+2variable xmit-scan			\ pointer to next byte
+variable xmit-left			\ number of bytes remaining
+
+: handle-xmit	\ ( -- ) Handle transmit interrupt.
+		\ Note: called from an interrupt routine.
+   xmit-left @ ?dup if			\ if there is data to send
+      1- xmit-left !			\ decrement amount left
+      xmit-scan 2@ set-mem		\ send next byte
+      dup farc@ io-mem# set-mem comm-a# far!
+      1+ xmit-scan cell+ !		\ step pointer
+   then ;
+
+comm-tx-int# int: \ ( -- ) Handle host byte transmit interrupt.
+   handle-xmit ;int			\ send byte
+
+: start-frame	\ ( addr memid len -- ) Start transmitting given data.
+   side-select				\ select side A or B (or neither)
+   xmit-left !  xmit-scan 2!		\ record length and scan start
+   get-mem disable			\ send first byte to start things going
+      handle-xmit			\   by calling interrupt routine
+   enable set-mem ;
+
+\ ------------------------------------------------------------------------
+\ * Timing
+
+variable 1hz-sem
+variable dt-sem
+
+public:
+
+: sync-1hz	\ ( -- ) Wait for next 1 Hz pulse.
+   0 1hz-sem !
+   1hz-sem wait
+   0 dt-sem ! ;
+
+: sync-dead-time \ ( -- ) Wait for next dead time.
+   dt-sem wait ;
+
+private:
+
+1pps-a-int# int: \ ( -- ) Handle host side A tick interrupt.
+   use-side-a				\ use spacecraft side A
+   sync-time				\ synchronize time
+   \ h# 41 xxx
+   ;int
+
+1pps-b-int# int: \ ( -- ) Handle host side B tick interrupt.
+   use-side-b				\ use spacecraft side B
+   sync-time				\ synchronize time
+   \ h# 42 xxx
+   ;int
+
+variable debug-timer-int
+0 debug-timer-int !
+
+timer-int# int: \ ( -- ) Handle timer interrupt.  Propogate time, signal
+                \ dead time, and run milli-schedule.
+                \ Note: 1Hz signal is delayed from 1PPS.  If this were done
+                \ at the more obvious delta=0, the 1Hz would happen before
+                \ the 1PPS.
+                \ Note: schedule call occurs every millisecond, except for
+                \ 1Hz and dead time's case; this avoids more than one signal
+                \ per interrupt.
+   prop-time                            \ propagate time
+
+   dup  10 = if 
+        debug-timer-int @ if
+            h# 53 xxx 
+        then
+        drop 1hz-sem signal		\ signal telemetry 1Hz, or
+   else 
+        d# 800 = if 
+	    dt-sem signal 
+	else      \  signal telemetry dead time, or
+	   exec-slot                                \  execute next slot function
+        then 
+   then 
+   ;int
+
+\ ------------------------------------------------------------------------
+\ Initialization
+
+: init-host-reg	\ ( -- ) Initialize host registers, e.g. baud rate, etc.,
+		\ and unmask interrupts.
+      timer-int# get-mask			\ unmask timer interrupt,
+      1pps-a-int# get-mask or		\   side A tick,
+      1pps-b-int# get-mask or		\   side B tick,
+      comm-tx-int# get-mask or		\   transmit,
+      comm-rx-int# get-mask or		\   receive,
+      unmask-int ;
+
+: init-host-io	\ ( -- ) Initialize host I/O.
+   init-identity			\ initialize instrument identity
+   init-side				\ initialize side
+   init-host-input			\ initialize input
+   init-slots
+   init-host-reg			\ unmask interrupts, etc.
+;
+
+endmodule>

@@ -2,7 +2,7 @@ head	0.1;
 access;
 symbols;
 locks
-	murphy:0.1.0.139; strict;
+	murphy:0.1.0.264; strict;
 comment	@# @;
 
 
@@ -24,6 +24,86 @@ next	0.1.0.139;
 
 0.1.0.139
 date	2018.04.13.20.05.41;	author murphy;	state Exp;
+branches;
+next	0.1.0.171;
+
+0.1.0.171
+date	2018.09.13.17.08.48;	author murphy;	state Exp;
+branches;
+next	0.1.0.172;
+
+0.1.0.172
+date	2018.09.13.17.10.34;	author murphy;	state Exp;
+branches;
+next	0.1.0.174;
+
+0.1.0.174
+date	2018.09.13.18.20.46;	author murphy;	state Exp;
+branches;
+next	0.1.0.204;
+
+0.1.0.204
+date	2018.09.18.14.08.59;	author murphy;	state Exp;
+branches;
+next	0.1.0.215;
+
+0.1.0.215
+date	2018.09.18.14.49.35;	author murphy;	state Exp;
+branches;
+next	0.1.0.216;
+
+0.1.0.216
+date	2018.09.18.15.27.13;	author murphy;	state Exp;
+branches;
+next	0.1.0.217;
+
+0.1.0.217
+date	2018.09.18.15.30.06;	author murphy;	state Exp;
+branches;
+next	0.1.0.218;
+
+0.1.0.218
+date	2018.09.18.15.36.56;	author murphy;	state Exp;
+branches;
+next	0.1.0.219;
+
+0.1.0.219
+date	2018.09.18.15.38.10;	author murphy;	state Exp;
+branches;
+next	0.1.0.220;
+
+0.1.0.220
+date	2018.09.18.15.39.00;	author murphy;	state Exp;
+branches;
+next	0.1.0.221;
+
+0.1.0.221
+date	2018.09.18.16.23.07;	author murphy;	state Exp;
+branches;
+next	0.1.0.223;
+
+0.1.0.223
+date	2018.09.18.16.28.16;	author murphy;	state Exp;
+branches;
+next	0.1.0.257;
+
+0.1.0.257
+date	2018.10.01.12.30.43;	author murphy;	state Exp;
+branches;
+next	0.1.0.261;
+
+0.1.0.261
+date	2018.11.02.14.50.07;	author murphy;	state Exp;
+branches;
+next	0.1.0.263;
+
+0.1.0.263
+date	2018.11.02.15.45.47;	author murphy;	state Exp;
+branches;
+next	0.1.0.264;
+
+0.1.0.264
+date	2018.11.02.15.53.23;	author murphy;	state Exp;
 branches;
 next	;
 
@@ -125,3 +205,207 @@ log
 @
 text
 @@
+
+
+0.1.0.171
+log
+@0.1.0.171
+@
+text
+@a41 1
+
+a43 2
+config/status 14 + 5	mem-bit:    dpu-id				\ *
+
+a60 1
+1 dpu-id set
+@
+
+
+0.1.0.172
+log
+@0.1.0.172
+@
+text
+@d63 1
+a63 1
+4 sw-version set
+@
+
+
+0.1.0.174
+log
+@0.1.0.174
+@
+text
+@d64 1
+a64 1
+0 dpu-id set
+@
+
+
+0.1.0.204
+log
+@0.1.0.204
+@
+text
+@d46 1
+a47 3
+
+config/status 16 +	port-word:  instr-control
+instr-control 7		port-bit:   nv-enb
+@
+
+
+0.1.0.215
+log
+@0.1.0.215
+@
+text
+@d11 2
+a12 2
+d# 18 constant #config/status		\ total size of status
+d#  2 constant #more-config/status		\ extra status
+@
+
+
+0.1.0.216
+log
+@0.1.0.216
+@
+text
+@d45 1
+a49 3
+
+config/status 18 +	mem-word:   instr-status
+instr-status 0		mem-bit:    dpu-id
+@
+
+
+0.1.0.217
+log
+@0.1.0.217
+@
+text
+@a47 1
+					' set-io , control-a# ,
+a50 1
+					' set-io , control-a# ,
+@
+
+
+0.1.0.218
+log
+@0.1.0.218
+@
+text
+@d52 1
+@
+
+
+0.1.0.219
+log
+@0.1.0.219
+@
+text
+@a6 4
+: set-io
+  @@ io! 
+;
+
+@
+
+
+0.1.0.220
+log
+@0.1.0.220
+@
+text
+@d15 1
+a15 1
+d# 20 constant #config/status		\ total size of status
+@
+
+
+0.1.0.221
+log
+@0.1.0.221
+@
+text
+@a50 2
+\ 15 unused
+
+d73 1
+a73 5
+
+: update-digital
+    control-a# io@@
+    instr-status set
+;
+@
+
+
+0.1.0.223
+log
+@0.1.0.223
+@
+text
+@d76 1
+a76 1
+: update-digital-status
+@
+
+
+0.1.0.257
+log
+@0.1.0.257
+@
+text
+@d51 1
+a51 1
+\ 15 unused to keep the following short word aligned.
+d53 2
+a54 1
+config/status 16 +	port-word:  instr-control ' set-io , control-a# ,
+d57 1
+a57 1
+config/status 18 +	mem-word:   instr-status	\ This has to be regularly read.
+@
+
+
+0.1.0.261
+log
+@0.1.0.261
+@
+text
+@d73 1
+a73 1
+1 sw-version set
+@
+
+
+0.1.0.263
+log
+@0.1.0.263
+@
+text
+@d15 1
+a15 1
+d# 22 constant #config/status		\ total size of status
+d57 1
+a57 1
+config/status 20 +	mem-word:   sccfg-status	\ This has to be regularly read.
+@
+
+
+0.1.0.264
+log
+@0.1.0.264
+@
+text
+@d77 1
+a77 3
+	instr-status set
+    sccfg-a# io@@
+	sccfg-status set
+@

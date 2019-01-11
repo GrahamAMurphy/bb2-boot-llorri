@@ -2,7 +2,7 @@ head	0.1;
 access;
 symbols;
 locks
-	murphy:0.1.0.144; strict;
+	murphy:0.1.0.236; strict;
 comment	@# @;
 
 
@@ -39,6 +39,31 @@ next	0.1.0.144;
 
 0.1.0.144
 date	2018.04.14.01.12.44;	author murphy;	state Exp;
+branches;
+next	0.1.0.178;
+
+0.1.0.178
+date	2018.09.14.16.41.02;	author murphy;	state Exp;
+branches;
+next	0.1.0.179;
+
+0.1.0.179
+date	2018.09.14.16.42.46;	author murphy;	state Exp;
+branches;
+next	0.1.0.180;
+
+0.1.0.180
+date	2018.09.14.16.47.34;	author murphy;	state Exp;
+branches;
+next	0.1.0.204;
+
+0.1.0.204
+date	2018.09.18.14.18.35;	author murphy;	state Exp;
+branches;
+next	0.1.0.236;
+
+0.1.0.236
+date	2018.09.18.22.04.47;	author murphy;	state Exp;
 branches;
 next	;
 
@@ -233,4 +258,74 @@ a104 3
 [ifdef] ___AUTO_BOOT___
 	" autoboot.fr"		fload
 [then]
+@
+
+
+0.1.0.178
+log
+@0.1.0.178
+@
+text
+@d40 1
+a40 1
+" extend-llorri.fr"	used
+@
+
+
+0.1.0.179
+log
+@0.1.0.179
+@
+text
+@d45 4
+a48 8
+\ " hw.fr"		used		\ SPP common
+\ " hw-hybrid.fr"		used		\ SPP common - EPI-Lo-specific
+\ " hw-boot.fr"		fload		\ SPP additions for boot
+\ " hw-boot-hybrid.fr"	fload		\ SPP additions - EPI-Lo-specific
+
+" hw-llorri.fr"		used		\ SPP common
+
+
+@
+
+
+0.1.0.180
+log
+@0.1.0.180
+@
+text
+@a51 5
+\ " config.fr"		used		\ SPP common
+\ " config-hybrid.fr"	used		\ SPP common - EPI-Lo-specific
+\ " config-boot.fr"	fload		\ additions for boot
+
+" config-llorri.fr"	used		\ SPP common
+d53 3
+d72 1
+d74 5
+d109 4
+@
+
+
+0.1.0.204
+log
+@0.1.0.204
+@
+text
+@@
+
+
+0.1.0.236
+log
+@0.1.0.236
+@
+text
+@d44 6
+d52 4
+d69 4
+d88 1
+d90 2
+a91 1
+" host-cmd.fr"                used
 @

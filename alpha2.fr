@@ -82,17 +82,10 @@ create cmdbuf  cmdbuf-size allot	\ holds command input arguments
 		\ will be extracted from command line.
    read-hex32 read-hex32 read-hex16 copy ;
 
-\ GAM !!! was >
-
-: PROMPT
-   [char] # emit [char] 0 emit [char] 1 emit [char] > emit 
-   ;
-
-
 : interboot	\ ( boot-addr boot-mem -- entry-addr entry-mem ) Accept
 		\ single-letter commands from keyboard.  Attempt to find
 		\ a program to run.  On success, return program's entry point.
-   begin cr PROMPT space		\ prompt
+   begin cr [char] > emit space		\ prompt
       key dup bl 7f within		\ check for printable chr
       if dup else bl then emit space	\ echo chr if printable
       sel				\ execute appropriate cmd

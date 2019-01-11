@@ -1,0 +1,98 @@
+\ (c) 2007 Johns Hopkins University / Applied Physics Laboratory
+\ Time management
+decimal
+
+\ * Time keeping module.  Provides management of time, used to tag data.
+
+\ * Two times are kept.  Appropximately once every two seconds, the S/C
+\ * sends a new time that is to be used on the next synchronization pulse.
+\ * The 48-bit spacecraft time is converted to a 32-bit integer time and
+\ * 16-bit millisecond time.  Between sync pulses, the time is propogated
+\ * by an internal fixed-rate interrupt (1000Hz).  This fixed rate
+\ * interrupt is also used to generate ~1Hz signals for the command and
+\ * timing processes; a second "1PPS" clock measures this timing.  The 1PPS
+\ * clock is synchronized to the S/C clock with a constant offset generated
+\ * by a phase-locked loop.  To achieve this, the interval from 1PPS to
+\ * 1PPS will be varied.  To meet the requirements of the common code
+\ * (specifically, for MAC_DELAY to work as expected), the get-time
+\ * function returns the 1PPS time, which will remain static between 1PPS
+\ * occurrences.
+
+module> time
+
+\ Constants:
+1000 constant #1pps-nom			\ nomimal 1PPS-to-1PPS interval
+50 constant #1pps-maxerr		\   and maximum error to apply to
+					\ #1pps-nom (milliseconds)
+#1pps-nom 2/ constant #1pps-phase	\ goal phase between s/c whole second
+					\   and 1PPS (milliseconds)
+
+\ Variables: (subseconds are in milliseconds)
+2variable future-time			\ time of next sync, whole seconds
+variable future-time-sub		\   and subseconds
+2variable s/c-time			\ current S/C time, whole seconds
+variable s/c-time-sub			\   and subseconds
+variable new-time			\ set when new time stamp arrives
+2variable 1pps-time			\ 1PPS time, S/C time at 1PPS
+variable delta-time			\   and subseconds wrt 1PPS
+variable 1pps-interval			\ interval between 1PPS-to-1PPS
+    #1pps-nom 1pps-interval !
+
+public:
+
+: set-time	\ ( time-sub time-ls time-ms -- ) Set time of upcoming
+		\ sync-time.
+		\ Synchronization: disables interrupts.
+   disable				\ disable interrupts
+   future-time 2!			\ set future time
+      #1pps-nom um* nip future-time-sub !
+   true new-time !			\ flag that time should be set
+   enable ;
+
+: sync-time	\ ( -- ) Set time (from set-time) to actual time.
+		\ Propogate this new time until another set-time occurs.
+		\ Synchronization: called from interrupt routine.
+   new-time @ if			\ if time set
+      false new-time !
+      future-time-sub @ s/c-time-sub !	\ set time, subseconds
+      future-time 2@ s/c-time 2!	\   and whole seconds
+   then ;
+
+: prop-time	\ ( -- delta ) Propogate time.  The S/C time is advanced.
+		\ The internal 1PPS time is also advanced.  The 1PPS time
+		\ is phase-locked to the S/C time; to do this, the interval
+		\ from 1PPS to 1PPS is varied.
+		\ Synchronization: called from interrupt routine.
+
+   s/c-time-sub @ 1+ dup #1pps-nom = if	\ propogate s/c time
+      drop 0
+      s/c-time 2@ 1 0 d+ s/c-time 2!
+   then s/c-time-sub !
+
+[ifndef] _XXX___
+   delta-time @ 1+ dup			\ step delta time
+   1pps-interval @ = if			\ if end of 1pps interval reached
+      s/c-time-sub @ #1pps-phase swap -	\ measure phase error
+	 #1pps-maxerr negate max #1pps-maxerr min
+      #1pps-nom + 1pps-interval !	\ adjust 1pps interval
+      drop 0
+      s/c-time 2@ 1 0 d+ 1pps-time 2!	\ sample s/c time for 1PPS time
+   then dup delta-time ! 
+[then]
+
+   ;
+ 
+: get-time	\ ( -- time-ls time-ms ) Return current 1PPS time.
+		\ Synchronization: disables interrupts.
+   disable 1pps-time 2@ enable ;
+
+: get-s/c-time	\ ( -- time-sub time-ls time-ms ) Return current S/C time with
+		\ fractional (subsecond) time.  Note: s/c-time-sub can be 1000;
+		\ this causes overflow in the divide, but the quotient is
+		\ pegged at the largest possible value, in effect, 0.9999.
+		\ Synchronization: disables interrupts.
+   disable 0 s/c-time-sub @ #1pps-nom um/mod nip s/c-time 2@ enable ;
+
+private:
+
+endmodule>

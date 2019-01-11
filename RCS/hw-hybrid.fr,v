@@ -2,7 +2,7 @@ head	0.1;
 access;
 symbols;
 locks
-	murphy:0.1.0.156; strict;
+	murphy:0.1.0.166; strict;
 comment	@# @;
 
 
@@ -94,6 +94,16 @@ next	0.1.0.156;
 
 0.1.0.156
 date	2018.04.14.03.17.18;	author murphy;	state Exp;
+branches;
+next	0.1.0.165;
+
+0.1.0.165
+date	2018.09.13.00.48.39;	author murphy;	state Exp;
+branches;
+next	0.1.0.166;
+
+0.1.0.166
+date	2018.09.13.00.49.00;	author murphy;	state Exp;
 branches;
 next	;
 
@@ -344,4 +354,29 @@ text
 @d29 1
 a29 1
 d#  3 constant 1pps-b-int#              \ 1PPS side B interrupt
+@
+
+
+0.1.0.165
+log
+@0.1.0.165
+@
+text
+@d40 3
+a42 4
+1 d# 3 lshift constant uart-enb-mask#    
+1 d# 2 lshift constant iemb-sel-mask#    
+1 d# 1 lshift constant iemb-enb-mask#   
+1 d# 0 lshift constant iema-enb-mask#   
+@
+
+
+0.1.0.166
+log
+@0.1.0.166
+@
+text
+@d40 1
+a40 1
+1 d# 3 lshift constant uart-ena-mask#    
 @

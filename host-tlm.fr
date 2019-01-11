@@ -40,8 +40,8 @@ create default-header
    0000 ,				\ checksum (filled in later)
    d# 192 c, d# 168 c, 1 c, 3 c,	\ source address (JEDIx)
    d# 192 c, d# 168 c, 1 c, 1 c,	\ destination address (Juno)
-   d# 5002 ,				\ UDP: source port (JEDIx)
-   d# 5002 ,				\ destination port (Juno/JEDIx)
+   d# 5003 ,				\ UDP: source port (JEDIx)
+   d# 5003 ,				\ destination port (Juno/JEDIx)
    0000 ,				\ length (filled in later)
    0000 ,				\ checksum (filled in later)
 
@@ -79,13 +79,6 @@ create default-header
       ones-sum 
       ;
 
-: init-default-ip \ ( -- ) Fill in default IP/UDP header based on instrument
-		\ id.
-   default-header .h-ip .ip-src 3 +	\ adjust source IP address
-      dup >r c@ #instr-code + r> c!	\ adjust source and dest. UDP ports
-   #instr-code default-header .h-udp .udp-src +!
-   #instr-code default-header .h-udp .udp-dst +! ;
-
 \ ========================================================================
 \ CIP Support
 
@@ -107,7 +100,14 @@ endstructure
 
 : prep-cip-hdr	\ ( type hdr -- ) Prepare CIP header with given type.  Also
 		\ fills in constant values.
-   >r 4def eefa r@ .cip-marker 2!	\ fill in constants: marker constant,
+
+
+
+   \ GAM 2018-06-04
+   \ >r 4def eefa r@ .cip-marker 2!	\ fill in constants: marker constant,
+
+   >r afee fed4 r@ .cip-marker 2!	\ fill in constants: marker constant,
+
    0 r@ .cip-trans c!			\   transaction id (unused),
    r> .cip-type c! ;			\   and type
 
@@ -118,8 +118,8 @@ endstructure
    over .cip-len @ u>=			\ return true iff there is enough data
    over .cip-len @ cip-head-struct u>= and \  and minimum size is met
    over .cip-len @ h# 03 and 0= and	\   and size is multiple of 4
-   swap .cip-marker 2@ >r 4def = and	\   and constant marker is correct
-   r> eefa = and ;
+   swap .cip-marker 2@ >r afee = and	\   and constant marker is correct
+   r> fed4 = and ;
 
 \ ========================================================================
 \ * Telemetry downlink
@@ -375,14 +375,6 @@ structure subpkt-head-struct		\ structure of subpacket header
      2 cells: .sub-idp-time		\ time tag
 endstructure
 
-\ Instrument ids, preshifted
-rom
-create instr-ids
-   d# 9 8 lshift ,			\ JEDI-090
-   d# 18 8 lshift ,			\ JEDI-A180
-   d# 27 8 lshift ,			\ JEDI-270
-ram
-
 \ Maximum unsegmented subpacket payload that will fit in a frame.
 #n-out-frame subpkt-head-struct -
    constant #n-max-subpkt
@@ -449,6 +441,29 @@ constant pkt-desc-size \ ( -- size ) Return size of a packet desciptor.  Useful
 
 private:
 
+#status-pkt 0006 = [if]
+
+cr .( NOTE NOTE: Status is ApId 6. This is BOOT! )
+
+    : id-to-cip-type	( id -- cip-type )
+	#status-pkt = if
+	    #cip-proc
+	else
+	    #cip-down
+	then
+    ;
+
+[else]
+
+cr .( NOTE NOTE: Status is NOT ApId 6. This is APPLICATION! )
+
+    : id-to-cip-type	( id -- cip-type )
+       d# 16 u< if #cip-down else #cip-sci then
+    ;
+
+[then]
+
+
 : pad-subpkt	\ ( pkt -- length ) Return size of subpacket data after padding.
 		\ As a side-effect, the pad length is recorded in the
 		\ packet descriptor.
@@ -460,10 +475,22 @@ private:
 		\ Precondition: exclusive access and header space available.
    subpkt-head-struct alloc-space	\ allocate space for header
    dup >r subpkt-msg !			\ remember where message starts
-   dup .pkt-id @ d# 16 u< if #cip-down else #cip-sci then
+
+    dup .pkt-id @ id-to-cip-type
+
+
+\ WAS GAM 20181109   dup .pkt-id @ d# 16 u< if #cip-down else #cip-sci then
+
+
+
+
+
       r@ .sub-cip-hdr prep-cip-hdr	\ prep CIP header, eng. vs. science
    #first-seg				\ assemble segment flags (first),
-      #instr-code cells instr-ids + @ or \   instr. id, and subpacket id
+
+      \ GAM 2018-09-05
+      \ #instr-code cells instr-ids + @ or \   instr. id, and subpacket id
+
       over .pkt-id @ or r@ .sub-idp-id !
    dup .pkt-len @ over .pkt-len2 @ +	\ compute subpacket length (no pad)
       r@ .sub-idp-len !			\ record length and time-tag
@@ -578,7 +605,6 @@ private:
 \ Initialization
 
 : init-host-tlm	\ ( -- ) Initialize host telemetry.
-   init-default-ip			\ fill in default IP source data
    get-mem tlm-mem# set-mem		\ frames are queued in remote memory
    free-frame-q farq-empty		\ empty queues
    down-frame-q farq-empty

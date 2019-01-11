@@ -37,18 +37,14 @@ def multitasking			\ include multitasker
 " extend-boot.fr"	fload		\ replace missing kernel functions
 " extend.fr"		used		\ needed by outbits, etc.
 " extend.mfr"		used
-" extend-mro.fr"	used
+" extend-llorri.fr"	used
 " outbits2a.fr"		used
 " outbits2.mfr"		used
 
-\ Shared: common code config, h/w addresses, etc.
-" hw.fr"		used		\ SPP common
-" hw-hybrid.fr"		used		\ SPP common - EPI-Lo-specific
-" hw-boot.fr"		fload		\ SPP additions for boot
-" hw-boot-hybrid.fr"	fload		\ SPP additions - EPI-Lo-specific
-" config.fr"		used		\ SPP common
-" config-hybrid.fr"	used		\ SPP common - EPI-Lo-specific
-" config-boot.fr"	fload		\ additions for boot
+" hw-llorri.fr"		used		\ SPP common
+
+" config-llorri.fr"	used		\ SPP common
+
 " farallot3.fr"		used
 " farallot3.mfr"	used
 " stat-db.fr"		fload		\ boot version
@@ -60,18 +56,8 @@ def multitasking			\ include multitasker
 \ Host interface part 1 (part 2 loaded later)
 " time.fr"		used
 
-\ " host-io-hybrid.fr"	used
-\ " host-tlm.fr"		used
-\ " host-tlm-split.fr"	used
-
 " host-io.fr"           used
-\ " host-ip.fr"           used
 " host-tlm.fr"          used
-\ " host-tlm-split.fr"    used
-
-[ifdef] ___AUTO_BOOT___
-    " scstatus.fr"		used
-[then]
 
 \ Core functions
 " memory1.fr"		used
@@ -85,10 +71,8 @@ def multitasking			\ include multitasker
 " cmd-proc1.fr"		used
 " stat-proc1.fr"	used
 
-\ Host interface part 2
 \ Host interface, commanding, etc.
-" host-cmd.fr"		used
-\ " host-cmd-hybrid.fr"	used
+" host-cmd.fr"                used
 
 \ Orchestrator
 " telecmd1.fr"		used
@@ -102,10 +86,6 @@ def multitasking			\ include multitasker
 \ Uplink versions of boot and go commands
 " boot-cmd1.fr"		used
 
-\ Load main and startup
-[ifdef] ___AUTO_BOOT___
-	" autoboot.fr"		fload
-[then]
 " main.fr"		fload
 " startup.fr"		ftload
 ram-here dp !				\ unused memory for run-time allocation

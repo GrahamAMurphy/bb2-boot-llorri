@@ -2,7 +2,7 @@ head	0.1;
 access;
 symbols;
 locks
-	murphy:0.1.0.150; strict;
+	murphy:0.1.0.255; strict;
 comment	@# @;
 
 
@@ -89,6 +89,71 @@ next	0.1.0.150;
 
 0.1.0.150
 date	2018.04.14.03.05.46;	author murphy;	state Exp;
+branches;
+next	0.1.0.163;
+
+0.1.0.163
+date	2018.09.10.21.36.38;	author murphy;	state Exp;
+branches;
+next	0.1.0.168;
+
+0.1.0.168
+date	2018.09.13.01.35.00;	author murphy;	state Exp;
+branches;
+next	0.1.0.204;
+
+0.1.0.204
+date	2018.09.18.14.18.35;	author murphy;	state Exp;
+branches;
+next	0.1.0.237;
+
+0.1.0.237
+date	2018.09.19.01.21.28;	author murphy;	state Exp;
+branches;
+next	0.1.0.238;
+
+0.1.0.238
+date	2018.09.19.01.22.57;	author murphy;	state Exp;
+branches;
+next	0.1.0.239;
+
+0.1.0.239
+date	2018.09.19.01.34.24;	author murphy;	state Exp;
+branches;
+next	0.1.0.240;
+
+0.1.0.240
+date	2018.09.19.01.37.59;	author murphy;	state Exp;
+branches;
+next	0.1.0.241;
+
+0.1.0.241
+date	2018.09.19.02.20.31;	author murphy;	state Exp;
+branches;
+next	0.1.0.242;
+
+0.1.0.242
+date	2018.09.19.02.21.14;	author murphy;	state Exp;
+branches;
+next	0.1.0.243;
+
+0.1.0.243
+date	2018.09.20.11.30.00;	author murphy;	state Exp;
+branches;
+next	0.1.0.250;
+
+0.1.0.250
+date	2018.09.21.13.06.35;	author murphy;	state Exp;
+branches;
+next	0.1.0.254;
+
+0.1.0.254
+date	2018.09.21.14.15.19;	author murphy;	state Exp;
+branches;
+next	0.1.0.255;
+
+0.1.0.255
+date	2018.09.21.14.16.33;	author murphy;	state Exp;
 branches;
 next	;
 
@@ -877,4 +942,179 @@ d73 2
 a74 1
 [ifndef] ___TRAIN_TIME___
 d87 1
+@
+
+
+0.1.0.163
+log
+@0.1.0.163
+@
+text
+@d6 15
+d62 4
+d71 17
+@
+
+
+0.1.0.168
+log
+@0.1.0.168
+@
+text
+@a5 15
+
+\ * Two times are kept.  Appropximately once every two seconds, the S/C
+\ * sends a new time that is to be used on the next synchronization pulse.
+\ * The 48-bit spacecraft time is converted to a 32-bit integer time and
+\ * 16-bit millisecond time.  Between sync pulses, the time is propogated
+\ * by an internal fixed-rate interrupt (1000Hz).  This fixed rate
+\ * interrupt is also used to generate ~1Hz signals for the command and
+\ * timing processes; a second "1PPS" clock measures this timing.  The 1PPS
+\ * clock is synchronized to the S/C clock with a constant offset generated
+\ * by a phase-locked loop.  To achieve this, the interval from 1PPS to
+\ * 1PPS will be varied.  To meet the requirements of the common code
+\ * (specifically, for MAC_DELAY to work as expected), the get-time
+\ * function returns the 1PPS time, which will remain static between 1PPS
+\ * occurrences.
+
+a46 4
+		\ The internal 1PPS time is also advanced.  The 1PPS time
+		\ is phase-locked to the S/C time; to do this, the interval
+		\ from 1PPS to 1PPS is varied.
+		\ Synchronization: called from interrupt routine.
+a51 12
+
+[ifndef] _XXX
+   delta-time @@ 1+ dup			\ step delta time
+   1pps-interval @@ = if			\ if end of 1pps interval reached
+      s/c-time-sub @@ #1pps-phase swap -	\ measure phase error
+	 #1pps-maxerr negate max #1pps-maxerr min
+      #1pps-nom + 1pps-interval !	\ adjust 1pps interval
+      drop 0
+      s/c-time 2@@ 1 0 d+ 1pps-time 2!	\ sample s/c time for 1PPS time
+   then dup delta-time ! 
+[then]
+
+@
+
+
+0.1.0.204
+log
+@0.1.0.204
+@
+text
+@@
+
+
+0.1.0.237
+log
+@0.1.0.237
+@
+text
+@d72 1
+a72 1
+[ifdef] _XXX___
+@
+
+
+0.1.0.238
+log
+@0.1.0.238
+@
+text
+@d72 1
+a72 1
+[ifndef] _XXX___
+@
+
+
+0.1.0.239
+log
+@0.1.0.239
+@
+text
+@d24 1
+a24 1
+d# 1000 constant #1pps-nom			\ nomimal 1PPS-to-1PPS interval
+d70 1
+a70 1
+   then dup s/c-time-sub !
+d72 1
+a72 1
+[ifdef] ___XXX___
+@
+
+
+0.1.0.240
+log
+@0.1.0.240
+@
+text
+@d62 3
+d71 12
+@
+
+
+0.1.0.241
+log
+@0.1.0.241
+@
+text
+@d37 1
+@
+
+
+0.1.0.242
+log
+@0.1.0.242
+@
+text
+@d37 2
+@
+
+
+0.1.0.243
+log
+@0.1.0.243
+@
+text
+@d27 2
+@
+
+
+0.1.0.250
+log
+@0.1.0.250
+@
+text
+@d25 1
+@
+
+
+0.1.0.254
+log
+@0.1.0.254
+@
+text
+@a36 3
+\ This is called when the time message arrives. The message 
+\ is scheduled to precede the associated PPS.
+
+a45 3
+\ This word is called when the PPS arrives. This means that
+\ NOW is the time in the message received earlier.
+
+d66 1
+a66 2
+   \ disable 1pps-time 2@@ enable ; WAS GAM 2018-09-21
+   disable s/c-time 2@@ enable ;
+@
+
+
+0.1.0.255
+log
+@0.1.0.255
+@
+text
+@d33 1
 @

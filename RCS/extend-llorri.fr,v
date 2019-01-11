@@ -1,0 +1,57 @@
+head	0.1;
+access;
+symbols;
+locks
+	murphy:0.1.0.204; strict;
+comment	@# @;
+
+
+0.1
+date	2018.09.18.14.18.35;	author murphy;	state Exp;
+branches
+	0.1.0.204;
+next	;
+
+0.1.0.204
+date	2018.09.18.14.18.35;	author murphy;	state Exp;
+branches;
+next	;
+
+
+desc
+@2018-09-18 10:08:59 gam-1
+@
+
+
+0.1
+log
+@0.1
+@
+text
+@\ Taken from forth/chips/scip/16bits/test-dinc.fr
+\ Used in IP checksum calculation.
+
+code c+         \ ( x y -- x+y ) Add; capture carry out in flag.
+        <alux   bplusa Cry popp >.
+        <exit> inline
+
+code +c         \ ( x y -- x+y+C ) Add with flag, i.e. carry in.
+        <alu    bplusax popp >.
+        <exit> inline
+
+code c1+        \ ( x -- x+1 ) Add one; capture carry out in flag.
+        <alux   inca Cry >.
+        <exit> inline
+
+code 0+c        \ ( x -- x' ) Add in flag (carry).
+        <lis    0 +# bplusax >.
+        <exit> inline
+@
+
+
+0.1.0.204
+log
+@0.1.0.204
+@
+text
+@@

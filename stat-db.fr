@@ -4,12 +4,16 @@ decimal
 
 module> status
 
+: set-io
+  @ io! 
+;
+
 \ -------------------------------------------------------------------------
 \ Configuration and status databases
 
 \ Sizes
-16 constant #config/status		\ total size of status
- 2 constant #more-config/status		\ extra status
+d# 22 constant #config/status		\ total size of status
+d#  2 constant #more-config/status		\ extra status
 
 \ Combined database
 create config/status
@@ -39,9 +43,18 @@ config/status 11 + 7	mem-bit:    alarm-type				\ *
 config/status 11 + 0 7	mem-field:  alarm-count				\ *
 config/status 12 +	mem-byte:   cmds-executed			\ *
 config/status 13 +	mem-byte:   cmds-rejected			\ *
+
 config/status 14 + 7	mem-bit:    cause				\ *
 config/status 14 + 6	mem-bit:    mem-write-enb			\ *
 config/status 14 + 0 3	mem-field:  code-ram				\ *
+
+\ 15 unused to keep the following short word aligned.
+
+config/status 16 +	port-word:  instr-control ' set-io , control-a# ,
+instr-control 7		port-bit:   nv-enb
+
+config/status 18 +	mem-word:   instr-status	\ This has to be regularly read.
+config/status 20 +	mem-word:   sccfg-status	\ This has to be regularly read.
 
 \ More; not downlinked
 more-config/status  0 +	mem-byte:   macro-cmds-exec			\ *
@@ -58,5 +71,12 @@ config/status #config/status 0 fill
 \ Set individual values for non-zero defaults
 1 status-int set
 1 sw-version set
+
+: update-digital-status
+    control-a# io@
+	instr-status set
+    sccfg-a# io@
+	sccfg-status set
+;
 
 endmodule>

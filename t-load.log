@@ -1,36 +1,36 @@
 File Opened: t-load
- File Opened: /Project/LLORRI/PROTO/forth/ans/lib/target.fr
- File Closed: /Project/LLORRI/PROTO/forth/ans/lib/target.fr
- File Opened: /Project/LLORRI/PROTO/forth/chips/scip/cross.fr
-  File Opened: /Project/LLORRI/PROTO/forth/loclib/struct.fr
-  File Closed: /Project/LLORRI/PROTO/forth/loclib/struct.fr
-  File Opened: /Project/LLORRI/PROTO/forth/ans/lib/onlyalso.fr
-  File Closed: /Project/LLORRI/PROTO/forth/ans/lib/onlyalso.fr
-  File Opened: /Project/LLORRI/PROTO/forth/ans/lib/condcomp.fr
-  File Closed: /Project/LLORRI/PROTO/forth/ans/lib/condcomp.fr
-  File Opened: /Project/LLORRI/PROTO/forth/chips/scip/asm.fr
-  File Closed: /Project/LLORRI/PROTO/forth/chips/scip/asm.fr
-  File Opened: /Project/LLORRI/PROTO/forth/chips/scip/16bits/model.fr
-  File Closed: /Project/LLORRI/PROTO/forth/chips/scip/16bits/model.fr
-  File Opened: /Project/LLORRI/PROTO/forth/chips/scip/16bits/asm-ext.fr
-  File Closed: /Project/LLORRI/PROTO/forth/chips/scip/16bits/asm-ext.fr
-  File Opened: /Project/LLORRI/PROTO/forth/chips/scip/opt.fr
-  File Closed: /Project/LLORRI/PROTO/forth/chips/scip/opt.fr
-  File Opened: /Project/LLORRI/PROTO/forth/chips/scip/opt-scip.fr
-  File Closed: /Project/LLORRI/PROTO/forth/chips/scip/opt-scip.fr
-  File Opened: /Project/LLORRI/PROTO/forth/chips/meta1.fr
-  File Closed: /Project/LLORRI/PROTO/forth/chips/meta1.fr
-  File Opened: /Project/LLORRI/PROTO/forth/chips/scip/metaasm.fr
-  File Closed: /Project/LLORRI/PROTO/forth/chips/scip/metaasm.fr
-  File Opened: /Project/LLORRI/PROTO/forth/chips/scip/rules.fr
-  File Closed: /Project/LLORRI/PROTO/forth/chips/scip/rules.fr
- File Closed: /Project/LLORRI/PROTO/forth/chips/scip/cross.fr
- File Opened: /Project/LLORRI/PROTO/forth/chips/scip/kernel1.fr
-  File Opened: /Project/LLORRI/PROTO/forth/chips/scip/chpparam.fr
+ File Opened: /Project/LLORRI/Lucy/forth/ans/lib/target.fr
+ File Closed: /Project/LLORRI/Lucy/forth/ans/lib/target.fr
+ File Opened: /Project/LLORRI/Lucy/forth/chips/scip/cross.fr
+  File Opened: /Project/LLORRI/Lucy/forth/loclib/struct.fr
+  File Closed: /Project/LLORRI/Lucy/forth/loclib/struct.fr
+  File Opened: /Project/LLORRI/Lucy/forth/ans/lib/onlyalso.fr
+  File Closed: /Project/LLORRI/Lucy/forth/ans/lib/onlyalso.fr
+  File Opened: /Project/LLORRI/Lucy/forth/ans/lib/condcomp.fr
+  File Closed: /Project/LLORRI/Lucy/forth/ans/lib/condcomp.fr
+  File Opened: /Project/LLORRI/Lucy/forth/chips/scip/asm.fr
+  File Closed: /Project/LLORRI/Lucy/forth/chips/scip/asm.fr
+  File Opened: /Project/LLORRI/Lucy/forth/chips/scip/16bits/model.fr
+  File Closed: /Project/LLORRI/Lucy/forth/chips/scip/16bits/model.fr
+  File Opened: /Project/LLORRI/Lucy/forth/chips/scip/16bits/asm-ext.fr
+  File Closed: /Project/LLORRI/Lucy/forth/chips/scip/16bits/asm-ext.fr
+  File Opened: /Project/LLORRI/Lucy/forth/chips/scip/opt.fr
+  File Closed: /Project/LLORRI/Lucy/forth/chips/scip/opt.fr
+  File Opened: /Project/LLORRI/Lucy/forth/chips/scip/opt-scip.fr
+  File Closed: /Project/LLORRI/Lucy/forth/chips/scip/opt-scip.fr
+  File Opened: /Project/LLORRI/Lucy/forth/chips/meta1.fr
+  File Closed: /Project/LLORRI/Lucy/forth/chips/meta1.fr
+  File Opened: /Project/LLORRI/Lucy/forth/chips/scip/metaasm.fr
+  File Closed: /Project/LLORRI/Lucy/forth/chips/scip/metaasm.fr
+  File Opened: /Project/LLORRI/Lucy/forth/chips/scip/rules.fr
+  File Closed: /Project/LLORRI/Lucy/forth/chips/scip/rules.fr
+ File Closed: /Project/LLORRI/Lucy/forth/chips/scip/cross.fr
+ File Opened: /Project/LLORRI/Lucy/forth/chips/scip/kernel1.fr
+  File Opened: /Project/LLORRI/Lucy/forth/chips/scip/chpparam.fr
        #pcr-se                          define 0001 
        #pcr-ie                          define 0002 
-  File Closed: /Project/LLORRI/PROTO/forth/chips/scip/chpparam.fr
-  File Opened: /Project/LLORRI/PROTO/forth/chips/sysparam.fr
+  File Closed: /Project/LLORRI/Lucy/forth/chips/scip/chpparam.fr
+  File Opened: /Project/LLORRI/Lucy/forth/chips/sysparam.fr
        namesize                         define 0007 
        nf-size                          define 0008 
        wid-step                         define 0001 
@@ -41,14 +41,14 @@ File Opened: t-load
        chars/dump                       define 0008 
        <does-default>                   define da40 
        <remote-does-default>            define ba00 
-  File Closed: /Project/LLORRI/PROTO/forth/chips/sysparam.fr
-  File Opened: /Project/LLORRI/PROTO/forth/chips/scip/vector.fr
+  File Closed: /Project/LLORRI/Lucy/forth/chips/sysparam.fr
+  File Opened: /Project/LLORRI/Lucy/forth/chips/scip/vector.fr
        reset-vector                     define 0000 
 0000 ALLOT 0004 
        int-vector                       define 0004 
 0004 ALLOT 0002 
-  File Closed: /Project/LLORRI/PROTO/forth/chips/scip/vector.fr
-  File Opened: /Project/LLORRI/PROTO/forth/chips/scip/prims.fr
+  File Closed: /Project/LLORRI/Lucy/forth/chips/scip/vector.fr
+  File Opened: /Project/LLORRI/Lucy/forth/chips/scip/prims.fr
 0006   reboot                           code 
 0006 ALLOT 0002 
 0008   branch                           code 
@@ -134,29 +134,29 @@ File Opened: t-load
 01a6   disable                          code 
 01ac   md!                              code 
 01ac   md@                              code 
-  File Closed: /Project/LLORRI/PROTO/forth/chips/scip/prims.fr
-  File Opened: /Project/LLORRI/PROTO/forth/chips/scip/16bits/extprims.fr
+  File Closed: /Project/LLORRI/Lucy/forth/chips/scip/prims.fr
+  File Opened: /Project/LLORRI/Lucy/forth/chips/scip/16bits/extprims.fr
 01ac   set-code                         code 
 01ac   get-code                         code 
 01ac   set-mem                          code 
 01ac   get-mem                          code 
 01ac   near                             code 
 01ac   far                              code 
-  File Closed: /Project/LLORRI/PROTO/forth/chips/scip/16bits/extprims.fr
-  File Opened: /Project/LLORRI/PROTO/forth/chips/bootdata.fr
+  File Closed: /Project/LLORRI/Lucy/forth/chips/scip/16bits/extprims.fr
+  File Opened: /Project/LLORRI/Lucy/forth/chips/bootdata.fr
        nop-boot                         define 01ac 
        NEXT-BOOT                        define 01ae 
 01ae ALLOT 0002 
        EVERY-BOOT                       define 01b0 
 01b0 ALLOT 0002 
-  File Closed: /Project/LLORRI/PROTO/forth/chips/bootdata.fr
-  File Opened: /Project/LLORRI/PROTO/forth/chips/meta2.fr
-  File Closed: /Project/LLORRI/PROTO/forth/chips/meta2.fr
-  File Opened: /Project/LLORRI/PROTO/forth/chips/struct.mfr
-  File Closed: /Project/LLORRI/PROTO/forth/chips/struct.mfr
-  File Opened: /Project/LLORRI/PROTO/forth/chips/boot.mfr
-  File Closed: /Project/LLORRI/PROTO/forth/chips/boot.mfr
-  File Opened: /Project/LLORRI/PROTO/forth/chips/hiprims.fr
+  File Closed: /Project/LLORRI/Lucy/forth/chips/bootdata.fr
+  File Opened: /Project/LLORRI/Lucy/forth/chips/meta2.fr
+  File Closed: /Project/LLORRI/Lucy/forth/chips/meta2.fr
+  File Opened: /Project/LLORRI/Lucy/forth/chips/struct.mfr
+  File Closed: /Project/LLORRI/Lucy/forth/chips/struct.mfr
+  File Opened: /Project/LLORRI/Lucy/forth/chips/boot.mfr
+  File Closed: /Project/LLORRI/Lucy/forth/chips/boot.mfr
+  File Opened: /Project/LLORRI/Lucy/forth/chips/hiprims.fr
 01b2   true                             : 
 01b2   false                            : 
 01b2   ?dup                             : 
@@ -183,17 +183,17 @@ File Opened: t-load
 0284   mod                              : 
 0288   */mod                            : 
 0290   */                               : 
-  File Closed: /Project/LLORRI/PROTO/forth/chips/hiprims.fr
-  File Opened: /Project/LLORRI/PROTO/forth/chips/scip/rules2.fr
-  File Closed: /Project/LLORRI/PROTO/forth/chips/scip/rules2.fr
-  File Opened: /Project/LLORRI/PROTO/forth/chips/scip/stacks.fr
+  File Closed: /Project/LLORRI/Lucy/forth/chips/hiprims.fr
+  File Opened: /Project/LLORRI/Lucy/forth/chips/scip/rules2.fr
+  File Closed: /Project/LLORRI/Lucy/forth/chips/scip/rules2.fr
+  File Opened: /Project/LLORRI/Lucy/forth/chips/scip/stacks.fr
 0294 ALLOT 0080 
        pstack                           define 0314 
 0314 ALLOT 0080 
        rstack                           define 0394 
 0394   spreset                          code 
-  File Closed: /Project/LLORRI/PROTO/forth/chips/scip/stacks.fr
-  File Opened: /Project/LLORRI/PROTO/forth/chips/scip/sched.fr
+  File Closed: /Project/LLORRI/Lucy/forth/chips/scip/stacks.fr
+  File Opened: /Project/LLORRI/Lucy/forth/chips/scip/sched.fr
 0396   head                             constant 0394 variable 
 0398   cproc                            constant 0396 variable 
 0398   .next                            offset: 0000 
@@ -211,16 +211,16 @@ File Opened: t-load
 03b4   resched                          code 
 0428   wait                             code 
 0450   signal                           code 
-  File Closed: /Project/LLORRI/PROTO/forth/chips/scip/sched.fr
-  File Opened: /Project/LLORRI/PROTO/forth/chips/scip/user.mfr
-  File Closed: /Project/LLORRI/PROTO/forth/chips/scip/user.mfr
-  File Opened: /Project/LLORRI/PROTO/forth/chips/scip/stacktask.fr
+  File Closed: /Project/LLORRI/Lucy/forth/chips/scip/sched.fr
+  File Opened: /Project/LLORRI/Lucy/forth/chips/scip/user.mfr
+  File Closed: /Project/LLORRI/Lucy/forth/chips/scip/user.mfr
+  File Opened: /Project/LLORRI/Lucy/forth/chips/scip/stacktask.fr
 04bc   pspreset                         code 
 04d6   depth                            code 
 04fa   under?                           code 
-  File Closed: /Project/LLORRI/PROTO/forth/chips/scip/stacktask.fr
- File Closed: /Project/LLORRI/PROTO/forth/chips/scip/kernel1.fr
- File Opened: /Project/LLORRI/PROTO/forth/chips/scip/16bits/amba/common1/brdparam.fr
+  File Closed: /Project/LLORRI/Lucy/forth/chips/scip/stacktask.fr
+ File Closed: /Project/LLORRI/Lucy/forth/chips/scip/kernel1.fr
+ File Opened: /Project/LLORRI/Lucy/forth/chips/scip/16bits/amba/common1/brdparam.fr
 04fe   io-mem#                          constant 0010 
 04fe   uart-a#                          constant 0000 
 04fe   int-a#                           constant 0004 
@@ -231,8 +231,8 @@ File Opened: t-load
 04fe   FIFOSIZE                         constant 0100 
 0500   stack-errors                     constant 04fe variable 
 0500   check-stack                      : 
- File Closed: /Project/LLORRI/PROTO/forth/chips/scip/16bits/amba/common1/brdparam.fr
- File Opened: /Project/LLORRI/PROTO/forth/chips/scip/16bits/amba/intprims.fr
+ File Closed: /Project/LLORRI/Lucy/forth/chips/scip/16bits/amba/common1/brdparam.fr
+ File Opened: /Project/LLORRI/Lucy/forth/chips/scip/16bits/amba/intprims.fr
 0510   int-nop                          : 
        vector-table                     define 0512 
 0512 ALLOT 0002 
@@ -251,10 +251,10 @@ File Opened: t-load
 0556   get-mask                         : 
 0556   unmask-int                       : 
 0568   mask-int                         : 
- File Closed: /Project/LLORRI/PROTO/forth/chips/scip/16bits/amba/intprims.fr
- File Opened: /Project/LLORRI/PROTO/forth/chips/scip/16bits/amba/intuser.mfr
- File Closed: /Project/LLORRI/PROTO/forth/chips/scip/16bits/amba/intuser.mfr
- File Opened: /Project/LLORRI/PROTO/forth/chips/devices/intttyws.fr
+ File Closed: /Project/LLORRI/Lucy/forth/chips/scip/16bits/amba/intprims.fr
+ File Opened: /Project/LLORRI/Lucy/forth/chips/scip/16bits/amba/intuser.mfr
+ File Closed: /Project/LLORRI/Lucy/forth/chips/scip/16bits/amba/intuser.mfr
+ File Opened: /Project/LLORRI/Lucy/forth/chips/devices/intttyws.fr
 057a   KILL                             constant 0003 
 057a   XOFF                             constant 0013 
 057a   XON                              constant 0011 
@@ -290,8 +290,8 @@ File Opened: t-load
 0778   tty-rcvrawint                    : 
 07b4   tty-size                         constant 021a 
 07b4   tty-init                         : 
- File Closed: /Project/LLORRI/PROTO/forth/chips/devices/intttyws.fr
- File Opened: /Project/LLORRI/PROTO/forth/chips/scip/16bits/amba/uart.fr
+ File Closed: /Project/LLORRI/Lucy/forth/chips/devices/intttyws.fr
+ File Opened: /Project/LLORRI/Lucy/forth/chips/scip/16bits/amba/uart.fr
 0a3c   tty                              constant 0822 makestruct 
 0a3c   uart!                            : 
 0a44   uart-first!                      : 
@@ -303,9 +303,9 @@ File Opened: t-load
 0a86   emit                             : 
 0a8c   key                              : 
 0a92   key?                             : 
- File Closed: /Project/LLORRI/PROTO/forth/chips/scip/16bits/amba/uart.fr
- File Opened: /Project/LLORRI/PROTO/forth/chips/scip/kernel2.fr
-  File Opened: /Project/LLORRI/PROTO/forth/chips/scip/nullproc.fr
+ File Closed: /Project/LLORRI/Lucy/forth/chips/scip/16bits/amba/uart.fr
+ File Opened: /Project/LLORRI/Lucy/forth/chips/scip/kernel2.fr
+  File Opened: /Project/LLORRI/Lucy/forth/chips/scip/nullproc.fr
 0a9a   .pd-run                          offset: 0000 
 0a9a   .lsp-init                        offset: 0002 
 0a9a   .psp-init                        offset: 0004 
@@ -328,38 +328,38 @@ File Opened: t-load
 0b00   init-cproc                       : 
 0b06   initprocess                      : 
 0b52                                    every-boot: 
-  File Closed: /Project/LLORRI/PROTO/forth/chips/scip/nullproc.fr
-  File Opened: /Project/LLORRI/PROTO/forth/chips/procprim.fr
+  File Closed: /Project/LLORRI/Lucy/forth/chips/scip/nullproc.fr
+  File Opened: /Project/LLORRI/Lucy/forth/chips/procprim.fr
 0b7e   insertprocess                    : 
 0b9c   nextprocess                      : 
 0bbe   run                              : 
 0bc2   removeprocess                    : 
 0bf4   kill                             : 
 0bf8   terminate                        : 
-  File Closed: /Project/LLORRI/PROTO/forth/chips/procprim.fr
-  File Opened: /Project/LLORRI/PROTO/forth/chips/process.mfr
-  File Closed: /Project/LLORRI/PROTO/forth/chips/process.mfr
-  File Opened: /Project/LLORRI/PROTO/forth/chips/scip/inits.fr
+  File Closed: /Project/LLORRI/Lucy/forth/chips/procprim.fr
+  File Opened: /Project/LLORRI/Lucy/forth/chips/process.mfr
+  File Closed: /Project/LLORRI/Lucy/forth/chips/process.mfr
+  File Opened: /Project/LLORRI/Lucy/forth/chips/scip/inits.fr
 0bfe   safe                             : 
 0bfe   cacheenable                      code 
 0c04   initlocals                       : 
-  File Closed: /Project/LLORRI/PROTO/forth/chips/scip/inits.fr
- File Closed: /Project/LLORRI/PROTO/forth/chips/scip/kernel2.fr
- File Opened: /Project/LLORRI/PROTO/forth/chips/forthio.fr
+  File Closed: /Project/LLORRI/Lucy/forth/chips/scip/inits.fr
+ File Closed: /Project/LLORRI/Lucy/forth/chips/scip/kernel2.fr
+ File Opened: /Project/LLORRI/Lucy/forth/chips/forthio.fr
 0c04   eol                              constant 000a 
 0c04   cr                               : 
 0c0c   type                             : 
 0c2e   ^h                               constant 0008 
 0c2e   ^u                               constant 0015 
 0c2e   accept                           : 
- File Closed: /Project/LLORRI/PROTO/forth/chips/forthio.fr
- File Opened: /Project/LLORRI/PROTO/forth/lib/modules2.mfr
- File Closed: /Project/LLORRI/PROTO/forth/lib/modules2.mfr
- File Opened: /Project/LLORRI/PROTO/forth/chips/scip/16bits/lib/rtxprims.fr
+ File Closed: /Project/LLORRI/Lucy/forth/chips/forthio.fr
+ File Opened: /Project/LLORRI/Lucy/forth/lib/modules2.mfr
+ File Closed: /Project/LLORRI/Lucy/forth/lib/modules2.mfr
+ File Opened: /Project/LLORRI/Lucy/forth/chips/scip/16bits/lib/rtxprims.fr
 0c98   @+                               : 
 0c98   !+                               : 
- File Closed: /Project/LLORRI/PROTO/forth/chips/scip/16bits/lib/rtxprims.fr
- File Opened: /Project/LLORRI/PROTO/forth/loclib/timers2a.fr
+ File Closed: /Project/LLORRI/Lucy/forth/chips/scip/16bits/lib/rtxprims.fr
+ File Opened: /Project/LLORRI/Lucy/forth/loclib/timers2a.fr
 [.next isn't unique] 
 0c98   .next                            
 [.next isn't unique] offset: 0000 
@@ -390,10 +390,10 @@ File Opened: t-load
 0e0a   executedoers                     : 
 0e40   doit                             : 
 0e5e   canceldoer                       : 
- File Closed: /Project/LLORRI/PROTO/forth/loclib/timers2a.fr
+ File Closed: /Project/LLORRI/Lucy/forth/loclib/timers2a.fr
  File Opened: timers.mfr
  File Closed: timers.mfr
- File Opened: /Project/LLORRI/PROTO/forth/chips/scip/16bits/lib/far2.fr
+ File Opened: /Project/LLORRI/Lucy/forth/chips/scip/16bits/lib/far2.fr
 0e72   far@                             : 
 0e76   far!                             : 
 0e7c   farc@                            : 
@@ -405,8 +405,8 @@ File Opened: t-load
 0f0c   bytes-in                         : 
 0f74   words-out                        : 
 0fe0   words-in                         : 
- File Closed: /Project/LLORRI/PROTO/forth/chips/scip/16bits/lib/far2.fr
- File Opened: /Project/LLORRI/PROTO/forth/chips/instr/lib16/farqueue2.fr
+ File Closed: /Project/LLORRI/Lucy/forth/chips/scip/16bits/lib/far2.fr
+ File Opened: /Project/LLORRI/Lucy/forth/chips/instr/lib16/farqueue2.fr
 104c   .tail                            offset: 0000 
 104c   .head                            offset: 0002 
 104c   farq-struct                      constant 0004 structure 
@@ -418,7 +418,7 @@ File Opened: t-load
 10b2   farq-put                         : 
 10b8   farq-append                      : 
 10be   farq-peek                        : 
- File Closed: /Project/LLORRI/PROTO/forth/chips/instr/lib16/farqueue2.fr
+ File Closed: /Project/LLORRI/Lucy/forth/chips/instr/lib16/farqueue2.fr
  File Opened: extend-boot.fr
 10c2   dp                               constant 10c0 variable 
 10c2   here                             : 
@@ -448,754 +448,719 @@ File Opened: t-load
  File Closed: ./extend.fr
  File Opened: ./extend.mfr
  File Closed: ./extend.mfr
- File Opened: ./extend-mro.fr
+ File Opened: ./extend-llorri.fr
 1170   c+                               code 
 1170   +c                               code 
 1170   c1+                              code 
 1170   0+c                              code 
-1170   8<<                              : 
-1170   d<>                              : 
- File Closed: ./extend-mro.fr
- File Opened: /Project/LLORRI/PROTO/forth/lib/outbits2a.fr
-1176   bits                             constant 0000 
-1176   get                              : 
-117c   set-i                            : 
-1182   set                              : 
-1188   refresh                          : 
-1194   insert-bit                       : 
-11aa   extract-bit                      : 
-11bc   insert-field                     : 
-11d0   extract-field                    : 
-11de   port-w!                          : 
-11f0   port-w@                          : 
-11f4 ALLOT 0002 
-11f6 ALLOT 0002 
-11f8   port-word-access                 constant 11f4 
-11f8   port-b!                          : 
-120a   port-b@                          : 
-120e ALLOT 0002 
-1210 ALLOT 0002 
-1212   port-byte-access                 constant 120e 
-1212   port-bit!                        : 
-1220   port-bit@                        : 
-1228 ALLOT 0002 
-122a ALLOT 0002 
-122c   port-bit-access                  constant 1228 
-122c   port-field!                      : 
-123a   port-field@                      : 
-1242 ALLOT 0002 
-1244 ALLOT 0002 
-1246   port-field-access                constant 1242 
-1246   mem-w!                           : 
-124c   mem-w@                           : 
-1250 ALLOT 0002 
-1252 ALLOT 0002 
-1254   mem-word-access                  constant 1250 
-1254   mem-b!                           : 
-125a   mem-b@                           : 
-125e ALLOT 0002 
-1260 ALLOT 0002 
-1262   mem-byte-access                  constant 125e 
-1262   mem-bit!                         : 
-1272   mem-bit@                         : 
-127a ALLOT 0002 
-127c ALLOT 0002 
-127e   mem-bit-access                   constant 127a 
-127e   mem-field!                       : 
-128e   mem-field@                       : 
-1296 ALLOT 0002 
-1298 ALLOT 0002 
-129a   mem-field-access                 constant 1296 
- File Closed: /Project/LLORRI/PROTO/forth/lib/outbits2a.fr
- File Opened: /Project/LLORRI/PROTO/forth/lib/outbits2.mfr
- File Closed: /Project/LLORRI/PROTO/forth/lib/outbits2.mfr
- File Opened: ./hw.fr
-129a   tlm-mem#                         constant 0002 
-129a   wd-a#                            constant 0002 
-129a   total-mem#                       constant 0060 
-129a   io@                              : 
-12aa   io!                              : 
-12ba   sccfg-a#                         constant 000c 
-12ba   set-io-cfg                       : 
-12be   clr-io-cfg                       : 
-12c2   set-Dpu-cfg                      : 
-12c6   clr-Dpu-cfg                      : 
-12ca   seconds                          : 
-12ca   seconds-d                        : 
- File Closed: ./hw.fr
- File Opened: ./hw-hybrid.fr
-12cc   comm-a#                          constant 000a 
-12cc   comm-cfg-a#                      constant 000c 
-12cc   #rcv-buffer                      constant 0200 
-12cc   xxx                              : 
-12dc   refresh-regs                     : 
-12de   1pps-a-int#                      constant 0002 
-12de   1pps-b-int#                      constant 0003 
-12de   timer-int#                       constant 0004 
-12de   comm-rx-int#                     constant 000a 
-12de   comm-tx-int#                     constant 000b 
-12de   dog-enb-mask#                    constant 8000 
-12de   iemb-sel-mask#                   constant 0004 
-12de   iemb-enb-mask#                   constant 0002 
-12de   iema-enb-mask#                   constant 0001 
- File Closed: ./hw-hybrid.fr
- File Opened: hw-boot.fr
-12de   boot-mem#                        constant 0007 
-12de   #boot-words                      constant 2000 
-12de   eeprom-prog-mem#                 constant 0040 
-12de   eeprom-prog-addr                 constant 0000 
-12de   cause-msk#                       constant 0020 
- File Closed: hw-boot.fr
- File Opened: hw-boot-hybrid.fr
-12de   control-a#                       constant 001a 
-12de   set-io                           : 
-12e2   more-status                      create(adjacent) 12e4 
-12e4 ALLOT 0002 
-12e6   instr-control                    create(adjacent) 12e8 
-12e8 ALLOT 0002 
-12ea ALLOT 0002 port-word: 
-12ec ALLOT 0002 
-12ee ALLOT 0002 
-12f0   nv-enb                           create(adjacent) 12f2 port-bit: 
-12f8   init-specific                    : 
- File Closed: hw-boot-hybrid.fr
- File Opened: ./config.fr
-12fa   #limits-str                      constant 0000 
-12fa   #params-str                      constant 0001 
-12fa   #echo-pkt                        constant 0001 
-12fa   #alarm-pkt                       constant 0002 
-12fa   #checksum-pkt                    constant 0003 
-12fa   #dump-pkt                        constant 0004 
-12fa   #mac-dump-pkt                    constant 0007 
-12fa   #mac-check-pkt                   constant 0008 
-12fa   #limits-pkt                      constant 0009 
-12fa   #params-pkt                      constant 000a 
-12fa   #text-pkt                        constant 000b 
-12fa   #crit-hsk-pkt                    constant 000c 
-12fa   #cmd-null                        constant 0001 
-12fa   #cmd-text                        constant 0021 
-12fa   #cmd-wrap                        constant 0002 
-12fa   #mac-check                       constant 0003 
-12fa   #mac-def                         constant 0004 
-12fa   #mac-delay                       constant 0005 
-12fa   #mac-end                         constant 0006 
-12fa   #mac-enddef                      constant 0007 
-12fa   #mac-halt                        constant 0008 
-12fa   #mac-loop-begin                  constant 0009 
-12fa   #mac-loop-end                    constant 000a 
-12fa   #mac-nest                        constant 000b 
-12fa   #mac-pause                       constant 000c 
-12fa   #mac-read                        constant 000d 
-12fa   #mac-restore                     constant 000e 
-12fa   #mac-run                         constant 000f 
-12fa   #mac-run-silent                  constant 0010 
-12fa   #mac-save                        constant 0011 
-12fa   #mem-check                       constant 0012 
-12fa   #mem-copy                        constant 0013 
-12fa   #mem-load                        constant 0014 
-12fa   #mem-nv-enb                      constant 0026 
-12fa   #mem-read                        constant 0015 
-12fa   #mem-read-abrt                   constant 0016 
-12fa   #mem-run                         constant 0017 
-12fa   #mem-str-load                    constant 0018 
-12fa   #mem-str-read                    constant 0019 
-12fa   #mem-write                       constant 001a 
-12fa   #mon-cntrl                       constant 001b 
-12fa   #saf-cycle                       constant 0025 
-12fa   #saf-off                         constant 0022 
-12fa   #saf-reset                       constant 0023 
-12fa   #saf-timeout                     constant 0024 
-12fa   #stat-clr                        constant 001c 
-12fa   #stat-int                        constant 001d 
-12fa   #stat-mem                        constant 0020 
-12fa   #max-args                        constant 0108 
-12fa   #max-echo-args                   constant 000a 
-12fa   #ok-cmd                          constant 0000 
-12fa   #ok-macro-cmd                    constant 0001 
-12fa   #unknown-cmd                     constant 0002 
-12fa   #badarg-cmd                      constant 0003 
-12fa   #macro-run-cmd                   constant 0004 
-12fa   #need-macro-cmd                  constant 0005 
-12fa   #macro-comp-cmd                  constant 0006 
-12fa   #macro-kill-cmd                  constant 0007 
-12fa   #macro-check-cmd                 constant 0009 
-12fa   #mem-write-cmd                   constant 000a 
-12fa   #bad-pkt-alm                     constant 0001 
-12fa   #no-contexts-alm                 constant 0002 
-12fa   #auto-op-alm                     constant 0003 
-12fa   #too-low-alm                     constant 0080 
-12fa   #too-high-alm                    constant 00c0 
-12fa   #max-macro-addr                  constant 0000 
-12fa   #dump-words                      constant 0040 
-12fa   dump-ok?                         constant ffffffff 
-12fa   #crc-poly                        constant 1021 
-12fa   #crc-seed                        constant ffff 
- File Closed: ./config.fr
- File Opened: ./config-hybrid.fr
-12fa   #itf-vc                          constant 0006 
-12fa   #apid-instr                      constant 03e0 
-12fa   #apids                           constant 0040 
-12fa   start-mask#                      constant 0002 
-12fa   pwr-down-mask#                   constant 0080 
-12fa   ssr-offset#                      constant 0002 
- File Closed: ./config-hybrid.fr
- File Opened: config-boot.fr
-12fa   #struct                          constant 0000 
-12fa   #status-pkt                      constant 0006 
-12fa   #rom-boot                        constant 001e 
-12fa   #rom-go                          constant 001f 
-12fa   #bad-eeprom-cmd                  constant 0008 
-12fa   #max-out-frame                   constant 0400 
-12fa   #max-frames                      constant 0001 
- File Closed: config-boot.fr
- File Opened: /Project/LLORRI/PROTO/forth/chips/instr/lib16/farallot3.fr
-12fa   far-mem-set                      create(adjacent) 12fc 
-12fc ALLOT 00c0 
-13bc   far-h                            : 
-13c2   far-here                         : 
-13c6   far-allot                        : 
- File Closed: /Project/LLORRI/PROTO/forth/chips/instr/lib16/farallot3.fr
- File Opened: /Project/LLORRI/PROTO/forth/chips/instr/lib16/farallot3.mfr
- File Closed: /Project/LLORRI/PROTO/forth/chips/instr/lib16/farallot3.mfr
+ File Closed: ./extend-llorri.fr
+ File Opened: /Project/LLORRI/Lucy/forth/lib/outbits2a.fr
+1170   bits                             constant 0000 
+1170   get                              : 
+1176   set-i                            : 
+117c   set                              : 
+1182   refresh                          : 
+118e   insert-bit                       : 
+11a4   extract-bit                      : 
+11b6   insert-field                     : 
+11ca   extract-field                    : 
+11d8   port-w!                          : 
+11ea   port-w@                          : 
+11ee ALLOT 0002 
+11f0 ALLOT 0002 
+11f2   port-word-access                 constant 11ee 
+11f2   port-b!                          : 
+1204   port-b@                          : 
+1208 ALLOT 0002 
+120a ALLOT 0002 
+120c   port-byte-access                 constant 1208 
+120c   port-bit!                        : 
+121a   port-bit@                        : 
+1222 ALLOT 0002 
+1224 ALLOT 0002 
+1226   port-bit-access                  constant 1222 
+1226   port-field!                      : 
+1234   port-field@                      : 
+123c ALLOT 0002 
+123e ALLOT 0002 
+1240   port-field-access                constant 123c 
+1240   mem-w!                           : 
+1246   mem-w@                           : 
+124a ALLOT 0002 
+124c ALLOT 0002 
+124e   mem-word-access                  constant 124a 
+124e   mem-b!                           : 
+1254   mem-b@                           : 
+1258 ALLOT 0002 
+125a ALLOT 0002 
+125c   mem-byte-access                  constant 1258 
+125c   mem-bit!                         : 
+126c   mem-bit@                         : 
+1274 ALLOT 0002 
+1276 ALLOT 0002 
+1278   mem-bit-access                   constant 1274 
+1278   mem-field!                       : 
+1288   mem-field@                       : 
+1290 ALLOT 0002 
+1292 ALLOT 0002 
+1294   mem-field-access                 constant 1290 
+ File Closed: /Project/LLORRI/Lucy/forth/lib/outbits2a.fr
+ File Opened: /Project/LLORRI/Lucy/forth/lib/outbits2.mfr
+ File Closed: /Project/LLORRI/Lucy/forth/lib/outbits2.mfr
+ File Opened: ./hw-llorri.fr
+1294   tlm-mem#                         constant 0002 
+1294   wd-a#                            constant 0002 
+1294   comm-a#                          constant 000a 
+1294   sccfg-a#                         constant 000c 
+1294   sccfg-clr-a#                     constant 000e 
+1294   control-a#                       constant 001a 
+1294   strobe-s-a#                      constant 001c 
+1294   strobe-r-a#                      constant 001e 
+1294   total-mem#                       constant 0060 
+1294   1pps-a-int#                      constant 0002 
+1294   1pps-b-int#                      constant 0003 
+1294   timer-int#                       constant 0004 
+1294   comm-rx-int#                     constant 000a 
+1294   comm-tx-int#                     constant 000b 
+1294   io@                              : 
+12a4   io!                              : 
+12b4   set-io-cfg                       : 
+12b8   clr-io-cfg                       : 
+12bc   uart-ena-mask#                   constant 0008 
+12bc   iemb-sel-mask#                   constant 0004 
+12bc   iemb-enb-mask#                   constant 0002 
+12bc   iema-enb-mask#                   constant 0001 
+12bc   seconds                          : 
+12bc   #rcv-buffer                      constant 0200 
+12bc   refresh-regs                     : 
+12be   dog-enb-mask#                    constant 8000 
+12be   boot-mem#                        constant 0007 
+12be   #boot-words                      constant 4000 
+12be   eeprom-prog-mem#                 constant 0040 
+12be   eeprom-prog-addr                 constant 0000 
+12be   cause-msk#                       constant 0020 
+ File Closed: ./hw-llorri.fr
+ File Opened: ./config-llorri.fr
+12be   #limits-str                      constant 0000 
+12be   #params-str                      constant 0001 
+12be   #echo-pkt                        constant 0001 
+12be   #alarm-pkt                       constant 0002 
+12be   #checksum-pkt                    constant 0003 
+12be   #dump-pkt                        constant 0004 
+12be   #status-pkt                      constant 0006 
+12be   #mac-dump-pkt                    constant 0007 
+12be   #mac-check-pkt                   constant 0008 
+12be   #limits-pkt                      constant 0009 
+12be   #params-pkt                      constant 000a 
+12be   #text-pkt                        constant 000b 
+12be   #cmd-null                        constant 0001 
+12be   #cmd-text                        constant 0021 
+12be   #cmd-wrap                        constant 0002 
+12be   #mac-check                       constant 0003 
+12be   #mac-def                         constant 0004 
+12be   #mac-delay                       constant 0005 
+12be   #mac-end                         constant 0006 
+12be   #mac-enddef                      constant 0007 
+12be   #mac-halt                        constant 0008 
+12be   #mac-loop-begin                  constant 0009 
+12be   #mac-loop-end                    constant 000a 
+12be   #mac-nest                        constant 000b 
+12be   #mac-pause                       constant 000c 
+12be   #mac-read                        constant 000d 
+12be   #mac-restore                     constant 000e 
+12be   #mac-run                         constant 000f 
+12be   #mac-run-silent                  constant 0010 
+12be   #mac-save                        constant 0011 
+12be   #mem-check                       constant 0012 
+12be   #mem-copy                        constant 0013 
+12be   #mem-load                        constant 0014 
+12be   #mem-read                        constant 0015 
+12be   #mem-read-abrt                   constant 0016 
+12be   #mem-run                         constant 0017 
+12be   #mem-str-load                    constant 0018 
+12be   #mem-str-read                    constant 0019 
+12be   #mem-write                       constant 001a 
+12be   #mon-cntrl                       constant 001b 
+12be   #stat-clr                        constant 001c 
+12be   #stat-int                        constant 001d 
+12be   #rom-boot                        constant 001e 
+12be   #rom-go                          constant 001f 
+12be   #stat-mem                        constant 0020 
+12be   #saf-off                         constant 0022 
+12be   #saf-reset                       constant 0023 
+12be   #saf-timeout                     constant 0024 
+12be   #mem-nv-enb                      constant 0026 
+12be   #max-args                        constant 0108 
+12be   #struct                          constant 0000 
+12be   #max-echo-args                   constant 000a 
+12be   #ok-cmd                          constant 0000 
+12be   #ok-macro-cmd                    constant 0001 
+12be   #unknown-cmd                     constant 0002 
+12be   #badarg-cmd                      constant 0003 
+12be   #macro-run-cmd                   constant 0004 
+12be   #need-macro-cmd                  constant 0005 
+12be   #macro-comp-cmd                  constant 0006 
+12be   #macro-kill-cmd                  constant 0007 
+12be   #bad-eeprom-cmd                  constant 0008 
+12be   #macro-check-cmd                 constant 0009 
+12be   #mem-write-cmd                   constant 000a 
+12be   #bad-pkt-alm                     constant 0001 
+12be   #no-contexts-alm                 constant 0002 
+12be   #auto-op-alm                     constant 0003 
+12be   #too-low-alm                     constant 0080 
+12be   #too-high-alm                    constant 00c0 
+12be   #max-macro-addr                  constant 0000 
+12be   #dump-words                      constant 0040 
+12be   dump-ok?                         constant ffffffff 
+12be   #crc-poly                        constant 1021 
+12be   #crc-seed                        constant ffff 
+12be   #max-out-frame                   constant 0400 
+ File Closed: ./config-llorri.fr
+ File Opened: /Project/LLORRI/Lucy/forth/chips/instr/lib16/farallot3.fr
+12be   far-mem-set                      create(adjacent) 12c0 
+12c0 ALLOT 00c0 
+1380   far-h                            : 
+1386   far-here                         : 
+138a   far-allot                        : 
+ File Closed: /Project/LLORRI/Lucy/forth/chips/instr/lib16/farallot3.fr
+ File Opened: /Project/LLORRI/Lucy/forth/chips/instr/lib16/farallot3.mfr
+ File Closed: /Project/LLORRI/Lucy/forth/chips/instr/lib16/farallot3.mfr
  File Opened: stat-db.fr
-13d6   status                           constant 0000 
-13d6   #config/status                   constant 0010 
-13d6   #more-config/status              constant 0002 
-13d6   config/status                    create(adjacent) 13d8 
-13d8 ALLOT 0010 
-13e8   more-config/status               create(adjacent) 13ea 
-13ea ALLOT 0002 
-13ec   status-int                       create(adjacent) 13ee mem-word: 
-13f2   tlm-volume                       create(adjacent) 13f4 mem-word: 
-13f8   watch-addr                       create(adjacent) 13fa mem-word: 
-13fe   watch-mem                        create(adjacent) 1400 mem-byte: 
-1404   watch-byte1                      create(adjacent) 1406 mem-byte: 
-140a   watch-byte2                      create(adjacent) 140c mem-byte: 
-1410   sw-version                       create(adjacent) 1412 mem-byte: 
-1416   alarm-id                         create(adjacent) 1418 mem-byte: 
-141c   alarm-type                       create(adjacent) 141e mem-bit: 
-1424   alarm-count                      create(adjacent) 1426 mem-field: 
-142e   cmds-executed                    create(adjacent) 1430 mem-byte: 
-1434   cmds-rejected                    create(adjacent) 1436 mem-byte: 
-143a   cause                            create(adjacent) 143c mem-bit: 
-1442   mem-write-enb                    create(adjacent) 1444 mem-bit: 
-144a   code-ram                         create(adjacent) 144c mem-field: 
-1454   macro-cmds-exec                  create(adjacent) 1456 mem-byte: 
-145a   macro-cmds-rej                   create(adjacent) 145c mem-byte: 
+139a   status                           constant 0000 
+139a   set-io                           : 
+139e   #config/status                   constant 0016 
+139e   #more-config/status              constant 0002 
+139e   config/status                    create(adjacent) 13a0 
+13a0 ALLOT 0016 
+13b6   more-config/status               create(adjacent) 13b8 
+13b8 ALLOT 0002 
+13ba   status-int                       create(adjacent) 13bc mem-word: 
+13c0   tlm-volume                       create(adjacent) 13c2 mem-word: 
+13c6   watch-addr                       create(adjacent) 13c8 mem-word: 
+13cc   watch-mem                        create(adjacent) 13ce mem-byte: 
+13d2   watch-byte1                      create(adjacent) 13d4 mem-byte: 
+13d8   watch-byte2                      create(adjacent) 13da mem-byte: 
+13de   sw-version                       create(adjacent) 13e0 mem-byte: 
+13e4   alarm-id                         create(adjacent) 13e6 mem-byte: 
+13ea   alarm-type                       create(adjacent) 13ec mem-bit: 
+13f2   alarm-count                      create(adjacent) 13f4 mem-field: 
+13fc   cmds-executed                    create(adjacent) 13fe mem-byte: 
+1402   cmds-rejected                    create(adjacent) 1404 mem-byte: 
+1408   cause                            create(adjacent) 140a mem-bit: 
+1410   mem-write-enb                    create(adjacent) 1412 mem-bit: 
+1418   code-ram                         create(adjacent) 141a mem-field: 
+1422   instr-control                    create(adjacent) 1424 
+1424 ALLOT 0002 
+1426 ALLOT 0002 port-word: 
+1428 ALLOT 0002 
+142a ALLOT 0002 
+142c   nv-enb                           create(adjacent) 142e port-bit: 
+1434   instr-status                     create(adjacent) 1436 mem-word: 
+143a   sccfg-status                     create(adjacent) 143c mem-word: 
+1440   macro-cmds-exec                  create(adjacent) 1442 mem-byte: 
+1446   macro-cmds-rej                   create(adjacent) 1448 mem-byte: 
+144c   update-digital-status            : 
  File Closed: stat-db.fr
- File Opened: /Project/LLORRI/PROTO/forth/chips/instr/lib16/sumcrc.fr
-1460   crc                              : 
-1482   checksum                         : 
- File Closed: /Project/LLORRI/PROTO/forth/chips/instr/lib16/sumcrc.fr
+ File Opened: /Project/LLORRI/Lucy/forth/chips/instr/lib16/sumcrc.fr
+145c   crc                              : 
+147e   checksum                         : 
+ File Closed: /Project/LLORRI/Lucy/forth/chips/instr/lib16/sumcrc.fr
  File Opened: stubs.fr
-14ae   append-cmd                       : 
-14b0   macro-ready?                     : 
-14b2   macro-load                       : 
-14b4   macro-echo?                      : 
-14b6   run-macro                        : 
-14b8   try-mac-dump                     : 
-14ba   all-is-well                      : 
-14bc   exec-slot                        : 
-14be   init-slots                       : 
+14aa   append-cmd                       : 
+14ac   macro-ready?                     : 
+14ae   macro-load                       : 
+14b0   macro-echo?                      : 
+14b2   run-macro                        : 
+14b4   try-mac-dump                     : 
+14b6   all-is-well                      : 
+14b8   exec-slot                        : 
+14ba   init-slots                       : 
  File Closed: stubs.fr
  File Opened: ./time.fr
-14c0   time                             constant 0000 
-14c0   #1pps-nom                        constant 03e8 
-14c0   #1pps-maxerr                     constant 0032 
-14c0   #1pps-phase                      constant 01f4 
-14c4   future-time                      constant 14c0 2variable 
-14c6   future-time-sub                  constant 14c4 variable 
-14ca   s/c-time                         constant 14c6 2variable 
-14cc   s/c-time-sub                     constant 14ca variable 
-14ce   new-time                         constant 14cc variable 
-14d2   1pps-time                        constant 14ce 2variable 
-14d4   delta-time                       constant 14d2 variable 
-14d6   1pps-interval                    constant 14d4 variable 
-14d6   set-time                         : 
-14f6   sync-time                        : 
-1522   prop-time                        : 
-159a   get-time                         : 
-15a4   get-s/c-time                     : 
+14bc   time                             constant 0000 
+14bc   #1pps-nom                        constant 03e8 
+14c0   future-time                      constant 14bc 2variable 
+14c2   future-time-sub                  constant 14c0 variable 
+14c6   s/c-time                         constant 14c2 2variable 
+14c8   s/c-time-sub                     constant 14c6 variable 
+14ca   new-time                         constant 14c8 variable 
+14ca   set-time                         : 
+14ea   sync-time                        : 
+1516   prop-time                        : 
+1540   get-time                         : 
+154a   get-s/c-time                     : 
  File Closed: ./time.fr
  File Opened: ./host-io.fr
-15bc   host                             constant 0000 
-15be   instr-code                       constant 15bc variable 
-15be   init-identity                    : 
-15ce   #instr-code                      : 
-15d6   side-a                           constant 15d4 variable 
-15d8   side-b                           constant 15d6 variable 
-15d8   init-side                        : 
-15dc   side-select                      : 
-1604   use-side-a                       : 
-161a   use-side-b                       : 
-1630   rcv-buffer                       constant 0000 
-1630   rcv-buffer-end                   constant 0200 
-1632   rcv-scan-get                     constant 1630 variable 
-1634   rcv-scan-put                     constant 1632 variable 
-1636   rcv-count                        constant 1634 variable 
-1638   rcv/cmd-event                    constant 1636 variable 
-1638   cmd-signal                       : 
-1640   cmd-wait                         : 
-1648   handle-rcv                       : 
-168a                                    int: 000a 
-168c   rcv-empty?                       : 
-1694   rcv-byte                         : 
-16c8   timeout-event                    create(adjacent) 16ca do: 
-16d4   init-host-input                  : 
-16f4   xmit-scan                        constant 16f0 2variable 
-16f6   xmit-left                        constant 16f4 variable 
-16f6   handle-xmit                      : 
-172a                                    int: 000b 
-172c   start-frame                      : 
-1746   1hz-sem                          constant 1744 variable 
-1748   dt-sem                           constant 1746 variable 
-1748   sync-1hz                         : 
-1760   sync-dead-time                   : 
-1768                                    int: 0002 
-176c                                    int: 0003 
-1772   debug-timer-int                  constant 1770 variable 
-1772                                    int: 0004 
-17a6   init-host-reg                    : 
-17ae   init-host-io                     : 
+1562   host                             constant 0000 
+1564   side-a                           constant 1562 variable 
+1566   side-b                           constant 1564 variable 
+1566   init-side                        : 
+156e   side-select                      : 
+1596   use-side-a                       : 
+15ac   use-side-b                       : 
+15c2   rcv-buffer                       constant 0000 
+15c2   rcv-buffer-end                   constant 0200 
+15c4   rcv-scan-get                     constant 15c2 variable 
+15c6   rcv-scan-put                     constant 15c4 variable 
+15c8   rcv-count                        constant 15c6 variable 
+15ca   rcv/cmd-event                    constant 15c8 variable 
+15ca   cmd-signal                       : 
+15d2   cmd-wait                         : 
+15da   handle-rcv                       : 
+161c                                    int: 000a 
+161e   rcv-empty?                       : 
+1626   rcv-byte                         : 
+165a   timeout-event                    create(adjacent) 165c do: 
+1666   init-host-input                  : 
+1686   xmit-scan                        constant 1682 2variable 
+1688   xmit-left                        constant 1686 variable 
+1688   handle-xmit                      : 
+16bc                                    int: 000b 
+16be   start-frame                      : 
+16d8   1hz-sem                          constant 16d6 variable 
+16da   dt-sem                           constant 16d8 variable 
+16da   sync-1hz                         : 
+16f2   sync-dead-time                   : 
+16fa                                    int: 0002 
+16fe                                    int: 0003 
+1702                                    int: 0004 
+1726   init-host-reg                    : 
+172e   init-host-io                     : 
  File Closed: ./host-io.fr
  File Opened: ./host-tlm.fr
-17b8   .ip-len                          offset: 0002 
-17b8   .ip-proto                        offset: 0009 
-17b8   .ip-sum                          offset: 000a 
-17b8   .ip-src                          offset: 000c 
-17b8   .ip-dst                          offset: 0010 
-17b8   ip-head-struct                   constant 0014 structure 
-17b8   .udp-src                         offset: 0000 
-17b8   .udp-dst                         offset: 0002 
-17b8   .udp-len                         offset: 0004 
-17b8   .udp-sum                         offset: 0006 
-17b8   udp-head-struct                  constant 0008 structure 
-17b8   .h-ip                            offset: 0000 
-17b8   .h-udp                           offset: 0014 
-17b8   head-struct                      constant 001c structure 
-17b8   default-header                   create(adjacent) 17ba 
-17ba ALLOT 0001 
-17bb ALLOT 0001 
-17bc ALLOT 0002 
-17be ALLOT 0002 
-17c0 ALLOT 0002 
-17c2 ALLOT 0001 
-17c3 ALLOT 0001 
-17c4 ALLOT 0002 
-17c6 ALLOT 0001 
-17c7 ALLOT 0001 
-17c8 ALLOT 0001 
-17c9 ALLOT 0001 
-17ca ALLOT 0001 
-17cb ALLOT 0001 
-17cc ALLOT 0001 
-17cd ALLOT 0001 
-17ce ALLOT 0002 
-17d0 ALLOT 0002 
-17d2 ALLOT 0002 
-17d4 ALLOT 0002 
-17d6   -zero                            constant ffffffff 
-17d6   +ones                            : 
-17d6   ones-sum                         : 
-17f4   ip-head-checksum                 : 
-17fc   udp-checksum                     : 
-1836   init-default-ip                  : 
-1858   .cip-marker                      offset: 0000 
-1858   .cip-len                         offset: 0004 
-1858   .cip-type                        offset: 0006 
-1858   #cip-time                        constant 0001 
-1858   #cip-cmd                         constant 0002 
-1858   #cip-noop                        constant 0003 
-1858   #cip-down                        constant 0004 
-1858   #cip-proc                        constant 0005 
-1858   #cip-sci                         constant 0006 
-1858   #cip-safe                        constant 0007 
-1858   .cip-trans                       offset: 0007 
-1858   cip-head-struct                  constant 0008 structure 
-1858   prep-cip-hdr                     : 
-1872   complete-cip-hdr                 : 
-1876   cip-good?                        : 
-18a8   #n-out-frame                     constant 03e4 
+1736   .ip-len                          offset: 0002 
+1736   .ip-proto                        offset: 0009 
+1736   .ip-sum                          offset: 000a 
+1736   .ip-src                          offset: 000c 
+1736   .ip-dst                          offset: 0010 
+1736   ip-head-struct                   constant 0014 structure 
+1736   .udp-src                         offset: 0000 
+1736   .udp-dst                         offset: 0002 
+1736   .udp-len                         offset: 0004 
+1736   .udp-sum                         offset: 0006 
+1736   udp-head-struct                  constant 0008 structure 
+1736   .h-ip                            offset: 0000 
+1736   .h-udp                           offset: 0014 
+1736   head-struct                      constant 001c structure 
+1736   default-header                   create(adjacent) 1738 
+1738 ALLOT 0001 
+1739 ALLOT 0001 
+173a ALLOT 0002 
+173c ALLOT 0002 
+173e ALLOT 0002 
+1740 ALLOT 0001 
+1741 ALLOT 0001 
+1742 ALLOT 0002 
+1744 ALLOT 0001 
+1745 ALLOT 0001 
+1746 ALLOT 0001 
+1747 ALLOT 0001 
+1748 ALLOT 0001 
+1749 ALLOT 0001 
+174a ALLOT 0001 
+174b ALLOT 0001 
+174c ALLOT 0002 
+174e ALLOT 0002 
+1750 ALLOT 0002 
+1752 ALLOT 0002 
+1754   -zero                            constant ffffffff 
+1754   +ones                            : 
+1754   ones-sum                         : 
+1772   ip-head-checksum                 : 
+177a   udp-checksum                     : 
+17b4   .cip-marker                      offset: 0000 
+17b4   .cip-len                         offset: 0004 
+17b4   .cip-type                        offset: 0006 
+17b4   #cip-time                        constant 0001 
+17b4   #cip-cmd                         constant 0002 
+17b4   #cip-noop                        constant 0003 
+17b4   #cip-down                        constant 0004 
+17b4   #cip-proc                        constant 0005 
+17b4   #cip-sci                         constant 0006 
+17b4   #cip-safe                        constant 0007 
+17b4   .cip-trans                       offset: 0007 
+17b4   cip-head-struct                  constant 0008 structure 
+17b4   prep-cip-hdr                     : 
+17ce   complete-cip-hdr                 : 
+17d2   cip-good?                        : 
+1804   #n-out-frame                     constant 03e4 
 [.next isn't unique] 
-18a8   .next                            
+1804   .next                            
 [.next isn't unique] offset: 0000 
-18a8   .frm-head                        offset: 0002 
-18a8   .frm-data                        offset: 001e 
-18a8   frame-struct                     constant 0402 structure 
-18a8   #frames                          constant 003f 
-18a8   telemetry-frames                 constant 0200 
-18ac   free-frame-q                     constant 18a8 makestruct 
-18b0   down-frame-q                     constant 18ac makestruct 
-18b4   allo-frame-q                     constant 18b0 makestruct 
-18b6   alloc-count                      constant 18b4 variable 
-1c9a   frame-buffer                     constant 18b6 makestruct 
-1c9c   frame-len                        constant 1c9a variable 
-1c9e   frame-sem                        constant 1c9c variable 
-1c9e   init-ip                          : 
-1cbc   complete-ip                      : 
-1cd8   get-tlm                          : 
-1ce0   release-tlm                      : 
-1ce8   reserve-frames                   : 
-1d26   flush-frame                      : 
-1d70   prepare-space                    : 
-1d86   alloc-space                      : 
-1d9c   noop-msg-struct                  constant 0008 
-1d9e   curr-frame                       constant 1d9c variable 
-1da0   pend-frame                       constant 1d9e variable 
-1da0   more-downlink?                   : 
-1dc6   start-downlink                   : 
-1e08   proc-dead-time                   : 
-1e0e   try-partial-frame                : 
-1e3a   .safe-cip-hdr                    offset: 0000 
-1e3a   .safe-code                       offset: 0008 
-1e3a   safe-msg-struct                  constant 000c structure 
-1e3a   req-power-off                    : 
-1e66   frac-volume                      constant 1e64 variable 
-1e66   clear-tlm-volume                 : 
-1e78   cnt-tlm-volume                   : 
-1e96   .sub-cip-hdr                     offset: 0000 
-1e96   .sub-idp-id                      offset: 0008 
-1e96   #last-seg                        constant 4000 
-1e96   #first-seg                       constant 2000 
-1e96   .sub-idp-len                     offset: 000a 
-1e96   .sub-idp-time                    offset: 000c 
-1e96   subpkt-head-struct               constant 0010 structure 
-1e96   instr-ids                        create(adjacent) 1e98 
-1e98 ALLOT 0002 
-1e9a ALLOT 0002 
-1e9c ALLOT 0002 
-1e9e   #n-max-subpkt                    constant 03d4 
-1ea0   subpkt-msg                       constant 1e9e variable 
-1ea0   .pkt-id                          offset: 0000 
-1ea0   .pkt-src                         offset: 0002 
-1ea0   .pkt-len                         offset: 0006 
-1ea0   .pkt-src2                        offset: 0008 
-1ea0   .pkt-len2                        offset: 000c 
-1ea0   .pkt-padlen                      offset: 000e 
-1ea0   .pkt-time                        offset: 0010 
-1ea0   pkt-struct                       constant 0014 structure 
-1ea0   zeros                            create(adjacent) 1ea2 
-1ea2 ALLOT 0001 
-1ea3 ALLOT 0001 
-1ea4 ALLOT 0001 
-1ea6   pkt-desc-size                    constant 0014 
-1ea6   time-tag-pkt                     : 
-1eaa   tag-pkt                          : 
-1eb4   pkt-id!                          : 
-1eb8   pkt-group!                       : 
-1ebc   #first-pkt                       constant 0000 
-1ebc   #cont-pkt                        constant 0000 
-1ebc   #last-pkt                        constant 0000 
-1ebc   #none-pkt                        constant 0000 
-1ebc   pkt-src!                         : 
-1ec6   pkt-src-more!                    : 
-1ed0   init-pkt                         : 
-1ee2   pad-subpkt                       : 
-1efa   start-subpkt                     : 
-1f50   suspend-subpkt                   : 
-1f7c   resume-subpkt                    : 
-1fa8   stop-subpkt                      : 
-1fce   load-subpkt                      : 
-1fe2   segment-subpkt                   : 
-201a   send-seg-subpkt                  : 
-2046   send-unseg-subpkt                : 
-2072   segment?                         : 
-2082   send-pkt                         : 
-20b0   init-packet                      : 
-20b2   init-host-tlm                    : 
+1804   .frm-head                        offset: 0002 
+1804   .frm-data                        offset: 001e 
+1804   frame-struct                     constant 0402 structure 
+1804   #frames                          constant 003f 
+1804   telemetry-frames                 constant 0200 
+1808   free-frame-q                     constant 1804 makestruct 
+180c   down-frame-q                     constant 1808 makestruct 
+1810   allo-frame-q                     constant 180c makestruct 
+1812   alloc-count                      constant 1810 variable 
+1bf6   frame-buffer                     constant 1812 makestruct 
+1bf8   frame-len                        constant 1bf6 variable 
+1bfa   frame-sem                        constant 1bf8 variable 
+1bfa   init-ip                          : 
+1c18   complete-ip                      : 
+1c34   get-tlm                          : 
+1c3c   release-tlm                      : 
+1c44   reserve-frames                   : 
+1c82   flush-frame                      : 
+1ccc   prepare-space                    : 
+1ce2   alloc-space                      : 
+1cf8   noop-msg-struct                  constant 0008 
+1cfa   curr-frame                       constant 1cf8 variable 
+1cfc   pend-frame                       constant 1cfa variable 
+1cfc   more-downlink?                   : 
+1d22   start-downlink                   : 
+1d64   proc-dead-time                   : 
+1d6a   try-partial-frame                : 
+1d96   .safe-cip-hdr                    offset: 0000 
+1d96   .safe-code                       offset: 0008 
+1d96   safe-msg-struct                  constant 000c structure 
+1d96   req-power-off                    : 
+1dc2   frac-volume                      constant 1dc0 variable 
+1dc2   clear-tlm-volume                 : 
+1dd4   cnt-tlm-volume                   : 
+1df2   .sub-cip-hdr                     offset: 0000 
+1df2   .sub-idp-id                      offset: 0008 
+1df2   #last-seg                        constant 4000 
+1df2   #first-seg                       constant 2000 
+1df2   .sub-idp-len                     offset: 000a 
+1df2   .sub-idp-time                    offset: 000c 
+1df2   subpkt-head-struct               constant 0010 structure 
+1df2   #n-max-subpkt                    constant 03d4 
+1df4   subpkt-msg                       constant 1df2 variable 
+1df4   .pkt-id                          offset: 0000 
+1df4   .pkt-src                         offset: 0002 
+1df4   .pkt-len                         offset: 0006 
+1df4   .pkt-src2                        offset: 0008 
+1df4   .pkt-len2                        offset: 000c 
+1df4   .pkt-padlen                      offset: 000e 
+1df4   .pkt-time                        offset: 0010 
+1df4   pkt-struct                       constant 0014 structure 
+1df4   zeros                            create(adjacent) 1df6 
+1df6 ALLOT 0001 
+1df7 ALLOT 0001 
+1df8 ALLOT 0001 
+1dfa   pkt-desc-size                    constant 0014 
+1dfa   time-tag-pkt                     : 
+1dfe   tag-pkt                          : 
+1e08   pkt-id!                          : 
+1e0c   pkt-group!                       : 
+1e10   #first-pkt                       constant 0000 
+1e10   #cont-pkt                        constant 0000 
+1e10   #last-pkt                        constant 0000 
+1e10   #none-pkt                        constant 0000 
+1e10   pkt-src!                         : 
+1e1a   pkt-src-more!                    : 
+1e24   init-pkt                         : 
+NOTE NOTE: Status is ApId 6. This is BOOT! 
+1e36   id-to-cip-type                   : 
+1e44   pad-subpkt                       : 
+1e5c   start-subpkt                     : 
+1e9a   suspend-subpkt                   : 
+1ec8   resume-subpkt                    : 
+1ef4   stop-subpkt                      : 
+1f1c   load-subpkt                      : 
+1f30   segment-subpkt                   : 
+1f68   send-seg-subpkt                  : 
+1f94   send-unseg-subpkt                : 
+1fc0   segment?                         : 
+1fd0   send-pkt                         : 
+1ffe   init-packet                      : 
+2000   init-host-tlm                    : 
  File Closed: ./host-tlm.fr
- File Opened: /Project/LLORRI/PROTO/forth/chips/instr/lib16/memory1.fr
-20fe   m-memid                          constant 20fc variable 
-2100   m-addr                           constant 20fe variable 
-2100   open-mem                         : 
-2112   seek-memid                       : 
-211a   seek-memaddr                     : 
-2122   step-mem                         : 
-2128   mem-pos                          : 
-2134   mem-peek                         : 
-214a   >mem                             : 
-2164   close-mem                        : 
- File Closed: /Project/LLORRI/PROTO/forth/chips/instr/lib16/memory1.fr
- File Opened: /Project/LLORRI/PROTO/forth/chips/instr/lib16/farcopy.fr
-2166   copy                             : 
- File Closed: /Project/LLORRI/PROTO/forth/chips/instr/lib16/farcopy.fr
- File Opened: /Project/LLORRI/PROTO/forth/chips/instr/lib16/cmd-dict1.fr
-219a   commands                         constant 0000 
-219a   .cmd-opcode                      offset: 0000 
-219a   .cmd-args                        offset: 0002 
-219a   .cmd-nargs                       offset: 010a 
-219a   command-struct                   constant 010c structure 
-22a6   command-buffer                   constant 219a makestruct 
-22a8   command-result                   constant 22a6 variable 
-22aa   in-macro                         constant 22a8 variable 
-22aa   set-opcode                       : 
-22b2   load-args                        : 
-22c6   set-cmd-length                   : 
-22d0   get-command                      : 
-22dc   n-args                           : 
-22e2   opcode                           : 
-22e8   args                             : 
-22ee   arg0                             : 
-22f4   arg1                             : 
-22fa   arg2                             : 
-2300   arg3                             : 
-2306   arg4                             : 
-230c   arg5                             : 
-2312   arg6                             : 
-2318   arg7                             : 
-231e   th-arg                           : 
-2324   cmd-error                        : 
+ File Opened: /Project/LLORRI/Lucy/forth/chips/instr/lib16/memory1.fr
+204a   m-memid                          constant 2048 variable 
+204c   m-addr                           constant 204a variable 
+204c   open-mem                         : 
+205e   seek-memid                       : 
+2066   seek-memaddr                     : 
+206e   step-mem                         : 
+2074   mem-pos                          : 
+2080   mem-peek                         : 
+2096   >mem                             : 
+20b0   close-mem                        : 
+ File Closed: /Project/LLORRI/Lucy/forth/chips/instr/lib16/memory1.fr
+ File Opened: /Project/LLORRI/Lucy/forth/chips/instr/lib16/farcopy.fr
+20b2   copy                             : 
+ File Closed: /Project/LLORRI/Lucy/forth/chips/instr/lib16/farcopy.fr
+ File Opened: /Project/LLORRI/Lucy/forth/chips/instr/lib16/cmd-dict1.fr
+20e6   commands                         constant 0000 
+20e6   .cmd-opcode                      offset: 0000 
+20e6   .cmd-args                        offset: 0002 
+20e6   .cmd-nargs                       offset: 010a 
+20e6   command-struct                   constant 010c structure 
+21f2   command-buffer                   constant 20e6 makestruct 
+21f4   command-result                   constant 21f2 variable 
+21f6   in-macro                         constant 21f4 variable 
+21f6   set-opcode                       : 
+21fe   load-args                        : 
+2212   set-cmd-length                   : 
+221c   get-command                      : 
+2228   n-args                           : 
+222e   opcode                           : 
+2234   args                             : 
+223a   arg0                             : 
+2240   arg1                             : 
+2246   arg2                             : 
+224c   arg3                             : 
+2252   arg4                             : 
+2258   arg5                             : 
+225e   arg6                             : 
+2264   arg7                             : 
+226a   th-arg                           : 
+2270   cmd-error                        : 
 [.next isn't unique] 
-232c   .next                            
+2278   .next                            
 [.next isn't unique] offset: 0000 
-232c   .opcode                          offset: 0002 
-232c   .nargs                           offset: 0004 
-232c   .vector                          offset: 0006 
-232c   hash-command-struct              constant 0008 structure 
-232e   hash-access                      constant 232c variable 
-232e   hash-table                       create(adjacent) 2330 
-2330 ALLOT 0020 
-2350   hash-opcode                      : 
-2358   check-cmd                        : 
-2366   lookup-cmd                       : 
-2388   trim-args                        : 
-23a2   exec-cmd                         : 
-23b0   rt-cmd                           : 
-23bc   macro-cmd                        : 
-23c8   init-cmd-table                   : 
-23dc   in-macro?                        : 
-23e2   register-cmd/args                : 
-2412   register-cmd                     : 
- File Closed: /Project/LLORRI/PROTO/forth/chips/instr/lib16/cmd-dict1.fr
- File Opened: /Project/LLORRI/PROTO/forth/chips/instr/lib16/dump1.fr
-2416   dumper                           constant 0000 
-2416   .dump-src                        offset: 0000 
-2416   .dump-len                        offset: 0004 
-2416   dump-hdr-struct                  constant 0008 structure 
-241e   dump-header                      constant 2416 makestruct 
-2432   dump-pkt                         constant 241e makestruct 
-2436   dump-src                         constant 2432 2variable 
-2438   dump-len                         constant 2436 variable 
-243a   dump-sem                         constant 2438 variable 
-243a   gather-dump                      : 
-245e   update-dump                      : 
-247c   send-dump                        : 
-2498   start-dump                       : 
-24b6   abort-dump                       : 
-24cc   try-dump-pkt                     : 
-24ec   init-dump                        : 
- File Closed: /Project/LLORRI/PROTO/forth/chips/instr/lib16/dump1.fr
- File Opened: /Project/LLORRI/PROTO/forth/chips/instr/lib16/alarm1.fr
-24fe   alarm                            constant 0000 
-24fe   .alarm-id                        offset: 0000 
-24fe   .alarm-flag                      offset: 0001 
-24fe   .alarm-value                     offset: 0002 
-24fe   .alarm-limit                     offset: 0003 
-24fe   alarm-struct                     constant 0004 structure 
-2502   alarm-buffer                     constant 24fe makestruct 
-2516   alarm-pkt                        constant 2502 makestruct 
-2518   alarm-access                     constant 2516 variable 
-2518   record-alarm                     : 
-252c   gen-alarm                        : 
-2564   trans-alarm                      : 
-2568   persist-alarm                    : 
-256c   sw-alarm                         : 
-2572   init-alarm                       : 
- File Closed: /Project/LLORRI/PROTO/forth/chips/instr/lib16/alarm1.fr
- File Opened: /Project/LLORRI/PROTO/forth/chips/instr/lib16/mem-cmd2.fr
-2584   memory                           constant 0000 
-2584   first-address                    : 
-2592   .sum-src                         offset: 0000 
-2592   .sum-len                         offset: 0004 
-2592   .sum-checksum                    offset: 0006 
-2592   checksum-pkt-struct              constant 0008 structure 
-259a   checksum-buffer                  constant 2592 makestruct 
-25ae   checksum-pkt                     constant 259a makestruct 
-25ae   c-mem-check                      : 
-25e2   c-mem-copy                       : 
-260c   load-mem                         : 
-261a   c-mem-load                       : 
-263a   c-mem-read                       : 
-2644   c-mem-read-abrt                  : 
-2646   c-mem-run                        : 
-264e   .str-src                         offset: 0000 
-264e   .str-len                         offset: 0004 
-264e   .str-id                          offset: 0006 
-264e   struct-load-struct               constant 0008 structure 
-264e   data-structures                  constant 264e makestruct 
-2662   structure-pkt                    constant 264e makestruct 
-2662   c-mem-str-load                   : 
-26bc   c-mem-str-read                   : 
-26f8   register-struct                  : 
-270e   c-mem-write                      : 
-2716   init-memory                      : 
- File Closed: /Project/LLORRI/PROTO/forth/chips/instr/lib16/mem-cmd2.fr
+2278   .opcode                          offset: 0002 
+2278   .nargs                           offset: 0004 
+2278   .vector                          offset: 0006 
+2278   hash-command-struct              constant 0008 structure 
+227a   hash-access                      constant 2278 variable 
+227a   hash-table                       create(adjacent) 227c 
+227c ALLOT 0020 
+229c   hash-opcode                      : 
+22a4   check-cmd                        : 
+22b2   lookup-cmd                       : 
+22d4   trim-args                        : 
+22ee   exec-cmd                         : 
+22fc   rt-cmd                           : 
+2308   macro-cmd                        : 
+2314   init-cmd-table                   : 
+2328   in-macro?                        : 
+232e   register-cmd/args                : 
+235e   register-cmd                     : 
+ File Closed: /Project/LLORRI/Lucy/forth/chips/instr/lib16/cmd-dict1.fr
+ File Opened: /Project/LLORRI/Lucy/forth/chips/instr/lib16/dump1.fr
+2362   dumper                           constant 0000 
+2362   .dump-src                        offset: 0000 
+2362   .dump-len                        offset: 0004 
+2362   dump-hdr-struct                  constant 0008 structure 
+236a   dump-header                      constant 2362 makestruct 
+237e   dump-pkt                         constant 236a makestruct 
+2382   dump-src                         constant 237e 2variable 
+2384   dump-len                         constant 2382 variable 
+2386   dump-sem                         constant 2384 variable 
+2386   gather-dump                      : 
+23aa   update-dump                      : 
+23c8   send-dump                        : 
+23e4   start-dump                       : 
+2402   abort-dump                       : 
+2418   try-dump-pkt                     : 
+2438   init-dump                        : 
+ File Closed: /Project/LLORRI/Lucy/forth/chips/instr/lib16/dump1.fr
+ File Opened: /Project/LLORRI/Lucy/forth/chips/instr/lib16/alarm1.fr
+244a   alarm                            constant 0000 
+244a   .alarm-id                        offset: 0000 
+244a   .alarm-flag                      offset: 0001 
+244a   .alarm-value                     offset: 0002 
+244a   .alarm-limit                     offset: 0003 
+244a   alarm-struct                     constant 0004 structure 
+244e   alarm-buffer                     constant 244a makestruct 
+2462   alarm-pkt                        constant 244e makestruct 
+2464   alarm-access                     constant 2462 variable 
+2464   record-alarm                     : 
+2478   gen-alarm                        : 
+24b0   trans-alarm                      : 
+24b4   persist-alarm                    : 
+24b8   sw-alarm                         : 
+24be   init-alarm                       : 
+ File Closed: /Project/LLORRI/Lucy/forth/chips/instr/lib16/alarm1.fr
+ File Opened: /Project/LLORRI/Lucy/forth/chips/instr/lib16/mem-cmd2.fr
+24d0   memory                           constant 0000 
+24d0   first-address                    : 
+24de   .sum-src                         offset: 0000 
+24de   .sum-len                         offset: 0004 
+24de   .sum-checksum                    offset: 0006 
+24de   checksum-pkt-struct              constant 0008 structure 
+24e6   checksum-buffer                  constant 24de makestruct 
+24fa   checksum-pkt                     constant 24e6 makestruct 
+24fa   c-mem-check                      : 
+252e   c-mem-copy                       : 
+2558   load-mem                         : 
+2566   c-mem-load                       : 
+2586   c-mem-read                       : 
+2590   c-mem-read-abrt                  : 
+2592   c-mem-run                        : 
+259a   .str-src                         offset: 0000 
+259a   .str-len                         offset: 0004 
+259a   .str-id                          offset: 0006 
+259a   struct-load-struct               constant 0008 structure 
+259a   data-structures                  constant 259a makestruct 
+25ae   structure-pkt                    constant 259a makestruct 
+25ae   c-mem-str-load                   : 
+2608   c-mem-str-read                   : 
+2644   register-struct                  : 
+265a   c-mem-write                      : 
+2662   init-memory                      : 
+ File Closed: /Project/LLORRI/Lucy/forth/chips/instr/lib16/mem-cmd2.fr
  File Opened: ./mem-cmd-extend.fr
-277c   c-mem-nv-enb                     : 
-2784   init-mem-extend                  : 
+26c8   c-mem-nv-enb                     : 
+26d0   init-mem-extend                  : 
  File Closed: ./mem-cmd-extend.fr
- File Opened: /Project/LLORRI/PROTO/forth/chips/instr/lib16/cmd-echo1.fr
-27a4   echo-pkt                         constant 2790 makestruct 
-27a4   echo-cmd                         : 
-27cc   init-echo-pkt                    : 
- File Closed: /Project/LLORRI/PROTO/forth/chips/instr/lib16/cmd-echo1.fr
- File Opened: /Project/LLORRI/PROTO/forth/chips/instr/lib16/cmd-proc1.fr
-27ce   count-mac-cmd                    : 
-27e8   learn-macro                      : 
-27f8   get-mac-cmd                      : 
-2802   handle-mac-cmd                   : 
-2812   ack-mac-cmd                      : 
-2828   process-cmd                      : 
-2836   count-cmd                        : 
-2850   handle-cmd                       : 
-2866   ack-cmd                          : 
-286c   save-cmd                         : 
-2872   c-cmd-null                       : 
-2874   init-command                     : 
- File Closed: /Project/LLORRI/PROTO/forth/chips/instr/lib16/cmd-proc1.fr
- File Opened: /Project/LLORRI/PROTO/forth/chips/instr/lib16/stat-proc1.fr
-2886   status-cnt                       constant 2884 variable 
-289a   status-pkt                       constant 2886 makestruct 
-289a   watch-memory                     : 
-28b8   send-status                      : 
-28e6   clear-all-cnts                   : 
-2908   c-stat-clr                       : 
-2972   c-stat-int                       : 
-297e   c-stat-mem                       : 
-2990   init-status                      : 
- File Closed: /Project/LLORRI/PROTO/forth/chips/instr/lib16/stat-proc1.fr
+ File Opened: /Project/LLORRI/Lucy/forth/chips/instr/lib16/cmd-echo1.fr
+26f0   echo-pkt                         constant 26dc makestruct 
+26f0   echo-cmd                         : 
+2718   init-echo-pkt                    : 
+ File Closed: /Project/LLORRI/Lucy/forth/chips/instr/lib16/cmd-echo1.fr
+ File Opened: /Project/LLORRI/Lucy/forth/chips/instr/lib16/cmd-proc1.fr
+271a   count-mac-cmd                    : 
+2734   learn-macro                      : 
+2744   get-mac-cmd                      : 
+274c   handle-mac-cmd                   : 
+275c   ack-mac-cmd                      : 
+2772   process-cmd                      : 
+2780   count-cmd                        : 
+279a   handle-cmd                       : 
+27b0   ack-cmd                          : 
+27b6   save-cmd                         : 
+27ba   c-cmd-null                       : 
+27bc   init-command                     : 
+ File Closed: /Project/LLORRI/Lucy/forth/chips/instr/lib16/cmd-proc1.fr
+ File Opened: ./stat-proc1.fr
+27cc   status-cnt                       constant 27ca variable 
+27e0   status-pkt                       constant 27cc makestruct 
+27e0   watch-memory                     : 
+27fe   send-status                      : 
+282e   clear-all-cnts                   : 
+2850   c-stat-clr                       : 
+28ba   c-stat-int                       : 
+28c6   c-stat-mem                       : 
+28d8   init-status                      : 
+ File Closed: ./stat-proc1.fr
  File Opened: ./host-cmd.fr
-29c0   #max-in-frame                    constant 0400 
-29c0   #ipsync                          constant 000a 
-2dc0   msg-buffer                       constant 29c0 makestruct 
-2dc0   #ip/udp-bad                      constant 0001 
-2dc0   #cip-bad                         constant 0002 
-2dc0   #cip-unknown                     constant 0003 
-2dc0   #cip-len-wrong                   constant 0004 
-2dc0   rcv-alarm                        : 
-2dc6   .ext-time                        offset: 0000 
-2dc6   .ext-time-sub                    offset: 0004 
-2dc6   ext-time-struct                  constant 0008 structure 
-2dc6   process-time                     : 
-2dde   .ext-cmd-opcode                  offset: 0000 
-2dde   .ext-cmd-macro                   offset: 0001 
-2dde   .ext-cmd-args                    offset: 0002 
-2dde   ext-cmd-struct                   constant 010c structure 
-2dde   real-time?                       : 
-2de2   unwrap-command                   : 
-2e14   process-command                  : 
-2e3a   do-macro-cmd                     : 
-2e44   get-msg-byte                     : 
-2e5a   get-msg-bytes                    : 
-2e76   sync-good?                       : 
-2ea6   find-msg-sync                    : 
-2ecc   read-rest-msg                    : 
-2ed4   ip-good?                         : 
-2f06   process-cip                      : 
-2f46   process-message                  : 
-2f74   handle-message                   : 
-2fb4   init-host                        : 
+2908   #max-in-frame                    constant 0400 
+2908   #ipsync                          constant 000a 
+2d08   msg-buffer                       constant 2908 makestruct 
+2d08   #ip/udp-bad                      constant 0001 
+2d08   #cip-bad                         constant 0002 
+2d08   #cip-unknown                     constant 0003 
+2d08   #cip-len-wrong                   constant 0004 
+2d08   rcv-alarm                        : 
+2d0e   .ext-time                        offset: 0000 
+2d0e   .ext-time-sub                    offset: 0004 
+2d0e   ext-time-struct                  constant 0008 structure 
+2d0e   process-time                     : 
+2d26   .ext-cmd-opcode                  offset: 0000 
+2d26   .ext-cmd-macro                   offset: 0001 
+2d26   .ext-cmd-args                    offset: 0002 
+2d26   ext-cmd-struct                   constant 010c structure 
+2d26   real-time?                       : 
+2d2a   unwrap-command                   : 
+2d5c   process-command                  : 
+2d82   do-macro-cmd                     : 
+2d8c   get-msg-byte                     : 
+2da2   get-msg-bytes                    : 
+2dbe   sync-good?                       : 
+2dee   find-msg-sync                    : 
+2e14   read-rest-msg                    : 
+2e1c   ip-good?                         : 
+2e4e   process-cip                      : 
+2e8e   process-message                  : 
+2ebc   handle-message                   : 
+2efc   init-host                        : 
  File Closed: ./host-cmd.fr
- File Opened: /Project/LLORRI/PROTO/forth/chips/instr/lib16/telecmd1.fr
-2fba   telecmd                          constant 0000 
-2fba ALLOT 0060 
-301a ALLOT 0040 
-305a ALLOT 0000 
-305a ALLOT 000e 
-3068   command-process                  create(adjacent) 306a 
-306a ALLOT 0002 
-306c ALLOT 0002 
-306e ALLOT 0002 
-3070 ALLOT 0002 process: 
- File Closed: /Project/LLORRI/PROTO/forth/chips/instr/lib16/telecmd1.fr
- File Opened: /Project/LLORRI/PROTO/forth/chips/instr/lib16/telemetry1.fr
-3078   telemetry                        constant 0000 
-3078   send-telemetry                   : 
-308c ALLOT 0040 
-30cc ALLOT 0040 
-310c ALLOT 0000 
-310c ALLOT 000e 
-311a   telemetry-process                create(adjacent) 311c 
-311c ALLOT 0002 
-311e ALLOT 0002 
-3120 ALLOT 0002 
-3122 ALLOT 0002 process: 
- File Closed: /Project/LLORRI/PROTO/forth/chips/instr/lib16/telemetry1.fr
- File Opened: /Project/LLORRI/PROTO/forth/chips/instr/lib16/boot.fr
-3136   .prog-mem                        offset: 0000 
-3136   .prog-dst                        offset: 0002 
-3136   .prog-exec                       offset: 0004 
-3136   .prog-length                     offset: 0006 
-3136   .prog-cksum                      offset: 0008 
-3136   prog-head-struct                 constant 000a structure 
-3136   checksum+                        : 
-315a   eeprom-good?                     : 
-316a   dst-ok?                          : 
-3172   eeprom-copy                      : 
-31c6   copy-ok?                         : 
-31ec   eeprom-entry                     : 
-31f8   bootload                         : 
- File Closed: /Project/LLORRI/PROTO/forth/chips/instr/lib16/boot.fr
- File Opened: /Project/LLORRI/PROTO/forth/chips/instr/lib16/motor2.fr
-3222   tolower                          : 
-3238   hexdigit                         : 
-3276   read-digit                       : 
-3284   rbuffer                          create(adjacent) 3286 
-3286 ALLOT 0100 
-3388   rchecksum                        constant 3386 variable 
-3388   read-byte                        : 
-3398   search-for-record                : 
-33a6   read-record                      : 
-33ee   get-8bits                        : 
-33fc   get-16bits                       : 
-3412   save-data                        : 
-3432   s1                               : 
-3440   s2                               : 
-344e   s3                               : 
-345c   s-recs                           : 
-34be   download                         : 
- File Closed: /Project/LLORRI/PROTO/forth/chips/instr/lib16/motor2.fr
+ File Opened: /Project/LLORRI/Lucy/forth/chips/instr/lib16/telecmd1.fr
+2f02   telecmd                          constant 0000 
+2f02 ALLOT 0060 
+2f62 ALLOT 0040 
+2fa2 ALLOT 0000 
+2fa2 ALLOT 000e 
+2fb0   command-process                  create(adjacent) 2fb2 
+2fb2 ALLOT 0002 
+2fb4 ALLOT 0002 
+2fb6 ALLOT 0002 
+2fb8 ALLOT 0002 process: 
+ File Closed: /Project/LLORRI/Lucy/forth/chips/instr/lib16/telecmd1.fr
+ File Opened: /Project/LLORRI/Lucy/forth/chips/instr/lib16/telemetry1.fr
+2fc0   telemetry                        constant 0000 
+2fc0   send-telemetry                   : 
+2fd4 ALLOT 0040 
+3014 ALLOT 0040 
+3054 ALLOT 0000 
+3054 ALLOT 000e 
+3062   telemetry-process                create(adjacent) 3064 
+3064 ALLOT 0002 
+3066 ALLOT 0002 
+3068 ALLOT 0002 
+306a ALLOT 0002 process: 
+ File Closed: /Project/LLORRI/Lucy/forth/chips/instr/lib16/telemetry1.fr
+ File Opened: /Project/LLORRI/Lucy/forth/chips/instr/lib16/boot.fr
+307e   .prog-mem                        offset: 0000 
+307e   .prog-dst                        offset: 0002 
+307e   .prog-exec                       offset: 0004 
+307e   .prog-length                     offset: 0006 
+307e   .prog-cksum                      offset: 0008 
+307e   prog-head-struct                 constant 000a structure 
+307e   checksum+                        : 
+30a2   eeprom-good?                     : 
+30b2   dst-ok?                          : 
+30ba   eeprom-copy                      : 
+310e   copy-ok?                         : 
+3134   eeprom-entry                     : 
+3140   bootload                         : 
+ File Closed: /Project/LLORRI/Lucy/forth/chips/instr/lib16/boot.fr
+ File Opened: /Project/LLORRI/Lucy/forth/chips/instr/lib16/motor2.fr
+316a   tolower                          : 
+3180   hexdigit                         : 
+31be   read-digit                       : 
+31cc   rbuffer                          create(adjacent) 31ce 
+31ce ALLOT 0100 
+32d0   rchecksum                        constant 32ce variable 
+32d0   read-byte                        : 
+32e0   search-for-record                : 
+32ee   read-record                      : 
+3336   get-8bits                        : 
+3344   get-16bits                       : 
+335a   save-data                        : 
+337a   s1                               : 
+3388   s2                               : 
+3396   s3                               : 
+33a4   s-recs                           : 
+3406   download                         : 
+ File Closed: /Project/LLORRI/Lucy/forth/chips/instr/lib16/motor2.fr
  File Opened: ./alpha2.fr
-34c6   .dig                             : 
-34d8   h.                               : 
-3512   convert-hex                      : 
-3544   cmdbuf-size                      constant 0010 
-3544   cmdbuf                           create(adjacent) 3546 
-3546 ALLOT 0010 
-3556   warn                             : 
-355e   read-hex32                       : 
-3578   read-hex16                       : 
-3586   read-hex8                        : 
-3598   inspect                          : 
-35fa   copy-cmd                         : 
-3604   PROMPT                           : 
-361e   interboot                        : 
+340e   .dig                             : 
+3420   h.                               : 
+345a   convert-hex                      : 
+348c   cmdbuf-size                      constant 0010 
+348c   cmdbuf                           create(adjacent) 348e 
+348e ALLOT 0010 
+349e   warn                             : 
+34a6   read-hex32                       : 
+34c0   read-hex16                       : 
+34ce   read-hex8                        : 
+34e0   inspect                          : 
+3542   copy-cmd                         : 
+354c   interboot                        : 
  File Closed: ./alpha2.fr
- File Opened: /Project/LLORRI/PROTO/forth/chips/instr/lib16/boot-cmd1.fr
-36bc   bootcmd                          constant 0000 
-36bc   boot-program                     : 
-36d0   c-rom-boot                       : 
-36d8   c-rom-go                         : 
-36e6   init-boot                        : 
- File Closed: /Project/LLORRI/PROTO/forth/chips/instr/lib16/boot-cmd1.fr
+ File Opened: /Project/LLORRI/Lucy/forth/chips/instr/lib16/boot-cmd1.fr
+35ee   bootcmd                          constant 0000 
+35ee   boot-program                     : 
+3602   c-rom-boot                       : 
+360a   c-rom-go                         : 
+3618   init-boot                        : 
+ File Closed: /Project/LLORRI/Lucy/forth/chips/instr/lib16/boot-cmd1.fr
  File Opened: main.fr
-36fc   init-common                      : 
-3710   check-cause                      : 
-373c   init-app                         : 
-3742   go                               : 
+362e   init-common                      : 
+3642   check-cause                      : 
+366e   init-app                         : 
+3670   go                               : 
  File Closed: main.fr
- File Opened: /Project/LLORRI/PROTO/forth/chips/startup.fr
-       REBOOT                           define 376a 
-       app-vector                       define 37ac 
-37ac ALLOT 0002 
- File Closed: /Project/LLORRI/PROTO/forth/chips/startup.fr
- File Opened: /Project/LLORRI/PROTO/forth/chips/scip/16bits/lib/bootboot2.fr
-37ae   good-page?                       : 
-37fc   select-ram                       : 
-3810   copy-out                         : 
-       romboot                          define 3838 
- File Closed: /Project/LLORRI/PROTO/forth/chips/scip/16bits/lib/bootboot2.fr
-here = 3844 
+ File Opened: /Project/LLORRI/Lucy/forth/chips/startup.fr
+       REBOOT                           define 3698 
+       app-vector                       define 36da 
+36da ALLOT 0002 
+ File Closed: /Project/LLORRI/Lucy/forth/chips/startup.fr
+ File Opened: /Project/LLORRI/Lucy/forth/chips/scip/16bits/lib/bootboot2.fr
+36dc   good-page?                       : 
+372a   select-ram                       : 
+373e   copy-out                         : 
+       romboot                          define 3766 
+ File Closed: /Project/LLORRI/Lucy/forth/chips/scip/16bits/lib/bootboot2.fr
+here = 3772 
  File Opened: llorri-boot.bin
  File Closed: llorri-boot.bin
 stack depth = 0 
